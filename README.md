@@ -37,7 +37,7 @@ importantes que se deben seguir al pie de la letra e información importante:
 Espero que os acordéis de esto cuando hagais vuestras aportaciones, si no, la 
 epicidad de este proyecto será muy cuestionable y nos rodeará la negra sombra del
 fracaso. Siendo conformes todas las partes integrantes de este proyecto, doy la
-bienvenida a los susodichos y un enpujón de ánimo, ya que nos queda mucha pardera
+bienvenida a los susodichos y un enpujón de ánimo, ya que nos queda mucha pradera
 por la que cabalgar y las noches serán largas, pero nuestro espíritu de superación
 y nuestras ganas de poner esto en nuestro currículum son mucho mayores.
 
