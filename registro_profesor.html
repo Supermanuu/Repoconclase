@@ -21,8 +21,48 @@
         </header>
 		<div id="principal" class="contenedor">
 			<div id="contenido">
-				<h1>Bienvenido profesor, rellene este formulario de alta</h1>
+				<h1>¡¡¡Bienvenido profesor!!!</h1>
 				<form method="post" action="mailto:profesoresconcontacto@gmail.com" enctype="text/plain">
+					<div id="etiquetas">
+						<p>Datos de usuario<p>
+						<label for="Usuario">Usuario :</label></br>
+						<label for="Contraseña">Contraseña :</label></br>
+						</br>
+						<p>Datos personales<p>
+						<label for="Nombre">Nombre :</label></br>
+						<label for="Apellido_1">Apellido 1 :</label></br>
+						<label for="Apellido_2">Apellido 2 :</label></br>
+						<label for="Tipo_Documento">NIF/NIE/Pasaporte :</label></br>
+						<label for="Documento">Documento :</label></br>
+						</br>
+						<p>Datos de contacto<p>
+						<label for="Email">Email :</label></br>
+						<label for="Teléfono">Teléfono :</label></br>
+						</br>
+					</div>
+					<div id="entradas">
+						</br>
+						<input type="text" name="Usuario" maxlength="20" size="25" required/></br>
+						<input type="text" name="Contraseña" maxlength="20" size="25" required/></br>
+						</br></br>
+						<input type="text" name="Nombre" maxlength="20" size="25" required/></br>
+						<input type="text" name="Apellido_1" maxlength="20" size="25" required/></br>
+						<input type="text" name="Apellido_2" maxlength="20" size="25" required/></br>
+						<select name="tipo_documento">
+  							<option value="NIF" selected>NIF</option>
+  							<option value="NIE">NIE</option>
+  							<option value="Pasaporte">Pasaporte</option>
+						</select></br>
+						<input type="text" name="Documento" maxlength="25" size="25" required/></br>
+						</br></br>
+						<input type="text" name="Email" maxlength="25" size="25" pattern="[a-z0-9]+@[a-z0-9]+\.[a-z]{2,3}$" required/></br>
+						<input type="text" name="Teléfono" maxlength="20" size="25" required/></br>
+					</div>
+					<div id="botonera">
+						<label for="verif"/> <input type="checkbox" required> Verifico que he leído y acepto los términos y condiciones del servicio.</br>
+						<input id ="enviar" type="submit" value="Send request"/>
+						<input id ="limpiar" type="reset" value="Clear"/>
+					</div>
 				</form>
 			</div>
 		</div>
