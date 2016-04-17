@@ -1,0 +1,92 @@
+body {
+	background-image: url("../img/pizarra.jpg");
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#contenido {
+    /* Color de la fuente */
+    color: white;
+}
+
+select, #enviar, #limpiar
+{
+   /* Color de acción */
+   background-color: #4F81BD;
+   
+   /* Color del borde */
+   border-color: #223A57;
+   
+   /* Color de la fuente */
+   color: white;
+   
+   /* Tamaño de la fuente */
+   font-size: larger;
+}
+
+@media (min-width: 768px) {
+  div#contenido {
+    text-align: center;
+    line-height: 150%;
+    padding-bottom: 1.5%;
+  }
+
+  div#contenido > h1 {
+    font-size: 1.5em;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+  }
+
+  div#etiquetas {
+    text-align: right;
+    line-height: 250%;
+    margin-left: 2.5;
+    margin-right: 1.25%;
+  }
+
+  div#entradas {
+    text-align: left;
+    line-height: 250%;
+    margin-left: 1.25%;
+    margin-right: 2.5%;
+  }
+
+  div#botonera {
+    text-align: center;
+    line-height: 150%;
+  }
+}
+
+@media (max-width: 768px) {
+  div#contenido {
+    text-align: center;
+    line-height: 150%;
+    padding-bottom: 3%;
+  }
+
+  div#contenido > h1 {
+    text-align: left;
+    font-size: 1.5em;
+    padding-top: 3%;
+  }
+
+  div#etiquetas {
+    text-align: right;
+    line-height: 250%;
+    margin-left: 2.5;
+    margin-right: 1.25%;
+  }
+
+  div#entradas {
+    text-align: left;
+    line-height: 250%;
+    margin-left: 1.25%;
+    margin-right: 2.5%;
+  }
+
+  div#botonera {
+    text-align: left;
+    line-height: 150%;
+  }
+}
