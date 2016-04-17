@@ -1,0 +1,41 @@
+﻿@media (min-width: 768px)
+{
+   body
+     {
+      /* Seleccionamos la imagen de fondo */
+      background-image: url(../img/alumnos.jpg);
+   }
+   
+   #contenido
+      {
+      font-size: 1.5em;
+   }
+}
+
+@media (max-width: 768px)
+{
+   body
+     {
+      background-image: none;
+   }
+   
+   #contenido
+      {
+      font-size: 1.2em;
+   }
+}
+
+#volver
+{
+   /* Color de acción */
+   background-color: #4F81BD;
+   
+   /* Color del borde */
+   border-color: #223A57;
+   
+   /* Color de la fuente */
+   color: white;
+   
+   /* Tamaño de la fuente */
+   font-size: larger;
+}

@@ -1,0 +1,43 @@
+@media (min-width: 768px){ /*Tamaño escritorio*/
+
+   body
+     {
+      /* Seleccionamos la imagen de fondo */
+      background-image: url(../img/profesor.png);
+   }
+   
+   #principal
+      {
+      font-size: 1.4em;
+      line-height: 1.2; /*Espaciado entre las frases*/
+   }
+}
+
+@media (max-width: 768px){ /*Tamaño movil*/
+
+   body
+     {
+      background-image: none;
+   }
+   
+   #principal
+      {
+      font-size: 1.1em;
+      line-height: 1.2; /*Espaciado entre las frases*/
+   }
+}
+
+#volver
+{
+   /* Color de acción */
+   background-color: #4F81BD;
+   
+   /* Color del borde */
+   border-color: #223A57;
+   
+   /* Color de la fuente */
+   color: white;
+   
+   /* Tamaño de la fuente */
+   font-size: larger;
+}

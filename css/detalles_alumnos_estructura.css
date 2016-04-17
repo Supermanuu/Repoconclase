@@ -1,0 +1,54 @@
+@media (min-width: 768px)
+{
+   body
+     {
+      /* La imagen se centra en la pantalla */
+      background-attachment: fixed;
+      
+      /* Colocamos la imagen de fondo */
+      background-size: 50% 100%;
+      background-position: right;
+      background-repeat: no-repeat;
+   }
+   
+   #contenido
+      {
+      width: 36%;
+      
+      /* Margen con respecto al borde */
+      margin: auto 8%;
+   }
+}
+
+body > div
+{
+    display: flex;
+    margin: auto 0;
+}
+
+@media (max-width: 768px)
+{
+   #contenido
+      {
+      width: 90%;
+      
+      /* Centramos */
+      margin: auto 8%;
+   }
+}
+
+#contenido > p
+{
+   margin: 20px 0;
+}
+
+#volver
+{
+   /* Límites del boton */
+   min-width: 10%;
+   min-height: 6%;
+  
+   /* Colocación */
+   margin: auto;
+   margin-bottom: 10px;
+}
