@@ -1,0 +1,262 @@
+header
+{
+	/* Anchura mínima en un bloque normal */
+   min-height: 6%;
+   
+   /* Margen superior para que se vea la pizarra de fondo */
+   margin-top: 40px;
+   
+   /* Esta instrucción indica que el borde debe ocmportarse como si
+      fuese un elementro interno del header */
+   background-origin: content-box;
+
+   /* Pequeño espacio para que el logo no se junte con el borde */
+   padding-left: 1%;
+   
+   /* Cargamos el icono de vuelta atrás */
+   background-image: url(../img/profesconclase_azul.png);
+   
+   /* Evitamos que se epita por todo el header */
+   background-repeat: no-repeat;
+   
+   /* Redimensionamos la imagen de fondo */
+   background-size: contain;
+   
+   /* Para mantener los botones dentro del header */
+   overflow: hidden;
+}
+
+#salir
+{
+   /* Para que los botones se alineen a la derecha */
+   float: right;
+   
+   /* Límites del boton */
+   min-width: 10%;
+   min-height: 6%;
+}
+
+body
+{
+   width: 100%;
+   /*
+   Para hacer que sea visible en safari
+   display : -webkit-flex;
+   */
+   
+   /* Reseteamos los margenes por defecto del navegador */
+   margin: 0px;
+}
+
+#altaClases > #mensajes{
+   display: flex;
+   position: relative;
+   border: 3px solid #460A78;
+   margin-top:5%;
+   width: 99.4%;
+   height: 50%;
+   overflow: scroll;
+}
+
+#correos > #mensajes {
+   display: flex;
+   position: relative;
+   border: 3px solid #460A78;
+   margin-top:3%;
+   width: 99.4%;
+   height: 50%;
+   overflow: scroll;
+}
+
+#altaClases > #mensajes > #fecha, #correos > #mensajes > #fecha {
+   width: 20%;
+   text-align: center;
+}
+
+#altaClases > #mensajes > #nombre, #correos > #mensajes > #tipo {
+   width: 40%;
+   text-align: center;
+}
+
+#altaClases > #mensajes > #profesor, #correos > #mensajes > #autor {
+   width: 20%;
+   text-align: center;
+}
+
+#informacionMensajes, #informacionClases {
+   background-color: #460A78;
+   border: 5px solid black;
+   color : white;
+   visibility: hidden;
+   position: absolute;
+   z-index: 1;
+   width: 50%;
+   height: 70%;
+   left: 25%;
+}
+
+.cerrarVentana {
+   position: float;
+   float: right;
+   height: 20px;
+   width: 20px;
+   background-image: url(../img/botonCerrar.png);
+   background-size: contain;
+}
+
+#aceptar, #rechazar {
+   width: 300px;
+   height: 75px;
+}
+
+#informacionMensajes > pre, #informacionClases > pre {
+   text-align: left;
+   overflow: scroll;
+   height: 50%;
+   margin-top: 30px;
+   margin-left: 20px;
+}
+
+#informacionMensajes > form, #informacionClases > #informacionClasesBotones {
+   margin-top: 30px;
+   text-align: center;
+}
+
+@media(min-width: 768px){
+   #parte1{
+      display: flex;
+      flex-direction: row;
+      height: 45%;
+   }
+
+   #parte2{
+      display: flex;
+      flex-direction: row;
+      height: 25%;
+   }
+
+   #altaClases > #mensajes{
+      display: flex;
+      position: relative;
+      border: 3px solid #460A78;
+      margin-top:5%;
+      width: 99.4%;
+      height: 50%;
+      overflow: scroll;
+   }
+
+   #correos > #mensajes {
+      display: flex;
+      position: relative;
+      border: 3px solid #460A78;
+      margin-top:3%;
+      width: 99.4%;
+      height: 50%;
+      overflow: scroll;
+   }
+
+   #estado{
+      flex-basis: 30%;
+   }
+
+   #altaClases{
+      flex-basis: 75%; 
+   }
+
+   #correos{
+      flex-basis: 70%; 
+   }
+
+   #gestionUsuarios{
+      flex-basis: 30%;
+   }
+
+   #gestionUsuarios > p{
+      margin-top: 50px;
+      text-align: center;
+   }
+
+}
+
+@media(max-width: 768px){
+   #parte1{
+      display: flex;
+      flex-direction: column;
+      height: 50%;
+   }
+
+   #parte2{
+      display: flex;
+      flex-direction: column;
+      height: 35%;
+   }
+
+   #altaClases > #mensajes{
+      display: flex;
+      position: relative;
+      border: 3px solid #460A78;
+      margin-top:5%;
+      width: 98%;
+      height: 30%;
+      overflow: scroll;
+   }
+
+   #correos > #mensajes {
+      display: flex;
+      position: relative;
+      border: 3px solid #460A78;
+      margin-top:3%;
+      width: 98%;
+      height: 30%;
+      overflow: scroll;
+   }
+
+   #estado{
+      flex-basis: 50%;
+   }
+
+   #altaClases{
+      min-height: 50%; 
+   }
+
+   #correos{
+      min-height: 65%;
+   }
+
+   #gestionUsuarios{
+      flex-basis: 25%;
+   }
+
+   #gestionUsuarios > p{
+      margin-top: 10px;
+      text-align: center;
+   }
+}
+
+#estado, #altaClases, #correos, #gestionUsuarios{
+   margin : 5 5 5 5;
+   background-color: #6414B4;
+}
+
+footer
+{
+   /* Para que los botones se coloquen a la izquierda */
+   display: flex;
+   
+   margin-bottom: 40px;
+	min-height: 10%;
+}
+
+#miembros, #contacto
+{
+   /* Margen con el inicio del footer */
+   margin-top: 10px;
+   min-width: 20%;
+   min-height: 5%;
+}
+
+#miembros > h1, #contacto > h1, #miembros > p, #contacto > p
+{
+   /* Margen con el borde de la página */
+   margin-left: 5%;
+}
