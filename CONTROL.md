@@ -18,3 +18,5 @@ Trabajo :
 Fran - 19:50 - Por el nuevo reparto, yo he empezado a hacer los formularios de registro para alumnos y profesores.
 Dani - 20:45 - Voy poniendo algunos enlaces comunes y luego solo es copiar-pegar el codigo. 
 	Voy a empezar a hacer el dashboard de profesores segun el reparto de la hoja de drive.
+
+20/4/2016
