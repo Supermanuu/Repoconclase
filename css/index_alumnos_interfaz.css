@@ -1,0 +1,167 @@
+﻿*
+{
+   /* Fuente predeterminada de la web */
+   font-family: 'Ubuntu', sans-serif;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none; 
+   
+   /* El cursor en todo momento es la flecha */
+   cursor: default;
+}
+
+header
+{
+	background-color : #118E56;
+}
+
+#logout
+{
+   /* Color de acción */
+   background-color: #6AC46E;
+   
+   /* Color del borde */
+   border-color: #4E8C50;
+   
+   /* Color de la fuente */
+   color: white;
+   
+   /* Tamaño de la fuente */
+   font-size: larger;
+   
+   /* El cursor se convierte en mano */
+   cursor: hand;
+}
+
+body
+{
+	background-color: lightgreen;
+}
+
+#menu_alumno
+{
+   background-color: #6AC46E;
+   /*font-size: 1.2em;*/
+   color: white;
+}
+
+#nombre_alumno
+{
+   font-weight: bold;
+   font-size: 45px;
+   border: 1px;
+   border-style: solid;
+   border-color: lightgreen;
+   
+   /* Para que la línea no se corte y sigua debajo */
+   overflow:hidden;
+   white-space: nowrap;
+   
+   /* Para que salgan puntos suspensivos */
+   text-overflow: ellipsis;
+}
+
+#mis_grupos > p, #mis_profesores > p
+{
+   /* Para que la línea no se corte y sigua debajo */
+   overflow:hidden;
+   white-space: nowrap;
+   
+   /* Para que salgan puntos suspensivos */
+   text-overflow: ellipsis;
+}
+
+#mis_clases_1 > p, #mis_clases_2 > p, #mis_clases_3 > p
+{
+   /* Para que la línea no se corte y sigua debajo */
+   overflow:hidden;
+   white-space: nowrap;
+   
+   /* Para que salgan puntos suspensivos */
+   text-overflow: ellipsis;
+}
+
+#spam_principal, #spam_secundario_derecha, #spam_secundario_centro, #spam_secundario_izquierda
+{
+   background-color: #C8F9C8;
+   border: 1px;
+   border-style: solid;
+   border-color: #6AC46E;
+   color: #118E56;
+}
+
+#spam_principal_autor, #spam_secundario_derecha_titulo, #spam_secundario_centro_titulo, #spam_secundario_izquierda_titulo
+{
+   font-size: 20px;
+   
+   /* Para que la línea no se corte y sigua debajo */
+   overflow:hidden;
+   white-space: nowrap;
+   
+   /* Para que salgan puntos suspensivos */
+   text-overflow: ellipsis;
+}
+
+#spam_principal_curso, #spam_secundario_derecha_apoderado, #spam_secundario_centro_apoderado, #spam_secundario_izquierda_apoderado
+{
+   font-size: 35px;
+   
+   /* Para que la línea no se corte y sigua debajo */
+   overflow:hidden;
+   white-space: nowrap;
+   
+   /* Para que salgan puntos suspensivos */
+   text-overflow: ellipsis;
+}
+
+#spam_principal_horario
+{
+   text-align: right;
+   font-size: 35px;
+   
+   /* Para que la línea no se corte y sigua debajo */
+   overflow:hidden;
+   white-space: nowrap;
+   
+   /* Para que salgan puntos suspensivos */
+   text-overflow: ellipsis;
+}
+
+#spam_principal
+{
+   background-image: url("../img/flecha_spam2.png");
+   background-repeat: no-repeat;
+   background-size: 5% 10%;
+   background-position: center bottom;
+}
+
+#spam_secundario_derecha, #spam_secundario_centro, #spam_secundario_izquierda
+{
+   background-image: url("../img/flecha_spam2.png");
+   background-repeat: no-repeat;
+   background-size: 7% 10%;
+   background-position: center bottom;
+}
+
+footer
+{
+	background-color : #118E56;
+}
+
+#miembros > h1, #contacto > h1
+{
+   /* Para quitar la letra en negrita */
+   font-weight: normal;
+   
+   color: white;
+   font-size: 1.5em;
+}
+
+#contacto > p
+{
+   color: white;
+   font-size: 1em;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}

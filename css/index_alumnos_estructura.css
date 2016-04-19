@@ -1,0 +1,274 @@
+﻿body
+{
+   width: 100%;
+   /*
+	Para hacer que sea visible en safari
+	display : -webkit-flex;
+	*/
+	
+	/* Reseteamos los margenes por defecto del navegador */
+	margin: 0px;
+   
+   /* Para colocar el footer */
+   display: flex;
+   flex-direction: column;
+}
+
+header
+{
+	/* Anchura mínima en un bloque normal */
+	min-height: 6%;
+	
+	/* Margen superior para que se vea la pizarra de fondo */
+   margin-top: 40px;
+   
+   /* Esta instrucción indica que el borde debe ocmportarse como si
+      fuese un elementro interno del header */
+   background-origin: content-box;
+
+   /* Pequeño espacio para que el logo no se junte con el borde */
+   padding-left: 1%;
+   
+   /* Cargamos el icono de vuelta atrás */
+   background-image: url(../img/profesconclase_verde.png);
+   
+   /* Evitamos que se epita por todo el header */
+   background-repeat: no-repeat;
+	
+	/* Redimensionamos la imagen de fondo */
+	background-size: contain;
+   
+   /* Para mantener los botones dentro del header */
+   overflow: hidden;
+}
+
+#login, #logout, #registrarse
+{
+   /* Para que los botones se alineen a la derecha */
+   float: right;
+   
+   /* Límites del boton */
+   min-width: 10%;
+   min-height: 6%;
+}
+
+#principal
+{
+   margin: auto 0;
+}
+
+#menu_alumno, #spam
+{
+   min-width: 90%;
+   overflow: hidden;
+   margin: 20px;
+}
+
+#spam
+{
+   height: 42%;
+   overflow: scroll;
+   overflow-x: hidden;
+   overflow-y: auto;
+}
+
+#spam_principal
+{
+   margin-bottom: 20px;
+}
+
+#spam_secundario
+{
+   margin-top: 20px;
+   display: flex;
+}
+
+#spam_secundario_derecha, #spam_secundario_centro, #spam_secundario_izquierda
+{
+   overflow: hidden;
+   margin: 10px;
+   display: flex;
+   flex-direction: column;
+   width: 100%;
+}
+
+#menu_alumno_principal
+{
+   float: left;
+   width: 30%;
+   display: flex;
+   flex-direction: column;
+}
+
+#bloque_1, #bloque_2, #bloque_3
+{
+   float: left;
+   margin-left: auto;
+   display: flex;
+   flex-direction: column;
+   width: 22%;
+}
+
+#estaticos_menu
+{
+   float: right;
+   display: flex;
+   flex-direction: row;
+   width: 70%;
+}
+
+#nombre_alumno
+{
+   margin: 10px 30px;
+   padding: 10px;
+}
+
+#acciones_rapidas
+{
+   margin-top: auto;
+   padding: 0px;
+   padding-left: 30px;
+   padding-bottom: 10px;
+}
+
+#acciones_rapidas > h1
+{
+   margin: 10px;
+}
+
+#mis_profesores, #correo_alumno
+{
+   margin: 20px 0;
+   padding-right: 20px;
+}
+
+#mis_grupos, #top_10_profesores
+{
+   margin: 20px 0;
+   padding-right: 20px;
+}
+
+#mis_clases, #acciones_no_tan_rapidas
+{
+   margin: 20px 0;
+   padding-right: 20px;
+}
+
+#mis_clases_1 > p, #mis_clases_2 > p, #mis_clases_3 > p
+{
+   float: left;
+}
+
+#mis_clases_1_nombre, #mis_clases_2_nombre, #mis_clases_3_nombre
+{
+   width: 60%;
+}
+
+#mis_clases_1_horario, #mis_clases_2_horario, #mis_clases_3_horario
+{
+   width: 30%;
+}
+
+#spam_secundario_derecha, #spam_secundario_centro, #spam_secundario_izquierda
+{
+   margin: 1%;
+   margin-top: 0;
+   margin-bottom: 0;
+}
+
+#spam_secundario_derecha
+{
+   margin-right: 0;
+}
+
+#spam_secundario_izquierda
+{
+   margin-left: 0;
+}
+
+#spam_principal_por
+{
+   display: flex;
+}
+
+#spam_principal_titulo
+{
+   display: flex;
+}
+
+#spam_principal_intro
+{
+   margin: 2%;
+   margin-right: 10px;
+   margin-bottom: 0;
+}
+
+#spam_principal_autor
+{
+   width: 30%;
+   margin: 2%;
+   margin-left: 10px;
+   margin-bottom: 0;
+}
+
+#spam_secundario_derecha_titulo, #spam_secundario_centro_titulo, #spam_secundario_izquierda_titulo
+{
+   margin: 2%;
+   margin-bottom: 0;
+}
+
+#spam_principal_curso
+{
+   width: 60%;
+   margin: 2%;
+}
+
+#spam_secundario_derecha_apoderado, #spam_secundario_centro_apoderado, #spam_secundario_izquierda_apoderado
+{
+   margin: 2%;
+}
+
+#spam_principal_horario
+{
+   width: 31%;
+   margin: 2%;
+   margin-left: auto;
+}
+
+#spam_principal_otros, #spam_secundario_derecha_otros, #spam_secundario_centro_otros, #spam_secundario_izquierda_otros
+{
+   display: flex;
+   margin: 1% 2%;
+   margin-top: 0;
+}
+
+#spam_principal_otros > p:last-child, #spam_secundario_derecha_otros > p:last-child,
+#spam_secundario_centro_otros > p:last-child, #spam_secundario_izquierda_otros > p:last-child
+{
+   margin-left: auto;
+   margin-top: auto;
+}
+
+footer
+{
+   /* Para que los botones se coloquen a la izquierda */
+   display: flex;
+   width: 100%;
+   
+   margin-bottom: 40px;
+	min-height: 10%;
+}
+
+#miembros, #contacto
+{
+   /* Margen con el inicio del footer */
+   margin-top: 10px;
+   min-width: 20%;
+   min-height: 5%;
+}
+
+#miembros > h1, #contacto > h1, #miembros > p, #contacto > p
+{
+   /* Margen con el borde de la página */
+   margin-left: 5%;
+}
