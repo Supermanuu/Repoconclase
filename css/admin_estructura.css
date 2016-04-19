@@ -48,26 +48,6 @@ body
    margin: 0px;
 }
 
-#altaClases > #mensajes{
-   display: flex;
-   position: relative;
-   border: 3px solid #460A78;
-   margin-top:5%;
-   width: 99.4%;
-   height: 50%;
-   overflow: scroll;
-}
-
-#correos > #mensajes {
-   display: flex;
-   position: relative;
-   border: 3px solid #460A78;
-   margin-top:3%;
-   width: 99.4%;
-   height: 50%;
-   overflow: scroll;
-}
-
 #altaClases > #mensajes > #fecha, #correos > #mensajes > #fecha {
    width: 20%;
    text-align: center;
@@ -83,18 +63,6 @@ body
    text-align: center;
 }
 
-#informacionMensajes, #informacionClases {
-   background-color: #460A78;
-   border: 5px solid black;
-   color : white;
-   visibility: hidden;
-   position: absolute;
-   z-index: 1;
-   width: 50%;
-   height: 70%;
-   left: 25%;
-}
-
 .cerrarVentana {
    position: float;
    float: right;
@@ -104,22 +72,19 @@ body
    background-size: contain;
 }
 
-#aceptar, #rechazar {
-   width: 300px;
-   height: 75px;
-}
-
 #informacionMensajes > pre, #informacionClases > pre {
    text-align: left;
-   overflow: scroll;
+   overflow: auto;
    height: 50%;
    margin-top: 30px;
    margin-left: 20px;
 }
 
 #informacionMensajes > form, #informacionClases > #informacionClasesBotones {
+   display: flex;
    margin-top: 30px;
-   text-align: center;
+   flex-direction: column;
+   height: 30%;
 }
 
 @media(min-width: 768px){
@@ -142,7 +107,7 @@ body
       margin-top:5%;
       width: 99.4%;
       height: 50%;
-      overflow: scroll;
+      overflow: auto;
    }
 
    #correos > #mensajes {
@@ -152,11 +117,12 @@ body
       margin-top:3%;
       width: 99.4%;
       height: 50%;
-      overflow: scroll;
+      overflow: auto;
    }
 
    #estado{
       flex-basis: 30%;
+      flex-shrink: 5;
    }
 
    #altaClases{
@@ -169,11 +135,24 @@ body
 
    #gestionUsuarios{
       flex-basis: 30%;
+      flex-shrink: 5;
    }
 
    #gestionUsuarios > p{
       margin-top: 50px;
       text-align: center;
+   }
+
+   #informacionMensajes, #informacionClases {
+      background-color: #460A78;
+      border: 5px solid black;
+      color : white;
+      visibility: hidden;
+      position: absolute;
+      z-index: 1;
+      width: 50%;
+      height: 70%;
+      left: 25%;
    }
 
 }
@@ -198,7 +177,7 @@ body
       margin-top:5%;
       width: 98%;
       height: 30%;
-      overflow: scroll;
+      overflow: auto;
    }
 
    #correos > #mensajes {
@@ -207,8 +186,8 @@ body
       border: 3px solid #460A78;
       margin-top:3%;
       width: 98%;
-      height: 30%;
-      overflow: scroll;
+      height: 40%;
+      overflow: auto;
    }
 
    #estado{
@@ -230,6 +209,17 @@ body
    #gestionUsuarios > p{
       margin-top: 10px;
       text-align: center;
+   }
+
+   #informacionMensajes, #informacionClases {
+      background-color: #460A78;
+      border: 3px solid black;
+      color : white;
+      visibility: hidden;
+      position: absolute;
+      z-index: 1;
+      width: 100%;
+      height: 80%;
    }
 }
 
