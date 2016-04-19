@@ -1,0 +1,58 @@
+@media (min-width: 768px) {
+  form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  div#etiquetas {
+    flex-basis: 46.25%;
+    flex-grow: 3;
+    order: 1;
+  }
+
+  div#entradas {
+    flex-basis: 46.25%;
+    flex-shrink: 12;
+    order: 2;
+  }
+
+  div#botonera {
+    flex-basis: 100%;
+    order: 3;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+  	min-width:360px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  div#etiquetas {
+    flex-basis: 20%;
+    flex-grow: 3;
+    order: 1;
+  }
+
+  div#entradas {
+    flex-basis: 54%;
+    flex-shrink: 12;
+    order: 2;
+  }
+
+  div#dummy {
+    flex-basis: 20%;
+    order: 3;
+  }
+
+  div#botonera {
+    flex-basis: 100%;
+    order: 4;
+  }
+}
