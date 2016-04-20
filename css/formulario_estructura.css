@@ -41,18 +41,13 @@
   }
 
   div#entradas {
-    flex-basis: 54%;
+    flex-basis: 20%;
     flex-shrink: 12;
     order: 2;
   }
 
-  div#dummy {
-    flex-basis: 20%;
-    order: 3;
-  }
-
   div#botonera {
     flex-basis: 100%;
-    order: 4;
+    order: 3;
   }
 }

@@ -10,7 +10,7 @@ body {
     color: white;
 }
 
-select, #enviar, #limpiar
+select, #Enviar, #Limpiar
 {
    /* Color de acción */
    background-color: #4F81BD;
@@ -27,7 +27,6 @@ select, #enviar, #limpiar
 
 text.label {
    color: #4F81BD;
-
 }
 
 @media (min-width: 768px) {
@@ -61,7 +60,6 @@ text.label {
 
 @media (max-width: 768px) {
   div#contenido {
-    position:relative;
     text-align: center;
     line-height: 150%;
     padding-bottom: 3%;
@@ -75,12 +73,12 @@ text.label {
     margin-left: 2.5%;
   }
 
-  text.label {
-    position: absolute;
-  }
-
   label.etiqueta {
     white-space: nowrap;
+  }
+
+  text.label {
+    position: absolute;
   }
 
   div#etiquetas {
@@ -93,7 +91,7 @@ text.label {
   div#entradas {
     text-align: left;
     line-height: 250%;
-    margin-left: 2.5%;
+    margin-left: 1.25%;
     margin-right: 2.5%;
   }
 
