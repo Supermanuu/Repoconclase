@@ -1,0 +1,57 @@
+*{
+	/* El cursor en todo momento es la flecha */
+   cursor: default;
+}
+
+body{
+	background-color: lightblue;
+	color: white;
+}
+
+#login, #logout, #registrarse
+{
+   /* Color de acción */
+   background-color: #94B8DD;
+   /* Color del borde */
+   border-color: #376092;
+   /* Color de la fuente */
+   color: white; 
+   /* Tamaño de la fuente */
+   font-size: larger;
+}
+
+p, a, #login, #logout, #registrarse{
+	/* El cursor se convierte en mano */
+   cursor: hand;
+}
+
+.dashboard{
+	background-color: #94B8DD; /*Color de fondo*/
+	padding: 1em;
+
+	border-color: #778EAA;
+	border-width: 4px;
+	border-style: groove; /*Hacer con JS que al poner el raton encima se cambie el borde a "double" asi se ve como que seleccionamos el div*/
+	text-align: center;
+
+	float: left;
+	margin-left: 5px;
+	margin-right: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	width: 30%; /*Ancho*/
+	height: 16%; /*Altura*/
+}
+
+p{
+	font-size: 18px;
+	line-height: 1.5; /*Espaciado entre las frases*/
+	text-align: left;
+	text-shadow: 1px 1px #5874DF;
+}
+
+h2{
+	font-size: 32px;
+	text-shadow: 1px -1px #0B1C5E;
+	line-height: 1.4; /*Espaciado entre las frases*/
+}
