@@ -7,17 +7,35 @@
       <link rel="stylesheet" type="text/css" href="css/reset.css"/>
 	  <link rel="stylesheet" type="text/css" href="css/admin_estructura.css"/>
       <link rel="stylesheet" type="text/css" href="css/admin_interfaz.css"/>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      <script src="js/admin.js"></script>
 	</head>
 	<body>
 		<header>
          <button id="salir">Salir</button>
       	</header>
 		<div id="principal">
-		  <div id="informacionMensajes">
-		  	 <button class="cerrarVentana" type="button"></button>
-		  	 <pre> 
+		  	<div id="parte1">
+		    	<div id="bandejaEntrada">
+		    		<h1>Bandeja de Entrada</h1>
+		    		<div id="mensajes">
+          				<div id="fecha">
+          				  <p id="15316MatematicasLuisFernandez"> 15/3/2016 </p>
+          				  <p id="20316HistoriaEspañaPabloC"> 20/3/2016 </p>
+          				  <p id="20316HistoriaEspañaPabloC"> 20/3/2016 </p>
+          				  <p id="20316HistoriaEspañaPabloC"> 20/3/2016 </p>
+          				  <p id="20316HistoriaEspañaPabloC"> 20/3/2016 </p>
+          				</div>
+          				<div id="asunto">
+          				  <p id="15316MatematicasLuisFernandez"> Matematicas </p>
+          				  <p id="20316HistoriaEspañaPabloC"> Historia </p>
+          				</div>
+          				<div id="autor">
+          				  <p id="15316MatematicasLuisFernandez"> Luis Fernandez </p>
+          				  <p id="20316HistoriaEspañaPabloC"> Pablo C </p>
+          				</div>
+          			</div>
+		    	</div>
+		    	<div id="informacionMensajes">
+		  	 		<pre> 
 		Mensaje Recibido por Contacto.
 		Emisor: Ricardo Gomez.
 		Fecha: 20/3/2016
@@ -35,94 +53,27 @@
 		  	cuando que incomodan bastante.
 		  			 	
 		  	Saludos!
-		  	  </pre>
-		  	  <form method="POST">
-		  	  	<textarea rows="6">
-		  	  	</textarea></br>
-		  	  	<input type = "submit" value="Enviar Mensaje"></input>
-		  	  </form>	
-          </div>
-          <div id="informacionClases">
-          	 <button class="cerrarVentana" type="button"></button>
-          	 <pre> 
-		Solicitud de Clase.
-		Profesor: Luis Fernandez.
-		Fecha: 20/3/2016.
-		Materia: Matematicas.
-
-		Descripcion: 	
-
-		 	Hola Profesores Con Clase,
-
-		  	Doy a conocer las clases sobre la materia
-		  	Matematicas, estara centrada para alumnos del 
-		  	nivel de 1-2 Bachillerato.
-
-		  	El temario sera:
-		  		1-Ecuaciones de segunda grado.
-		  		2-Geometria.
-		  		3-Planos
-		  		4-Derivadas.
-
-		  	Las clases estan disponibles a partir del 
-		  	25/3/16.
-
-		  	Saludos.
-		  	  </pre>
-		  	  <div id="informacionClasesBotones">
-		  	  	<button id="aceptar" type="button">Aceptar Clase</button>
-		  	 	<button id="rechazar" type="button">Rechazar Clase</button>
-		  	  </div>
-          </div>
-		  <div id="parte1">
-		  	<div id="estado">
-		  		<h1>Estado de la web</h1>
-		  		<p>Usuarios registrados: 131</p>
-		  		<p>Profesores: 46</p>
-		  		<p>Alumnos: 85</p>
-		  		<p>Actividad: </p>
-		  		<p>ERROR : GRAFICA NO DISPONIBLE</p>
-          	</div>
-          	<div id="altaClases">
-          		<h1>Solicitudes de clases</h1>
-          		<div id="mensajes">
-          			<div id="fecha">
-          				<p id="15316MatematicasLuisFernandez"> 15/3/2016 </p>
-          				<p id="20316HistoriaEspañaPabloC"> 20/3/2016 </p>
-          			</div>
-          			<div id="nombre">
-          				<p id="15316MatematicasLuisFernandez"> Matematicas </p>
-          				<p id="20316HistoriaEspañaPabloC"> Historia </p>
-          			</div>
-          			<div id="profesor">
-          				<p id="15316MatematicasLuisFernandez"> Luis Fernandez </p>
-          				<p id="20316HistoriaEspañaPabloC"> Pablo C </p>
-          			</div>
+		  	 	    </pre>
+		  	 	    <form method="POST">
+		  	  		  <textarea rows="6">
+		  	  		  </textarea></br>
+		  	  		  <input type = "submit" value="Enviar Mensaje"></input>
+		  	 	    </form>	
           		</div>
           	</div>
-          </div>
-          <div id="parte2">
-          	<div id="correos">
-          		<h1>Bandeja de entrada</h1>
-          		<div id="mensajes">
-          			<div id="fecha">
-          				<p id="15316EJoseManuelPerez"> 15/3/2016 </p>
-          				<p id="20316CPabloC"> 20/3/2016 </p>
-          			</div>
-          			<div id="tipo">
-          				<p id="15316EJoseManuelPerez"> Evaluacion </p>
-          				<p id="20316CPabloC"> Critica </p>
-          			</div>
-          			<div id="emisor">
-          				<p id="15316EJoseManuelPerez"> Jose Manuel Perez </p>
-          				<p id="20316CPabloC"> Pablo C </p>
-          			</div>
+            <div id="parte2">
+          		<div id="estado">
+		  			<h1>Estado de la web</h1>
+		  			<p>Usuarios registrados: 131</p>
+		  			<p>Profesores: 46</p>
+		  			<p>Alumnos: 85</p>
+		  			<p>Actividad: </p>
+		  			<p>ERROR : GRAFICA NO DISPONIBLE</p>
           		</div>
-          	</div>
-          	<div id="gestionUsuarios">
-          		<h1>Acceder a Gestion de usuarios</h1>
-          	</div>
-		  </div>
+          		<div id="gestionUsuarios">
+          			<h1>Acceder a Gestion de usuarios</h1>
+          		</div>
+		  	</div>
 		</div>
 		<footer>
         	 <div id="contacto">
