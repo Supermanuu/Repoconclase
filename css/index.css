@@ -7,18 +7,16 @@ body {
 #principal{
 	display: flex;
 	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-	height: 75%;
+	min-height: 70%;
 }
 
 #logoPrincipal {
    background-image: url("../img/profesconclase_azul.png");
    background-repeat: no-repeat;
-   background-size: contain;
-   flex-basis: 60%;
-   flex-shrink: 3;
-   height: 25%;
+   background-size: 100%;
+   margin: auto;
+   width: 75%;
+   min-height: 25%;
 }
 
 #loginForm {
@@ -48,7 +46,7 @@ form {
 #botonesInfo {
 	position: absolute;
 	left: 0;
-	top: 65%;
+	top: 60%;
 	bottom: 0;
 	right: 0;
 	width: 65%;
