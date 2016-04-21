@@ -6,8 +6,8 @@ body {
 
 #principal{
 	display: flex;
-	flex-direction: row;
-	min-height: 70%;
+	flex-direction: column;
+	height: 75%;
 }
 
 #logoPrincipal {
@@ -44,14 +44,11 @@ form {
 }
 
 #botonesInfo {
-	position: absolute;
-	left: 0;
-	top: 60%;
-	bottom: 0;
-	right: 0;
+	position: relative;
 	width: 65%;
 	height: 10%;
 	margin: 0 auto;
+	margin-bottom: 130px;
 }
 
 .info{
