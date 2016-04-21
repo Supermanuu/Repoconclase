@@ -7,7 +7,11 @@ $(this).ready (function (){
    });
    $(".dashboard").mouseleave (function (){
       $(this).css ("border-style", "groove");
-      $(this).css ("background-color", "#94B8DD");
+      $(this).css ("background-color", "#6C8DBC");
+   });
+   $("#tuInfo").mouseleave (function (){
+      $(this).css ("border-style", "groove");
+      $(this).css ("background-color", "#376092");
    });
 
  // ACCIONES AL PULSAR SOBRE LOS PANELES 

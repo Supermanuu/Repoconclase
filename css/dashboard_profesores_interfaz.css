@@ -8,6 +8,16 @@ body{
 	color: white;
 }
 
+.dashboard{
+	border-color: #778EAA;
+	background-color: #6C8DBC;
+}
+
+.oscuro{
+	background-color: #376092;
+	border-color: #778EAA;
+}
+
 #login, #logout, #registrarse
 {
    /* Color de acción */
@@ -25,33 +35,53 @@ p, a, #login, #logout, #registrarse{
    cursor: hand;
 }
 
-.dashboard{
-	background-color: #94B8DD; /*Color de fondo*/
-	padding: 1em;
+@media (min-width: 768px){ /*Tamaño escritorio*/
 
-	border-color: #778EAA;
-	border-width: 4px;
-	border-style: groove; /*Hacer con JS que al poner el raton encima se cambie el borde a "double" asi se ve como que seleccionamos el div*/
-	text-align: center;
+	.dashboard{
+		padding: 1em;
 
-	float: left;
-	margin-left: 5px;
-	margin-right: 5px;
-	margin-top: 5px;
-	margin-bottom: 5px;
-	width: 30%; /*Ancho*/
-	height: 16%; /*Altura*/
+		border-width: 4px;
+		border-style: groove; /*Hacer con JS que al poner el raton encima se cambie el borde a "double" asi se ve como que seleccionamos el div*/
+		text-align: center;
+
+		float: left;
+		margin-left: 5px;
+		margin-right: 5px;
+		margin-top: 10px;
+		margin-bottom: 10px;
+		width: 29%; /*Ancho*/
+		/*height: 16%; Altura*/
+	}
+
+	p{
+		font-size: 20px;
+		line-height: 1.5; /*Espaciado entre las frases*/
+		text-align: left;
+	}
+
+	p.tituloDiv{
+		font-size: 32px;
+		line-height: 1.4; /*Espaciado entre las frases*/
+	}
+
 }
 
-p{
-	font-size: 18px;
-	line-height: 1.5; /*Espaciado entre las frases*/
-	text-align: left;
-	text-shadow: 1px 1px #5874DF;
-}
+@media (max-width: 768px){ /*Tamaño Movil*/
+	.dashboard{
+	    padding: 0.5em;
+	    border-width: 2px;
+	    border-style: groove;
+	    margin: 2px;
+	}
 
-h2{
-	font-size: 32px;
-	text-shadow: 1px -1px #0B1C5E;
-	line-height: 1.4; /*Espaciado entre las frases*/
+	p{
+		font-size: 14px;
+		line-height: 1; /*Espaciado entre las frases*/
+		text-align: left;
+	}
+
+	p.tituloDiv{
+		font-size: 15px;
+		line-height: 1.6; /*Espaciado entre las frases*/
+	}
 }

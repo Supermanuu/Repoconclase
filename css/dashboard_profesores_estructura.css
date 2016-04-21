@@ -1,16 +1,43 @@
+@media (min-width: 768px){ /*Tamaño escritorio*/
 
+  #principal {
+  	/*La div principal es un contenedor flexible, los hijos de principal herendan la propiedad*/
 
-#principal {
-	/*La div principal es un contenedor flexible, los hijos de principal herendan la propiedad*/
-
-	/*Los elementos dentro del contenedor se van a alinear en columnas, 3 columnas por fila */
-	flex-direction: column;
+  	/*Los elementos dentro del contenedor se van a alinear en columnas, 3 columnas por fila */
+  	flex-direction: column;
     -webkit-flex-direction: column;
     /*Contenedor flexible con multiples filas (wrap), cada fila con tres div */
     flex-wrap: wrap; 
     -webkit-flex-wrap: wrap;
     /*La division principal ocupa el 100% de la pantalla en horizontal, luego se repartira en cada caja*/
     width: 100%;
+  }
+
+}
+
+#principal {
+  margin:auto;
+}
+
+@media (max-width: 768px){ /*Tamaño Movil*/
+
+  #principal {
+    /*La div principal es un contenedor flexible, los hijos de principal herendan la propiedad*/
+
+    /*Los elementos dentro del contenedor se van a alinear en columnas, 3 columnas por fila */
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    /*Contenedor flexible con multiples filas (wrap), cada fila con tres div */
+    flex-wrap: wrap; 
+    -webkit-flex-wrap: wrap;
+    /*La division principal ocupa el 100% de la pantalla en horizontal, luego se repartira en cada caja*/
+    width: 100%;
+  }
+}
+
+.dashboard{
+  flex-direction: column;
+  -webkit-flex-direction: column;
 }
 
 #login, #logout, #registrarse
@@ -36,9 +63,4 @@
    
    /* El cursor se convierte en mano */
    cursor: hand;
-}
-
-.dashboard{
-	flex-direction: column;
-    -webkit-flex-direction: column;
 }
