@@ -33,7 +33,7 @@
                             <input name="pass" type="password"></input></br>
                         </div>
                         <div id="sub">
-                            <input id="submit" name="sub" type="submit" value="Entrar"></input>
+                            <input name="sub" type="submit" value="Entrar"></input>
                         </div>
                     </form>
                 </div>
