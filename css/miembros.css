@@ -1,0 +1,54 @@
+@media (min-width: 768px)
+{
+   body
+     {
+      /* Seleccionamos la imagen de fondo */
+      background-image: url(../img/pizarra.jpg);
+      
+      /* La imagen se centra en la pantalla */
+      background-attachment: fixed;
+      
+      /* Colocamos la imagen de fondo */
+      /*background-size: 50% 100%;*/
+      background-position: right;
+      background-repeat: no-repeat;
+   }
+   
+   #contenido
+      {
+      width: 36%;
+      font-size: 1.5em;
+      color: white;
+      /* Margen con respecto al borde */
+      margin: auto 8%;
+   }
+}
+
+body > div
+{
+    display: flex;
+    margin: auto 0;
+}
+
+@media (max-width: 768px)
+{
+   body
+     {
+      background-image: none;
+   }
+   
+   #contenido
+      {
+      width: 90%;
+      font-size: 1.2em;
+      
+      /* Centramos */
+      margin: auto 8%;
+   }
+}
+
+#contenido > p
+{
+   margin: 20px 0;
+}
+
