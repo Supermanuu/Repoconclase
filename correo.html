@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Profesores Con Clase</title>
+        <meta charset="utf-8"/>
+        <meta name="author" content="SWTeam"/>
+        <meta name="description" content="cliente_mensajeria"/>
+        <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+        <link rel="stylesheet" type="text/css" href="css/correo_interfaz.css"/>
+        <link rel="stylesheet" type="text/css" href="css/correo_estructura.css"/>
+    </head>
+    <body>
+        <header>
+            <button id="salir" type="button">Salir</button>
+        </header>
+        <div id="principal">
+         	<div id="correos">
+            <div id="tipoCorreo">
+        		  <select name="Tipo">
+  					  <option value="recibidos" selected>Mensajes Recibidos</option>
+  					  <option value="envidados">Mensajes Enviados</option>
+  					  <option value="borrados">Mensajes Eliminados</option>
+			     	  </select>
+              <button type="button">Redactar</button>
+            </div>
+			     	<div id="detallesCorreo">
+					    <p>21/3/2016 00:15 de José</p><hr>
+				    	<p>21/3/2016 00:20 de María</p><hr>
+					    <p>21/3/2016 00:25 de Pedro</p><hr>
+				    </div>
+			    </div>
+			    <div id="mostrarMensaje">
+            <pre id="cabecera">
+        De    : Jose
+        Para  : Administrador
+        Fecha : 21/3/2016
+        Hora  : 00:15    
+            </pre><hr>
+				    <pre id="cuerpo">
+        Buenos dias, 
+        
+        Preguntaba por la clase de mañana.
+
+        Saludos!
+            </pre>
+			    </div>
+        </div>
+        <footer>
+         <div id="contacto">
+            <h1>Contacto</h1>
+            <p><a href="contacto.html">Enviar un correo</a></p>
+            <p>Páginas web</p>
+         </div>
+         <div id="miembros">
+         <h1>Miembros</h1>
+         </div>
+        </footer>
+    </body>
+</html>
