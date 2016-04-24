@@ -5,16 +5,16 @@
         <meta name="author" content="SWTeam"/>
         <meta name="description" content="cliente_mensajeria"/>
         <link rel="stylesheet" type="text/css" href="css/reset.css"/>
-        <link rel="stylesheet" type="text/css" href="css/correo_interfaz.css"/>
-        <link rel="stylesheet" type="text/css" href="css/correo_estructura.css"/>
+        <link rel="stylesheet" type="text/css" href="css/estructura_Pablo.css"/>
+        <link rel="stylesheet" type="text/css" href="css/interfaz_Pablo.css"/>
     </head>
-    <body>
-        <header>
+    <body id="correo_body">
+        <header id="correo_header">
             <button id="salir" type="button">Salir</button>
         </header>
-        <div id="principal">
-         	<div id="correos">
-            <div id="tipoCorreo">
+        <div id="correo_principal">
+         	<div id="correo_correos">
+            <div id="correo_tipoCorreo">
         		  <select name="Tipo">
   					  <option value="recibidos" selected>Mensajes Recibidos</option>
   					  <option value="envidados">Mensajes Enviados</option>
@@ -22,20 +22,20 @@
 			     	  </select>
               <button type="button">Redactar</button>
             </div>
-			     	<div id="detallesCorreo">
-					    <p>21/3/2016 00:15 de José</p><hr>
-				    	<p>21/3/2016 00:20 de María</p><hr>
-					    <p>21/3/2016 00:25 de Pedro</p><hr>
+			     	<div id="correo_detallesCorreo">
+					    <p>21/3/2016 00:15 de José</p><hr class="correo_linea">
+				    	<p>21/3/2016 00:20 de María</p><hr class="correo_linea">
+					    <p>21/3/2016 00:25 de Pedro</p><hr class="correo_linea">
 				    </div>
 			    </div>
-			    <div id="mostrarMensaje">
-            <pre id="cabecera">
+			    <div id="correo_mostrarMensaje">
+            <pre id="correo_cabecera">
         De    : Jose
         Para  : Administrador
         Fecha : 21/3/2016
         Hora  : 00:15    
-            </pre><hr>
-				    <pre id="cuerpo">
+            </pre><hr class="correo_linea">
+				    <pre id="correo_cuerpo">
         Buenos dias, 
         
         Preguntaba por la clase de mañana.
@@ -44,7 +44,7 @@
             </pre>
 			    </div>
         </div>
-        <footer>
+        <footer id="correo_footer">
          <div id="contacto">
             <h1>Contacto</h1>
             <p><a href="contacto.html">Enviar un correo</a></p>

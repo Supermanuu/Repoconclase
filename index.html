@@ -6,47 +6,47 @@
         <meta name="description" content="Index de Profesores con clase"/>
         <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/reset.css"/>
-        <link rel="stylesheet" type="text/css" href="css/index_interfaz.css"/>
-        <link rel="stylesheet" type="text/css" href="css/index_estructura.css"/>
-        <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="css/estructura_Pablo.css"/>
+        <link rel="stylesheet" type="text/css" href="css/interfaz_Pablo.css"/>
 		<script type = "text/javascript" src = "js/index.js"></script>
     </head>
     
-    <body>
-        <header>
+    <body id="index_body">
+        <header id="index_header">
             <button id="login" type="button">Login</button>
             <button id="registrarse" type="button">Registrarse</button>
         </header>
-        <div id="principal">
-        	<div id="logoPrincipal">
+        <div id="index_principal">
+            <!-- Contenedor para el logo -->
+        	<div id="index_logoPrincipal">
 			</div>
-			<div id="loginForm">
-
-                <div id="loginForm2">
+            <!-- Contenido que saldria al pulsar Login -->
+			<div id="index_loginForm">
+                <div id="index_loginForm2">
                     <form method="post">
-                        <div id="etiquetas">
+                        <div id="index_etiquetas">
     				        <label for="dni">DNI : </label></br>
                             <label for="pass">Contraseña : </label></br>
                         </div>
-                        <div id="entradas">
-                            <input name="dni" type="text"></input></br>
-                            <input name="pass" type="password"></input></br>
+                        <div id="index_entradas">
+                            <input name="dni" type="text" value="12345678R"></input></br>
+                            <input name="pass" type="password" value="holaMundo"></input></br>
                         </div>
-                        <div id="sub">
-                            <input id="submit" name="sub" type="submit" value="Entrar"></input>
+                        <div id="index_sub">
+                            <input name="sub" type="submit" value="Entrar"></input>
                         </div>
                     </form>
                 </div>
-
 			</div>
-			<div id="botonesInfo">
-				<div id="botonesInfo2">
-                	<button id="infoAlumnos" class="info" type="button" >¿Buscas profesores?</br>¡Este es tu sitio!</button>
-                	<button id="infoProfes" class="info" type="button" >¿Buscas alumnos?</br>¡Este es tu sitio!</button>
+            <!-- Botones para registrarse -->
+			<div id="index_botonesInfo">
+				<div id="index_botonesInfo2">
+                	<button class="index_info" id="index_toAlumnos" type="button" >¿Buscas profesores?</br>¡Este es tu sitio!</button>
+                	<button class="index_info" id="index_toProfes" type="button" >¿Buscas alumnos?</br>¡Este es tu sitio!</button>
             	</div>
             </div>
         </div>
-        <footer>
+        <footer id="index_footer">
          <div id="contacto">
             <h1>Contacto</h1>
             <p><a href="contacto.html">Enviar un correo</a></p>
@@ -55,6 +55,6 @@
          <div id="miembros">
          <h1>Miembros</h1>
          </div>
-      </footer>
+        </footer>
     </body>
 </html>

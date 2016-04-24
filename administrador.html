@@ -1,40 +1,28 @@
 ﻿<html>
 	<head>
-	  <title>Profesores con clase</title>
+	  <title>Administrador</title>
 	  <meta charset="utf-8"/>
-	  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+      <meta name="author" content="SWTeam"/>
+      <meta name="description" content="Index pantalla administrador"/>
       <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" type="text/css" href="css/reset.css"/>
-	  <link rel="stylesheet" type="text/css" href="css/admin_estructura.css"/>
-      <link rel="stylesheet" type="text/css" href="css/admin_interfaz.css"/>
+      <link rel="stylesheet" type="text/css" href="css/estructura_Pablo.css"/>
+      <link rel="stylesheet" type="text/css" href="css/interfaz_Pablo.css"/>
 	</head>
-	<body>
-		<header>
+	<body id="admin_body">
+		<header id="admin_header">
          <button id="salir">Salir</button>
       	</header>
-		<div id="principal">
-		  	<div id="parte1">
-		    	<div id="bandejaEntrada">
-		    		<h1>Bandeja de Entrada</h1>
-		    		<div id="mensajes">
-          				<div id="fecha">
-          				  <p id="15316MatematicasLuisFernandez"> 15/3/2016 </p>
-          				  <p id="20316HistoriaEspañaPabloC"> 20/3/2016 </p>
-          				  <p id="20316HistoriaEspañaPabloC"> 20/3/2016 </p>
-          				  <p id="20316HistoriaEspañaPabloC"> 20/3/2016 </p>
-          				  <p id="20316HistoriaEspañaPabloC"> 20/3/2016 </p>
-          				</div>
-          				<div id="asunto">
-          				  <p id="15316MatematicasLuisFernandez"> Matematicas </p>
-          				  <p id="20316HistoriaEspañaPabloC"> Historia </p>
-          				</div>
-          				<div id="autor">
-          				  <p id="15316MatematicasLuisFernandez"> Luis Fernandez </p>
-          				  <p id="20316HistoriaEspañaPabloC"> Pablo C </p>
-          				</div>
-          			</div>
+		<div id="admin_principal">
+			<!-- Bandeja de entrada y lectura de mensajes -->
+		  	<div id="admin_parte1">
+		    	<div id="admin_bandejaEntrada">
+		    		<h1>Bandeja de Entrada</h1><hr class="admin_linea">
+		    		<p id="Jose213160015">21/3/2016 00:15 de José</p><hr class="admin_linea">
+				    <p id="Maria213160020">21/3/2016 00:20 de María</p><hr class="admin_linea">
+				    <p id="Pedro213160025">21/3/2016 00:25 de Pedro</p><hr class="admin_linea">
 		    	</div>
-		    	<div id="informacionMensajes">
+		    	<div id="admin_informacionMensajes">
 		  	 		<pre> 
 		Mensaje Recibido por Contacto.
 		Emisor: Ricardo Gomez.
@@ -61,8 +49,9 @@
 		  	 	    </form>	
           		</div>
           	</div>
-            <div id="parte2">
-          		<div id="estado">
+          	<!-- Estado de la pagina y acceso a la gestion usuarios -->
+            <div id="admin_parte2">
+          		<div id="admin_estado">
 		  			<h1>Estado de la web</h1>
 		  			<p>Usuarios registrados: 131</p>
 		  			<p>Profesores: 46</p>
@@ -70,12 +59,12 @@
 		  			<p>Actividad: </p>
 		  			<p>ERROR : GRAFICA NO DISPONIBLE</p>
           		</div>
-          		<div id="gestionUsuarios">
+          		<div id="admin_gestionUsuarios">
           			<h1>Acceder a Gestion de usuarios</h1>
           		</div>
 		  	</div>
 		</div>
-		<footer>
+		<footer id="admin_footer">
         	 <div id="contacto">
             	<h1>Contacto</h1>
             	<p>Enviar un correo<br>

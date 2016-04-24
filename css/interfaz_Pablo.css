@@ -1,0 +1,190 @@
+*
+{
+   /* Fuente predeterminada de la web */
+   font-family: 'Ubuntu', sans-serif;
+}
+
+/* class index_info : Botones de la pantalla index.html */
+#login, #registrarse, .index_info, #index_sub>input
+{
+   /* Color de acción */
+   background-color: #4F81BD;
+   
+   /* Color del borde */
+   border-color: #223A57;
+   
+   /* Color de la fuente */
+   color: white;
+   
+   /* Tamaño de la fuente */
+   font-size: larger;
+}
+
+#miembros > h1, #contacto > h1
+{
+   /* Para quitar la letra en negrita */
+   font-weight: normal;
+   
+   color: white;
+   font-size: 1.5em;
+}
+
+#contacto > p
+{
+   color: white;
+   font-size: 1em;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+/*  --------Interfaz - > Index.html ----------- */
+
+#index_header
+{
+   background-color : #376092;
+}
+
+#index_body
+{
+   /* Color por defecto */
+   background-color: white;
+   background-image: url("../img/pizarra.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+/* Logo que sale en la pantalla principal */
+#index_logoPrincipal {
+   background-image: url("../img/profesconclase_azul.png");
+   background-repeat: no-repeat;
+   background-size: 100%;
+}
+
+#index_footer
+{
+   background-color : #376092;
+}
+
+/*  --------Interfaz - > administrador.html ----------- */
+
+#admin_header
+{
+   background-color : #460A78;
+}
+
+#admin_header > #salir
+{
+   /* Color de acción */
+   background-color: #6414B4;
+   
+   /* Color del borde */
+   border-color: #6414B4;
+   
+   /* Color de la fuente */
+   color: white;
+   
+   /* Tamaño de la fuente */
+   font-size: larger;
+}
+
+#admin_body
+{
+   background-color: white;
+}
+
+#admin_footer
+{
+   background-color : #460A78;
+}
+
+#admin_estado, #admin_informacionMensajes, #admin_bandejaEntrada, #admin_gestionUsuarios{
+   background-color: #6414B4;
+   border: 3px solid black;
+}
+
+#admin_estado > p, #admin_informacionMensajes > pre
+{
+   color: white;
+   font-size: 1em;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+#admin_bandejaEntrada > p {
+   text-align: center;
+   color: white;
+   font-size: 1em;
+}
+
+.admin_linea {
+   height: 2px;
+   background-color: #460A78;
+   border-color: #460A78;
+}
+
+#admin_gestionUsuarios > h1, #admin_bandejaEntrada > h1, #admin_estado > h1
+{
+   margin-left: 5%;
+   color: white;
+   font-weight: normal;
+   font-size: 1.5em;
+   margin-top: 5px;
+}
+
+/*  --------Interfaz - > correo.html ----------- */
+
+#correo_header
+{
+   background-color : #376092;
+}
+
+#correo_body
+{
+   /* Color por defecto */
+   background-color: white;
+   background-image: url("../img/pizarra.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+#correo_footer
+{
+   background-color : #376092;
+}
+
+#correo_header > #salir, #correo_tipoCorreo > select, #correo_tipoCorreo > button
+{
+   /* Color de acción */
+   background-color: #4F81BD;
+   
+   /* Color del borde */
+   border-color: #223A57;
+   
+   /* Color de la fuente */
+   color: white;
+   
+   /* Tamaño de la fuente */
+   font-size: larger;
+}
+
+#correo_detallesCorreo > p, #correo_mostrarMensaje > pre {
+   color: white;
+   font-size: 1em;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+#correo_detallesCorreo > p{
+   text-align: center;
+}
+
+#correo_correos > #correo_detallesCorreo, #correo_mostrarMensaje {
+   border : 2px solid black;
+   background-color: #4F81BD;
+}
+
+.correo_linea {
+   height: 2px;
+   background-color: #376092;
+   border-color: #376092;
+}
