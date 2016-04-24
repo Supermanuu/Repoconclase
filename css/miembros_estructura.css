@@ -1,0 +1,100 @@
+@media (min-width: 768px)
+{
+   body
+     {
+      /* Seleccionamos la imagen de fondo */
+      background-image: url(../img/pizarra.jpg);
+      
+      /* La imagen se centra en la pantalla */
+      background-attachment: fixed;
+      
+      /* Colocamos la imagen de fondo */
+      /*background-size: 50% 100%;*/
+      background-position: right;
+      background-repeat: no-repeat;
+   }
+   
+   #contenido
+      {
+      width: 36%;
+      font-size: 1.5em;
+      color: white;
+      /* Margen con respecto al borde */
+      margin: auto 8%;
+   }
+}
+
+body > div
+{
+    display: flex;
+    margin: auto 0;
+}
+
+@media (max-width: 768px)
+{
+   body
+     {
+      background-image: url(../img/pizarra.jpg);
+   }
+   
+   #contenido
+      {
+      width: 90%;
+      font-size: 1.2em;
+      
+      /* Centramos */
+      margin: auto 8%;
+   }
+}
+
+#contenido > p
+{
+   margin: 20px 0;
+}
+
+header
+{
+  /* Anchura mínima en un bloque normal */
+  min-height: 6%;
+  
+  /* Margen superior para que se vea la pizarra de fondo */
+   margin-top: 40px;
+   
+   /* Esta instrucción indica que el borde debe ocmportarse como si
+      fuese un elementro interno del header */
+   background-origin: content-box;
+
+   /* Pequeño espacio para que el logo no se junte con el borde */
+   padding-left: 1%;
+   
+   /* Cargamos el icono de vuelta atrás */
+   background-image: url(../img/profesconclase_azul.png);
+   
+   /* Evitamos que se epita por todo el header */
+   background-repeat: no-repeat;
+  
+  /* Redimensionamos la imagen de fondo */
+  background-size: contain;
+   
+   /* Para mantener los botones dentro del header */
+   overflow: hidden;
+}
+
+#login, #registrarse
+{
+   /* Para que los botones se alineen a la derecha */
+   float: right;
+   
+   /* Límites del boton */
+   min-width: 10%;
+   min-height: 6%;
+}
+
+footer
+{
+   /* Para que los botones se coloquen a la izquierda */
+   display: flex;
+   
+   margin-bottom: 40px;
+  min-height: 10%;
+}

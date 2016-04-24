@@ -1,0 +1,53 @@
+*
+{
+   /* Fuente predeterminada de la web */
+   font-family: 'Ubuntu', sans-serif;
+}
+
+body
+{
+   /* Color por defecto */
+	background-color: white;
+}
+
+header
+{
+	background-color : #376092;
+}
+
+#login, #registrarse
+{
+   /* Color de acción */
+   background-color: #4F81BD;
+   
+   /* Color del borde */
+   border-color: #223A57;
+   
+   /* Color de la fuente */
+   color: white;
+   
+   /* Tamaño de la fuente */
+   font-size: larger;
+}
+
+footer
+{
+	background-color : #376092;
+}
+
+#miembros > h1, #contacto > h1
+{
+   /* Para quitar la letra en negrita */
+   font-weight: normal;
+   
+   color: white;
+   font-size: 1.5em;
+}
+
+#contacto > p
+{
+   color: white;
+   font-size: 1em;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
