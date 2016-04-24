@@ -39,9 +39,9 @@ body > div
    
    #contenido
       {
-      width: 90%;
+      width: 100%;
       font-size: 1.2em;
-      
+      color: white;
       /* Centramos */
       margin: auto 8%;
    }
