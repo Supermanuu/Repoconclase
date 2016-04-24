@@ -1,0 +1,54 @@
+#login, #logout, #registrarse
+{
+   /* Para que los botones se alineen a la derecha */
+   float: right;
+   /* Límites del boton */
+   min-width: 10%;
+   min-height: 6%;
+   /* Color de acción */
+   background-color: #94B8DD;
+   /* Color del borde */
+   border-color: #376092;
+   /* Color de la fuente */
+   color: white;
+   /* Tamaño de la fuente */
+   font-size: larger;
+   /* El cursor se convierte en mano */
+   cursor: hand;
+}
+
+#titulo{
+   text-align: center;
+   text-shadow: 1px 1px 1px #333;
+   font-size: 30px;
+}
+
+#rank{ 
+   float: left;
+   padding-left: 30%; /*Controlar la distancia del borde izq a la lista*/
+   display: flex;
+   flex-direction: column;
+   width: 45%; /*Ancho de */
+
+   list-style:none; 
+   margin:30px auto; 
+}
+
+#profe{
+   width: 50%;
+}
+
+#rank li{ 
+   display:inline; 
+   float:left; 
+   margin-bottom: 20px;
+}
+
+#rank li #bloque1{
+
+}
+
+#rank li #bloque2{
+   margin-top: -60px; /* Margen alto negativo para que el texto del bloque 2 este a la misma altura que el bloque 1 */
+   float: right; /*Bloque 2 alineado a la derecha*/
+}

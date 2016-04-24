@@ -1,0 +1,53 @@
+#login, #logout, #registrarse
+{
+   /* Color de acción */
+   background-color: #94B8DD;
+   /* Color del borde */
+   border-color: #376092;
+   /* Color de la fuente */
+   color: white; 
+   /* Tamaño de la fuente */
+   font-size: larger;
+}
+
+#login, #logout, #registrarse{
+	/* El cursor se convierte en mano */
+   cursor: hand;
+}
+
+* {
+    font-family: 'Ubuntu';
+    -webkit-user-select: none;
+    cursor: default;
+}
+
+#principal{
+   background-color: #ff077f;
+}
+
+#bloque1 img{
+   width: 120px; 
+   height: 120px;
+}
+
+
+/* RATING: Estructura del selector de valoracion */
+#rating{ 
+   list-style:none; 
+   margin: 0px; 
+}
+
+#rating li{ 
+   display:inline; 
+   float:left; 
+}
+
+#rating li a{ /*Asi dibujamos el circulo de seleccion*/
+   display: block; 
+   width: 15px; 
+   height: 15px; 
+   margin: 5px; 
+   border: 2px solid #000; 
+   background-color: #94B8DD; 
+   border-radius: 5px; 
+   }
