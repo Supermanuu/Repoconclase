@@ -47,6 +47,7 @@
     unicode-bidi: bidi-override;
     direction: rtl;
   }
+
 }
 
 @media (max-width: 768px){ /*Tamaño Movil*/
@@ -55,5 +56,8 @@
     direction: rtl;
   }
 
+  h1, h2{
+    text-align: center;
+  }
 
 }
