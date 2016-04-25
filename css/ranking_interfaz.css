@@ -32,22 +32,17 @@
 
 
 /* RATING: Estructura del selector de valoracion */
-#rating{ 
-   list-style:none; 
-   margin: 0px; 
+.rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
 }
-
-#rating li{ 
-   display:inline; 
-   float:left; 
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
 }
-
-#rating li a{ /*Asi dibujamos el circulo de seleccion*/
-   display: block; 
-   width: 15px; 
-   height: 15px; 
-   margin: 5px; 
-   border: 2px solid #000; 
-   background-color: #94B8DD; 
-   border-radius: 5px; 
-   }
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
