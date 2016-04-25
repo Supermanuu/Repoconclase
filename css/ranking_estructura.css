@@ -24,31 +24,51 @@
 }
 
 #rank{ 
-   float: left;
-   padding-left: 30%; /*Controlar la distancia del borde izq a la lista*/
    display: flex;
    flex-direction: column;
-   width: 45%; /*Ancho de */
-
    list-style:none; 
    margin:30px auto; 
 }
 
-#profe{
-   width: 50%;
-}
-
-#rank li{ 
-   display:inline; 
-   float:left; 
-   margin-bottom: 20px;
-}
-
 #rank li #bloque1{
-
+   margin: auto;
 }
 
 #rank li #bloque2{
-   margin-top: -60px; /* Margen alto negativo para que el texto del bloque 2 este a la misma altura que el bloque 1 */
-   float: right; /*Bloque 2 alineado a la derecha*/
+   text-align-last: start;
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   text-align: right;
+   margin: auto;
+}
+
+@media (min-width: 768px){ /*Tamaño escritorio*/
+   #rank li{ 
+      display:flex; 
+      margin: auto;
+      margin-bottom: 20px;
+   }
+
+   #profe{
+      width: 40%;
+   }
+}
+
+@media (max-width: 768px){ /*Tamaño Movil*/
+
+   #principal{
+      min-width: 400px;
+   }
+
+   #rank li{ 
+      display:block; 
+      margin: auto;
+      margin-bottom: 20px;
+   }
+
+   #profe{
+      text-align: center;
+   }
+
 }
