@@ -17,39 +17,75 @@
    #contenido
       {
       width: 100%;
-      font-size: 1.5em;
-      color: white;
-      /* Margen con respecto al borde */
-      margin: auto 8%;
+      margin: auto 10px;
+      flex-direction: column;
+    -webkit-flex-direction: column;
+    /*Contenedor flexible con multiples filas (wrap), cada fila con tres div */
+    flex-wrap: wrap; 
+    -webkit-flex-wrap: wrap;
+    /*La division principal ocupa el 100% de la pantalla en horizontal, luego se repartira en cada caja*/
+    
    }
 }
 
 body > div
 {
-    display: flex;
-    margin: auto 0;
+  display: flex;
+  margin: auto 0;
 }
 
 @media (max-width: 768px)
 {
-   body
-     {
+  body
+    {
       background-image: url(../img/pizarra.jpg);
-   }
+  }
    
-   #contenido
-      {
-      width: 100%;
+  #contenido
+  {
       font-size: 1.2em;
-      color: white;
-      /* Centramos */
       margin: auto 8%;
+      overflow: hidden;
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
    }
 }
 
 #contenido > p
 {
    margin: 20px 0;
+}
+
+#miembro_ind
+{
+   margin-top: 20px;
+   display: flex;
+   width: 40%;
+}
+
+#pablo, #fran, #manu, #pino, #sergio
+{
+   margin: 2%;
+   margin-bottom: 0;
+}
+
+#foto
+{
+   float: left;
+   width: 40%;
+   display: flex;
+   flex-direction: column;
+}
+
+#texto
+{
+   float: left;
+   margin-left: auto;
+   display: flex;
+   flex-direction: column;
+   width: 40%;
 }
 
 header
