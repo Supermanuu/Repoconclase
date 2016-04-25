@@ -66,124 +66,169 @@ header
 
 #spam
 {
-   height: 42%;
-   overflow: scroll;
-   overflow-x: hidden;
-   overflow-y: auto;
+   margin-bottom: 0px;
 }
 
 #spam_principal
 {
+   display: flex;
+   flex-direction: column;
    margin-bottom: 20px;
 }
 
-#spam_secundario
+@media (min-width: 768px)
 {
-   margin-top: 20px;
-   display: flex;
+   #menu_alumno_principal
+     {
+      float: left;
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+   }
+   
+   #bloque_1, #bloque_2, #bloque_3
+     {
+      float: left;
+      margin-left: auto;
+      display: flex;
+      flex-direction: column;
+      width: 22%;
+   }
+   
+   #nombre_alumno
+     {
+      margin: 10px 30px;
+      padding: 10px;
+   }
+   
+   #acciones_rapidas
+     {
+      margin-top: auto;
+      padding: 0px;
+      padding-left: 30px;
+      padding-bottom: 10px;
+   }
+
+   #acciones_rapidas > h1
+     {
+      margin: 10px;
+   }
+
+   #mis_profesores, #correo_alumno
+     {
+      margin: 20px 0;
+      padding-right: 20px;
+   }
+
+   #mis_grupos, #top_10_profesores
+     {
+      margin: 20px 0;
+      padding-right: 20px;
+   }
+
+   #mis_clases, #acciones_no_tan_rapidas
+     {
+      margin: 20px 0;
+      padding-right: 20px;
+   }
+   
+   #spam_secundario_derecha, #spam_secundario_centro, #spam_secundario_izquierda
+     {
+      margin: 1%;
+      margin-top: 0px;
+      margin-bottom: 0px;
+      overflow: hidden;
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+   }
+
+   #spam_secundario_derecha_titulo, #spam_secundario_centro_titulo, #spam_secundario_izquierda_titulo
+     {
+      margin: 2%;
+      margin-bottom: 0;
+   }
+   
+   #spam_secundario_derecha_apoderado, #spam_secundario_centro_apoderado, #spam_secundario_izquierda_apoderado
+     {
+      margin: 2%;
+   }
+   
+   #spam_secundario_derecha
+     {
+      margin-right: 0px;
+   }
+   
+   #spam_secundario_izquierda
+     {
+      margin-left: 0px;
+   }
+   
+   #spam_secundario
+     {
+      margin-top: 20px;
+      display: flex;
+   }
+   
+   #spam
+     {
+      height: 42%;
+      overflow: scroll;
+      overflow-x: hidden;
+      overflow-y: auto;
+   }
 }
 
-#spam_secundario_derecha, #spam_secundario_centro, #spam_secundario_izquierda
+@media (max-width: 768px)
 {
-   overflow: hidden;
-   margin: 10px;
-   display: flex;
-   flex-direction: column;
-   width: 100%;
+   #spam_secundario
+     {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: row;
+   }
+   
+   #nombre_alumno
+     {
+      margin: 0 10px;
+      padding: 10px 0;
+   }
+   
+   #acciones_rapidas, #bloque_1, #bloque_2, #bloque_3
+     {
+      float: left;
+      margin: 10px 20px;
+      width: 230px;
+   }
+   
+   #spam_secundario_derecha, #spam_secundario_centro, #spam_secundario_izquierda
+     {
+      margin: 0px;
+      visibility: hidden;
+      height: 0px;
+      width: 0px;
+   }
 }
 
-#menu_alumno_principal
+#mis_clases_1_nombre , #mis_clases_2_nombre, #mis_clases_3_nombre
 {
    float: left;
-   width: 30%;
-   display: flex;
-   flex-direction: column;
 }
 
-#bloque_1, #bloque_2, #bloque_3
-{
-   float: left;
-   margin-left: auto;
-   display: flex;
-   flex-direction: column;
-   width: 22%;
-}
-
-#estaticos_menu
+#mis_clases_1_horario , #mis_clases_2_horario, #mis_clases_3_horario
 {
    float: right;
-   display: flex;
-   flex-direction: row;
-   width: 70%;
-}
-
-#nombre_alumno
-{
-   margin: 10px 30px;
-   padding: 10px;
-}
-
-#acciones_rapidas
-{
-   margin-top: auto;
-   padding: 0px;
-   padding-left: 30px;
-   padding-bottom: 10px;
-}
-
-#acciones_rapidas > h1
-{
-   margin: 10px;
-}
-
-#mis_profesores, #correo_alumno
-{
-   margin: 20px 0;
-   padding-right: 20px;
-}
-
-#mis_grupos, #top_10_profesores
-{
-   margin: 20px 0;
-   padding-right: 20px;
-}
-
-#mis_clases, #acciones_no_tan_rapidas
-{
-   margin: 20px 0;
-   padding-right: 20px;
-}
-
-#mis_clases_1 > p, #mis_clases_2 > p, #mis_clases_3 > p
-{
-   float: left;
 }
 
 #mis_clases_1_nombre, #mis_clases_2_nombre, #mis_clases_3_nombre
 {
-   width: 60%;
+   width: 50%;
 }
 
 #mis_clases_1_horario, #mis_clases_2_horario, #mis_clases_3_horario
 {
-   width: 30%;
-}
-
-#spam_secundario_derecha, #spam_secundario_centro, #spam_secundario_izquierda
-{
-   margin: 1%;
-   margin-top: 0;
-   margin-bottom: 0;
-}
-
-#spam_secundario_derecha
-{
-   margin-right: 0;
-}
-
-#spam_secundario_izquierda
-{
-   margin-left: 0;
+   width: 45%;
 }
 
 #spam_principal_por
@@ -211,20 +256,9 @@ header
    margin-bottom: 0;
 }
 
-#spam_secundario_derecha_titulo, #spam_secundario_centro_titulo, #spam_secundario_izquierda_titulo
-{
-   margin: 2%;
-   margin-bottom: 0;
-}
-
 #spam_principal_curso
 {
    width: 60%;
-   margin: 2%;
-}
-
-#spam_secundario_derecha_apoderado, #spam_secundario_centro_apoderado, #spam_secundario_izquierda_apoderado
-{
    margin: 2%;
 }
 
@@ -235,18 +269,12 @@ header
    margin-left: auto;
 }
 
-#spam_principal_otros, #spam_secundario_derecha_otros, #spam_secundario_centro_otros, #spam_secundario_izquierda_otros
-{
-   display: flex;
-   margin: 1% 2%;
-   margin-top: 0;
-}
-
-#spam_principal_otros > p:last-child, #spam_secundario_derecha_otros > p:last-child,
-#spam_secundario_centro_otros > p:last-child, #spam_secundario_izquierda_otros > p:last-child
+#spam_principal_ver_mas, #spam_secundario_derecha_ver_mas,
+#spam_secundario_centro_ver_mas, #spam_secundario_izquierda_ver_mas
 {
    margin-left: auto;
    margin-top: auto;
+   padding : 10px;
 }
 
 footer
