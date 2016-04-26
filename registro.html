@@ -9,82 +9,80 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
         <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/reset.css"/>
-        <link rel="stylesheet" type="text/css" href="css/plantilla_estructura.css"/>
-      	<link rel="stylesheet" type="text/css" href="css/plantilla_interfaz.css"/>
-      	<link rel="stylesheet" type="text/css" href="css/formulario_estructura.css"/>
-      	<link rel="stylesheet" type="text/css" href="css/formulario_interfaz.css"/>
+      	<link rel="stylesheet" type="text/css" href="css/estructura.css"/>
+      	<link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
       	<script type="text/javascript" src="./js/formulario.js"></script>
     </head>
-    <body>
-		<header>
-         <button id="login">Login</button>
-         <button id="registrarse">Registrarse</button>
+    <body class ="form_body">
+		<header class="blue">
+         <button class="blue" id="login">Login</button>
+         <button class="blue" id="registrarse">Registrarse</button>
         </header>
-		<div id="principal">
-			<div id="contenido">
-				<h1>¡¡¡Registrate en Profesores con Clase!!!</h1>
-				<form method="post" action="mailto:profesoresconcontacto@gmail.com" enctype="text/plain">
-					<div id="etiquetas">
-						<text class="label">Datos de usuario</text></br>
-						<label class="etiqueta" for="Usuario">Su usuario</label></br>
-						<label class="etiqueta" for="Contraseña1">Su contraseña</label></br>
-						<label class="etiqueta" for="Contraseña2">¡Repítela!</label></br>
-						<label class="etiqueta" for="Perfil">Su perfil</label></br>
+		<div class="form_principal">
+			<div class="form_contenido">
+				<h1 class="form_h1">¡¡¡Registrate en Profesores con Clase!!!</h1>
+				<form class="form_box" method="post" action="mailto:profesoresconcontacto@gmail.com" enctype="text/plain">
+					<div class="form_etiquetas">
+						<text class="form_text">Datos de usuario</text></br>
+						<label class="form_label" for="Usuario">Su usuario</label></br>
+						<label class="form_label" for="Contraseña1">Su contraseña</label></br>
+						<label class="form_label" for="Contraseña2">¡Repítela!</label></br>
+						<label class="form_label" for="Perfil">Su perfil</label></br>
 						</br>
-						<text class="label">Datos personales</text></br>
-						<label class="etiqueta" for="Nombre">Nombre</label></br>
-						<label class="etiqueta" for="Apellido_1">Apellido 1</label></br>
-						<label class="etiqueta" for="Apellido_2">Apellido 2</label></br>
-						<label class="etiqueta" for="Nacimiento">Nacimiento</label></br>
-						<label class="etiqueta" for="Tipo_Documento">NIF/NIE</label></br>
-						<label class="etiqueta" for="Documento">Documento</label></br>
+						<text class="form_text">Datos personales</text></br>
+						<label class="form_label" for="Nombre">Nombre</label></br>
+						<label class="form_label" for="Apellido_1">Apellido 1</label></br>
+						<label class="form_label" for="Apellido_2">Apellido 2</label></br>
+						<label class="form_label" for="Nacimiento">Nacimiento</label></br>
+						<label class="form_label" for="Tipo_Documento">NIF/NIE</label></br>
+						<label class="form_label" for="Documento">Documento</label></br>
 						</br>
-						<text class="label">Datos postales</text></br>
-						<label class="etiqueta" for="CP">Código postal</label></br>
-						<label class="etiqueta" for="Localidad">Localidad</label></br>
-						<label class="etiqueta" for="Provincia">Provincia</label></br>
+						<text class="form_text">Datos postales</text></br>
+						<label class="form_label" for="CP">Código postal</label></br>
+						<label class="form_label" for="Localidad">Localidad</label></br>
+						<label class="form_label" for="Provincia">Provincia</label></br>
 						</br>
-						<text class="label">Datos de contacto</text></br>
-						<label class="etiqueta" for="Email">Email</label></br>
-						<label class="etiqueta" for="Teléfono">Teléfono</label></br>
+						<text class="form_text">Datos de contacto</text></br>
+						<label class="form_label" for="Email">Email</label></br>
+						<label class="form_label" for="Teléfono">Teléfono</label></br>
 						</br>
 					</div>
-					<div id="entradas">
+					<div class="form_entradas">
 						</br> <!-- Datos de usuario -->
-						<input type="text" name="Usuario" maxlength="20" size="20" placeholder="Alfanumérico (8-12 dígitos)" pattern="[A-Za-z0-9]{8,12}" required/></br>
-						<input id="pswd1" type="password" name="Contraseña1" maxlength="20" size="20" placeholder="Alfanumérica (8-12 dígitos)" pattern="[A-Za-z0-9]{8,12}" required/></br>
-						<input id="pswd2" type="password" name="Contraseña2" maxlength="20" size="20" placeholder="Repita su contraseña" required/></br>
-						<select name="Perfil">
-  							<option value="alumno" selected>Nuevo alumno de PcC</option>
-  							<option value="profesor">Nuevo profesor de PcC</option>
+						<input class="form_input" type="text" name="Usuario" maxlength="20" size="20" placeholder="Alfanumérico (8-12 dígitos)" pattern="[A-Za-z0-9]{8,12}" required/></br>
+						<input class="form_input" id="pswd1" type="password" name="Contraseña1" maxlength="20" size="20" placeholder="Alfanumérica (8-12 dígitos)" pattern="[A-Za-z0-9]{8,12}" required/></br>
+						<input class="form_input" id="pswd2" type="password" name="Contraseña2" maxlength="20" size="20" placeholder="Repita su contraseña" required/></br>
+						<select class="blue" name="Perfil">
+  							<option class="form_option" value="alumno" selected>Nuevo alumno de PcC</option>
+  							<option class="form_option" value="profesor">Nuevo profesor de PcC</option>
 						</select></br>
 						</br></br> <!-- Datos personales -->
-						<input type="text" name="Nombre" maxlength="20" size="20" placeholder="Tu nombre" required/></br>
-						<input type="text" name="Apellido_1" maxlength="20" size="20" placeholder="Tu primer apellido" required/></br>
-						<input type="text" name="Apellido_2" maxlength="20" size="20" placeholder="Tu segundo apellido" required/></br>
-						<input type="date" name="Nacimiento" maxlength="20" size="20" required/></br>
-						<select name="Tipo_Documento">
-  							<option value="NIF" selected>NIF</option>
-  							<option value="NIE">NIE</option>
+						<input class="form_input" type="text" name="Nombre" maxlength="20" size="20" placeholder="Tu nombre" required/></br>
+						<input class="form_input" type="text" name="Apellido_1" maxlength="20" size="20" placeholder="Tu primer apellido" required/></br>
+						<input class="form_input" type="text" name="Apellido_2" maxlength="20" size="20" placeholder="Tu segundo apellido" required/></br>
+						<input class="form_input" type="date" name="Nacimiento" maxlength="20" size="20" required/></br>
+						<select class="form_select" name="Tipo_Documento">
+  							<option class="form_option" value="NIF" selected>NIF</option>
+  							<option class="form_option" value="NIE">NIE</option>
 						</select></br>
-						<input type="text" name="Documento" maxlength="20" size="20" placeholder="Tu documento de identidad" required/></br>
+						<input class="form_input" type="text" name="Documento" maxlength="20" size="20" placeholder="Tu documento de identidad" required/></br>
 						</br></br> <!-- Datos postales -->
-						<input type="text" name="CP" maxlength="5" size="20" placeholder="Tu código postal" required/></br>
-						<input type="text" name="Localidad" maxlength="20" size="20" placeholder="Tu localidad..." required/></br>
-						<input type="text" name="Provincia" maxlength="20" size="20" placeholder="es provincia de..." required/></br>
+						<input class="form_input" type="text" name="CP" maxlength="5" size="20" placeholder="Tu código postal" required/></br>
+						<input class="form_input" type="text" name="Localidad" maxlength="20" size="20" placeholder="Tu localidad..." required/></br>
+						<input class="form_input" type="text" name="Provincia" maxlength="20" size="20" placeholder="es provincia de..." required/></br>
 						</br></br> <!-- Datos de contacto -->
-						<input type="email" name="Email" maxlength="25" size="20" placeholder="Tu correo electrónico" required/></br>
-						<input type="phone" name="Teléfono" maxlength="20" size="20" placeholder="Tu teléfono de contacto"required/></br>
+						<input class="form_input" type="email" name="Email" maxlength="25" size="20" placeholder="Tu correo electrónico" required/></br>
+						<input class="form_input" type="phone" name="Teléfono" maxlength="20" size="20" placeholder="Tu teléfono de contacto"required/></br>
 					</div>
-					<div id="botonera">
+					<div class="form_botonera">
 						<label for="verif"/> <input type="checkbox" required>Verifico que he leído y acepto los términos y condiciones del servicio.</br>
-						<input id ="Enviar" type="submit" value="Send request"/>
-						<input id ="Limpiar" type="reset" value="Clear"/>
+						<input id ="form_enviar" type="submit" value="Send request"/>
+						<input id ="form_limpiar" type="reset" value="Clear"/>
 					</div>
 				</form>
 			</div>
 		</div>
-		<footer>
+		<footer class="blue">
          <div id="contacto">
             <h1>Contacto</h1>
             <p>Enviar un correo<br>

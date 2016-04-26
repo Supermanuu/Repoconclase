@@ -9,50 +9,49 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
         <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/reset.css"/>
-        <link rel="stylesheet" type="text/css" href="css/plantilla_estructura.css"/>
-      	<link rel="stylesheet" type="text/css" href="css/plantilla_interfaz.css"/>
-      	<link rel="stylesheet" type="text/css" href="css/formulario_estructura.css"/>
-      	<link rel="stylesheet" type="text/css" href="css/formulario_interfaz.css"/>
+      	<link rel="stylesheet" type="text/css" href="css/estructura.css"/>
+      	<link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
+      	<script src="less.js" type="text/javascript"></script>
     </head>
-    <body>
-		<header>
-         <button id="login">Login</button>
-         <button id="registrarse">Registrarse</button>
+    <body class="form_body">
+		<header class="blue">
+         <button class="blue" id="login">Login</button>
+         <button class="blue" id="registrarse">Registrarse</button>
         </header>
-		<div id="principal">
-			<div id="contenido">
-				<h1>Contacta con nosotros</h1>
-				<form method="post" action="mailto:profesoresconcontacto@gmail.com" enctype="text/plain">
-					<div id="etiquetas">
-						<text class="label">Formulario de contacto</text></br>
-						<label class="etiqueta" for="Nombre">Nombre</label></br>
-						<label class="etiqueta" for="Apellidos">Apellido</label></br>
-						<label class="etiqueta" for="Email">Email</label></br>
-						<label class="etiqueta" for="Tipo">Tipo</label></br>
-						<label class="etiqueta" for="Mensaje">Mensaje</label></br>
+		<div class="form_principal">
+			<div class="form_contenido">
+				<h1 class="form_h1">Contacta con nosotros</h1>
+				<form class="form_box" method="post" action="mailto:profesoresconcontacto@gmail.com" enctype="text/plain">
+					<div class="form_etiquetas">
+						<text class="form_text">Formulario de contacto</text></br>
+						<label class="form_label" for="Nombre">Nombre</label></br>
+						<label class="form_label" for="Apellidos">Apellido</label></br>
+						<label class="form_label" for="Email">Email</label></br>
+						<label class="form_label" for="Tipo">Tipo</label></br>
+						<label class="form_label" for="Mensaje">Mensaje</label></br>
 					</div>
-					<div id="entradas">
+					<div class="form_entradas">
 						</br> <!-- Formulario de contacto -->
-						<input type="text" name="Nombre" maxlength="20" size="20" placeholder="Para tratar con ud." required/></br>
-						<input type="text" name="Apellido" maxlength="20" size="20" placeholder="Para tratar con ud." required/></br>
-						<input type="email" name="Email" maxlength="30" size="20" placeholder="Para que podamos contactarle" required/></br>
-						<select name="Tipo">
-  							<option value="Sugerencias" selected>Sugerencias</option>
-  							<option value="Criticas">Criticas</option>
-  							<option value="Evaluación">Evaluación</option>
-  							<option value="otros">Otros</option>
+						<input class="form_input" type="text" name="Nombre" maxlength="20" size="20" placeholder="Para tratar con ud." required/></br>
+						<input class="form_input" type="text" name="Apellido" maxlength="20" size="20" placeholder="Para tratar con ud." required/></br>
+						<input class="form_input" type="email" name="Email" maxlength="30" size="20" placeholder="Para que podamos contactarle" required/></br>
+						<select class="blue" name="Tipo">
+  							<option class="form_option" value="Sugerencias" selected>Sugerencias</option>
+  							<option class="form_option" value="Criticas">Criticas</option>
+  							<option class="form_option" value="Evaluación">Evaluación</option>
+  							<option class="form_option" value="otros">Otros</option>
 						</select></br>
-						<textarea name="Mensaje" rows="15" cols="15" maxlength="225" placeholder="Tiene 225 caracteres para escribir su mensaje." required></textarea></br></br>
+						<textarea class="form_textarea" name="Mensaje" rows="15" cols="15" maxlength="225" placeholder="Tiene 225 caracteres para escribir su mensaje." required></textarea></br></br>
 					</div>
-					<div id="botonera">
+					<div class="form_botonera">
 						<label for="verif"/> <input type="checkbox" required>Verifico que he leído y acepto los términos y condiciones del servicio.</br>
-						<input id="Enviar" type="submit" value="Send request"/>
-						<input id="Limpiar" type="reset" value="Clear"/>
+						<input id="form_enviar" type="submit" value="Send request"/>
+						<input id="form_limpiar" type="reset" value="Clear"/>
 					</div>
 				</form>
 			</div>
 		</div>
-		<footer>
+		<footer class="blue">
          <div id="contacto">
             <h1>Contacto</h1>
             <p>Enviar un correo<br>

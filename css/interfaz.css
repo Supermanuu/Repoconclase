@@ -1,0 +1,482 @@
+/*  -------- PLANTILLA ----------- */
+
+*
+{
+   /* Fuente predeterminada de la web */
+   font-family: 'Ubuntu', sans-serif;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none; 
+   
+   /* El cursor en todo momento es la flecha */
+   cursor: default;
+}
+
+header 
+{
+   background-color : #376092;
+   background-image: url(../img/profesconclase_azul.png);
+}
+
+header.green
+{
+  background-color : #118E56;
+  background-image: url(../img/profesconclase_verde.png);
+}
+
+header.blue
+{
+  background-color : #376092;
+  background-image: url(../img/profesconclase_azul.png);
+}
+
+header.purple
+{
+  background-color : #460A78;
+  background-image: url(../img/profesconclase_azul.png);
+}
+
+button.green, select.green
+{
+   /* Color de acción */
+   background-color: #6AC46E;
+   
+   /* Color del borde */
+   border-color: #4E8C50;
+   
+   /* Color de la fuente */
+   color: white;
+   
+   /* Tamaño de la fuente */
+   font-size: larger;
+}
+
+button.blue, select.blue
+{
+   /* Color de acción */
+   background-color: #4F81BD;
+   
+   /* Color del borde */
+   border-color: #223A57;
+   
+   /* Color de la fuente */
+   color: white;
+   
+   /* Tamaño de la fuente */
+   font-size: larger;
+}
+
+button.purple, select.purple
+{
+   /* Color de acción */
+   background-color: #6414B4;
+   
+   /* Color del borde */
+   border-color: #460A78;
+   
+   /* Color de la fuente */
+   color: white;
+   
+   /* Tamaño de la fuente */
+   font-size: larger;
+}
+
+footer 
+{
+  background-color : #376092;
+}
+
+footer.green
+{
+  background-color : #118E56;
+}
+
+footer.blue
+{
+  background-color : #376092;
+}
+
+footer.purple
+{
+  background-color : #460A78;
+}
+
+#miembros > h1, #contacto > h1
+{
+   /* Para quitar la letra en negrita */
+   font-weight: normal;
+   
+   color: white;
+   font-size: 1.5em;
+}
+
+#contacto > p
+{
+   color: white;
+   font-size: 1em;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+/*  --------Interfaz - > Index.html ----------- */
+
+#index_body
+{
+   /* Color por defecto */
+   background-color: white;
+   background-image: url("../img/pizarra.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+/* Logo que sale en la pantalla principal */
+#index_logoPrincipal {
+   background-image: url("../img/profesconclase_azul.png");
+   background-repeat: no-repeat;
+   background-size: 100%;
+}
+
+/*  --------Interfaz - > administrador.html ----------- */
+
+#admin_body
+{
+   background-color: white;
+}
+
+#admin_estado, #admin_informacionMensajes, #admin_bandejaEntrada, #admin_gestionUsuarios{
+   background-color: #6414B4;
+   border: 3px solid black;
+}
+
+#admin_estado > p, #admin_informacionMensajes > pre
+{
+   color: white;
+   font-size: 1em;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+#admin_bandejaEntrada > p {
+   text-align: center;
+   color: white;
+   font-size: 1em;
+}
+
+.admin_linea {
+   height: 2px;
+   background-color: #460A78;
+   border-color: #460A78;
+}
+
+#admin_gestionUsuarios > h1, #admin_bandejaEntrada > h1, #admin_estado > h1 {
+   margin-left: 5%;
+   color: white;
+   font-weight: normal;
+   font-size: 1.5em;
+   margin-top: 5px;
+}
+
+/*  --------Interfaz - > correo.html ----------- */
+
+#correo_body {
+   /* Color por defecto */
+   background-color: white;
+   background-image: url("../img/pizarra.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+#correo_detallesCorreo > p, #correo_mostrarMensaje > pre {
+   color: white;
+   font-size: 1em;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+#correo_detallesCorreo > p{
+   text-align: center;
+}
+
+#correo_correos > #correo_detallesCorreo, #correo_mostrarMensaje {
+   border : 2px solid black;
+   background-color: #4F81BD;
+}
+
+.correo_linea {
+   height: 2px;
+   background-color: #376092;
+   border-color: #376092;
+}
+
+/*  --------Interfaz - > Formularios ----------- */
+
+body.form_body {
+	background-image: url("../img/pizarra.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+div.form_contenido {
+    color: white;
+}
+
+input#form_enviar, input#form_limpiar {
+   background-color: #4F81BD;
+   border-color: #223A57;
+   color: white;
+   font-size: larger;
+}
+
+text.form_text {
+   color: #4F81BD;
+}
+
+@media (min-width: 768px) {
+  div.form_contenido {
+    text-align: center;
+    line-height: 150%;
+    padding-bottom: 1.5%;
+  }
+
+  h1.form_h1 {
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+  }
+
+  div.form_etiquetas {
+    text-align: right;
+    line-height: 250%;
+    margin-left: 2.5%;
+    margin-right: 1.25%;
+  }
+
+  div.form_entradas {
+    text-align: left;
+    line-height: 250%;
+    margin-left: 1.25%;
+    margin-right: 2.5%;
+  }
+}
+
+@media (max-width: 768px) {
+  div.form_contenido {
+    text-align: center;
+    line-height: 150%;
+    padding-bottom: 3%;
+  }
+
+  h1.form_h1 {
+    text-align: center;
+    font-size: 1.5em;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    margin-left: 2.5%;
+  }
+
+  label.form_label {
+    white-space: nowrap;
+  }
+
+  text.form_text {
+    position: absolute;
+  }
+
+  div.form_etiquetas {
+    text-align: left;
+    line-height: 250%;
+    margin-left: 2.5%;
+    margin-right: 1.25%;
+  }
+
+  div.form_entradas {
+    text-align: left;
+    line-height: 250%;
+    margin-left: 1.25%;
+    margin-right: 2.5%;
+  }
+
+  div.form_botonera {
+    text-align: left;
+    line-height: 150%;
+    margin-left: 2.5%;
+  }
+}
+
+/* ----------Interfaz - > detalles_alumnos.html--------- */
+
+@media (min-width: 768px)
+{
+   body.dalumnos_body
+     {
+      /* Seleccionamos la imagen de fondo */
+      background-image: url(../img/alumnos.jpg);
+   }
+   
+   article.dalumnos_article
+      {
+      font-size: 1.5em;
+   }
+}
+
+@media (max-width: 768px)
+{
+   body.dalumnos_body
+     {
+      background-image: none;
+   }
+   
+   article.dalumnos_article
+      {
+      font-size: 1.2em;
+   }
+}
+
+/* ----------Interfaz - > index_alumnos.html--------- */
+
+body.ialumnos_body
+{
+  background-color: lightgreen;
+}
+
+#menu_alumno
+{
+   background-color: #6AC46E;
+   color: white;
+}
+
+@media (min-width: 768px)
+{
+   #nombre_alumno
+     {
+      font-weight: bold;
+      font-size: 45px;
+      border: 1px;
+      border-style: solid;
+      border-color: lightgreen;
+      
+      /* Para que la línea no se corte y sigua debajo */
+      overflow:hidden;
+      white-space: nowrap;
+      
+      /* Para que salgan puntos suspensivos */
+      text-overflow: ellipsis;
+   }
+   
+   #spam_principal_autor, #spam_secundario_derecha_titulo, #spam_secundario_centro_titulo, #spam_secundario_izquierda_titulo
+     {
+      font-size: 20px;
+   }
+   
+   #spam_principal_curso, #spam_secundario_derecha_apoderado, #spam_secundario_centro_apoderado, #spam_secundario_izquierda_apoderado, #spam_principal_horario
+     {
+      font-size: 35px;
+   }
+   
+   #spam_principal
+     {
+      background-image: url("../img/flecha_spam2.png");
+      background-repeat: no-repeat;
+      background-size: 70px 30px;
+      background-position: center bottom;
+   }
+
+   #spam_secundario_derecha, #spam_secundario_centro, #spam_secundario_izquierda
+     {
+      background-image: url("../img/flecha_spam2.png");
+      background-repeat: no-repeat;
+      background-size: 50px 30px;
+      background-position: center bottom;
+   }
+}
+@media (max-width: 768px)
+{
+   #nombre_alumno
+     {
+      font-weight: bold;
+      font-size: 30px;
+      
+      border: palegreen;
+      border-style: solid;
+      border-top: inherit;
+      border-right: inherit;
+      border-left: inherit;
+      
+      /* Para que la línea no se corte y sigua debajo */
+      overflow:hidden;
+      white-space: nowrap;
+      
+      /* Para que salgan puntos suspensivos */
+      text-overflow: ellipsis;
+   }
+   
+   #spam_principal_autor, #spam_secundario_derecha_titulo, #spam_secundario_centro_titulo, #spam_secundario_izquierda_titulo,
+   #spam_principal_curso, #spam_secundario_derecha_apoderado, #spam_secundario_centro_apoderado, #spam_secundario_izquierda_apoderado, #spam_principal_horario
+     {
+      font-weight: bold;
+   }
+}
+
+#mis_grupos > p, #mis_profesores > p
+{
+   /* Para que la línea no se corte y sigua debajo */
+   overflow:hidden;
+   white-space: nowrap;
+   
+   /* Para que salgan puntos suspensivos */
+   text-overflow: ellipsis;
+}
+
+#mis_clases_1 > p, #mis_clases_2 > p, #mis_clases_3 > p
+{
+   /* Para que la línea no se corte y sigua debajo */
+   overflow:hidden;
+   white-space: nowrap;
+   
+   /* Para que salgan puntos suspensivos */
+   text-overflow: ellipsis;
+}
+
+#spam_principal, #spam_secundario_derecha, #spam_secundario_centro, #spam_secundario_izquierda
+{
+   background-color: #C8F9C8;
+   border: 1px;
+   border-style: solid;
+   border-color: #6AC46E;
+   color: #118E56;
+}
+
+#spam_principal_autor, #spam_secundario_derecha_titulo, #spam_secundario_centro_titulo, #spam_secundario_izquierda_titulo
+{
+   /* Para que la línea no se corte y sigua debajo */
+   overflow:hidden;
+   white-space: nowrap;
+   
+   /* Para que salgan puntos suspensivos */
+   text-overflow: ellipsis;
+}
+
+#spam_principal_curso, #spam_secundario_derecha_apoderado, #spam_secundario_centro_apoderado, #spam_secundario_izquierda_apoderado
+{
+   /* Para que la línea no se corte y sigua debajo */
+   overflow:hidden;
+   white-space: nowrap;
+   
+   /* Para que salgan puntos suspensivos */
+   text-overflow: ellipsis;
+}
+
+#spam_principal_horario
+{
+   text-align: right;
+   
+   /* Para que la línea no se corte y sigua debajo */
+   overflow:hidden;
+   white-space: nowrap;
+   
+   /* Para que salgan puntos suspensivos */
+   text-overflow: ellipsis;
+}
+
