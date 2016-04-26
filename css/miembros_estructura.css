@@ -14,7 +14,7 @@
       background-repeat: no-repeat;
    }
    
-   #contenido
+   #contenido_miembros
       {
       width: 100%;
       margin: auto 10px;
@@ -41,7 +41,7 @@ body > div
       background-image: url(../img/pizarra.jpg);
   }
    
-  #contenido
+  #contenido_miembros
   {
       font-size: 1.2em;
       margin: auto 8%;
@@ -53,39 +53,45 @@ body > div
    }
 }
 
-#contenido > p
+#contenido_miembros > p
 {
    margin: 20px 0;
-}
-
-#miembro_ind
-{
    margin-top: 20px;
    display: flex;
    width: 40%;
+   flex-direction: row;
 }
 
 #pablo, #fran, #manu, #pino, #sergio
 {
-   margin: 2%;
-   margin-bottom: 0;
+  float: left;
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  width: 45%;
+  margin: 2%;
+   margin-bottom: 20px;
+   margin-top: 20px;
 }
 
-#foto
+#miembro_foto
 {
    float: left;
-   width: 40%;
+   display: flex;
+   flex-direction: row;
+}
+
+#miembro_texto
+{
+   float: left;
+   margin-left: 1%;
    display: flex;
    flex-direction: column;
 }
 
-#texto
-{
-   float: left;
-   margin-left: auto;
-   display: flex;
-   flex-direction: column;
-   width: 40%;
+#quienes_somos{
+  margin: 20px;
+  text-align: center;
 }
 
 header
@@ -133,4 +139,18 @@ footer
    
    margin-bottom: 40px;
   min-height: 10%;
+}
+
+#miembros, #contacto
+{
+   /* Margen con el inicio del footer */
+   margin-top: 10px;
+   min-width: 20%;
+   min-height: 5%;
+}
+
+#miembros > h1, #contacto > h1, #miembros > p, #contacto > p
+{
+   /* Margen con el borde de la página */
+   margin-left: 5%;
 }
