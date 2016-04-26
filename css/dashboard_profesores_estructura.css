@@ -1,8 +1,8 @@
 @media (min-width: 768px){ /*Tamaño escritorio*/
 
   #principal {
-  	/*La div principal es un contenedor flexible, los hijos de principal herendan la propiedad*/
-
+  	
+    flex-shrink: 1;
   	/*Los elementos dentro del contenedor se van a alinear en columnas, 3 columnas por fila */
   	flex-direction: column;
     -webkit-flex-direction: column;
@@ -22,8 +22,6 @@
 @media (max-width: 768px){ /*Tamaño Movil*/
 
   #principal {
-    /*La div principal es un contenedor flexible, los hijos de principal herendan la propiedad*/
-
     /*Los elementos dentro del contenedor se van a alinear en columnas, 3 columnas por fila */
     flex-direction: row;
     -webkit-flex-direction: row;
@@ -36,6 +34,12 @@
 }
 
 .dashboard{
+
+  overflow: hidden;
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+
   flex-direction: column;
   -webkit-flex-direction: column;
 }
