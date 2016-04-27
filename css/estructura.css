@@ -540,7 +540,7 @@ footer
   }
 }
 
-/* ----------Estructura - > detalles_alumnos.html--------- */
+/* ----------Estructura - > detalles_alumnos.html y detalles_profesores.html--------- */
 
 @media (min-width: 768px)
 {
@@ -562,12 +562,6 @@ footer
       /* Margen con respecto al borde */
       margin: auto 8%;
     }
-}
-
-body > div 
-{
-    display: flex;
-    margin: auto 0;
 }
 
 div.dprincipal_div
