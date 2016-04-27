@@ -1,0 +1,6 @@
+<div id="contacto">
+<h1 id="contacto_lnk">Contacto</h1>
+</div>
+<div id="miembros">
+<h1 id="miembros_lnk">Miembros</h1>
+</div> 

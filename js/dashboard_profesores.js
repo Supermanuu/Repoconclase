@@ -1,4 +1,4 @@
-$(this).ready (function (){
+$(document).ready (function () {
 
    // Para resaltar los cuadros del dashboard al pasar sobre ellos con el raton
    $(".dashboard").mouseover (function (){

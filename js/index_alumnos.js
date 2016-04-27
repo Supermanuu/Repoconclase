@@ -1,4 +1,4 @@
-﻿$(this).ready (function ()
+﻿$(document).ready(function()
 {
    // Accion al pulsar sobre el boton de logout
    $("#logout").mousedown (function ()
