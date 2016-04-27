@@ -49,9 +49,8 @@ button#registrarse, button#login, button#logout, button#volver, button#salir
 
 footer
 {
-  /* Para que los botones se coloquen a la izquierda */
+  /* DIsposición del footer*/
   display: flex;
-   
   margin-bottom: 40px;
   min-height: 10%;
 }
@@ -682,14 +681,12 @@ div.ialumnos_principal
 @media (min-width: 768px){
 
   div.dashprofes_principal {
-    
+    display:flex;
     flex-shrink: 1;
     /*Los elementos dentro del contenedor se van a alinear en columnas, 3 columnas por fila */
     flex-direction: column;
-    -webkit-flex-direction: column;
     /*Contenedor flexible con multiples filas (wrap), cada fila con tres div */
     flex-wrap: wrap; 
-    -webkit-flex-wrap: wrap;
     /*La division principal ocupa el 100% de la pantalla en horizontal, luego se repartira en cada caja*/
     width: 100%;
   }
@@ -705,13 +702,12 @@ div.dashprofes_principal {
   div.dashprofes_principal {
     /*Los elementos dentro del contenedor se van a alinear en columnas, 3 columnas por fila */
     flex-direction: row;
-    -webkit-flex-direction: row;
     /*Contenedor flexible con multiples filas (wrap), cada fila con tres div */
     flex-wrap: wrap; 
-    -webkit-flex-wrap: wrap;
     /*La division principal ocupa el 100% de la pantalla en horizontal, luego se repartira en cada caja*/
     width: 100%;
   }
+
 }
 
 div.dashboard {
@@ -722,5 +718,5 @@ div.dashboard {
   text-overflow: ellipsis;
 
   flex-direction: column;
-  -webkit-flex-direction: column;
+
 }

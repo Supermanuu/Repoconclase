@@ -515,7 +515,7 @@ div.oscuro{
   border-color: #778EAA;
 }
 
-@media (min-width: 768px){ /*Tamaño escritorio*/
+@media (min-width: 768px){
 
   div.dashboard {
     padding: 1em;
@@ -546,7 +546,7 @@ div.oscuro{
 
 }
 
-@media (max-width: 768px){ /*Tamaño Movil*/
+@media (max-width: 768px){
   div.dashboard {
       padding: 0.5em;
       border-width: 2px;
