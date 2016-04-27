@@ -137,6 +137,13 @@ footer.purple
    background-size: 100%;
 }
 
+#index_sub>input {
+   background-color: #4F81BD;
+   border-color: #223A57;
+   color: white;
+   font-size: larger;
+}
+
 /*  --------Interfaz - > administrador.html ----------- */
 
 #admin_body
@@ -144,9 +151,20 @@ footer.purple
    background-color: white;
 }
 
-#admin_estado, #admin_informacionMensajes, #admin_bandejaEntrada, #admin_gestionUsuarios{
+header.purple > #volver {
+  visibility: hidden;
+}
+
+#admin_estado, #admin_informacionMensajes, #admin_bandejaEntrada, #admin_gestionUsuarios,
+#admin_mostrarUsuario {
    background-color: #6414B4;
    border: 3px solid black;
+}
+
+#admin_imagen {
+   background-image: url("../img/gato.jpg");
+   background-size: contain;
+   background-repeat: no-repeat;
 }
 
 #admin_estado > p, #admin_informacionMensajes > pre
@@ -177,6 +195,48 @@ footer.purple
    margin-top: 5px;
 }
 
+#admin_clave {
+   text-align: right;
+   color: white;
+   font-size: 1.2em;
+}
+
+#admin_valor {
+   text-align: left;
+   color: white;
+   font-size: 1em;
+}
+
+/* Buscador - Administrador */
+
+#admin_buscador {
+   background-color: #460A78;  
+   border-color: #223A57;            
+}
+
+#admin_buscador > #search {
+   border: 1px solid #223A57;
+   font: normal 13px;
+   font-family: 'Ubuntu', sans-serif;
+   background: #f1f1f1;        
+}
+
+#admin_buscador > #submit {       
+    background-color: #6414B4;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #223A57;
+    cursor: pointer;
+    font: bold 14px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #ffffff;    
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+
+#admin_buscador > #submit:hover {       
+    background-color: #223A57;   
+}
+
 /*  --------Interfaz - > correo.html ----------- */
 
 #correo_body {
@@ -187,11 +247,19 @@ footer.purple
    background-size: cover;
 }
 
-#correo_detallesCorreo > p, #correo_mostrarMensaje > pre {
+#correo_detallesCorreo > p, #correo_mostrarMensaje > pre,
+#correo_etiquetas > label {
    color: white;
    font-size: 1em;
    margin-top: 10px;
    margin-bottom: 10px;
+}
+
+#correo_sub > input {
+   background-color: #4F81BD;
+   border-color: #223A57;
+   color: white;
+   font-size: larger;
 }
 
 #correo_detallesCorreo > p{

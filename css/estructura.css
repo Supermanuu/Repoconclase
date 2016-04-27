@@ -37,7 +37,7 @@ header
   overflow: hidden;
 }
 
-button#login, button#registrarse, button#logout
+button#login, button#registrarse, button#logout, header.purple > #volver
 {
    /* Para que los botones se alineen a la derecha */
    float: right;
@@ -81,7 +81,7 @@ footer
 #index_logoPrincipal {
    margin: auto;
    width: 75%;
-   min-height: 30%;
+   min-height: 35%;
 }
 
 #index_loginForm {
@@ -193,7 +193,8 @@ footer
       height: 30%;
    }
 
-   #admin_estado{
+   #admin_estado{ 
+      overflow: auto;
       flex-basis: 70%;
    }
 
@@ -219,7 +220,7 @@ footer
    #admin_principal {
       display: flex;
       flex-direction: column;
-      height: 100%;
+      height: 110%;
    }
 
    #admin_parte1{
@@ -231,7 +232,7 @@ footer
    #admin_parte2{
       display: flex;
       flex-direction: column;
-      height: 40%;
+      height: 50%;
    }
 
    #admin_bandejaEntrada {
@@ -253,15 +254,94 @@ footer
    }
 }
 
-#admin_estado, #admin_informacionMensajes, #admin_bandejaEntrada, #admin_gestionUsuarios{
+#admin_estado, #admin_informacionMensajes, #admin_bandejaEntrada, #admin_gestionUsuarios,
+#admin_mostrarUsuario {
    margin : 5 5 5 5;
+}
+
+/* Admin - Gestion de Usuarios */
+
+#admin_mostrarUsuario {
+   flex-basis: 100%;
+   flex-grow: 3;
+}
+
+@media (min-width: 768px) {
+   #admin_mostrarUsuario {
+      display: flex;
+      flex-direction: row;
+   }
+
+   #admin_imagen {
+      margin-top : 20px;
+      margin-left: 30px;
+      width: 18%;
+      height: 50%;
+   }
+}
+
+@media (max-width: 768px) {
+   #admin_mostrarUsuario {
+      display: flex;
+      flex-direction: column;
+   }
+
+    #admin_imagen {
+      margin: 0 auto;
+      width: 50%;
+      height: 50%;
+   }
+}
+
+#admin_datos {
+   display: flex;
+   flex-direction: row;
+   min-width: 50%;
+   flex-grow: 5;
+   overflow: auto;
+}
+
+#admin_clave{
+   margin-top: 20px;
+   line-height: 25px;
+   width: 100%;
+}
+
+#admin_valor{
+   margin-top: 20px;
+   margin-left: 30px;
+   line-height: 25px;
+   width: 100%;
+}
+
+/* admin_buscador */
+
+#admin_buscador {
+   display: flex;
+   flex-direction: row;
+   width: 30%;
+   height: 35px;
+   padding: 10px;
+   margin: 10px auto;           
+}
+
+#admin_buscador > #search {
+   float: left; 
+   width: 100%;  
+}
+
+#admin_buscador > #submit {       
+   float: left;
+   margin-left: 10px;
+   padding: 0;
+   width: 30%;
 }
 
 /* ----------Estructura - > correo.html--------- */
 
 #correo_mostrarMensaje > #correo_cabecera {
    overflow: auto;
-   height: 20%;
+   height: 15%;
    margin-top: 30px;
    margin-left: 15px;
 }
@@ -269,6 +349,7 @@ footer
 #correo_mostrarMensaje > #correo_cuerpo {
    overflow: auto;
    height: 50%;
+   margin-top: 30px;
    margin-left: 15px;
    margin-right: 15px;
 }
@@ -287,14 +368,14 @@ footer
    }
 
    #correo_correos > #correo_tipoCorreo {
+      display: flex;
+      flex-direction: row;
       margin: 10 10 10 10;
-      height: 30px;
+      height: 40px;
    }
 
    #correo_tipoCorreo > select, #correo_tipoCorreo > button {
-      width: 42%;
-      height: 100%;
-      margin-left: 10px;
+      width: 100%;
    }
 
    #correo_correos > #correo_detallesCorreo {
@@ -314,7 +395,7 @@ footer
    #correo_principal {
       display: flex;
       flex-direction: column;
-      height: 75%;
+      height: 90%;
    }
 
   #correo_correos {
@@ -324,25 +405,83 @@ footer
    }
 
    #correo_correos > #correo_tipoCorreo {
+      display: flex;
+      flex-direction: row;
       margin: 10 10 10 10;
-      height: 30px;
+      height: 40px;
    }
 
    #correo_tipoCorreo > select, #correo_tipoCorreo > button {
-      width: 45%;
-      height: 100%;
-      margin-left: 10px;
+      width: 100%;
    }
 
    #correo_correos > #correo_detallesCorreo {
       margin: 0 10 10 10;
       overflow: auto;
+      height: 55%;
    }
 
    #correo_mostrarMensaje {
       margin : 10 10 10 10;
-      height: 70%;
+      height: 75%;
    }
+}
+
+/* Correo - Nuevo Mensaje */
+
+#correo_formulario {
+   display: flex;
+   flex-direction: column;
+}
+
+#correo_formulario > #correo_dir {
+   display: flex;
+   flex-direction: row;
+   height: 30%;
+}
+
+#correo_formulario > #correo_men {
+   display: flex;
+   flex-direction: column;
+   height: 50%;
+}
+
+#correo_etiquetas {
+   margin-top: 50px;
+   line-height: 20px;
+   text-align: right;
+   width: 100%;
+}
+
+#correo_entradas {
+   margin-top: 50px;
+   text-align: left;
+   margin-left: 30px;
+   width: 100%;
+}
+
+#correo_text {
+   text-align: center;
+   margin: 0 auto;
+   margin-top: 20px;
+   width: 80%;
+}
+
+#correo_text > textarea {
+   width: 100%;
+   height: 40%;
+}
+
+#correo_sub {
+   width: 35%;
+   height: 40px;
+   margin: 0 auto;
+   margin-top: 20px;
+}
+
+#correo_sub > input{
+   width: 100%;
+   height: 100%;
 }
 
 /* ----------Estructura - > Formularios--------- */
