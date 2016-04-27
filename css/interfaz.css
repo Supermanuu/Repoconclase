@@ -632,4 +632,75 @@ div.oscuro{
     font-size: 15px;
     line-height: 1.6; /*Espaciado entre las frases*/
   }
+
+}
+
+/* ----------Interfaz - > buscador.html--------- */
+
+#buscador {
+    background-color: #4F81BD;  
+    border-width: 1px;
+    border-color: #223A57;          
+    width: 270px;
+    height: 35px;
+    padding: 10px;
+    margin: 10px auto 10px;
+    overflow: hidden;
+}
+
+#search, #submit {
+    float: left;
+}
+
+#search {
+    padding: 5px 9px;
+    height: 23px;
+    width: 150px;
+    border: 1px solid #223A57;
+    font: normal 13px;
+    font-family: 'Ubuntu', sans-serif;
+    background: #f1f1f1; 
+    cursor: text;        
+}
+
+#submit {       
+    background-color: #4F81BD;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #223A57;
+    height: 35px;
+    margin: 0 0 0 10px;
+    padding: 0;
+    width: 90px;
+    cursor: pointer;
+    font: bold 14px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #ffffff;    
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+
+#submit_det {       
+    background-color: #4F81BD;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #223A57;
+    height: 35px;
+    margin: 15px 0 0 0px;
+    padding: 0;
+    width: 170px;
+    cursor: pointer;
+    font: bold 14px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #ffffff;    
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+
+#submit:hover, #submit_det:hover {       
+    background-color: #223A57;   
+}
+
+#res_busqueda {
+    min-height: 40%;
+    width: 90%;
+    background-color: #4F81BD;
 }
