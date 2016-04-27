@@ -10,12 +10,13 @@
       <link rel="stylesheet" type="text/css" href="css/estructura.css"/>
       <link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="js/links.js"></script>
       <script src="js/admin.js"></script>
 	</head>
 	<body id="admin_body">
 		<header class="purple">
-         <button class="purple" id="logout">Salir</button>
-         <button class="purple" id="volver">Volver</button>
+         <button class="purple" id="logout" type="button">Logout</button>
+         <button class="purple" id="volver" type="button">Volver</button>
       	</header>
 		<div id="admin_principal">
 			<!-- Bandeja de entrada y lectura de mensajes -->
@@ -70,12 +71,10 @@
 		</div>
 		<footer class="purple">
         	 <div id="contacto">
-            	<h1>Contacto</h1>
-            	<p>Enviar un correo<br>
-            	Páginas web</p>
+            	<h1 id="contacto_lnk">Contacto</h1>
         	 </div>
         	 <div id="miembros">
-        		 <h1>Miembros</h1>
+        		 <h1 id="miembros_lnk">Miembros</h1>
          	</div>
         </footer>
 	</body>

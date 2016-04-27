@@ -16,11 +16,6 @@ $(this).ready (function (){
 
  // ACCIONES AL PULSAR SOBRE LOS PANELES 
    // pulsar en logout
-   $("#logout").mousedown (function ()
-   {
-      console.log ("cerrar sesion");
-   });
-
    $("#buscaUsuario").mousedown (function ()
    {
       console.log ("Panel de Buscar Usuarios");

@@ -1,4 +1,4 @@
-$(function(){
+$(function() {
 
 	$("#admin_gestionUsuarios").click(function(){
 
@@ -25,12 +25,6 @@ $(function(){
 		$(location).attr('href', 'administrador.html');
 		$("header.purple > #volver").css ("visibility", "hidden");
 
-	});
-
-	$("#logout").click(function(){
-		
-		$(location).attr('href', 'index.html');
-	
 	});
 
 });

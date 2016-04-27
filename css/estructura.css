@@ -37,7 +37,7 @@ header
   overflow: hidden;
 }
 
-button#registrarse, button#login, button#logout, button#volver, button#salir
+button#registrarse, button#login, button#logout, button#volver
 {
    /* Para que los botones se alineen a la derecha */
    float: right;
