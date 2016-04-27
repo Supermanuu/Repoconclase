@@ -50,6 +50,7 @@ button.green, select.green
    
    /* Tamaño de la fuente */
    font-size: larger;
+
 }
 
 button.blue, select.blue
@@ -65,6 +66,7 @@ button.blue, select.blue
    
    /* Tamaño de la fuente */
    font-size: larger;
+
 }
 
 button.purple, select.purple
@@ -80,6 +82,7 @@ button.purple, select.purple
    
    /* Tamaño de la fuente */
    font-size: larger;
+
 }
 
 footer 
@@ -159,13 +162,6 @@ footer.purple
    background-size: 100%;
 }
 
-#index_sub>input {
-   background-color: #4F81BD;
-   border-color: #223A57;
-   color: white;
-   font-size: larger;
-}
-
 /*  --------Interfaz - > administrador.html ----------- */
 
 #admin_body
@@ -173,20 +169,9 @@ footer.purple
    background-color: white;
 }
 
-header.purple > #volver {
-  visibility: hidden;
-}
-
-#admin_estado, #admin_informacionMensajes, #admin_bandejaEntrada, #admin_gestionUsuarios,
-#admin_mostrarUsuario {
+#admin_estado, #admin_informacionMensajes, #admin_bandejaEntrada, #admin_gestionUsuarios{
    background-color: #6414B4;
    border: 3px solid black;
-}
-
-#admin_imagen {
-   background-image: url("../img/gato.jpg");
-   background-size: contain;
-   background-repeat: no-repeat;
 }
 
 #admin_estado > p, #admin_informacionMensajes > pre
@@ -217,48 +202,6 @@ header.purple > #volver {
    margin-top: 5px;
 }
 
-#admin_clave {
-   text-align: right;
-   color: white;
-   font-size: 1.2em;
-}
-
-#admin_valor {
-   text-align: left;
-   color: white;
-   font-size: 1em;
-}
-
-/* Buscador - Administrador */
-
-#admin_buscador {
-   background-color: #460A78;  
-   border-color: #223A57;            
-}
-
-#admin_buscador > #search {
-   border: 1px solid #223A57;
-   font: normal 13px;
-   font-family: 'Ubuntu', sans-serif;
-   background: #f1f1f1;        
-}
-
-#admin_buscador > #submit {       
-    background-color: #6414B4;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #223A57;
-    cursor: pointer;
-    font: bold 14px;
-    font-family: 'Ubuntu', sans-serif;
-    color: #ffffff;    
-    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
-}
-
-#admin_buscador > #submit:hover {       
-    background-color: #223A57;   
-}
-
 /*  --------Interfaz - > correo.html ----------- */
 
 #correo_body {
@@ -269,19 +212,11 @@ header.purple > #volver {
    background-size: cover;
 }
 
-#correo_detallesCorreo > p, #correo_mostrarMensaje > pre,
-#correo_etiquetas > label {
+#correo_detallesCorreo > p, #correo_mostrarMensaje > pre {
    color: white;
    font-size: 1em;
    margin-top: 10px;
    margin-bottom: 10px;
-}
-
-#correo_sub > input {
-   background-color: #4F81BD;
-   border-color: #223A57;
-   color: white;
-   font-size: larger;
 }
 
 #correo_detallesCorreo > p{
@@ -385,19 +320,19 @@ text.form_text {
 @media (min-width: 768px){ /*Tamaño escritorio*/
 
    body.dalumnos_body
-     {
+  {
       /* Seleccionamos la imagen de fondo */
       background-image: url(../img/alumnos.jpg);
    }
 
    body.dprofesores_body
-     {
+  {
       /* Seleccionamos la imagen de fondo */
       background-image: url(../img/profesor.png);
    }
    
-   div.dprincipal_div
-      {
+   div.d_principal
+    {
       font-size: 1.2em;
       line-height: 1.2; /*Espaciado entre las frases*/
    }
@@ -410,7 +345,7 @@ text.form_text {
       background-image: none;
    }
    
-   div.dprincipal_div
+   div.d_principal
       {
       font-size: 1.1em;
       line-height: 1.2; /*Espaciado entre las frases*/
@@ -563,3 +498,70 @@ body.ialumnos_body
    text-overflow: ellipsis;
 }
 
+/* ----------Interfaz - > dashboard_profesores.html--------- */
+
+body.dashprofes_body {
+  background-color: lightblue;
+  color: white;
+}
+
+div.dashboard{
+  border-color: #778EAA;
+  background-color: #6C8DBC;
+}
+
+div.oscuro{
+  background-color: #376092;
+  border-color: #778EAA;
+}
+
+@media (min-width: 768px){ /*Tamaño escritorio*/
+
+  div.dashboard {
+    padding: 1em;
+
+    border-width: 4px;
+    border-style: groove; /*Hacer con JS que al poner el raton encima se cambie el borde a "double" asi se ve como que seleccionamos el div*/
+    text-align: center;
+
+    float: left;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 29%; /*Ancho*/
+    /*height: 16%; Altura*/
+  }
+
+  p.dashprofes_small_p {
+    font-size: 20px;
+    line-height: 1.5; /*Espaciado entre las frases*/
+    text-align: left;
+  }
+
+  p.dashprofes_big_p {
+    font-size: 32px;
+    line-height: 1.4; /*Espaciado entre las frases*/
+  }
+
+}
+
+@media (max-width: 768px){ /*Tamaño Movil*/
+  div.dashboard {
+      padding: 0.5em;
+      border-width: 2px;
+      border-style: groove;
+      margin: 2px;
+  }
+
+  p.dashprofes_small_p {
+    font-size: 14px;
+    line-height: 1; /*Espaciado entre las frases*/
+    text-align: left;
+  }
+
+  p.dashprofes_big_p {
+    font-size: 15px;
+    line-height: 1.6; /*Espaciado entre las frases*/
+  }
+}

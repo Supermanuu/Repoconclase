@@ -37,7 +37,7 @@ header
   overflow: hidden;
 }
 
-button#login, button#registrarse, button#logout, header.purple > #volver
+button#registrarse, button#login, button#logout, button#volver, button#salir
 {
    /* Para que los botones se alineen a la derecha */
    float: right;
@@ -81,7 +81,7 @@ footer
 #index_logoPrincipal {
    margin: auto;
    width: 75%;
-   min-height: 35%;
+   min-height: 30%;
 }
 
 #index_loginForm {
@@ -193,8 +193,7 @@ footer
       height: 30%;
    }
 
-   #admin_estado{ 
-      overflow: auto;
+   #admin_estado{
       flex-basis: 70%;
    }
 
@@ -220,7 +219,7 @@ footer
    #admin_principal {
       display: flex;
       flex-direction: column;
-      height: 110%;
+      height: 100%;
    }
 
    #admin_parte1{
@@ -232,7 +231,7 @@ footer
    #admin_parte2{
       display: flex;
       flex-direction: column;
-      height: 50%;
+      height: 40%;
    }
 
    #admin_bandejaEntrada {
@@ -254,94 +253,15 @@ footer
    }
 }
 
-#admin_estado, #admin_informacionMensajes, #admin_bandejaEntrada, #admin_gestionUsuarios,
-#admin_mostrarUsuario {
+#admin_estado, #admin_informacionMensajes, #admin_bandejaEntrada, #admin_gestionUsuarios{
    margin : 5 5 5 5;
-}
-
-/* Admin - Gestion de Usuarios */
-
-#admin_mostrarUsuario {
-   flex-basis: 100%;
-   flex-grow: 3;
-}
-
-@media (min-width: 768px) {
-   #admin_mostrarUsuario {
-      display: flex;
-      flex-direction: row;
-   }
-
-   #admin_imagen {
-      margin-top : 20px;
-      margin-left: 30px;
-      width: 18%;
-      height: 50%;
-   }
-}
-
-@media (max-width: 768px) {
-   #admin_mostrarUsuario {
-      display: flex;
-      flex-direction: column;
-   }
-
-    #admin_imagen {
-      margin: 0 auto;
-      width: 50%;
-      height: 50%;
-   }
-}
-
-#admin_datos {
-   display: flex;
-   flex-direction: row;
-   min-width: 50%;
-   flex-grow: 5;
-   overflow: auto;
-}
-
-#admin_clave{
-   margin-top: 20px;
-   line-height: 25px;
-   width: 100%;
-}
-
-#admin_valor{
-   margin-top: 20px;
-   margin-left: 30px;
-   line-height: 25px;
-   width: 100%;
-}
-
-/* admin_buscador */
-
-#admin_buscador {
-   display: flex;
-   flex-direction: row;
-   width: 30%;
-   height: 35px;
-   padding: 10px;
-   margin: 10px auto;           
-}
-
-#admin_buscador > #search {
-   float: left; 
-   width: 100%;  
-}
-
-#admin_buscador > #submit {       
-   float: left;
-   margin-left: 10px;
-   padding: 0;
-   width: 30%;
 }
 
 /* ----------Estructura - > correo.html--------- */
 
 #correo_mostrarMensaje > #correo_cabecera {
    overflow: auto;
-   height: 15%;
+   height: 20%;
    margin-top: 30px;
    margin-left: 15px;
 }
@@ -349,7 +269,6 @@ footer
 #correo_mostrarMensaje > #correo_cuerpo {
    overflow: auto;
    height: 50%;
-   margin-top: 30px;
    margin-left: 15px;
    margin-right: 15px;
 }
@@ -368,14 +287,14 @@ footer
    }
 
    #correo_correos > #correo_tipoCorreo {
-      display: flex;
-      flex-direction: row;
       margin: 10 10 10 10;
-      height: 40px;
+      height: 30px;
    }
 
    #correo_tipoCorreo > select, #correo_tipoCorreo > button {
-      width: 100%;
+      width: 42%;
+      height: 100%;
+      margin-left: 10px;
    }
 
    #correo_correos > #correo_detallesCorreo {
@@ -395,7 +314,7 @@ footer
    #correo_principal {
       display: flex;
       flex-direction: column;
-      height: 90%;
+      height: 75%;
    }
 
   #correo_correos {
@@ -405,83 +324,25 @@ footer
    }
 
    #correo_correos > #correo_tipoCorreo {
-      display: flex;
-      flex-direction: row;
       margin: 10 10 10 10;
-      height: 40px;
+      height: 30px;
    }
 
    #correo_tipoCorreo > select, #correo_tipoCorreo > button {
-      width: 100%;
+      width: 45%;
+      height: 100%;
+      margin-left: 10px;
    }
 
    #correo_correos > #correo_detallesCorreo {
       margin: 0 10 10 10;
       overflow: auto;
-      height: 55%;
    }
 
    #correo_mostrarMensaje {
       margin : 10 10 10 10;
-      height: 75%;
+      height: 70%;
    }
-}
-
-/* Correo - Nuevo Mensaje */
-
-#correo_formulario {
-   display: flex;
-   flex-direction: column;
-}
-
-#correo_formulario > #correo_dir {
-   display: flex;
-   flex-direction: row;
-   height: 30%;
-}
-
-#correo_formulario > #correo_men {
-   display: flex;
-   flex-direction: column;
-   height: 50%;
-}
-
-#correo_etiquetas {
-   margin-top: 50px;
-   line-height: 20px;
-   text-align: right;
-   width: 100%;
-}
-
-#correo_entradas {
-   margin-top: 50px;
-   text-align: left;
-   margin-left: 30px;
-   width: 100%;
-}
-
-#correo_text {
-   text-align: center;
-   margin: 0 auto;
-   margin-top: 20px;
-   width: 80%;
-}
-
-#correo_text > textarea {
-   width: 100%;
-   height: 40%;
-}
-
-#correo_sub {
-   width: 35%;
-   height: 40px;
-   margin: 0 auto;
-   margin-top: 20px;
-}
-
-#correo_sub > input{
-   width: 100%;
-   height: 100%;
 }
 
 /* ----------Estructura - > Formularios--------- */
@@ -546,6 +407,7 @@ footer
 {
    body.dalumnos_body, body.dprofesores_body
   {
+
     /* La imagen se centra en la pantalla */
     background-attachment: fixed;
     
@@ -555,45 +417,31 @@ footer
      background-repeat: no-repeat;
   }
 
-  div.dprincipal_div
+  div.d_principal
     {
       width: 45%;
-      
-      /* Margen con respecto al borde */
       margin: auto 8%;
     }
 }
 
-div.dprincipal_div
-{
-    
+div.d_principal
+{  
     margin-left: 8%;
     margin-top: 3%;
     margin-bottom: 3%;
 }
 
-div.dprincipal_div > #contenido{
+div.d_principal > #contenido{
   margin-bottom: 3%;
 }
 
 @media (max-width: 768px)
 {
-   div.dprincipal_div
+   div.d_principal
       {
       width: 90%;
-      
-      /* Centramos */
       margin: auto 8%;
    }
-}
-
-button#volver
-{
-   /* Límites del boton */
-   min-width: 10%;
-   min-height: 6%;
-   /* Colocación */
-   margin-bottom: 10px;
 }
 
 /* ----------Estructura - > index_alumnos.html--------- */
@@ -827,4 +675,52 @@ div.ialumnos_principal
    margin-left: auto;
    margin-top: auto;
    padding : 10px;
+}
+
+/* ----------Estructura - > dashboard_profesores.html--------- */
+
+@media (min-width: 768px){
+
+  div.dashprofes_principal {
+    
+    flex-shrink: 1;
+    /*Los elementos dentro del contenedor se van a alinear en columnas, 3 columnas por fila */
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    /*Contenedor flexible con multiples filas (wrap), cada fila con tres div */
+    flex-wrap: wrap; 
+    -webkit-flex-wrap: wrap;
+    /*La division principal ocupa el 100% de la pantalla en horizontal, luego se repartira en cada caja*/
+    width: 100%;
+  }
+
+}
+
+div.dashprofes_principal {
+  margin:auto;
+}
+
+@media (max-width: 768px){
+
+  div.dashprofes_principal {
+    /*Los elementos dentro del contenedor se van a alinear en columnas, 3 columnas por fila */
+    flex-direction: row;
+    -webkit-flex-direction: row;
+    /*Contenedor flexible con multiples filas (wrap), cada fila con tres div */
+    flex-wrap: wrap; 
+    -webkit-flex-wrap: wrap;
+    /*La division principal ocupa el 100% de la pantalla en horizontal, luego se repartira en cada caja*/
+    width: 100%;
+  }
+}
+
+div.dashboard {
+
+  overflow: hidden;
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+
+  flex-direction: column;
+  -webkit-flex-direction: column;
 }
