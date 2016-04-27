@@ -1,4 +1,4 @@
-window.onload = function(){
+window.onload = function() {
 
 	var login = function mostrarLogin(){
   		c = document.getElementById("index_loginForm2");
