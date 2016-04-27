@@ -113,7 +113,7 @@ footer.purple
    font-size: 1.5em;
 }
 
-#contacto > p
+#miembros > p, #contacto > p
 {
    color: white;
    font-size: 1em;
