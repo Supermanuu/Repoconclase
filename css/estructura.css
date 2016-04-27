@@ -405,35 +405,47 @@ footer
 
 @media (min-width: 768px)
 {
-   body.dalumnos_body
-     {
-      /* La imagen se centra en la pantalla */
-      background-attachment: fixed;
-      
-      /* Colocamos la imagen de fondo */
-      background-size: 50% 100%;
-      background-position: right;
-      background-repeat: no-repeat;
-   }
-   
-   article.dalumnos_article
-      {
-      width: 36%;
+   body.dalumnos_body, body.dprofesores_body
+  {
+    /* La imagen se centra en la pantalla */
+    background-attachment: fixed;
+    
+    /* Colocamos la imagen de fondo */
+     background-size: 50% 100%;
+     background-position: right;
+     background-repeat: no-repeat;
+  }
+
+  div.dprincipal_div
+    {
+      width: 45%;
       
       /* Margen con respecto al borde */
       margin: auto 8%;
-   }
+    }
 }
 
-body.dalumnos_body > div.dalumnos_principal
+body > div 
 {
     display: flex;
     margin: auto 0;
 }
 
+div.dprincipal_div
+{
+    
+    margin-left: 8%;
+    margin-top: 3%;
+    margin-bottom: 3%;
+}
+
+div.dprincipal_div > #contenido{
+  margin-bottom: 3%;
+}
+
 @media (max-width: 768px)
 {
-   article.dalumnos_article
+   div.dprincipal_div
       {
       width: 90%;
       
@@ -442,18 +454,12 @@ body.dalumnos_body > div.dalumnos_principal
    }
 }
 
-article.dalumnos_article > p
-{
-   margin: 20px 0;
-}
-
 button#volver
 {
    /* Límites del boton */
    min-width: 10%;
    min-height: 6%;
    /* Colocación */
-   margin: auto;
    margin-bottom: 10px;
 }
 

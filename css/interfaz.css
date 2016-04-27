@@ -305,32 +305,40 @@ text.form_text {
   }
 }
 
-/* ----------Interfaz - > detalles_alumnos.html--------- */
+/* ----------Interfaz - > detalles_alumnos.html y detalles_profesores.html--------- */
 
-@media (min-width: 768px)
-{
+@media (min-width: 768px){ /*Tamaño escritorio*/
+
    body.dalumnos_body
      {
       /* Seleccionamos la imagen de fondo */
       background-image: url(../img/alumnos.jpg);
    }
+
+   body.dprofesores_body
+     {
+      /* Seleccionamos la imagen de fondo */
+      background-image: url(../img/profesor.png);
+   }
    
-   article.dalumnos_article
+   div.dprincipal_div
       {
-      font-size: 1.5em;
+      font-size: 1.2em;
+      line-height: 1.2; /*Espaciado entre las frases*/
    }
 }
 
-@media (max-width: 768px)
-{
-   body.dalumnos_body
+@media (max-width: 768px){ /*Tamaño movil*/
+
+   body.dalumnos_body, body.dprofesores_body
      {
       background-image: none;
    }
    
-   article.dalumnos_article
+   div.dprincipal_div
       {
-      font-size: 1.2em;
+      font-size: 1.1em;
+      line-height: 1.2; /*Espaciado entre las frases*/
    }
 }
 
