@@ -379,7 +379,7 @@ text.form_text {
   }
 
   div.form_etiquetas {
-    text-align: left;
+    text-align: right;
     line-height: 250%;
     margin-left: 2.5%;
     margin-right: 1.25%;
@@ -393,9 +393,8 @@ text.form_text {
   }
 
   div.form_botonera {
-    text-align: left;
+    text-align: center;
     line-height: 150%;
-    margin-left: 2.5%;
   }
 }
 
@@ -652,7 +651,7 @@ div.oscuro{
 
 /* ----------Interfaz - > buscador.html--------- */
 
-form.form_buscador {
+form.form_principal {
     background-color: #4F81BD;  
     border-width: 1px;
     border-color: #223A57;          
