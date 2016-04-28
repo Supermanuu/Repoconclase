@@ -851,3 +851,83 @@ div.dashboard {
   flex-direction: column;
 
 }
+
+/* ----------Estructura - > miembros.html--------- */
+
+body.miembros_body
+{
+  display: flex;
+  flex-direction: column;
+}
+
+div.miembros_principal {
+
+  margin: auto;
+
+}
+
+@media (min-width: 768px)
+{
+   #contenido_miembros
+      {
+      width: 100%;
+      flex-direction: column;
+      flex-wrap: wrap; 
+    
+   }
+}
+
+@media (max-width: 768px)
+{
+  body.miembros_body
+  {
+      min-width: 360px;
+  }
+   
+  #contenido_miembros
+  {
+      font-size: 1.2em;
+      margin: auto 8%;
+      overflow: hidden;
+      margin: 10px;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+   }
+}
+
+#contenido_miembros > p
+{
+   margin: 20px 0;
+   margin-top: 20px;
+   display: flex;
+   width: 40%;
+   flex-direction: row;
+}
+
+#pablo, #fran, #manu, #pino, #sergio
+{
+  float: left;
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  width: 45%;
+  margin: 2%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+#miembro_foto
+{
+   float: left;
+   display: flex;
+   flex-direction: row;
+}
+
+#miembro_texto
+{
+   float: left;
+   margin-left: 1%;
+   display: flex;
+   flex-direction: column;
+}

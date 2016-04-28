@@ -727,3 +727,18 @@ form.form_principal {
     width: 90%;
     background-color: #4F81BD;
 }
+
+/* ----------Interfaz - > miembros.html--------- */
+
+div.miembros_principal 
+{
+  color: white;
+}
+
+body.miembros_body
+{
+  background-image: url("../img/pizarra.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+  
