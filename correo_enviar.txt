@@ -11,7 +11,7 @@
 	</div>
 	<div id="correo_men">
 	   <div id="correo_text">
-	    <textarea></textarea>
+	    <textarea class="blue"></textarea>
 	   </div>
 	   <div id="correo_sub">
 	    <input name="sub" type="submit" value="Enviar Correo"></>

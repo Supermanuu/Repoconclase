@@ -59,7 +59,7 @@ button.blue, select.blue
    background-color: #4F81BD;
    
    /* Color del borde */
-   border-color: #223A57;
+   border-color: #376092;
    
    /* Color de la fuente */
    color: white;
@@ -152,6 +152,16 @@ textarea.purple {
     line-height: 1.3;
     color : white;
     box-shadow: 5px 5px 5px #6A1B9A;
+}
+
+textarea.blue {
+	background-color: #376092;
+	overflow: auto;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    line-height: 1.3;
+    color : white;
+    box-shadow: 5px 5px 5px #376092;
 }
 
 /*  --------Interfaz - > Index.html ----------- */
@@ -251,8 +261,8 @@ header.purple > #volver {
 /* Buscador - Administrador */
 
 #admin_buscador {
-   background-color: #460A78;  
-   border-color: #223A57;            
+   background-color: #6A1B9A;  
+   box-shadow: 5px 5px 5px #AB47BC;          
 }
 
 #admin_buscador > #search {
@@ -263,7 +273,7 @@ header.purple > #volver {
 }
 
 #admin_buscador > #submit {       
-    background-color: #6414B4;
+    background-color: #AB47BC;
     border-width: 1px;
     border-style: solid;
     border-color: #223A57;
@@ -297,8 +307,8 @@ header.purple > #volver {
 }
 
 #correo_sub > input {
-   background-color: #4F81BD;
-   border-color: #223A57;
+   background-color: #376092;
+   border-color: #4F81BD;
    color: white;
    font-size: larger;
 }
@@ -308,13 +318,12 @@ header.purple > #volver {
 }
 
 #correo_correos > #correo_detallesCorreo, #correo_mostrarMensaje {
-   border : 2px solid black;
+   box-shadow: 5px 5px 5px #376092;
    background-color: #4F81BD;
 }
 
 .correo_linea {
    margin: 0;
-   background-color: #376092;
    border-color: #376092;
 }
 
