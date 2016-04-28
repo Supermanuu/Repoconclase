@@ -1,5 +1,3 @@
-<!DOCTYPE html> 
-
 <html lang="es-ES">
     <head>
         <title id="Title">Profesores con clase</title>
@@ -12,57 +10,57 @@
       	<link rel="stylesheet" type="text/css" href="css/estructura.css"/>
       	<link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
       	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="js/links.js"></script>
-        <script src="js/ajax.js"></script>
+        <script src="js/common.js"></script>
     </head>
     <body class="form_body">
 		<header class="blue">
          <button class="blue" id="logout">Logout</button>
         </header>
-		<div class="form_busqueda">
-			<div class="form_contenido">
+		<div class="form_principal">
 				<!--Búsqueda rápida-->
-				<h1 class="my_h1">Búsqueda rápida</h1>
-				<form id="buscador" action="">
-    				<input id="search" type="text" placeholder="Búsqueda rápida">
-    				<input id="submit" type="submit" value="Buscar">
-				</form></br>
-				<h1 class="my_h1">Búsqueda detallada</h1>
-				<form class="form_box" method="post" action="">
-					<div class="form_etiquetas">						
-						<label class="form_label" for="User">Nombre/Apellido:</label></br>
-						<label class="form_label" for="Localidad">Localidad:</label></br>
-						<label class="form_label" for="Asignatura">Asignatura:</label></br>
-						<label class="form_label" for="Valoracion">Valoración:</label></br>
-						<label class="form_label" for="Estudios">Nivel de estudios:</label></br>	
-						<label class="form_label" for="Horario">Horarios:</label></br>				
+			<h1 class="my_h1">Búsqueda rápida</h1>
+			<div class="form_search" id="buscador" action="">
+				<input id="search" type="text" placeholder="Búsqueda rápida">
+				<input id="submit" type="submit" value="Buscar">
+			</div>
+			<h1 class="my_h1">Búsqueda detallada</h1>
+			<form class="form_box" method="post" action="">
+				<div class="form_etiquetas">						
+					<label class="form_label" for="User">Nombre/Apellido:</label></br>
+					<label class="form_label" for="Localidad">Localidad:</label></br>
+					<label class="form_label" for="Asignatura">Asignatura:</label></br>
+					<label class="form_label" for="Valoracion">Valoración:</label></br>
+					<label class="form_label" for="Estudios">Nivel de estudios:</label></br>	
+					<label class="form_label" for="Horario">Horarios:</label></br>				
+				</div>
+				<div class="form_entradas">						
+					<input class="form_input" type="text" name="User" maxlength="20" size="20" placeholder="Buscar por usuario" required/><</br>
+					<input class="form_input" type="text" name="Localidad" maxlength="20" size="20" placeholder="Buscar por localidad" required/><</br>
+					<input class="form_input" type="text" name="Asignatura" maxlength="30" size="20" placeholder="Buscar por asignatura" required/><</br>
+					<select class="blue" name="Valoracion">
+							<option class="form_option" value="5 estrella" selected>☆☆☆☆☆</option>
+							<option class="form_option" value="4 estrellas">☆☆☆☆</option>
+							<option class="form_option" value="3 estrellas">☆☆☆</option>
+							<option class="form_option" value="2 estrellas">☆☆</option>
+							<option class="form_option" value="1 estrella">☆</option>
+					</select><label><</label></br>
+					<select class="blue" name="EStudios">
+							<option class="form_option" value="Bachillerato" selected>Bachillerato</option>
+							<option class="form_option" value="Grado">Grado</option>
+							<option class="form_option" value="Máster">Máster</option>
+							<option class="form_option" value="Doctorado">Doctorado</option>
+					</select><label><</label></br>
+					<select class="blue" name="Horario">
+							<option class="form_option" value="Mañanas" selected>Mañanas</option>
+							<option class="form_option" value="Tardes">Tardes</option>
+							<option class="form_option" value="Ambos">Ambos</option>
+					</select><label><</label></br>
 					</div>
-					<div class="form_entradas">						
-						<input class="form_input" type="text" name="User" maxlength="20" size="20" placeholder="Buscar por usuario" required/></br>
-						<input class="form_input" type="text" name="Localidad" maxlength="20" size="20" placeholder="Buscar por localidad" required/></br>
-						<input class="form_input" type="text" name="Asignatura" maxlength="30" size="20" placeholder="Buscar por asignatura" required/></br>
-						<select class="blue" name="Valoracion">
-  							<option class="form_option" value="5 estrella" selected>☆☆☆☆☆</option>
-  							<option class="form_option" value="4 estrellas">☆☆☆☆</option>
-  							<option class="form_option" value="3 estrellas">☆☆☆</option>
-  							<option class="form_option" value="2 estrellas">☆☆</option>
-  							<option class="form_option" value="1 estrella">☆</option>
-						</select></br>
-						<select class="blue" name="EStudios">
-  							<option class="form_option" value="Bachillerato" selected>Bachillerato</option>
-  							<option class="form_option" value="Grado">Grado</option>
-  							<option class="form_option" value="Máster">Máster</option>
-  							<option class="form_option" value="Doctorado">Doctorado</option>
-						</select></br>
-						<select class="blue" name="Horario">
-  							<option class="form_option" value="Mañanas" selected>Mañanas</option>
-  							<option class="form_option" value="Tardes">Tardes</option>
-  							<option class="form_option" value="Ambos">Ambos</option>
-						</select></br>
-						<input id="submit_det" type="submit" value="Buscar (forma detallada)"></br>						
-				</form>
-			</div></br>
-		
+					<div class="form_botonera">
+						<input id="submit_det" type="submit" value="Buscar (forma detallada)"></br>	
+					</div>				
+			</form>
+			
 		</div>
 		<footer class="blue">
         </footer>

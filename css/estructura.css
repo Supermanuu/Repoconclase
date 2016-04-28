@@ -466,6 +466,15 @@ footer
 
 /* ----------Estructura - > Formularios--------- */
 
+body.form_body {
+  display: flex;
+  flex-direction: column;
+}
+
+div.form_principal {  
+  margin: auto;
+}
+
 @media (min-width: 768px) {
   form.form_box {
     display: flex;
@@ -509,7 +518,7 @@ footer
   }
 
   div.form_entradas {
-    flex-basis: 20%;
+    flex-basis: 60%;
     flex-shrink: 12;
     order: 2;
   }
