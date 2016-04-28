@@ -33,7 +33,7 @@ header.blue
 
 header.purple
 {
-  background-color : #460A78;
+  background-color : #6A1B9A;
   background-image: url(../img/profesconclase_azul.png);
 }
 
@@ -72,10 +72,10 @@ button.blue, select.blue
 button.purple, select.purple
 {
    /* Color de acción */
-   background-color: #6414B4;
+   background-color: #BA68C8;
    
    /* Color del borde */
-   border-color: #460A78;
+   border-color: #6A1B9A;
    
    /* Color de la fuente */
    color: white;
@@ -102,7 +102,7 @@ footer.blue
 
 footer.purple
 {
-  background-color : #460A78;
+  background-color : #6A1B9A;
 }
 
 #miembros > h1, #contacto > h1
@@ -144,6 +144,16 @@ footer.purple
 
 }
 
+textarea.purple {
+	background-color: #6A1B9A;
+	overflow: auto;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    line-height: 1.3;
+    color : white;
+    box-shadow: 5px 5px 5px #6A1B9A;
+}
+
 /*  --------Interfaz - > Index.html ----------- */
 
 #index_body
@@ -180,10 +190,17 @@ header.purple > #volver {
   visibility: hidden;
 }
 
+#admin_form > input {
+   background-color: #6A1B9A;
+   border-color: #AB47BC;
+   color: white;
+   font-size: larger;
+}
+
 #admin_estado, #admin_informacionMensajes, #admin_bandejaEntrada, #admin_gestionUsuarios,
 #admin_mostrarUsuario {
-   background-color: #6414B4;
-   border: 3px solid black;
+   background-color: #AB47BC;
+   box-shadow: 5px 5px 5px #6A1B9A;
 }
 
 #admin_imagen {
@@ -207,9 +224,8 @@ header.purple > #volver {
 }
 
 .admin_linea {
-   height: 2px;
-   background-color: #460A78;
-   border-color: #460A78;
+   height: 0px;
+   border-color: #6A1B9A;
 }
 
 #admin_gestionUsuarios > h1, #admin_bandejaEntrada > h1, #admin_estado > h1 {
