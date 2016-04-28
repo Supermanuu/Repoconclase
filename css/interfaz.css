@@ -632,12 +632,11 @@ div.oscuro{
     font-size: 15px;
     line-height: 1.6; /*Espaciado entre las frases*/
   }
-
 }
 
 /* ----------Interfaz - > buscador.html--------- */
 
-#buscador {
+form.form_buscador {
     background-color: #4F81BD;  
     border-width: 1px;
     border-color: #223A57;          
@@ -654,7 +653,7 @@ div.oscuro{
 
 #search {
     padding: 5px 9px;
-    height: 23px;
+    height: inherit;
     width: 150px;
     border: 1px solid #223A57;
     font: normal 13px;
