@@ -163,38 +163,37 @@ footer
 /* ----------Estructura - > administrador.html--------- */
 
 #admin_informacionMensajes > pre {
-   overflow: auto;
    margin : auto;
 }
 
-#admin_informacionMensajes > form, #admin_informacionMensajes > #admin_informacionBotones {
+#admin_informacionMensajes > form {
    display: flex;
    flex-direction: column;
-   margin: auto;
 }
 
 @media(min-width: 768px){
    #admin_principal {
       display: flex;
       flex-direction: column;
-      height: 75%;
    }
 
    #admin_parte1{
       display: flex;
       flex-direction: row;
-      height: 70%;
+      height: 60%;
+      min-height: 150px;
    }
 
    #admin_parte2{
       display: flex;
       flex-direction: row;
-      height: 30%;
+      height: 25%;
+      min-height: 100px;
    }
 
-   #admin_estado{ 
-      overflow: auto;
+   #admin_estado{
       flex-basis: 70%;
+      overflow: auto;
    }
 
    #admin_bandejaEntrada{
@@ -210,7 +209,7 @@ footer
 
    #admin_informacionMensajes {
       flex-basis: 60%;
-      overflow: auto hidden;
+      overflow: auto;
    }
 
 }
@@ -234,16 +233,15 @@ footer
 
    #admin_bandejaEntrada {
       overflow: auto;
-      min-height: 20%;
+      height: 110px;
    }
 
    #admin_informacionMensajes {
       overflow: auto;
-      min-height: 50%;
    }
 
    #admin_gestionUsuarios{
-     min-height: 45px;
+      min-height: 45px;
    }
 }
 
