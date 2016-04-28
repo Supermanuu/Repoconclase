@@ -297,7 +297,7 @@ header.purple > #volver {
 }
 
 .correo_linea {
-   height: 2px;
+   margin: 0;
    background-color: #376092;
    border-color: #376092;
 }
