@@ -12,6 +12,7 @@
       /*background-size: 50% 100%;*/
       background-position: right;
       background-repeat: no-repeat;
+      min-width: 360px;
    }
    
    #contenido_miembros
