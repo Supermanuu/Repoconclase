@@ -10,13 +10,13 @@ $(document).ready(function() {
 
 	$("#admin_gestionUsuarios").mouseover(function(){
 		
-		$(this).css ("background-color", "#CE93D8");
+		$(this).css ("background-color", "#460A78");
 		
 	});
 
 	$("#admin_gestionUsuarios").mouseleave(function(){
 
-		$(this).css ("background-color", "#AB47BC");
+		$(this).css ("background-color", "#6414B4");
 
 	});
 
