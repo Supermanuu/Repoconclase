@@ -210,46 +210,40 @@ footer
 
    #admin_informacionMensajes {
       flex-basis: 60%;
-      overflow: auto;
+      overflow: auto hidden;
    }
 
 }
 
 @media(max-width: 768px){
    #admin_principal {
+      overflow: hidden;
       display: flex;
       flex-direction: column;
-      height: 110%;
    }
 
    #admin_parte1{
       display: flex;
       flex-direction: column;
-      height: 60%;
    }
 
    #admin_parte2{
       display: flex;
       flex-direction: column;
-      height: 50%;
    }
 
    #admin_bandejaEntrada {
-      height: 25%;
       overflow: auto;
+      min-height: 20%;
    }
 
    #admin_informacionMensajes {
-      height: 75%;
       overflow: auto;
-   }
-
-   #admin_estado {
-      height: 85%;
+      min-height: 50%;
    }
 
    #admin_gestionUsuarios{
-      height: 15%;
+     min-height: 45px;
    }
 }
 
