@@ -1,0 +1,17 @@
+Pasos para modificar en el servidor:
+
+	1 - Hacemos ping a container.fdi.ucm.es
+		La respuesta podria ser 147.96.85.115
+
+	2 - Escribimos en terminal : 
+		ssh -p 20064 root@147.96.85.115
+		pass : La que viene en correo
+	
+	3 - Desde /var/www/html/ puedes cambiar lo que quieras.
+
+	4 - Para transmitir archivos desde tu disco:
+		scp -r -P 20064 root@147.96.85.115:/home/
+
+	5 - Mover el archivo de home a /var/www/html con sudo mv
+
+Arreglao!
