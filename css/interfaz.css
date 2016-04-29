@@ -710,3 +710,44 @@ body.miembros_body
   background-size: cover;
 }
   
+/*  --------Interfaz - > Index.html ----------- */
+
+#stats_body {
+   background-color: white;
+   background-image: url("../img/pizarra.jpg");
+   background-repeat: no-repeat;
+   background-size: cover;
+}
+
+#stats_perfiles > p, #stats_cuadro > pre{
+   color: white;
+   font-size: 1em;
+   margin-top: 10px;
+   margin-bottom: 10px;
+}
+
+#stats_perfiles > p{
+   text-align: center;
+}
+
+#stats_sts > #stats_perfiles, #stats_cuadro {
+   box-shadow: 5px 5px 5px #376092;
+   background-color: #4F81BD;
+}
+
+.perfil_ind {
+   margin: 0;
+   border-color: #376092;
+}
+
+.rating2 {
+  unicode-bidi: bidi-override;
+}
+.rating2 > span {
+  display: inline-block;
+  position: relative;
+}
+.rating2 > span:before {
+   content: "\2605";
+   position: absolute;
+}
