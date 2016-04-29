@@ -1,0 +1,18 @@
+<div id="profesores">
+	<div class="desp">
+	  <p> Juan Jose Rodriguez </p>
+	  <p> Eusebio Martinez </p>
+	  <p> Jose Mourinho </p>
+	  <p> Penelope Alonso </p>
+	  <p> Sandra Gonzalez </p>
+	  <p> Sandra Gonzalez </p>
+	  <p> Sandra Gonzalez </p>
+	  <p> Sandra Gonzalez </p>
+	  <p> Sandra Gonzalez </p>
+	  <p> Sandra Gonzalez </p>
+	</div>
+</div>
+<div id="profesores_info">
+	<p> Ningun profesor seleccionado </p>
+	<button class="green" id="ver">Ver Curriculum</button>
+</div>
