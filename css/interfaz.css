@@ -85,6 +85,34 @@ button.purple, select.purple
 
 }
 
+form.blue_search {
+   background-color: #223A57;  
+   box-shadow: 5px 5px 5px #4F81BD;          
+}
+
+form.blue_search > #search {
+   border: 1px solid #4F81BD;
+   font: normal 13px;
+   font-family: 'Ubuntu', sans-serif;
+   background: #f1f1f1;        
+}
+
+form.blue_search > #submit {       
+    background-color: #4F81BD;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #4F81BD;
+    cursor: pointer;
+    font: bold 14px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #ffffff;    
+    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+
+form.blue_search > #submit:hover {       
+    background-color: #223A57;   
+}
+
 footer 
 {
   background-color : #376092;
@@ -339,15 +367,15 @@ div.form_contenido {
     color: white;
 }
 
+text.form_text {
+   color: #4F81BD;
+}
+
 input#form_enviar, input#form_limpiar {
    background-color: #4F81BD;
    border-color: #223A57;
    color: white;
    font-size: larger;
-}
-
-text.form_text {
-   color: #4F81BD;
 }
 
 @media (min-width: 768px) {
@@ -666,63 +694,6 @@ form.form_principal {
     padding: 10px;
     margin: 10px auto 10px;
     overflow: hidden;
-}
-
-#search, #submit {
-    float: left;
-}
-
-#search {
-    padding: 5px 9px;
-    height: inherit;
-    width: 150px;
-    border: 1px solid #223A57;
-    font: normal 13px;
-    font-family: 'Ubuntu', sans-serif;
-    background: #f1f1f1; 
-    cursor: text;        
-}
-
-#submit {       
-    background-color: #4F81BD;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #223A57;
-    height: 35px;
-    margin: 0 0 0 10px;
-    padding: 0;
-    width: 90px;
-    cursor: pointer;
-    font: bold 14px;
-    font-family: 'Ubuntu', sans-serif;
-    color: #ffffff;    
-    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
-}
-
-#submit_det {       
-    background-color: #4F81BD;
-    border-width: 1px;
-    border-style: solid;
-    border-color: #223A57;
-    height: 35px;
-    margin: 15px 0 0 0px;
-    padding: 0;
-    width: 170px;
-    cursor: pointer;
-    font: bold 14px;
-    font-family: 'Ubuntu', sans-serif;
-    color: #ffffff;    
-    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
-}
-
-#submit:hover, #submit_det:hover {       
-    background-color: #223A57;   
-}
-
-#res_busqueda {
-    min-height: 40%;
-    width: 90%;
-    background-color: #4F81BD;
 }
 
 /* ----------Interfaz - > miembros.html--------- */

@@ -47,6 +47,26 @@ button#registrarse, button#login, button#logout, button#volver
    min-height: 6%;
 }
 
+form.blue_search {
+   display: flex;
+   flex-direction: row;
+   padding: 10px;
+   margin: 10px auto;           
+}
+
+form.blue_search > #search {
+   float: left; 
+   width: 100%;  
+   height: 35px;
+}
+
+form.blue_search > #submit {       
+   float: left;
+   margin-left: 10px;
+   padding: 0;
+   width: 30%;
+}
+
 footer
 {
   /* DIsposición del footer*/
