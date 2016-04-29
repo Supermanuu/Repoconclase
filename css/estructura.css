@@ -39,10 +39,8 @@ header
 
 button#registrarse, button#login, button#logout, button#volver
 {
-   /* Para que los botones se alineen a la derecha */
    float: right;
    
-   /* Límites del boton */
    min-width: 10%;
    min-height: 6%;
 }
@@ -69,7 +67,6 @@ form.blue_search > #submit {
 
 footer
 {
-  /* DIsposición del footer*/
   display: flex;
   margin-bottom: 40px;
   min-height: 10%;
@@ -77,15 +74,18 @@ footer
 
 #miembros, #contacto
 {
-   /* Margen con el inicio del footer */
    margin-top: 10px;
    min-width: 20%;
    min-height: 5%;
 }
 
+#miembros_lnk:hover, #contacto_lnk:hover
+{
+   text-decoration: underline; 
+}
+
 #miembros > h1, #contacto > h1, #miembros > p, #contacto > p
 {
-   /* Margen con el borde de la página */
    margin-left: 5%;
 }
 
@@ -895,6 +895,18 @@ div.miembros_principal {
       flex-wrap: wrap; 
     
    }
+
+   #pablo, #fran, #manu, #pino, #sergio
+  {
+  float: left;
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  width: 45%;
+  margin: 2%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  }
 }
 
 @media (max-width: 768px)
@@ -914,6 +926,17 @@ div.miembros_principal {
       flex-direction: column;
       width: 100%;
    }
+
+   #pablo, #fran, #manu, #pino, #sergio
+  {
+  float: left;
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  margin: 2%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  }
 }
 
 #contenido_miembros > p
@@ -923,18 +946,6 @@ div.miembros_principal {
    display: flex;
    width: 40%;
    flex-direction: row;
-}
-
-#pablo, #fran, #manu, #pino, #sergio
-{
-  float: left;
-  margin-left: auto;
-  display: flex;
-  flex-direction: row;
-  width: 45%;
-  margin: 2%;
-  margin-bottom: 20px;
-  margin-top: 20px;
 }
 
 #miembro_foto
