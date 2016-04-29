@@ -115,11 +115,10 @@ footer
 }
 
 #index_loginForm2 {
+   display: none;
    position: float;
    float: right;
    color: white;
-
-   visibility: hidden;
 }
 
 #index_loginForm2 > form {

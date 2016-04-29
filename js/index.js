@@ -1,14 +1,5 @@
 window.onload = function() {
 
-	var login = function mostrarLogin(){
-  		c = document.getElementById("index_loginForm2");
-  		if (c.style["visibility"] == "hidden" || c.style["visibility"] == "")
-			c.style["visibility"] = "initial";
-  		else
-			c.style["visibility"] = "hidden";
-
- 	 };
-
  	 var aInfoAlumnos = function(){
 		location.href='detalles_alumnos.html';
 	 };
