@@ -21,6 +21,7 @@
    text-align: center;
    text-shadow: 1px 1px 1px #333;
    font-size: 30px;
+   padding: 20px;
 }
 
 #rank{ 
@@ -33,6 +34,7 @@
 #busca_rank{
    display: flex;
    flex-direction: row;
+   background-color: #4F81BD;
    
    /*
    flex: X Y J%;
@@ -69,10 +71,6 @@
 
 @media (max-width: 768px){ /*Tamaño Movil*/
 
-   #principal{
-      min-width: 400px;
-   }
-
    #rank li{ 
       display:block; 
       margin: auto;
@@ -86,7 +84,7 @@
 }
 
 /*------------BUSCADOR------------*/
-#buscador {
+#buscador_rank{
     background-color: #4F81BD;
     border-width: 1px;
     border-color: #223A57; 
@@ -96,11 +94,11 @@
     overflow: hidden;
 }
 
-#search, #submit, #filter, #etq_filter {
+#search_rank, #submit_rank, #filter, #etq_filter {
     float: left;
 }
 
-#search {
+#search_rank {
     padding: 5px 9px;
     height: 23px;
     width: 150px;
@@ -111,7 +109,7 @@
     background: #f1f1f1;         
 }
 
-#submit {       
+#submit_rank {       
     background-color: #4F81BD;
     border-width: 1px;
     border-style: solid;
@@ -127,7 +125,7 @@
     text-shadow: 0 1px 0 rgba(255,255,255,0.5);
 }
 
-#submit:hover {       
+#submit_rank:hover {       
     background-color: #223A57;   
 }
 

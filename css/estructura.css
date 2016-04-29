@@ -537,7 +537,7 @@ body.dalumnos_body, body.dprofesores_body  {
 }
 
 div.d_principal {
-  margin: auto;
+  margin: auto 8%;
 }
 
 @media (min-width: 768px)
