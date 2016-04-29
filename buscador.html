@@ -18,15 +18,14 @@
         </header>
 		<div class="form_principal">
 			<div class="form_contenido">
-			<h1 class="my_h1">Búsqueda rápida</h1>
+			<h1 class="my_h1">Búsqueda por nombre y apellidos</h1>
 			<form class="blue_search" action="">
-				<input id="search" type="text" placeholder="Búsqueda de usuario"/>
-				<input id="submit" type="submit" value="Buscar"/>
+				<input class="blue" id="search" type="text" placeholder="Búsqueda por nombre/apellidos"/>
+				<input class="blue" id="submit" type="submit" value="Buscar"/>
 			</form>
-			<h1 class="my_h1">Búsqueda detallada</h1>
+			<h1 class="my_h1">Búsqueda por perfil</h1>
 			<form class="form_box" method="post" action="">
 				<div class="form_etiquetas">						
-					<label class="form_label" for="User">Nombre:</label></br>
 					<label class="form_label" for="CP">C. postal:</label></br>
 					<label class="form_label" for="Asignatura">Asignatura:</label></br>
 					<label class="form_label" for="Valoracion">Valoración:</label></br>
@@ -34,9 +33,8 @@
 					<label class="form_label" for="Horario">Horarios:</label></br>				
 				</div>
 				<div class="form_entradas">						
-					<input class="form_input" type="text" name="User" maxlength="20" size="20" placeholder="Buscar por nombre/apellido" required/><</br>
-					<input class="form_input" type="text" name="CP" maxlength="20" size="20" placeholder="Buscar por código postal" required/><</br>
-					<input class="form_input" type="text" name="Asignatura" maxlength="30" size="20" placeholder="Buscar por asignatura" required/><</br>
+					<input class="form_input" type="text" name="CP" maxlength="5" size="15" placeholder="Buscar por código postal" required/><</br>
+					<input class="form_input" type="text" name="Asignatura" maxlength="30" size="15" placeholder="Buscar por asignatura" required/><</br>
 					<select class="blue" name="Valoracion">
 							<option class="form_option" value="5 estrella" selected>☆☆☆☆☆</option>
 							<option class="form_option" value="4 estrellas">☆☆☆☆</option>
@@ -44,7 +42,7 @@
 							<option class="form_option" value="2 estrellas">☆☆</option>
 							<option class="form_option" value="1 estrella">☆</option>
 					</select><label><</label></br>
-					<select class="blue" name="EStudios">
+					<select class="blue" name="Estudios">
 							<option class="form_option" value="Bachillerato" selected>Bachillerato</option>
 							<option class="form_option" value="Grado">Grado</option>
 							<option class="form_option" value="Máster">Máster</option>
@@ -57,7 +55,8 @@
 					</select><label><</label></br>
 					</div>
 					<div class="form_botonera">
-						<input id="form_enviar" type="submit" value="Buscar (forma detallada)"></br>	
+						<input class="blue" id="form_enviar" type="submit" value="Buscar"/>
+						<input class="blue" id="form_limpiar" type="reset" value="Limpiar"/>
 					</div>				
 			</form>
 			</div>
