@@ -1183,3 +1183,128 @@ div.miembros_principal {
    display: flex;
    flex-direction: column;
 }
+
+
+
+/* ----------Estructura - > administrador.html--------- */
+
+#stats_datos{
+   margin-top: 10px;
+   margin-left: 15px;
+   min-height: 20%;
+   color: white;
+   flex-direction: column;
+   float: top;
+}
+
+#valoracion_global{
+   overflow: auto;
+   min-height: 40%;
+   width: 80%;
+   margin-top: 25px;
+   margin-left: 15%;
+   margin-right: 15%;
+   color: white;
+   flex-direction: column;
+   float: center;
+}
+
+#stats_cuadro > #valoracion_reciente{
+   margin-top: 30px;
+   margin-left: 15px;
+   color: white;
+   flex-direction: column;
+   float: bottom;
+   overflow: auto;
+   height: 20%;
+}
+
+#stats_info {
+   float: left;
+   margin-left: 10px;
+   display: flex;
+   flex-direction: row;
+}
+
+#stats_pic {
+   float: left;
+   margin-left: 30%;
+   display: flex;
+   flex-direction: row;
+}
+
+
+
+@media(min-width: 768px){
+   #stats_main {
+      display: flex;
+      flex-direction: row;
+      height: 75%;
+   }
+
+   #stats_sts {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 25%;
+   }
+
+   #stats_sts > #stats_opts {
+      display: flex;
+      flex-direction: row;
+      margin: 10 10 10 10;
+      height: 40px;
+   }
+
+   #stats_opts > select {
+      width: 100%;
+   }
+
+   #stats_sts > #stats_perfiles {
+      margin: 0 10 10 10;
+      height: 100%;
+      overflow: auto;
+   }
+
+   #stats_cuadro {
+      flex-basis : 100%;
+      margin : 10 10 10 10;
+      overflow: auto;
+   }
+}
+
+@media(max-width: 768px){
+   
+   #estadisticas_principal {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+   }
+
+  #stats_sts {
+      display: flex;
+      flex-direction: column;
+   }
+
+   #stats_sts > #stats_opts {
+      display: flex;
+      flex-direction: row;
+      margin: 10px;
+      min-height: 40px;
+   }
+
+   #stats_opts > select {
+      width: 100%;
+   }
+
+   #stats_sts > #stats_perfiles {
+      margin: 0px 10px 10px 10px;
+      overflow: auto;
+      min-height: 75px;
+   }
+
+   #stats_cuadro {
+      margin: 10px;
+      margin : 10 10 10 10;
+      overflow: auto;
+   }
+}
