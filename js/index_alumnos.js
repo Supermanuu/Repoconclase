@@ -39,12 +39,12 @@
    {
       $(location).attr('href', 'vista_lista.html?a=al&b=cl');
    });
-   
+   /*
    $("#buscar_profesor").mousedown (function ()
    {
       $(location).attr('href', 'buscador.html');
    });
-   
+   */
    $("#contratar_profesor").mousedown (function ()
    {
       $(location).attr('href', 'contrata.html');
@@ -57,14 +57,14 @@
    
    $("#correo_alumno").mousedown (function ()
    {
-      $(location).attr('href', 'correo.html');
+      $(location).attr('href', 'correo.html?a=al');
    });
-   
+   /*
    $("#top_10_profesores").mousedown (function ()
    {
       $(location).attr('href', 'ranking.html');
    });
-   
+   */
    $("#ajustes_perfil").mousedown (function ()
    {
       console.log ("ajustes_perfil");
