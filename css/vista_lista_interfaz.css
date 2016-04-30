@@ -2,25 +2,25 @@
 /* De esta forma se hereda el comportamiento de la clase .vista_lista_imagen_elemento */
 .vista_lista_imagen_elemento.vista_lista_imagen_elemento_grupo
 {
-   background-image: url(../img/grupo.png);
+   background-image: url("../img/grupo.png");
 }
 
 /* De esta forma se hereda el comportamiento de la clase .vista_lista_imagen_elemento */
 .vista_lista_imagen_elemento.vista_lista_imagen_elemento_alumno
 {
-   background-image: url(../img/alumno.jpg);
+   background-image: url("../img/alumno.jpg");
 }
 
 /* De esta forma se hereda el comportamiento de la clase .vista_lista_imagen_elemento */
 .vista_lista_imagen_elemento.vista_lista_imagen_elemento_profesor
 {
-   background-image: url(../img/profe.jpg);
+   background-image: url("../img/profe.jpg");
 }
 
 /* De esta forma se hereda el comportamiento de la clase .vista_lista_imagen_elemento */
 .vista_lista_imagen_elemento.vista_lista_imagen_elemento_clase
 {
-   background-image: url(../img/clase.png);
+   background-image: url("../img/clase.png");
 }
 
 .vista_lista_imagen_elemento
@@ -29,9 +29,43 @@
    background-size: 30px 30px;
 }
 
+.vista_lista_borrar_elemento.vista_lista_borrar_elemento_activo
+{
+   background-image: url("../img/basura.png");
+}
+
+.vista_lista_borrar_elemento.vista_lista_borrar_elemento_pasivo
+{
+   background-image: url("../img/basura_negra.png");
+}
+
+.vista_lista_borrar_elemento
+{
+    background-size: 30px 30px;
+    background-repeat: no-repeat;
+    min-width: 30px;
+    min-height: 30px;
+    margin-left: auto;
+}
+
+.vista_lista_borrar_elemento:hover
+{
+   background-image: url("../img/basura.png");
+}
+
 .vista_lista_elemento:hover
 {
    background-color: white;
+}
+
+.vista_lista_elemento.vista_lista_elemento_activo
+{
+   background-color: white;
+}
+
+.vista_lista_elemento.vista_lista_elemento_pasivo
+{
+   background-color: lightgray;
 }
 
 .vista_lista_elemento
@@ -106,4 +140,9 @@
     font: bold 14px;
     color: #ffffff;
     text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+
+#vista_lista_editar
+{
+   display: none;
 }

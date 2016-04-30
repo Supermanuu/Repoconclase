@@ -22,12 +22,17 @@
          </div>
          <div id="vista_lista_detalle">
             <div id="vista_lista_container_lista">
+               <div id="vista_lista_acciones">
+                  <button id="vista_lista_nuevo">Nuevo</button>
+                  <button id="vista_lista_editar">Editar</button>
+                  <button id="vista_lista_borrar_seleccionados">Borrar</button>
+               </div>
                <form id="vista_lista_buscador" action="">
                   <input id="vista_lista_search" type="text" placeholder="Búsqueda por asignatura">
                   <input id="vista_lista_submit" type="submit" value="Buscar">
                </form>
                <div id="vista_lista_lista">
-                  <div id="vista_lista_elemento_1" class="vista_lista_elemento">
+                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
                      <div id="vista_lista_imagen_elemento_1" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
                      <div class="vista_lista_contenido_elemento">
                         <div id="vista_lista_titulo_elemento_1" class="vista_lista_titulo_elemento">
@@ -37,8 +42,9 @@
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
+                     <div id="vista_lista_borrar_elemento_1" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
                   </div>
-                  <div id="vista_lista_elemento_2" class="vista_lista_elemento">
+                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
                      <div id="vista_lista_imagen_elemento_2" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
                      <div class="vista_lista_contenido_elemento">
                         <div id="vista_lista_titulo_elemento_2" class="vista_lista_titulo_elemento">
@@ -48,8 +54,9 @@
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
+                     <div id="vista_lista_borrar_elemento_2" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
                   </div>
-                  <div id="vista_lista_elemento_3" class="vista_lista_elemento">
+                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
                      <div id="vista_lista_imagen_elemento_3" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
                      <div class="vista_lista_contenido_elemento">
                         <div id="vista_lista_titulo_elemento_3" class="vista_lista_titulo_elemento">
@@ -59,8 +66,9 @@
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
+                     <div id="vista_lista_borrar_elemento_3" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
                   </div>
-                  <div id="vista_lista_elemento_4" class="vista_lista_elemento">
+                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
                      <div id="vista_lista_imagen_elemento_4" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
                      <div class="vista_lista_contenido_elemento">
                         <div id="vista_lista_titulo_elemento_4" class="vista_lista_titulo_elemento">
@@ -70,8 +78,9 @@
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
+                     <div id="vista_lista_borrar_elemento_4" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
                   </div>
-                  <div id="vista_lista_elemento_5" class="vista_lista_elemento">
+                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
                      <div id="vista_lista_imagen_elemento_5" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
                      <div class="vista_lista_contenido_elemento">
                         <div id="vista_lista_titulo_elemento_5" class="vista_lista_titulo_elemento">
@@ -81,8 +90,9 @@
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
+                     <div id="vista_lista_borrar_elemento_5" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
                   </div>
-                  <div id="vista_lista_elemento_6" class="vista_lista_elemento">
+                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
                      <div id="vista_lista_imagen_elemento_6" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
                      <div class="vista_lista_contenido_elemento">
                         <div id="vista_lista_titulo_elemento_6" class="vista_lista_titulo_elemento">
@@ -92,8 +102,9 @@
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
+                     <div id="vista_lista_borrar_elemento_6" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
                   </div>
-                  <div id="vista_lista_elemento_7" class="vista_lista_elemento">
+                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
                      <div id="vista_lista_imagen_elemento_7" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
                      <div class="vista_lista_contenido_elemento">
                         <div id="vista_lista_titulo_elemento_7" class="vista_lista_titulo_elemento">
@@ -103,8 +114,9 @@
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
+                     <div id="vista_lista_borrar_elemento_7" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
                   </div>
-                  <div id="vista_lista_elemento_8" class="vista_lista_elemento">
+                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
                      <div id="vista_lista_imagen_elemento_8" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
                      <div class="vista_lista_contenido_elemento">
                         <div id="vista_lista_titulo_elemento_8" class="vista_lista_titulo_elemento">
@@ -114,8 +126,9 @@
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
+                     <div id="vista_lista_borrar_elemento_8" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
                   </div>
-                  <div id="vista_lista_elemento_9" class="vista_lista_elemento">
+                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
                      <div id="vista_lista_imagen_elemento_9" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
                      <div class="vista_lista_contenido_elemento">
                         <div id="vista_lista_titulo_elemento_9" class="vista_lista_titulo_elemento">
@@ -125,8 +138,9 @@
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
+                     <div id="vista_lista_borrar_elemento_9" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
                   </div>
-                  <div id="vista_lista_elemento_10" class="vista_lista_elemento">
+                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
                      <div id="vista_lista_imagen_elemento_10" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
                      <div class="vista_lista_contenido_elemento">
                         <div id="vista_lista_titulo_elemento_10" class="vista_lista_titulo_elemento">
@@ -136,8 +150,9 @@
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
+                     <div id="vista_lista_borrar_elemento_10" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
                   </div>
-                  <div id="vista_lista_elemento_11" class="vista_lista_elemento">
+                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
                      <div id="vista_lista_imagen_elemento_11" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
                      <div class="vista_lista_contenido_elemento">
                         <div id="vista_lista_titulo_elemento_11" class="vista_lista_titulo_elemento">
@@ -147,8 +162,9 @@
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
+                     <div id="vista_lista_borrar_elemento_11" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
                   </div>
-                  <div id="vista_lista_elemento_12" class="vista_lista_elemento">
+                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
                      <div id="vista_lista_imagen_elemento_12" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
                      <div class="vista_lista_contenido_elemento">
                         <div id="vista_lista_titulo_elemento_12" class="vista_lista_titulo_elemento">
@@ -158,8 +174,9 @@
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
+                     <div id="vista_lista_borrar_elemento_12" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
                   </div>
-                  <div id="vista_lista_elemento_13" class="vista_lista_elemento">
+                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
                      <div id="vista_lista_imagen_elemento_13" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
                      <div class="vista_lista_contenido_elemento">
                         <div id="vista_lista_titulo_elemento_13" class="vista_lista_titulo_elemento">
@@ -169,8 +186,9 @@
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
+                     <div id="vista_lista_borrar_elemento_13" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
                   </div>
-                  <div id="vista_lista_elemento_14" class="vista_lista_elemento">
+                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
                      <div id="vista_lista_imagen_elemento_14" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
                      <div class="vista_lista_contenido_elemento">
                         <div id="vista_lista_titulo_elemento_14" class="vista_lista_titulo_elemento">
@@ -180,6 +198,7 @@
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
+                     <div id="vista_lista_borrar_elemento_14" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
                   </div>
                </div>
             </div>
