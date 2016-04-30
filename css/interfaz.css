@@ -133,7 +133,7 @@ footer.purple
   background-color : #6A1B9A;
 }
 
-#miembros > h1, #contacto > h1
+#miembros > h1, #contacto > h1, #inicio > h1
 {
    font-weight: normal;
    
@@ -141,7 +141,7 @@ footer.purple
    font-size: 1.5em;
 }
 
-#miembros > p, #contacto > p
+#miembros > p, #contacto > p, #inicio > p
 {
    color: white;
    font-size: 1em;

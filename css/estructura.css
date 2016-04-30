@@ -72,19 +72,19 @@ footer
   min-height: 10%;
 }
 
-#miembros, #contacto
+#miembros, #contacto, #inicio
 {
    margin-top: 10px;
    min-width: 20%;
    min-height: 5%;
 }
 
-#miembros_lnk:hover, #contacto_lnk:hover
+#miembros_lnk:hover, #contacto_lnk:hover, #inicio_lnk:hover
 {
    text-decoration: underline; 
 }
 
-#miembros > h1, #contacto > h1, #miembros > p, #contacto > p
+#miembros > h1, #contacto > h1, #miembros > p, #contacto > p, #inicio > h1, #inicio > p
 {
    margin-left: 5%;
 }
