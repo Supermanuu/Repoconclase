@@ -11,7 +11,8 @@
       	<link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
       	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       	<script src="js/common.js"></script>
-      	<script src="js/login.js"></script>
+      	<!--<script src="js/login.js"></script>-->
+      	<script src="js/registro.js"></script>
     </head>
     <body class ="form_body">
 		<header class="blue">
@@ -26,6 +27,7 @@
 					<div class="form_etiquetas">
 						<text class="form_text">Datos de usuario</text></br>
 						<label class="form_label" for="Usuario">Su usuario</label></br>
+						<label class="form_label" for="Correo">Su correo</label></br>
 						<label class="form_label" for="Contraseña1">Su contraseña</label></br>
 						<label class="form_label" for="Contraseña2">¡Repítela!</label></br>
 						<label class="form_label" for="Perfil">Su perfil</label></br>
@@ -40,40 +42,35 @@
 						</br>
 						<text class="form_text">Datos postales</text></br>
 						<label class="form_label" for="CP">Código postal</label></br>
-						<label class="form_label" for="Localidad">Localidad</label></br>
-						<label class="form_label" for="Provincia">Provincia</label></br>
 						</br>
 						<text class="form_text">Datos de contacto</text></br>
-						<label class="form_label" for="Email">Email</label></br>
-						<label class="form_label" for="Teléfono">Teléfono</label></br>
+						<label class="form_label" for="Móvil">Móvil</label></br>
 						</br>
 					</div>
 					<div class="form_entradas">
-						</br> <!-- Datos de usuario -->
-						<input class="form_input" type="text" name="Usuario" maxlength="20" size="20" placeholder="Alfanumérico (8-12 dígitos)" pattern="[A-Za-z0-9]{8,12}" required/><</br>
-						<input class="form_input" id="pswd1" type="password" name="Contraseña1" maxlength="20" size="20" placeholder="Alfanumérica (8-12 dígitos)" pattern="[A-Za-z0-9]{8,12}" required/><</br>
-						<input class="form_input" id="pswd2" type="password" name="Contraseña2" maxlength="20" size="20" placeholder="Repita su contraseña" required/><</br>
-						<select class="blue" name="Perfil">
+						</br>  <!--Datos de usuario -->
+						<input class="form_input" id="field1" type="text" name="Usuario" maxlength="20" size="20" placeholder="Alfanumérico (8-12 dígitos)" pattern="[A-Za-z0-9]{8,12}" required/><label class="form_checker" id="input_chk1">  <</label></br>
+						<input class="form_input" id="field2" type="email" name="Correo" maxlength="40" size="20" placeholder="Escribe tu correo electrónico" required/><label class="form_checker" id="input_chk2">  <</label></br>
+						<input class="form_input" id="field3" id="pswd1" type="password" name="Contraseña1" maxlength="20" size="20" placeholder="Alfanumérica (8-12 dígitos)" pattern="[A-Za-z0-9]{8,12}" required/><label class="form_checker" id="input_chk3">  <</label></br>
+						<input class="form_input" id="field4" id="pswd2" type="password" name="Contraseña2" maxlength="20" size="20" placeholder="Repita su contraseña" required/><label class="form_checker" id="input_chk4">  <</label></br>
+						<select class="blue" id="field5" name="Perfil">
   							<option class="form_option" value="alumno" selected>Alumno de PcC</option>
   							<option class="form_option" value="profesor">Profesor de PcC</option><
-						</select><label><</label></br>
+						</select><label class="form_checker" id="input_chk5">  <</label></br>
 						</br></br> <!-- Datos personales -->
-						<input class="form_input" type="text" name="Nombre" maxlength="20" size="20" placeholder="Tu nombre" required/><</br>
-						<input class="form_input" type="text" name="Apellido_1" maxlength="20" size="20" placeholder="Tu primer apellido" required/><</br>
-						<input class="form_input" type="text" name="Apellido_2" maxlength="20" size="20" placeholder="Tu segundo apellido" required/><</br>
-						<input class="form_input" type="date" name="Nacimiento" maxlength="20" size="20" required/><</br>
-						<select class="blue" name="Tipo_Documento">
+						<input class="form_input" id="field6" type="text" name="Nombre" maxlength="20" size="20" placeholder="Tu nombre" required/><label class="form_checker" id="input_chk6">  <</label></br>
+						<input class="form_input" id="field7" type="text" name="Apellido_1" maxlength="20" size="20" placeholder="Tu primer apellido" required/><label class="form_checker" id="input_chk7">  <</label></br>
+						<input class="form_input" id="field8" type="text" name="Apellido_2" maxlength="20" size="20" placeholder="Tu segundo apellido" required/><label class="form_checker" id="input_chk8">  <</label></br>
+						<input class="form_input" id="field9" type="date" name="Nacimiento" maxlength="20" size="20" required/><label class="form_checker" id="input_chk9">  <</label></br>
+						<select class="blue" id="field10" name="Tipo_Documento">
   							<option class="form_option" value="NIF" selected>NIF</option>
   							<option class="form_option" value="NIE">NIE</option>
-						</select><label><</label></br>
-						<input class="form_input" type="text" name="Documento" maxlength="20" size="20" placeholder="Tu documento de identidad" required/><</br>
+						</select><label class="form_checker" id="input_chk10">  <</label></br>
+						<input class="form_input" id="field11" type="text" name="Documento" maxlength="20" size="20" placeholder="Tu documento de identidad" required/><label class="form_checker" id="input_chk11">  <</label></br>
 						</br></br> <!-- Datos postales -->
-						<input class="form_input" type="text" name="CP" maxlength="5" size="20" placeholder="Tu código postal" required/><</br>
-						<input class="form_input" type="text" name="Localidad" maxlength="20" size="20" placeholder="Tu localidad..." required/><</br>
-						<input class="form_input" type="text" name="Provincia" maxlength="20" size="20" placeholder="es provincia de..." required/><</br>
+						<input class="form_input" id="field12" type="text" name="CP" maxlength="5" size="20" placeholder="Tu código postal" required/><label class="form_checker" id="input_chk12">  <</label></br>
 						</br></br> <!-- Datos de contacto -->
-						<input class="form_input" type="email" name="Email" maxlength="25" size="20" placeholder="Tu correo electrónico" required/><</br>
-						<input class="form_input" type="phone" name="Teléfono" maxlength="20" size="20" placeholder="Tu teléfono de contacto"required/><</br>
+						<input class="form_input" id="field14" type="phone" name="Móvil" maxlength="20" size="20" placeholder="Tu teléfono de contacto"required/><label class="form_checker" id="input_chk14">  <</label></br>
 					</div>
 					<div class="form_botonera">
 						<label for="verif"/> <input type="checkbox" required>Verifico que he leído y acepto los términos y condiciones del servicio.</br>

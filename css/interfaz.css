@@ -448,6 +448,11 @@ text.form_text {
    color: #4F81BD;
 }
 
+label.form_checker {
+   font-size:20px;
+
+}
+
 input#form_enviar, input#form_limpiar {
    background-color: #4F81BD;
    border-color: #223A57;

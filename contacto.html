@@ -11,6 +11,8 @@
       	<link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
       	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       	<script src="js/common.js"></script>
+      	<script src="js/login.js"></script>
+      	<script src="js/contacto.js"></script>
     </head>
     <body class="form_body">
 		<header class="blue">
@@ -24,23 +26,21 @@
 					<div class="form_etiquetas">
 						<text class="form_text">Formulario de contacto</text></br>
 						<label class="form_label" for="Nombre">Nombre</label></br>
-						<label class="form_label" for="Apellidos">Apellido</label></br>
 						<label class="form_label" for="Email">Email</label></br>
 						<label class="form_label" for="Tipo">Tipo</label></br>
 						<label class="form_label" for="Mensaje">Mensaje</label></br>
 					</div>
 					<div class="form_entradas">
 						</br> <!-- Formulario de contacto -->
-						<input class="form_input" type="text" name="Nombre" maxlength="20" size="20" placeholder="Para tratar con ud." required/><</br>
-						<input class="form_input" type="text" name="Apellido" maxlength="20" size="20" placeholder="Para tratar con ud." required/><</br>
-						<input class="form_input" type="email" name="Email" maxlength="30" size="20" placeholder="Para que podamos contactarle" required/><</br>
-						<select class="blue" name="Tipo">
+						<input class="form_input" id="field1" type="text" name="Nombre" maxlength="20" size="20" placeholder="Para tratar con ud." required/><label class="form_checker" id="input_chk1">  <</label></br>
+						<input class="form_input" id="field2" type="email" name="Email" maxlength="30" size="20" placeholder="Para que podamos contactarle" required/><label class="form_checker" id="input_chk2">  <</label></br>
+						<select class="blue" id="field3" name="Tipo">
   							<option class="form_option" value="Sugerencias" selected>Sugerencias</option>
   							<option class="form_option" value="Criticas">Criticas</option>
   							<option class="form_option" value="Evaluación">Evaluación</option>
   							<option class="form_option" value="otros">Otros</option>
-						</select><label><</label></br>
-						<textarea class="blue" name="Mensaje" rows="15" cols="15" maxlength="225" placeholder="Tiene 225 caracteres para escribir su mensaje." required></textarea></br></br>
+						</select><label class="form_checker" id="input_chk3">  <</label></br>
+						<textarea class="blue" id=text_chk name="Mensaje" rows="15" cols="25" maxlength="300" placeholder="Tiene 300 caracteres para escribir su mensaje." required></textarea></br></br>
 					</div>
 					<div class="form_botonera">
 						<label for="verif"/> <input type="checkbox" required>Verifico que he leído y acepto los términos y condiciones del servicio.</br>
