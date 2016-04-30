@@ -26,6 +26,12 @@ $(this).ready(function() {
 	
 		});
 
+		$("#inicio_lnk").click(function(){
+		
+			$(location).attr('href', 'index.html');
+	
+		});
+
 	};
 
 	$("footer").load("footer.txt", "no_data", jQuery.fn.add_lnk);
