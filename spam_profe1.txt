@@ -1,0 +1,3 @@
+<div id="spam_secundario_centro_titulo">Mejor profesor de Filosofía</div>
+<div id="spam_secundario_izquierda_apoderado">Leandro Gado Moreno</div>
+<p id = "spam_secundario_centro_ver_mas">Ver más</p>

@@ -558,13 +558,14 @@ input#form_enviar, input#form_limpiar {
 
 body.ialumnos_body
 {
-  background-color: lightgreen;
+   background-color: #A5D6A7;
 }
 
 #menu_alumno
 {
    background-color: #6AC46E;
    color: white;
+   text-shadow: 1px 1px black;
 }
 
 @media (min-width: 768px)
@@ -661,11 +662,16 @@ body.ialumnos_body
 
 #spam_principal, #spam_secundario_derecha, #spam_secundario_centro, #spam_secundario_izquierda
 {
-   background-color: #C8F9C8;
+   background-color: #E8F5E9;
    border: 1px;
    border-style: solid;
    border-color: #6AC46E;
    color: #118E56;
+}
+
+#spam_principal:hover, #spam_secundario_derecha:hover, #spam_secundario_centro:hover, #spam_secundario_izquierda:hover
+{
+	background-color: white;
 }
 
 #spam_principal_autor, #spam_secundario_derecha_titulo, #spam_secundario_centro_titulo, #spam_secundario_izquierda_titulo

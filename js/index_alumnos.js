@@ -1,130 +1,79 @@
 ﻿$(document).ready(function()
 {
-   // Accion al pulsar sobre el boton de logout
    $("#logout").mousedown (function ()
    {
-      console.log ("volver");
+      $(location).attr('href', 'index.html');
    });
    
-   // Accion al pulsar sobre el spam principal
    $("#spam_principal").mousedown (function ()
    {
-      console.log ("spam_principal");
+      $(location).attr('href', 'vista_lista.html', alert ("Queda por maquear un poco"));
+	  //$(document).attr('tipo_usuario_profesconclase', 'alumno');
    });
    
-   // Para resaltar partes de la página al poner el raton encima
-   $("#spam_principal").mouseover (function ()
-   {
-      $(this).css ("background-color", "white");
-   });
-   $("#spam_principal").mouseleave (function ()
-   {
-      $(this).css ("background-color", "#C8F9C8");
-   });
-   
-   // Accion al pulsar sobre el spam secundario izquierda
    $("#spam_secundario_izquierda").mousedown (function (event)
    {
-      console.log ("spam_secundario_izquierda");
+      $(location).attr('href', 'estadisticas.html');
    });
    
-   // Para resaltar partes de la página al poner el raton encima
-   $("#spam_secundario_izquierda").mouseover (function ()
-   {
-      $(this).css ("background-color", "white");
-   });
-   $("#spam_secundario_izquierda").mouseleave (function ()
-   {
-      $(this).css ("background-color", "#C8F9C8");
-   });
-   
-   // Accion al pulsar sobre el spam secundario centro
    $("#spam_secundario_centro").mousedown (function (event)
    {
-      console.log ("spam_secundario_centro");
+      $(location).attr('href', 'estadisticas.html');
    });
    
-   // Para resaltar partes de la página al poner el raton encima
-   $("#spam_secundario_centro").mouseover (function ()
-   {
-      $(this).css ("background-color", "white");
-   });
-   $("#spam_secundario_centro").mouseleave (function ()
-   {
-      $(this).css ("background-color", "#C8F9C8");
-   });
-   
-   // Accion al pulsar sobre el spam secundario reecha
    $("#spam_secundario_derecha").mousedown (function (event)
    {
-      console.log ("spam_secundario_derecha");
+      $(location).attr('href', 'estadisticas.html');
    });
    
-   // Para resaltar partes de la página al poner el raton encima
-   $("#spam_secundario_derecha").mouseover (function ()
-   {
-      $(this).css ("background-color", "white");
-   });
-   $("#spam_secundario_derecha").mouseleave (function ()
-   {
-      $(this).css ("background-color", "#C8F9C8");
-   });
-   
-   // Accion al pulsar sobre el boton de logout
    $("#mis_notas").mousedown (function ()
    {
       console.log ("mis_notas");
    });
    
-   // Accion al pulsar sobre el boton de logout
    $("#mis_grupos").mousedown (function ()
    {
-      console.log ("mis_grupos");
+      $(location).attr('href', 'vista_lista.html', alert ("Queda por maquear un poco"));
+	  //$(document).attr('tipo_usuario_profesconclase', 'alumno');
    });
    
-   // Accion al pulsar sobre el boton de logout
    $("#mis_clases").mousedown (function ()
    {
-      console.log ("mis_clases");
+      $(location).attr('href', 'vista_lista.html', alert ("Queda por maquear un poco"));
+	  //$(document).attr('tipo_usuario_profesconclase', 'alumno');
    });
    
-   // Accion al pulsar sobre el boton de logout
    $("#buscar_profesor").mousedown (function ()
    {
-      console.log ("buscar_profesor");
+      $(location).attr('href', 'buscador.html');
    });
    
-   // Accion al pulsar sobre el boton de logout
    $("#contratar_profesor").mousedown (function ()
    {
-      console.log ("contratar_profesor");
+      $(location).attr('href', 'contrata.html');
    });
    
-   // Accion al pulsar sobre el boton de logout
    $("#mis_profesores").mousedown (function ()
    {
-      console.log ("mis_profesores");
+      $(location).attr('href', 'vista_lista.html', alert ("Queda por maquear un poco"));
+	  //$(document).attr('tipo_usuario_profesconclase', 'alumno');
    });
    
-   // Accion al pulsar sobre el boton de logout
    $("#correo_alumno").mousedown (function ()
    {
-      console.log ("correo_alumno");
+      $(location).attr('href', 'correo.html');
    });
    
-   // Accion al pulsar sobre el boton de logout
    $("#top_10_profesores").mousedown (function ()
    {
-      console.log ("top_10_profesores");
+      $(location).attr('href', 'ranking.html');
    });
    
-   // Accion al pulsar sobre el boton de logout
    $("#ajustes_perfil").mousedown (function ()
    {
       console.log ("ajustes_perfil");
    });
    
-   // Accion al pulsar sobre el boton de logout
    $("#video_tutorial").mousedown (function ()
    {
       console.log ("video_tutorial");
@@ -132,14 +81,32 @@
    
    // Para cambiar despues de cierto tiempo el carousel
    var index = 0;
-   var carouseles = ["#spam_secundario_izquierda", "#spam_secundario_centro", "#spam_secundario_derecha", "#spam_principal"];
+   var i_curso = 1;
+   var i_profe = 3;
+   var carouseles = ["#spam_principal", "#spam_secundario_izquierda", "#spam_secundario_centro", "#spam_secundario_derecha"];
+   var ficheros = ["spam_curso", "spam_profe", "spam_profe", "spam_profe"];
+   
+   // Cargamos el spam
+   $(carouseles [0]).load (ficheros [0] + "0.txt");
+   $(carouseles [1]).load (ficheros [1] + "0.txt");
+   $(carouseles [2]).load (ficheros [2] + "1.txt");
+   $(carouseles [3]).load (ficheros [3] + "2.txt");
+   
    var carousel_next = function ()
    {
-      //var index = Math.floor (Math.random ()*carouseles.length);
-      index = (index + 1) % carouseles.length;
-      // refrescar info aqui
+	  index = (index + 1) % carouseles.length;
+	  if (index == 0) { i = i_curso; i_curso++; }
+	  else            { i = i_profe; i_profe++; }
       $(carouseles [index]).slideUp (200);
-      // o aqui
+      $(carouseles [index]).load (ficheros [index] + i.toString () + ".txt", function (response, status, xhr)
+	  {
+		  if (status == "error")
+		  {
+			  if (index == 0) { i_curso = 0; i = 0; }
+			  else            { i_profe = 0; i = 0; }
+			  $(carouseles [index]).load (ficheros [index] + i.toString () + ".txt");
+		  }
+	  });
       $(carouseles [index]).slideDown (200);
       setTimeout (carousel_next, 10000);
    }

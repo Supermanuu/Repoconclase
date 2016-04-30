@@ -1,0 +1,9 @@
+<div id="spam_principal_por">
+  <div id="spam_principal_intro">Impartido por:</div>
+  <div id="spam_principal_autor">Marco del Triunfo López</div>
+</div>
+<div id="spam_principal_titulo">
+  <div id="spam_principal_curso">Curso de programación en C/C++ en la Universidad Complutense de Madrid</div>
+  <div id="spam_principal_horario">L, M, X, J, V, S, D - 23:00</div>
+</div>
+<p id = "spam_principal_ver_mas">Ver más</p>

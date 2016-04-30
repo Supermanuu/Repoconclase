@@ -1,0 +1,3 @@
+<div id="spam_secundario_centro_titulo">Profesora más barata</div>
+<div id="spam_secundario_izquierda_apoderado">Encarna Vales García</div>
+<p id = "spam_secundario_derecha_ver_mas">Ver más</p>
