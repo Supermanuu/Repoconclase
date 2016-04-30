@@ -1,3 +1,7 @@
+<div id="inicio">
+<h1>Inicio</h1>
+<p id="inicio_lnk">Main page</p><br>
+</div>
 <div id="contacto">
 <h1>Contacto</h1>
 <p id="contacto_lnk">Enviar un correo</p><br>
