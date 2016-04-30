@@ -7,8 +7,7 @@
    
    $("#spam_principal").mousedown (function ()
    {
-      $(location).attr('href', 'vista_lista.html', alert ("Queda por maquear un poco"));
-	  //$(document).attr('tipo_usuario_profesconclase', 'alumno');
+      $(location).attr('href', 'vista_lista.html?a=al');
    });
    
    $("#spam_secundario_izquierda").mousedown (function (event)
@@ -33,14 +32,12 @@
    
    $("#mis_grupos").mousedown (function ()
    {
-      $(location).attr('href', 'vista_lista.html', alert ("Queda por maquear un poco"));
-	  //$(document).attr('tipo_usuario_profesconclase', 'alumno');
+      $(location).attr('href', 'vista_lista.html?a=al&b=gr');
    });
    
    $("#mis_clases").mousedown (function ()
    {
-      $(location).attr('href', 'vista_lista.html', alert ("Queda por maquear un poco"));
-	  //$(document).attr('tipo_usuario_profesconclase', 'alumno');
+      $(location).attr('href', 'vista_lista.html?a=al&b=cl');
    });
    
    $("#buscar_profesor").mousedown (function ()
@@ -55,8 +52,7 @@
    
    $("#mis_profesores").mousedown (function ()
    {
-      $(location).attr('href', 'vista_lista.html', alert ("Queda por maquear un poco"));
-	  //$(document).attr('tipo_usuario_profesconclase', 'alumno');
+      $(location).attr('href', 'vista_lista.html?a=al&b=pr');
    });
    
    $("#correo_alumno").mousedown (function ()
@@ -102,6 +98,7 @@
 	  {
 		  if (status == "error")
 		  {
+           // Es importante que esten todos los indices rellenos
 			  if (index == 0) { i_curso = 0; i = 0; }
 			  else            { i_profe = 0; i = 0; }
 			  $(carouseles [index]).load (ficheros [index] + i.toString () + ".txt");

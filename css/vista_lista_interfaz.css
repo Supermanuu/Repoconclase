@@ -17,6 +17,12 @@
    background-image: url(../img/profe.jpg);
 }
 
+/* De esta forma se hereda el comportamiento de la clase .vista_lista_imagen_elemento */
+.vista_lista_imagen_elemento.vista_lista_imagen_elemento_clase
+{
+   background-image: url(../img/clase.png);
+}
+
 .vista_lista_imagen_elemento
 {
    background-repeat: no-repeat;
@@ -67,6 +73,7 @@
 
 .vista_lista_imagen
 {
+   display: none;
    background-color: lightblue;
    background-image: url(../img/profe.jpg);
    background-repeat: no-repeat;
@@ -75,9 +82,6 @@
 
 #vista_lista_buscador 
 {
-    background-color: #4F81BD;
-    border-width: 1px;
-    border-color: #223A57;
     padding: 10px;
 }
 
@@ -92,10 +96,9 @@
 
 #vista_lista_submit
 {
-    background-color: #4F81BD;
     border-width: 1px;
     border-style: solid;
-    border-color: #223A57;
+    border-color: black;
     margin: 0 0 0 10px;
     padding: 0;
     width: 25%;

@@ -8,10 +8,13 @@
       <link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
 		<link rel="stylesheet" type="text/css" href="css/vista_lista_estructura.css"/>
 		<link rel="stylesheet" type="text/css" href="css/vista_lista_interfaz.css"/>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="js/common.js"></script>
+      <script src="js/vista_lista.js"></script>
 	</head>
 	<body id="vista_lista_body">
 		<header>
-         <button id="logout" class="blue">Logout</button>
+         <button id="logout">Logout</button>
       </header>
 		<div id="vista_lista_principal">
          <div id="vista_lista_presentacion">
@@ -25,10 +28,8 @@
                </form>
                <div id="vista_lista_lista">
                   <div id="vista_lista_elemento_1" class="vista_lista_elemento">
-                     <div class="vista_lista_imagen_elemento vista_lista_imagen_elemento_alumno">
-                        
-                     </div>
-                     <div id="vista_lista_contenido_elemento_1" class="vista_lista_contenido_elemento">
+                     <div id="vista_lista_imagen_elemento_1" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
+                     <div class="vista_lista_contenido_elemento">
                         <div id="vista_lista_titulo_elemento_1" class="vista_lista_titulo_elemento">
                            Eusebio Martín Pérez
                         </div>
@@ -38,170 +39,144 @@
                      </div>
                   </div>
                   <div id="vista_lista_elemento_2" class="vista_lista_elemento">
-                     <div class="vista_lista_imagen_elemento vista_lista_imagen_elemento_profesor">
-                        
-                     </div>
-                     <div id="vista_lista_contenido_elemento_1" class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_1" class="vista_lista_titulo_elemento">
+                     <div id="vista_lista_imagen_elemento_2" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
+                     <div class="vista_lista_contenido_elemento">
+                        <div id="vista_lista_titulo_elemento_2" class="vista_lista_titulo_elemento">
                            Eusebio Martín Pérez
                         </div>
-                        <div id="vista_lista_descripcion_elemento_1" class="vista_lista_descripcion_elemento">
+                        <div id="vista_lista_descripcion_elemento_2" class="vista_lista_descripcion_elemento">
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
                   </div>
                   <div id="vista_lista_elemento_3" class="vista_lista_elemento">
-                     <div class="vista_lista_imagen_elemento vista_lista_imagen_elemento_grupo">
-                        
-                     </div>
-                     <div id="vista_lista_contenido_elemento_1" class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_1" class="vista_lista_titulo_elemento">
+                     <div id="vista_lista_imagen_elemento_3" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
+                     <div class="vista_lista_contenido_elemento">
+                        <div id="vista_lista_titulo_elemento_3" class="vista_lista_titulo_elemento">
                            Eusebio Martín Pérez
                         </div>
-                        <div id="vista_lista_descripcion_elemento_1" class="vista_lista_descripcion_elemento">
+                        <div id="vista_lista_descripcion_elemento_3" class="vista_lista_descripcion_elemento">
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
                   </div>
                   <div id="vista_lista_elemento_4" class="vista_lista_elemento">
-                     <div class="vista_lista_imagen_elemento vista_lista_imagen_elemento_grupo">
-                        
-                     </div>
-                     <div id="vista_lista_contenido_elemento_1" class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_1" class="vista_lista_titulo_elemento">
+                     <div id="vista_lista_imagen_elemento_4" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
+                     <div class="vista_lista_contenido_elemento">
+                        <div id="vista_lista_titulo_elemento_4" class="vista_lista_titulo_elemento">
                            Eusebio Martín Pérez
                         </div>
-                        <div id="vista_lista_descripcion_elemento_1" class="vista_lista_descripcion_elemento">
+                        <div id="vista_lista_descripcion_elemento_4" class="vista_lista_descripcion_elemento">
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
                   </div>
                   <div id="vista_lista_elemento_5" class="vista_lista_elemento">
-                     <div class="vista_lista_imagen_elemento vista_lista_imagen_elemento_grupo">
-                        
-                     </div>
-                     <div id="vista_lista_contenido_elemento_1" class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_1" class="vista_lista_titulo_elemento">
+                     <div id="vista_lista_imagen_elemento_5" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
+                     <div class="vista_lista_contenido_elemento">
+                        <div id="vista_lista_titulo_elemento_5" class="vista_lista_titulo_elemento">
                            Eusebio Martín Pérez
                         </div>
-                        <div id="vista_lista_descripcion_elemento_1" class="vista_lista_descripcion_elemento">
+                        <div id="vista_lista_descripcion_elemento_5" class="vista_lista_descripcion_elemento">
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
                   </div>
                   <div id="vista_lista_elemento_6" class="vista_lista_elemento">
-                     <div class="vista_lista_imagen_elemento vista_lista_imagen_elemento_grupo">
-                        
-                     </div>
-                     <div id="vista_lista_contenido_elemento_1" class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_1" class="vista_lista_titulo_elemento">
+                     <div id="vista_lista_imagen_elemento_6" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
+                     <div class="vista_lista_contenido_elemento">
+                        <div id="vista_lista_titulo_elemento_6" class="vista_lista_titulo_elemento">
                            Eusebio Martín Pérez
                         </div>
-                        <div id="vista_lista_descripcion_elemento_1" class="vista_lista_descripcion_elemento">
+                        <div id="vista_lista_descripcion_elemento_6" class="vista_lista_descripcion_elemento">
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
                   </div>
                   <div id="vista_lista_elemento_7" class="vista_lista_elemento">
-                     <div class="vista_lista_imagen_elemento vista_lista_imagen_elemento_grupo">
-                        
-                     </div>
-                     <div id="vista_lista_contenido_elemento_1" class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_1" class="vista_lista_titulo_elemento">
+                     <div id="vista_lista_imagen_elemento_7" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
+                     <div class="vista_lista_contenido_elemento">
+                        <div id="vista_lista_titulo_elemento_7" class="vista_lista_titulo_elemento">
                            Eusebio Martín Pérez
                         </div>
-                        <div id="vista_lista_descripcion_elemento_1" class="vista_lista_descripcion_elemento">
+                        <div id="vista_lista_descripcion_elemento_7" class="vista_lista_descripcion_elemento">
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
                   </div>
                   <div id="vista_lista_elemento_8" class="vista_lista_elemento">
-                     <div class="vista_lista_imagen_elemento vista_lista_imagen_elemento_grupo">
-                        
-                     </div>
-                     <div id="vista_lista_contenido_elemento_1" class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_1" class="vista_lista_titulo_elemento">
+                     <div id="vista_lista_imagen_elemento_8" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
+                     <div class="vista_lista_contenido_elemento">
+                        <div id="vista_lista_titulo_elemento_8" class="vista_lista_titulo_elemento">
                            Eusebio Martín Pérez
                         </div>
-                        <div id="vista_lista_descripcion_elemento_1" class="vista_lista_descripcion_elemento">
+                        <div id="vista_lista_descripcion_elemento_8" class="vista_lista_descripcion_elemento">
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
                   </div>
                   <div id="vista_lista_elemento_9" class="vista_lista_elemento">
-                     <div class="vista_lista_imagen_elemento vista_lista_imagen_elemento_grupo">
-                        
-                     </div>
-                     <div id="vista_lista_contenido_elemento_1" class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_1" class="vista_lista_titulo_elemento">
+                     <div id="vista_lista_imagen_elemento_9" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
+                     <div class="vista_lista_contenido_elemento">
+                        <div id="vista_lista_titulo_elemento_9" class="vista_lista_titulo_elemento">
                            Eusebio Martín Pérez
                         </div>
-                        <div id="vista_lista_descripcion_elemento_1" class="vista_lista_descripcion_elemento">
+                        <div id="vista_lista_descripcion_elemento_9" class="vista_lista_descripcion_elemento">
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
                   </div>
                   <div id="vista_lista_elemento_10" class="vista_lista_elemento">
-                     <div class="vista_lista_imagen_elemento vista_lista_imagen_elemento_grupo">
-                        
-                     </div>
-                     <div id="vista_lista_contenido_elemento_1" class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_1" class="vista_lista_titulo_elemento">
+                     <div id="vista_lista_imagen_elemento_10" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
+                     <div class="vista_lista_contenido_elemento">
+                        <div id="vista_lista_titulo_elemento_10" class="vista_lista_titulo_elemento">
                            Eusebio Martín Pérez
                         </div>
-                        <div id="vista_lista_descripcion_elemento_1" class="vista_lista_descripcion_elemento">
+                        <div id="vista_lista_descripcion_elemento_10" class="vista_lista_descripcion_elemento">
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
                   </div>
                   <div id="vista_lista_elemento_11" class="vista_lista_elemento">
-                     <div class="vista_lista_imagen_elemento vista_lista_imagen_elemento_grupo">
-                        
-                     </div>
-                     <div id="vista_lista_contenido_elemento_1" class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_1" class="vista_lista_titulo_elemento">
+                     <div id="vista_lista_imagen_elemento_11" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
+                     <div class="vista_lista_contenido_elemento">
+                        <div id="vista_lista_titulo_elemento_11" class="vista_lista_titulo_elemento">
                            Eusebio Martín Pérez
                         </div>
-                        <div id="vista_lista_descripcion_elemento_1" class="vista_lista_descripcion_elemento">
+                        <div id="vista_lista_descripcion_elemento_11" class="vista_lista_descripcion_elemento">
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
                   </div>
                   <div id="vista_lista_elemento_12" class="vista_lista_elemento">
-                     <div class="vista_lista_imagen_elemento vista_lista_imagen_elemento_grupo">
-                        
-                     </div>
-                     <div id="vista_lista_contenido_elemento_1" class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_1" class="vista_lista_titulo_elemento">
+                     <div id="vista_lista_imagen_elemento_12" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
+                     <div class="vista_lista_contenido_elemento">
+                        <div id="vista_lista_titulo_elemento_12" class="vista_lista_titulo_elemento">
                            Eusebio Martín Pérez
                         </div>
-                        <div id="vista_lista_descripcion_elemento_1" class="vista_lista_descripcion_elemento">
+                        <div id="vista_lista_descripcion_elemento_12" class="vista_lista_descripcion_elemento">
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
                   </div>
                   <div id="vista_lista_elemento_13" class="vista_lista_elemento">
-                     <div class="vista_lista_imagen_elemento vista_lista_imagen_elemento_grupo">
-                        
-                     </div>
-                     <div id="vista_lista_contenido_elemento_1" class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_1" class="vista_lista_titulo_elemento">
+                     <div id="vista_lista_imagen_elemento_13" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
+                     <div class="vista_lista_contenido_elemento">
+                        <div id="vista_lista_titulo_elemento_13" class="vista_lista_titulo_elemento">
                            Eusebio Martín Pérez
                         </div>
-                        <div id="vista_lista_descripcion_elemento_1" class="vista_lista_descripcion_elemento">
+                        <div id="vista_lista_descripcion_elemento_13" class="vista_lista_descripcion_elemento">
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
                   </div>
                   <div id="vista_lista_elemento_14" class="vista_lista_elemento">
-                     <div class="vista_lista_imagen_elemento vista_lista_imagen_elemento_grupo">
-                        
-                     </div>
-                     <div id="vista_lista_contenido_elemento_1" class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_1" class="vista_lista_titulo_elemento">
+                     <div id="vista_lista_imagen_elemento_14" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
+                     <div class="vista_lista_contenido_elemento">
+                        <div id="vista_lista_titulo_elemento_14" class="vista_lista_titulo_elemento">
                            Eusebio Martín Pérez
                         </div>
-                        <div id="vista_lista_descripcion_elemento_1" class="vista_lista_descripcion_elemento">
+                        <div id="vista_lista_descripcion_elemento_14" class="vista_lista_descripcion_elemento">
                            Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
                         </div>
                      </div>
@@ -228,15 +203,6 @@
             </div>
          </div>
 		</div>
-		<footer>
-         <div id="contacto">
-            <h1>Contacto</h1>
-            <p>Enviar un correo</p>
-            <p>Páginas web</p>
-         </div>
-         <div id="miembros">
-         <h1>Miembros</h1>
-         </div>
-      </footer>
+		<footer></footer>
 	</body>
 </html>
