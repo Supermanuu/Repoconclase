@@ -466,6 +466,14 @@ input#form_enviar, input#form_limpiar {
     padding-bottom: 1.5%;
   }
 
+  div.form_editar {  
+    padding-bottom: 1.5%;
+  }
+
+  div.form_notes {
+    text-align: center;
+  }
+
   div.form_etiquetas {
     text-align: right;
     line-height: 250%;
@@ -486,6 +494,19 @@ input#form_enviar, input#form_limpiar {
     text-align: center;
     line-height: 150%;
     padding-bottom: 3%;
+  }
+
+  div.form_editar {  
+    padding-bottom: 3%;
+  }
+
+  div.form_image {
+    margin-right: 5%;
+  }
+
+  div.form_notes {
+    text-align: center;
+    margin-left: 5%;
   }
 
   label.form_label {

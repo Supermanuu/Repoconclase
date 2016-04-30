@@ -720,13 +720,11 @@ div.form_principal {
   div.form_editar {  
     display: flex;
     flex-direction: row;
-    background-color:#4F81BD;
     padding-bottom: 1.5%;
   }
 
   div#editar_left {
     flex-basis: 20%;
-    background-color:red;
     order: 1;
     margin: auto;
   }
@@ -742,7 +740,6 @@ div.form_principal {
 
   div#editar_right {
     flex-basis: 80%;
-    background-color:green;
     order: 2;
     margin: auto;
   }
@@ -779,13 +776,11 @@ div.form_principal {
   div.form_editar {  
     display: flex;
     flex-direction: column;
-    background-color:#4F81BD;
     padding-bottom: 3%;
   }
 
   div#editar_left {
     flex-basis: 20%;
-    background-color:red;
     order: 1;
     margin: auto;
   }
@@ -810,7 +805,6 @@ div.form_principal {
 
   div#editar_right {
     flex-basis: 80%;
-    background-color:green;
     order: 2;
     margin: auto;
   }
