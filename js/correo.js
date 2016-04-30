@@ -7,7 +7,7 @@ $(document).ready(function() {
        //Eliminamos color por defecto
       $("header").removeClass ("blue");
       $("#logout").removeClass ("blue");
-      $("#volver").removeClass ("blue");
+     
       $("footer").removeClass ("blue");
       $("#correo_tipoCorreo > select").removeClass ("blue");
       $("#correo_nuevo").removeClass ("blue");
@@ -15,7 +15,6 @@ $(document).ready(function() {
       // Añadimos la clase del usuario
       $("header").addClass ("green");
       $("#logout").addClass ("green");
-      $("#volver").addClass ("green");
       $("footer").addClass ("green");
       
       // Cambiamos el color del buscador
@@ -28,12 +27,6 @@ $(document).ready(function() {
       $(".correo_linea").css("border-color", "#118E56");
 
    };
-
-   $("#volver").click(function(){
-
-      $(location).attr('href', 'index_alumnos.html');
-
-   });
 
 	$("#correo_nuevo").click(function(){
 
