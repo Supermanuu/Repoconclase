@@ -717,6 +717,36 @@ div.form_principal {
 }
 
 @media (min-width: 768px) {
+  div.form_editar {  
+    display: flex;
+    flex-direction: row;
+    background-color:#4F81BD;
+    padding-bottom: 1.5%;
+  }
+
+  div#editar_left {
+    flex-basis: 20%;
+    background-color:red;
+    order: 1;
+    margin: auto;
+  }
+
+  div.form_image {
+   margin: auto;
+  }
+
+  div.form_notes {
+    text-align: center;
+    margin: auto;
+  }
+
+  div#editar_right {
+    flex-basis: 80%;
+    background-color:green;
+    order: 2;
+    margin: auto;
+  }
+
   form.form_box {
     display: flex;
     flex-direction: row;
@@ -743,7 +773,46 @@ div.form_principal {
 
 @media (max-width: 768px) {
   body.form_body {
-  	min-width:360px;
+  	min-width:400px;
+  }
+
+  div.form_editar {  
+    display: flex;
+    flex-direction: column;
+    background-color:#4F81BD;
+    padding-bottom: 3%;
+  }
+
+  div#editar_left {
+    flex-basis: 20%;
+    background-color:red;
+    order: 1;
+    margin: auto;
+  }
+
+  div.form_avatar {
+    display:flex;
+    flex-direction:row;
+  }
+
+  div.form_image {
+    flex-basis: 20%;
+    order: 1;
+    margin-right: 5%;
+  }
+
+  div.form_notes {
+    flex-basis: 80%;
+    order: 2;
+    text-align: center;
+    margin-left: 5%;
+  }
+
+  div#editar_right {
+    flex-basis: 80%;
+    background-color:green;
+    order: 2;
+    margin: auto;
   }
 
   form.form_box {

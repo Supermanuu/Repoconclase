@@ -440,7 +440,7 @@ body.form_body {
 	background-size: cover;
 }
 
-div.form_contenido {
+div.form_principal {
     color: white;
 }
 
@@ -450,7 +450,6 @@ text.form_text {
 
 label.form_checker {
    font-size:20px;
-
 }
 
 input#form_enviar, input#form_limpiar {
