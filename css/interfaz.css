@@ -175,27 +175,24 @@ footer.purple
 textarea.purple {
 	background-color: #6A1B9A;
 	overflow: auto;
-    text-transform: capitalize;
-    letter-spacing: 2px;
-    line-height: 1.3;
-    color : white;
-    box-shadow: 5px 5px 5px #6A1B9A;
+  letter-spacing: 2px;
+  line-height: 1.3;
+  color : white;
+  box-shadow: 5px 5px 5px #6A1B9A;
 }
 
 textarea.blue {
 	background-color: #376092;
 	overflow: auto;
-    text-transform: capitalize;
-    letter-spacing: 2px;
-    line-height: 1.3;
-    color : white;
-    box-shadow: 5px 5px 5px #376092;
+  letter-spacing: 2px;
+  line-height: 1.3;
+  color : white;
+  box-shadow: 5px 5px 5px #376092;
 }
 
 textarea.green {
   background-color: #118E56;
   overflow: auto;
-  text-transform: capitalize;
   letter-spacing: 2px;
   line-height: 1.3;
   color : white;
@@ -1021,4 +1018,71 @@ body.miembros_body
 #vista_lista_editar
 {
    display: none;
+}
+
+/*  --------Interfaz - > ranking.html ----------- */
+
+#titulo_rk{
+   text-align: center;
+   text-shadow: 1px 1px 1px #333;
+   font-size: 30px;
+   padding: 20px;
+}
+
+/*------------Buscador Ranking------------*/
+#ranking_titulo > h1 {
+  font-size: 1.5em;
+}
+
+#ranking_titulo > h2 {
+  font-size: 1em;
+}
+
+#buscador_rank{
+    background-color: #4F81BD;
+    border-width: 1px;
+    border-color: #223A57; 
+    float: right;
+    padding: 5px;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+#search_rank, #submit_rank, #filter, #etq_filter {
+    float: left;
+}
+
+#search_rank {
+    padding: 5px 9px;
+    height: 23px;
+    width: 150px;
+    margin: 0 0 0 10px;
+    border: 1px solid #223A57;
+    font: normal 13px;
+    font-family: 'Ubuntu', sans-serif;
+    background: #f1f1f1;         
+}
+
+#submit_rank{       
+    background-color: #4F81BD;
+    border-width: 1px;
+    border-style: solid;
+    border-color: #223A57;
+    height: 23px;
+    margin: 0 0 0 10px;
+    padding: 0;
+    width: 90px;
+    cursor: pointer;
+    font: bold 14px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #ffffff;
+}
+
+#submit_rank:hover {       
+    background-color: #223A57;   
+}
+
+#filter_rk{
+   height: 23px;
+   margin: 0 0 0 5px;
 }
