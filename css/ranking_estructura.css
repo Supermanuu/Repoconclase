@@ -35,13 +35,6 @@
    display: flex;
    flex-direction: row;
    background-color: #4F81BD;
-   
-   /*
-   flex: X Y J%;
-   Flex-grow: crece con un factor de X
-   Flex-shrink: se encoje con un factor de Y
-   Flex-basis: tamaño inicial del J%
-   */
 }
 
 #rank li #bloque1{
