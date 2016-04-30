@@ -701,7 +701,7 @@ body.ialumnos_body
 
 #spam_principal:hover, #spam_secundario_derecha:hover, #spam_secundario_centro:hover, #spam_secundario_izquierda:hover
 {
-	background-color: "#118E56";
+	background-color: #118E56;
 }
 
 #spam_principal_autor, #spam_secundario_derecha_titulo, #spam_secundario_centro_titulo, #spam_secundario_izquierda_titulo
