@@ -22,8 +22,8 @@
 }
 
 #bloque1 img{
-   width: 120px; 
-   height: 120px;
+   width: 140px; 
+   height: 140px;
 }
 
 .rating > span {
@@ -36,6 +36,7 @@
    content: "\2605";
    position: absolute;
 }
+
 
 
 @media (min-width: 768px){ /*Tamaño escritorio*/

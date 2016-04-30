@@ -1371,3 +1371,96 @@ div.miembros_principal {
       overflow: auto;
    }
 }
+
+/* ----------Estructura - > ranking.html--------- */
+
+#rank{ 
+   display: flex;
+   flex-direction: column;
+   list-style:none; 
+   margin:30px auto; 
+}
+
+#busca_rank{
+   display: flex;
+   flex-direction: row;
+   background-color: #4F81BD;
+}
+
+#rank li #bloque1{
+   margin: auto;
+}
+
+#rank li #bloque2{
+   text-align-last: start;
+   overflow: hidden;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   text-align: right;
+   margin: auto;
+}
+
+
+@media (min-width: 768px){ /*Tamaño escritorio*/
+   #rank li{ 
+      display:flex; 
+      margin: auto;
+      margin-bottom: 20px;
+   }
+
+   #profe{
+      width: 40%;
+   }
+}
+
+@media (max-width: 768px){ /*Tamaño Movil*/
+
+   #rank li{ 
+      display:block; 
+      margin: auto;
+      margin-bottom: 20px;
+   }
+
+   #profe{
+      text-align: center;
+   }
+
+}
+
+#bloque1 img{
+   width: 140px; 
+   height: 140px;
+}
+
+.rating > span {
+  display: inline-block;
+  position: relative;
+  width: 1.1em;
+}
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+   content: "\2605";
+   position: absolute;
+}
+
+
+
+@media (min-width: 768px){ /*Tamaño escritorio*/
+  .rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+  }
+
+}
+
+@media (max-width: 768px){ /*Tamaño Movil*/
+  .rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+  }
+
+  h1, h2{
+    text-align: center;
+  }
+
+}

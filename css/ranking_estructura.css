@@ -17,7 +17,7 @@
    cursor: hand;
 }
 
-#titulo{
+#titulo_rk{
    text-align: center;
    text-shadow: 1px 1px 1px #333;
    font-size: 30px;
@@ -102,7 +102,7 @@
     background: #f1f1f1;         
 }
 
-#submit_rank {       
+#submit_rank{       
     background-color: #4F81BD;
     border-width: 1px;
     border-style: solid;
@@ -115,14 +115,13 @@
     font: bold 14px;
     font-family: 'Ubuntu', sans-serif;
     color: #ffffff;
-    text-shadow: 0 1px 0 rgba(255,255,255,0.5);
 }
 
 #submit_rank:hover {       
     background-color: #223A57;   
 }
 
-#filter{
+#filter_rk{
    height: 23px;
    margin: 0 0 0 5px;
 }
