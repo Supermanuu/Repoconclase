@@ -8,9 +8,12 @@
         <link rel="stylesheet" type="text/css" href="css/reset.css"/>
         <link rel="stylesheet" type="text/css" href="css/estructura.css"/>
         <link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
+        <link rel="stylesheet" type="text/css" href="css/ranking_interfaz.css"/>
+        <link rel="stylesheet" type="text/css" href="css/ranking_estructura.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script type="text/javascript" src="js/jquery.color.js"></script>
 		<script type="text/javascript" src="js/ranking.js"></script>
+		<script type="text/javascript" src="js/common.js"></script>
     </head>
     
     <body>
@@ -18,9 +21,9 @@
             <button class="blue" id="logout">Logout</button>
         </header>
 
-        <div id="principal">
+        <div id="ranking_principal">
 
-            <div id="titulo_rk">
+            <div id="ranking_titulo">
                <h1>TOP PROFESORES</h1>
                <h2>¿Podrás llegar a lo más alto? </h2>
             </div>
@@ -28,7 +31,7 @@
             <div id="busca_rank">
             <form id="buscador_rank" action="">
                 <p id="etq_filter">Filtrar por: </p>
-                <select id="filter_rk">
+                <select id="filter">
                     <option selected>Nombre del Profesor</option>
                     <option>Asignaturas</option>
                     <option>Mejores Valorados</option>
@@ -46,13 +49,12 @@
             		<div id="bloque2">
             			<h1 id="nombre">Berto Carlos Huevos</h1> 
             			<p id="asignatura">Mejor Profesor de Matematicas</p>
+                        <br>
             			<p id="valorar">Valorar: 
             				<div class="rating">
                 					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
             				</div>
-                            <textarea rows="2" cols="35" maxlength="120" placeholder="Escribe una reseña..."></textarea>
             			</p>
-                        <input name="button_resena_rank" type="submit" value="Enviar Reseña">
             		</div>
             	</li>
 
@@ -67,9 +69,7 @@
             				<div class="rating">
                 					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
             				</div>
-                            <textarea rows="2" cols="35" maxlength="120" placeholder="Escribe una reseña..."></textarea>
-                        </p>
-                        <input name="button_resena_rank" type="submit" value="Enviar Reseña">
+            			</p>
             		</div>
     			</li>
 
@@ -84,9 +84,7 @@
             				<div class="rating">
                 					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
             				</div>
-                            <textarea rows="2" cols="35" maxlength="120" placeholder="Escribe una reseña..."></textarea>
-                        </p>
-                        <input name="button_resena_rank" type="submit" value="Enviar Reseña">
+            			</p>
             		</div>
     			</li>
 
@@ -101,9 +99,7 @@
             				<div class="rating">
                 					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
             				</div>
-            			    <textarea rows="2" cols="35" maxlength="120" placeholder="Escribe una reseña..."></textarea>
-                        </p>
-                        <input name="button_resena_rank" type="submit" value="Enviar Reseña">
+            			</p>
             		</div>
     			</li>
 
@@ -118,9 +114,7 @@
             				<div class="rating">
                 					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
             				</div>
-            			    <textarea rows="2" cols="35" maxlength="120" placeholder="Escribe una reseña..."></textarea>
-                        </p>
-                        <input name="button_resena_rank" type="submit" value="Enviar Reseña">
+            			</p>
             		</div>
             	</li>
 
@@ -135,9 +129,7 @@
             				<div class="rating">
                 					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
             				</div>
-            			    <textarea rows="2" cols="35" maxlength="120" placeholder="Escribe una reseña..."></textarea>
-                        </p>
-                        <input name="button_resena_rank" type="submit" value="Enviar Reseña">
+            			</p>
             		</div>
     			</li>
 
@@ -152,23 +144,13 @@
             				<div class="rating">
                 					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
             				</div>
-            			    <textarea rows="2" cols="35" maxlength="120" placeholder="Escribe una reseña..."></textarea>
-                        </p>
-                        <input name="button_resena_rank" type="submit" value="Enviar Reseña">
+            			</p>
             		</div>
             	</li>
     		</ul>
         </div> <!-- PRINCIPAL -->
 
-        <footer>
-         <div id="contacto">
-            <h1>Contacto</h1>
-            <p>Enviar un correo</p>
-            <p>Páginas web</p>
-         </div>
-         <div id="miembros">
-         <h1>Miembros</h1>
-         </div>
-      </footer>
+        <footer class="blue">
+      	</footer>
     </body>
 </html>
