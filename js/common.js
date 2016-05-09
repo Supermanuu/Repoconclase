@@ -10,7 +10,7 @@ $(this).ready(function() {
 
 		$("#logout").click(function(){
 		
-			$(location).attr('href', 'index.php');
+			$(location).attr('href', './index.php');
 	
 		});
 

@@ -1,9 +1,5 @@
 ﻿$(document).ready(function()
 {
-   $("#logout").mousedown (function ()
-   {
-      $(location).attr('href', 'index.html');
-   });
    
    $("#spam_principal").mousedown (function ()
    {

@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <html>
     <head>
         <title>Profesores Con Clase</title>
@@ -13,25 +15,25 @@
         <script src="js/common.js"></script>
         <script type = "text/javascript" src ="js/index.js"></script>
     </head>
-    
     <body id="index_body">
+	<?php
+	   //Para cerrar la sesion - De momento provisional
+	   if (isset ($_SESSION["login"]) && $_SESSION["login"] == true){
+		session_destroy();
+	   }
+	?>
+
         <?php include './php/header.php'; ?>
         <div id="index_principal">
+	    <!-- Contenido al pulsar login -->
             <div id="login_placement">
                 <?php include './php/login.php'; ?>
             </div>
             <!-- Contenedor para el logo -->
             <div id="index_logoPrincipal">
             </div>
-            <!-- Contenido que saldria al pulsar Login -->
-            <div id="login_placement">
-            </div>
             <!-- Botones para registrarse -->
             <div id="index_botonesInfo">
-
-                <!-- LINK PROVISIONAL - NO RESPONSIVE-->
-                <h1 class="my_h1" id="general" style="color:white">Pincha aquí para ver todas las páginas</h1>
-
                 <div id="index_botonesInfo2">
                     <button class="blue" id="index_toProfes" type="button" >¿Buscas profesores?</br>¡Este es tu sitio!</button>
                     <button class="blue" id="index_toAlumnos" type="button" >¿Buscas alumnos?</br>¡Este es tu sitio!</button>
