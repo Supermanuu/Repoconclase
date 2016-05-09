@@ -11,11 +11,8 @@
       	<link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
       	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       	<script src="js/common.js"></script>
-        <script src="js/nologin.js"></script>
-
     </head>
-    <body class="form_body">
-		<header class="blue">
+    <?php include './php/header.php'; ?>
     </header>
 		<div class="form_principal">
 			<div class="form_contenido">
@@ -23,7 +20,6 @@
 				<a type="button" href="index.html">Volver al índice</a>
 			</div>
 		</div>
-		<footer class="blue">
-    </footer>
+		<?php include './php/footer.php'; ?>
 	</body>
 </html>

@@ -5,22 +5,23 @@
         <meta charset="utf-8"> <!--Codificación utf8-->
         <meta name="author" content="Sistemas web 15/16"> <!--Autor del documento HTML-->
         <meta name="description" content="¿Quiénes somos?"> <!--Descripción del HTML-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
         <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/reset.css"/>
         <link rel="stylesheet" type="text/css" href="css/estructura.css"/>
       	<link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
       	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       	<script src="js/common.js"></script>
-        <script src="js/nologin.js"></script>
     </head>
     </head>
 
     <body class="miembros_body">
-        <header class="blue">
-        </header>
+        <?php include './php/header.php'; ?>
 
         <div class="miembros_principal">
-            <div id="login_placement"></div>
+            <div id="login_placement">
+                <?php include './php/login.php'; ?>
+            </div>
             <div id="contenido_miembros">
             <h1 class="my_h1">¿Quiénes somos?</h1>
             
@@ -92,16 +93,7 @@
             </div>
         </div>
 
-        <footer>
-            <div id="contacto">
-                <h1>Contacto</h1>
-                <p>Enviar un correo<br>
-                Páginas web</p>
-            </div>
-            <div id="miembros">
-                <h1>Miembros</h1>
-            </div>
-        </footer>
+        <?php include './php/footer.php'; ?>
 
     </body>
 

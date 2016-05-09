@@ -1,39 +1,50 @@
 $(this).ready(function() { 
 
-	jQuery.fn.add_lnk = function() {
+	function add_lnk () {
 
 		$("#registrarse").click(function(){
 		
-			$(location).attr('href', 'registro.html');
+			$(location).attr('href', 'registro.php');
 	
 		});
 
 		$("#logout").click(function(){
 		
-			$(location).attr('href', 'index.html');
+			$(location).attr('href', 'index.php');
 	
 		});
 
 		$("#contacto_lnk").click(function(){
 		
-			$(location).attr('href', 'contacto.html');
+			$(location).attr('href', 'contacto.php');
 	
 		});
 
 		$("#miembros_lnk").click(function(){
 		
-			$(location).attr('href', 'miembros.html');
+			$(location).attr('href', 'miembros.php');
 	
 		});
 
 		$("#inicio_lnk").click(function(){
 		
-			$(location).attr('href', 'index.html');
+			$(location).attr('href', 'index.php');
 	
 		});
 
-	};
 
-	$("footer").load("footer.txt", "no_data", jQuery.fn.add_lnk);
+   	}
 
+   	function login_popup() {
+
+   		$("#login").mousedown (function () 
+   		{
+       		$("#index_loginForm2").toggle();
+   		});
+
+   	}
+
+   	add_lnk();
+	login_popup();
+	
 });

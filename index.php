@@ -11,15 +11,15 @@
         <link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="js/common.js"></script>
-        <script src="js/nologin.js"></script>
         <script type = "text/javascript" src ="js/index.js"></script>
     </head>
     
     <body id="index_body">
-        <header class="blue">
-        </header>
+        <?php include './php/header.php'; ?>
         <div id="index_principal">
-            <div id="login_placement"></div>
+            <div id="login_placement">
+                <?php include './php/login.php'; ?>
+            </div>
             <!-- Contenedor para el logo -->
             <div id="index_logoPrincipal">
             </div>
@@ -38,7 +38,6 @@
                 </div>
             </div>
         </div>
-        <footer class="blue">
-        </footer>
+        <?php include './php/footer.php'; ?>
     </body>
 </html>

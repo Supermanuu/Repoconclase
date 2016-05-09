@@ -11,16 +11,14 @@
       	<link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
       	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       	<script src="js/common.js"></script>
-      	<script src="js/nologin.js"></script>
       	<script src="js/registro.js"></script>
     </head>
     <body class ="form_body">
-		<header class="blue">
-        </header>
+		<?php include './php/header.php'; ?>
 		<div class="form_principal">
 			<div class="form_contenido">
 				<h1 class="my_h1">¡¡¡Registrate en Profesores con Clase!!!</h1>
-				<form class="form_box" method="post" action="form_dummy.html" enctype="text/plain">
+				<form class="form_box" method="post" action="form_dummy.php">
 					<div class="form_etiquetas">
 						<text class="form_text">Datos de usuario</text></br>
 						<label class="form_label" for="Usuario">Su usuario</label></br>
@@ -92,7 +90,6 @@
 				</form>
 			</div>
 		</div>
-		<footer class="blue">
-       </footer>
+		<?php include './php/footer.php'; ?>
 	</body>
 </html> 

@@ -9,13 +9,13 @@
       <link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script src="js/common.js"></script>
-      <script src="js/nologin.js"></script>
 	</head>
 	<body class="dalumnos_body">
-		<header class="blue">
-      </header>
+		<?php include './php/header.php'; ?>
 		<div class="d_principal">
-         <div id="login_placement"></div>
+         <div id="login_placement">
+            <?php include './php/login.php'; ?>
+         </div>
          <h1 class="my_h1">Bienvenidos alumnos</h1>
 			<article>
          <p>¿Tus hijos no obtienen los resultados académicos que esperas?
@@ -32,7 +32,6 @@
          <p><strong>Regístrate en nuestra web y olvídate de las malas notas.</strong></p><br>
          </article>
 		</div>
-		<footer class="blue">
-    </footer>
+		<?php include './php/footer.php'; ?>
 	</body>
 </html>

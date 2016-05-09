@@ -1,12 +1,12 @@
 window.onload = function() {
 
  	 var aInfoAlumnos = function(){
-		location.href='detalles_alumnos.html';
+		location.href='detalles_alumnos.php';
 	 };
 
 
  	 var aInfoProfes = function(){
-		location.href='detalles_profesores.html';
+		location.href='detalles_profesores.php';
 	 };
 
 	 var general = function(){

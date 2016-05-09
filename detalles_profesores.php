@@ -9,16 +9,14 @@
       <link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script src="js/common.js"></script>
-      <script src="js/nologin.js"></script>
     </head>
     <body class="dprofesores_body">
-        <header class="blue">
-         <button class="blue" id="login">Login</button>
-         <button class="blue" id="registrarse">Registrarse</button>
-        </header>
+        <?php include './php/header.php'; ?>
 
         <div class="d_principal">
-            <div id="login_placement"></div>
+            <div id="login_placement">
+              <?php include './php/login.php'; ?>
+            </div>
             <h1 class="my_h1">Bienvenidos profesores</h1>
             <article>
                 <p>¿Eres estudiante en etapa universitaria o titulado?<br>
@@ -43,7 +41,6 @@
 
         </div>
         
-        <footer>
-      </footer>
+        <?php include './php/footer.php'; ?>
     </body>
 </html>
