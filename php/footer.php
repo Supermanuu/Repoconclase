@@ -1,6 +1,8 @@
 <?php
 
-  session_start();
+  if(!isset($_SESSION)){ 
+      session_start(); 
+  }
 
   if (!isset ($_SESSION["login"]) || $_SESSION["login"] == false){ //Sesion no iniciada
      $color = "blue";

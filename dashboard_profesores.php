@@ -1,3 +1,7 @@
+<?php if(!isset($_SESSION)){ 
+		session_start(); 
+	  } ?>
+
 <html>
     <head>
         <title>Profesores Con Clase</title>
@@ -15,9 +19,8 @@
     </head>
     
     <body class="dashprofes_body">
-        <header class="blue">
-            <button class="blue" id="logout">Logout</button>
-        </header>
+
+        <?php require_once('./php/header.php'); ?>
 
         <div class="dashprofes_principal" id="principal">
 
@@ -87,7 +90,6 @@
 
         </div>
 
-        <footer class="blue">
-      </footer>
+        <?php require_once('./php/footer.php'); ?>
     </body>
 </html>
