@@ -1,2 +1,0 @@
-<button class="blue" id="login">Login</button>
-<button class="blue" id="registrarse">Registrarse</button>
