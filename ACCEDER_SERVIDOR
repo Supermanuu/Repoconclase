@@ -10,8 +10,22 @@ Pasos para modificar en el servidor:
 	3 - Desde /var/www/html/ puedes cambiar lo que quieras.
 
 	4 - Para transmitir archivos desde tu disco:
-		scp -r -P 20064 root@147.96.85.115:/home/
+		scp -r -P 20064 'archivo' root@147.96.85.115:/home/
 
 	5 - Mover el archivo de home a /var/www/html con sudo mv
 
-Arreglao!
+Pasos para acceder a la base de datos:
+
+	1 - mysql -u profesores -p
+		Enter password : (ya la dije)
+
+	2 - Ya accedes a la consola de mysql.
+		Puedes hacer:
+
+		- show datbases;		--para ver todas
+		- use profesoresConClase;       --para seleccionar la nuestra
+		- show tables;			--Ver tablas
+		- (create, select...etcetc)
+
+OBS: No lo he probado desde usando la sintaxis de php.
+	(deberia funcionar)
