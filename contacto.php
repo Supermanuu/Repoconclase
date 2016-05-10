@@ -21,7 +21,7 @@
 			</div>
 			<div class="form_contenido">
 				<h1 class="my_h1">Contacta con nosotros</h1>
-				<form class="form_box" method="post" action="form_dummy.php">
+				<form class="form_box" method="post" action="./php/form_contacto.php">
 					<div class="form_etiquetas">
 						<text class="form_text">Formulario de contacto</text></br>
 						<label class="form_label" for="Nombre">Nombre</label></br>
