@@ -18,7 +18,7 @@
 		<div class="form_principal">
 			<div class="form_contenido">
 				<h1 class="my_h1">¡¡¡Registrate en Profesores con Clase!!!</h1>
-				<form class="form_box" method="post" action="form_dummy.php">
+				<form class="form_box" method="post" action="./php/form_registro.php">
 					<div class="form_etiquetas">
 						<text class="form_text">Datos de usuario</text></br>
 						<label class="form_label" for="Usuario">Su usuario</label></br>
