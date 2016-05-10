@@ -1,3 +1,7 @@
+<?php if(!isset($_SESSION)){ 
+        session_start(); 
+      } ?>
+
 <html>
     <head>
         <title>Profesores Con Clase</title>
@@ -8,18 +12,16 @@
         <link rel="stylesheet" type="text/css" href="css/reset.css"/>
         <link rel="stylesheet" type="text/css" href="css/estructura.css"/>
         <link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
-        <link rel="stylesheet" type="text/css" href="css/ranking_interfaz.css"/>
-        <link rel="stylesheet" type="text/css" href="css/ranking_estructura.css"/>
+        
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script type="text/javascript" src="js/jquery.color.js"></script>
 		<script type="text/javascript" src="js/ranking.js"></script>
 		<script type="text/javascript" src="js/common.js"></script>
     </head>
     
-    <body>
-        <header>
-            <button class="blue" id="logout">Logout</button>
-        </header>
+    <body class="ranking_body">
+
+        <?php require_once('./php/header.php'); ?>
 
         <div id="ranking_principal">
 
@@ -150,7 +152,7 @@
     		</ul>
         </div> <!-- PRINCIPAL -->
 
-        <footer class="blue">
-      	</footer>
+        <?php require_once('./php/footer.php'); ?>
+
     </body>
 </html>

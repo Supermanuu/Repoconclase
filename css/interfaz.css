@@ -1022,14 +1022,19 @@ body.miembros_body
 
 /*  --------Interfaz - > ranking.html ----------- */
 
-#titulo_rk{
+body.ranking_body {
+  background-color: white;
+  /*background-image: url("../img/pizarra.jpg");*/
+}
+
+#ranking_titulo{
+   background-color: #376092;
    text-align: center;
    text-shadow: 1px 1px 1px #333;
    font-size: 30px;
    padding: 20px;
 }
 
-/*------------Buscador Ranking------------*/
 #ranking_titulo > h1 {
   font-size: 1.5em;
 }
@@ -1037,6 +1042,8 @@ body.miembros_body
 #ranking_titulo > h2 {
   font-size: 1em;
 }
+
+/*------------Buscador Ranking------------*/
 
 #buscador_rank{
     background-color: #4F81BD;
