@@ -17,7 +17,7 @@
    if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){ //Si es la primera vez que me meto o ya he fallado
 
 	//Hacer consulta sql y comprobar datos - ifs de prueba
-    if ($user == "12345678A" && $password == "holaHOLA1"){
+        if ($user == "12345678A" && $password == "holaHOLA1"){
 	   $_SESSION["login"] = true;
 	   $_SESSION["id_user"] = 1;
 	   $_SESSION["type"] = "al";
@@ -39,7 +39,7 @@
    }
 
    if ($_SESSION["type"] == "ad"){
-	header('Location: ../administrador.html');
+	header('Location: ../administrador.php');
    }
    elseif ($_SESSION["type"] == "al"){
 	header('Location: ../index_alumnos.html');

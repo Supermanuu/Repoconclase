@@ -12,15 +12,18 @@
         <link rel="stylesheet" type="text/css" href="css/estructura.css"/>
         <link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="js/common.js"></script>
-        <script type = "text/javascript" src ="js/index.js"></script>
+	<script src="js/index.js"></script>
+	<script src="js/common.js"></script>
     </head>
     <body id="index_body">
 	<?php
+
 	   //Para cerrar la sesion - De momento provisional
 	   if (isset ($_SESSION["login"]) && $_SESSION["login"] == true){
 		session_destroy();
+		header('Location: index.php');
 	   }
+
 	?>
 
         <?php include './php/header.php'; ?>

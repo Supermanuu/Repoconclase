@@ -1,20 +1,22 @@
 <?php
 
-  if(!isset($_SESSION)){ 
-      session_start(); 
+  if (!isset($_SESSION)){
+	session_start();
   }
 
   if (!isset ($_SESSION["login"]) || $_SESSION["login"] == false){ //Sesion no iniciada
      $color = "blue";
   }
-  elseif ($_SESSION["type"] == "al"){ //Sesion iniciada-hacer distincion de usuario (alumno)
-     $color = "green";
-  }
-  elseif ($_SESSION["type"] == "pr"){ //Profesor
-     $color = "blue";
-  }
-  else {  //Admin
-     $color = "purple";
+  else { //Sesion iniciada - distincion de usuarios
+     if ($_SESSION["type"] == "al"){ //Alumno
+       $color = "green";
+     }
+     elseif ($_SESSION["type"] == "pr"){ //Profesor
+       $color = "blue";
+     }
+     else { //Admin
+       $color = "purple";
+     }
   }
 
   echo '<footer class=$color>';
