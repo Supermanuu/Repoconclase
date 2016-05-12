@@ -42,10 +42,10 @@
 	header('Location: ../administrador.php');
    }
    elseif ($_SESSION["type"] == "al"){
-	header('Location: ../index_alumnos.html');
+	header('Location: ../index_alumnos.php');
    }
    elseif ($_SESSION["type"] == "pr"){
-	header('Location: ../dashboard_profesores.html');
+	header('Location: ../dashboard_profesores.php');
    }
    else{
 	header('Location: ../index.php');

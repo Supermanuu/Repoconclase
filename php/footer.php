@@ -1,9 +1,5 @@
 <?php
 
-  if (!isset($_SESSION)){
-	session_start();
-  }
-
   if (!isset ($_SESSION["login"]) || $_SESSION["login"] == false){ //Sesion no iniciada
      $color = "blue";
   }
@@ -19,7 +15,7 @@
      }
   }
 
-  echo '<footer class=$color>';
+  echo '<footer class=' . $color . '>';
 	echo '<div id="inicio">';
 		echo '<h1>Inicio</h1>';
 		echo '<p id="inicio_lnk">Principal</p><br>';

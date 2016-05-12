@@ -1,4 +1,6 @@
-﻿<html>
+﻿<?php session_start (); ?>
+
+<html>
 	<head>
 		<title>Profesores con clase</title>
 		<meta charset="utf-8"/>
@@ -12,9 +14,7 @@
       <script src="js/index_alumnos.js"></script>
 	</head>
 	<body class="ialumnos_body">
-		<header class="green">
-         <button class="green" id="logout">Logout</button>
-      </header>
+		<?php include "php/header.php"; ?>
 		<div class="ialumnos_principal">
 			<div id="menu_alumno">
             <div id ="menu_alumno_principal">
@@ -82,7 +82,6 @@
             </div>
          </div>
       </div>
-		<footer class="green">
-      </footer>
+		<?php include "php/footer.php"; ?>
 	</body>
 </html>
