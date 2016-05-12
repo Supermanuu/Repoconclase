@@ -46,8 +46,20 @@
 			exit();
 		}
 
-		/*$query = "INSERT INTO contacta VALUES ('$nombre', '$email', '$tipo', '$mensaje')";
-		$resultado = $mysqli->query($query);*/
+		$variable = "no";
+
+		$query = "INSERT INTO registra VALUES ('$usuario', '$correo', '$contrasena', '$perfil', 
+			'$nombre', '$apellido1', '$apellido2', '$variable', '$tipo_documento', 
+			'$documento', '$cp', '$movil')";
+		$resultado = $mysqli->query($query);
+
+		if (!$resultado)
+			echo '<h1 class="my_hy">Formulario de registro no enviado... ¡Vuelva a intentarlo!</h1>';
+		else
+			echo '<h1 class="my_hy">¡Formulario de registro enviado!</h1>';
+
+		$query = "INSERT INTO usuarios VALUES (0, '$usuario', '$contrasena', '$perfil')";
+		$resultado = $mysqli->query($query);
 
 		if (!$resultado)
 			echo '<h1 class="my_hy">Formulario de registro no enviado... ¡Vuelva a intentarlo!</h1>';

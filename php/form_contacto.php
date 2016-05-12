@@ -22,7 +22,10 @@
 			exit();
 		}
 
-		$query = "INSERT INTO contacta VALUES ('$nombre', '$email', '$tipo', '$mensaje')";
+		date_default_timezone_set("Europe/Madrid");
+		$date = getdate();
+		$my_date = $date[mon]."/".$date[mday]."/".$date[year]." - ".$date[hours].":".$date[minutes].":".$date[seconds];
+		$query = "INSERT INTO contacta VALUES ('$nombre', '$email', '$tipo', 0, '$mensaje', '$my_date')";
 		$resultado = $mysqli->query($query);
 
 		if (!$resultado)

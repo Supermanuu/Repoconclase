@@ -79,7 +79,7 @@
 						<input class="form_input" id="field12" type="text" name="CP" maxlength="5" size="20" placeholder="Tu código postal" required/><label class="form_checker" id="input_chk12">  <</label></br>
 
 						</br></br> <!-- Datos de contacto -->
-						<input class="form_input" id="field14" type="phone" name="Móvil" maxlength="20" size="20" placeholder="Tu teléfono de contacto"required/><label class="form_checker" id="input_chk14">  <</label></br>
+						<input class="form_input" id="field14" type="text" name="Móvil" maxlength="20" size="20" placeholder="Tu teléfono de contacto"required/><label class="form_checker" id="input_chk14">  <</label></br>
 
 					</div>
 					<div class="form_botonera">
