@@ -736,7 +736,8 @@ body.ialumnos_body
 /* ----------Interfaz - > dashboard_profesores.html--------- */
 
 body.dashprofes_body {
-  background-color: lightblue;
+  /* background-color: lightblue; */
+  background-image: url("../img/pizarra.jpg");
   color: white;
 }
 
@@ -754,6 +755,17 @@ div.oscuro{
   text-align: center;
 }
 
+p.dashprofes_small_p
+{
+	color: lightgray;
+    /* color: #376092; */
+}
+
+p.dashprofes_small_p.dashprofes_info
+{
+	color: white;
+}
+
 @media (min-width: 768px){
 
   div.dashboard {
@@ -766,6 +778,7 @@ div.oscuro{
     margin: 10 auto;
     width: 28%; /*Ancho*/
     /*height: 16%; Altura*/
+	/*height: 20%;*/
   }
 
   p.dashprofes_small_p {

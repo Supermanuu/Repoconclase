@@ -44,66 +44,48 @@
 
         	<div id="tuInfo" class="dashboard oscuro">
 		    	<p class="dashprofes_big_p"> Leandro Gado Mata</p>
-		    	<p class="dashprofes_small_p">Proximos Eventos: </p>
-		    	<p class="dashprofes_small_p" id="tusEventos"> Quimica - Grupo 2 : 18:00 </p>
-
-		    	<p class="dashprofes_small_p"><br></p>
+		    	<p class="dashprofes_small_p dashprofes_info">Proximos Eventos: </p>
+		    	<p class="dashprofes_small_p dashprofes_info" id="tusEventos"> Quimica - Grupo 2 : 18:00 </p>
 		 	</div>
 
         	<div id="tusAlumnos" class="dashboard claro">
-		    	<p class="dashprofes_big_p">Tus Alumnos</p>
-		    	<p class="dashprofes_small_p" id="gestionaAlumnos">Gestionar Alumnos</p>
-		    	<p class="dashprofes_small_p" id="listaCursos">Lista de Cursos</p>
-		    	<p class="dashprofes_small_p" id="nuevoCurso">Crear Nuevo Curso</p>
+		    	<p class="dashprofes_big_p">Tus Clases</p>
+		    	<p class="dashprofes_small_p" id="gestionaAlumnos">Aqui encontrarás todo lo que necesitas para gestionar tus clases particulares con otros alumnos</p>
 		 	</div>
 
 		 	<div id="tusGrupos" class="dashboard claro">
-		    	<p class="dashprofes_big_p">Tus Grupos</p>
-		    	<p class="dashprofes_small_p" id="gestionaGrupos">Gestionar Grupos</p>
-		    	<p class="dashprofes_small_p" id="nuevoGrupo">Crear Nuevo Grupo</p>
-		    	<p class="dashprofes_small_p"><br></p>
+		    	<p class="dashprofes_big_p">Tus Cursos</p>
+		    	<p class="dashprofes_small_p" id="gestionaGrupos">Este es el espacio podrás admnistrar todo lo relacionado con tus clases a un grupo de alumnos</p>
 		 	</div>
 
 		 	<div id="buscaUsuario" class="dashboard claro">
 		    	<p class="dashprofes_big_p">Búsqueda</p>
-		    	<p class="dashprofes_small_p" id="busca">Buscar Alumnos</p>
-		    	<p class="dashprofes_small_p" id="busca">Buscar Grupos</p>
-		    	<p class="dashprofes_small_p"><br></p>
+		    	<p class="dashprofes_small_p" id="busca">Utiliza este servicio para encontrar alumnos u otros usuarios usando filtros en pocos pasos</p>
 		 	</div>
 
         	<div id="correo" class="dashboard claro">
 		    	<p class="dashprofes_big_p">Correo</p>
-		    	<p class="dashprofes_small_p" id="redactarMensaje">Nuevo Mensaje</p>
-		    	<p class="dashprofes_small_p" id="entradaMensajes">Bandeja de Entrada</p>
-		    	<p class="dashprofes_small_p"><br></p>
+		    	<p class="dashprofes_small_p" id="redactarMensaje">Cliente de mensajería personalizado para la comunicación con cualquier usuario de esta web</p>
 		 	</div>
 
 		 	<div id="infoPersonal" class="dashboard claro">
 		    	<p class="dashprofes_big_p">Información Personal</p>
-		    	<p class="dashprofes_small_p" id="editarInfo">Editar información</p>
-		    	<p class="dashprofes_small_p"><br></p>
-		    	<p class="dashprofes_small_p"><br></p>
+		    	<p class="dashprofes_small_p" id="editarInfo">Actualiza tu información personal para mostrar al mundo tus más recientes aptitudes</p>
 		 	</div>
 
 		 	<div id="valoraciones" class="dashboard claro">
 		    	<p class="dashprofes_big_p">Valoraciones y Estadisticas</p>
-		    	<p class="dashprofes_small_p" id="verValoraciones">Ver valoraciones</p>
-		    	<p class="dashprofes_small_p" id="estadsAlumnos">Estadísticas de Alumnos</p>
-		    	<p class="dashprofes_small_p" id="estadsGrupos">Estadísticas de Grupos</p>
+		    	<p class="dashprofes_small_p" id="verValoraciones">Consulta tus valoraciones o las de diferentes grupos y alumnos. ¡Son una parte muy importante de esta web!</p>
 		 	</div>
 
 		 	<div id="ranking" class="dashboard claro">
 		    	<p class="dashprofes_big_p">Ranking</p>
-		    	<p class="dashprofes_small_p" id="verTop">Ver Top 10</p>
-		    	<p class="dashprofes_small_p">¿Cómo mejorar tu rank?</p>
-		    	<p class="dashprofes_small_p"><br></p>
+		    	<p class="dashprofes_small_p" id="verTop">¡Comprueba tu puesto en la clasificación de Profesores y demuestra quien tiene mas Clase!</p>
 		 	</div>
 
 		 	<div id="video" class="dashboard claro">
 		    	<p class="dashprofes_big_p">Video Tutorial</p>
-		    	<p class="dashprofes_small_p"><br></p>
-		    	<p class="dashprofes_small_p"><br></p>
-		    	<p class="dashprofes_small_p"><br></p>
+		    	<p class="dashprofes_small_p">Vídeo ilustrativo para aprender a usar la imponente web de Profesores Con Clase</p>
 		 	</div>		
 
         </div>
