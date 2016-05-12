@@ -2,10 +2,10 @@ $(document).ready (function () {
 
    // Para resaltar los cuadros del dashboard al pasar sobre ellos con el raton
    $(".claro").mouseover (function (){
-      $(this).css ("background-color", "#94AFCB");
+      $(this).css ("background-color", "#4F6E9C");
    });
    $(".claro").mouseleave (function (){
-      $(this).css ("background-color", "#6C8DBC");
+      $(this).css ("background-color", "#576881");
    });
    //para dejar el mismo color al cuadro de info
    $("#tuInfo").mouseleave (function (){
@@ -13,17 +13,17 @@ $(document).ready (function () {
    });
 
  // ACCIONES AL PULSAR SOBRE LOS PANELES 
-   $("#tusAlumnos").mousedown (function ()
+   $("#tusClases").mousedown (function ()
    {
-      $(location).attr('href', 'vista_lista.html?a=pr&b=al');
+      $(location).attr('href', 'vista_lista.php?a=pr&b=al');
    });
 
-   $("#tusGrupos").mousedown (function ()
+   $("#tusCursos").mousedown (function ()
    {
-      $(location).attr('href', 'vista_lista.html?a=pr&b=gr');
+      $(location).attr('href', 'vista_lista.php?a=pr&b=gr');
    });
 
-   $("#buscaUsuario").mousedown (function ()
+   $("#busqueda").mousedown (function ()
    {
       $(location).attr('href', 'buscador.html');
    });
@@ -46,7 +46,7 @@ $(document).ready (function () {
 
    $("#ranking").mousedown (function ()
    {
-      $(location).attr('href', 'ranking.html');
+      $(location).attr('href', 'ranking.php');
    });
 
    $("#video").mousedown (function ()

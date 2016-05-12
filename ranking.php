@@ -50,7 +50,7 @@
             		</div>
             		<div id="bloque2">
             			<h1 id="nombre">Berto Carlos Huevos</h1> 
-            			<p id="asignatura">Mejor Profesor de Matematicas</p>
+            			<p id="asignatura">Mejor Profesor de Fisica</p>
                         <br>
             			<p id="valorar">Valorar: 
             				<div class="rating">

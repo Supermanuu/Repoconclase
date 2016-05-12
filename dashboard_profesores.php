@@ -2,9 +2,9 @@
 	 session_start(); 
 
 	 //si no has iniciado sesion y accedes desde la url te tira al index
-	 if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){
-	     header('Location: ./index.php');
-	 }
+	// if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){
+	 //    header('Location: ./index.php');
+	 //}
 
 ?>
 
@@ -36,17 +36,17 @@
 		    	<p class="dashprofes_small_p dashprofes_info" id="tusEventos"> Quimica - Grupo 2 : 18:00 </p>
 		 	</div>
 
-        	<div id="tusAlumnos" class="dashboard claro">
+        	<div id="tusClases" class="dashboard claro">
 		    	<p class="dashprofes_big_p">Tus Clases</p>
 		    	<p class="dashprofes_small_p" id="gestionaAlumnos">Aqui encontrarás todo lo que necesitas para gestionar tus clases particulares con otros alumnos</p>
 		 	</div>
 
-		 	<div id="tusGrupos" class="dashboard claro">
+		 	<div id="tusCursos" class="dashboard claro">
 		    	<p class="dashprofes_big_p">Tus Cursos</p>
 		    	<p class="dashprofes_small_p" id="gestionaGrupos">Este es el espacio podrás admnistrar todo lo relacionado con tus clases a un grupo de alumnos</p>
 		 	</div>
 
-		 	<div id="buscaUsuario" class="dashboard claro">
+		 	<div id="busqueda" class="dashboard claro">
 		    	<p class="dashprofes_big_p">Búsqueda</p>
 		    	<p class="dashprofes_small_p" id="busca">Utiliza este servicio para encontrar alumnos u otros usuarios usando filtros en pocos pasos</p>
 		 	</div>
