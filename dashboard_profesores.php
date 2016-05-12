@@ -1,22 +1,10 @@
-<?php if(!isset($_SESSION)){ 
-		session_start(); 
-	  } 
+<?php
+	 session_start(); 
 
-	  //si no has iniciado sesion y accedes desde la url te tira al index
-	  if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){
-	  	header('Location: ./index.php');
-	  }
-
-	  /*si no has iniciado sesion como tipo de usuario profesor te tira a 
-	  	tu pagina de inicio dependiendo de tu tipo o al  index */
-	  if (!isset($_SESSION["type"]) || $_SESSION["type"] != "pr"){
-	  	if ($_SESSION["type"] == "al")
-	  		header('Location: ./index_alumnos.html');
-	  	elseif ($_SESSION["type"] == "ad")
-	  		header('Location: ./administrador.html');
-	  	else 
-	  		header('Location: ./index.php');
-	  }
+	 //si no has iniciado sesion y accedes desde la url te tira al index
+	 if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){
+	     header('Location: ./index.php');
+	 }
 
 ?>
 

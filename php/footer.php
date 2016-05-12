@@ -10,7 +10,7 @@
      elseif ($_SESSION["type"] == "profesor"){ //Profesor
        $color = "blue";
      }
-     else { //Admin
+     elseif ($_SESSION["type"] == "administrador") { //Admin
        $color = "purple";
      }
   }

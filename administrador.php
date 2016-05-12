@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 function readHeader() {	//Leemos cabeceras de mensajes
 
 	$mysqli = new mysqli('localhost', 'profesores', 'profesConEstilo', 'profesoresConClase');

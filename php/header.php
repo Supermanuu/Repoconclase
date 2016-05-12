@@ -16,7 +16,7 @@
      echo '<button class="blue" id="logout">Logout</button>';
      echo '</header>';
   }
-  else {  //Admin
+  elseif ($_SESSION["type"] == "administrador") {  //Admin
      echo '<header class="purple">';
      echo '<button class="purple" id="logout">Logout</button>';
      echo '</header>';
