@@ -16,16 +16,6 @@
 	<script src="js/common.js"></script>
     </head>
     <body id="index_body">
-	<?php
-
-	   //Para cerrar la sesion - De momento provisional
-	   if (isset ($_SESSION["login"]) && $_SESSION["login"] == true){
-		session_destroy();
-		header('Location: index.php');
-	   }
-
-	?>
-
         <?php include './php/header.php'; ?>
         <div id="index_principal">
 	    <!-- Contenido al pulsar login -->

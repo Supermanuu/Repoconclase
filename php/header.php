@@ -6,12 +6,12 @@
      echo '<button class="blue" id="registrarse">Registrarse</button>';
      echo '</header>';
   }
-  elseif ($_SESSION["type"] == "al") {  //Alumno
+  elseif ($_SESSION["type"] == "alumno") {  //Alumno
      echo '<header class="green">';
      echo '<button class="green" id="logout">Logout</button>';
      echo '</header>';
   }
-  elseif ($_SESSION["type"] == "pr") {  //Profesor
+  elseif ($_SESSION["type"] == "profesor") {  //Profesor
      echo '<header class="blue">';
      echo '<button class="blue" id="logout">Logout</button>';
      echo '</header>';

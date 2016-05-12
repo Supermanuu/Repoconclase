@@ -9,7 +9,7 @@ $(function() {
 
 	$("#logout").click(function(){
 		
-		$(location).attr('href', 'index.php');
+		$(location).attr('href', 'php/logout.php');
 
 
 	});
@@ -40,7 +40,7 @@ $(function() {
              dni = $("#index_entradas > input['dni']").value;
              password = $("#index_entradas > input['pass']").value;
 
-             if ( !(/^\d{8}[A-Z]$/.test(dni)) ) {
+             if ( !(/^\[A-Za-z0-9]{8}$/.test(dni)) ) {
                 event.preventdefault(); 
              };
              if (password == null || password.length == 0 || !(/^\[A-Za-z0-9]{8}$/.test(password))) {

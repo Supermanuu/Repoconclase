@@ -4,10 +4,10 @@
      $color = "blue";
   }
   else { //Sesion iniciada - distincion de usuarios
-     if ($_SESSION["type"] == "al"){ //Alumno
+     if ($_SESSION["type"] == "alumno"){ //Alumno
        $color = "green";
      }
-     elseif ($_SESSION["type"] == "pr"){ //Profesor
+     elseif ($_SESSION["type"] == "profesor"){ //Profesor
        $color = "blue";
      }
      else { //Admin
