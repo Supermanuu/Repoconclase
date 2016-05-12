@@ -1,3 +1,3 @@
-<div id="spam_secundario_centro_titulo">Mejor profesora de Matemáticas</div>
-<div id="spam_secundario_izquierda_apoderado">Helena Nito del Bosque</div>
-<p id = "spam_secundario_izquierda_ver_mas">Ver más</p>
+<div id="spam_secundario_centro_titulo" class="pulsable">Mejor profesora de Matemáticas</div>
+<div id="spam_secundario_izquierda_apoderado" class="pulsable">Helena Nito del Bosque</div>
+<p id = "spam_secundario_izquierda_ver_mas" class="pulsable">Ver más</p>

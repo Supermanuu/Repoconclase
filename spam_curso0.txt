@@ -1,9 +1,9 @@
-<div id="spam_principal_por">
-  <div id="spam_principal_intro">Impartido por:</div>
-  <div id="spam_principal_autor">Marco del Triunfo López</div>
+<div id="spam_principal_por" class="pulsable">
+  <div id="spam_principal_intro" class="pulsable">Impartido por:</div>
+  <div id="spam_principal_autor" class="pulsable">Marco del Triunfo López</div>
 </div>
-<div id="spam_principal_titulo">
-  <div id="spam_principal_curso">Curso de programación en C/C++ en la Universidad Complutense de Madrid</div>
-  <div id="spam_principal_horario">L, M, X, J, V, S, D - 23:00</div>
+<div id="spam_principal_titulo" class="pulsable">
+  <div id="spam_principal_curso" class="pulsable">Curso de programación en C/C++ en la Universidad Complutense de Madrid</div>
+  <div id="spam_principal_horario" class="pulsable">L, M, X, J, V, S, D - 23:00</div>
 </div>
-<p id = "spam_principal_ver_mas">Ver más</p>
+<p id = "spam_principal_ver_mas" class="pulsable">Ver más</p>

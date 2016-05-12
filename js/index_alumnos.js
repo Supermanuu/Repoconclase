@@ -3,7 +3,7 @@
    
    $("#spam_principal").mousedown (function ()
    {
-      $(location).attr('href', 'vista_lista.html?a=al');
+      $(location).attr('href', 'vista_lista.php?a=al&b=gr&c=mis');
    });
    
    $("#spam_secundario_izquierda").mousedown (function (event)
@@ -26,21 +26,21 @@
       console.log ("mis_notas");
    });
    
-   $("#mis_grupos").mousedown (function ()
+   $("#mis_cursos").mousedown (function ()
    {
-      $(location).attr('href', 'vista_lista.html?a=al&b=gr');
+      $(location).attr('href', 'vista_lista.php?a=al&b=gr');
    });
    
    $("#mis_clases").mousedown (function ()
    {
-      $(location).attr('href', 'vista_lista.html?a=al&b=cl');
+      $(location).attr('href', 'vista_lista.php?a=al&b=cl');
    });
-   /*
+   
    $("#buscar_profesor").mousedown (function ()
    {
       $(location).attr('href', 'buscador.html');
    });
-   */
+   
    $("#contratar_profesor").mousedown (function ()
    {
       $(location).attr('href', 'contrata.html');
@@ -48,19 +48,19 @@
    
    $("#mis_profesores").mousedown (function ()
    {
-      $(location).attr('href', 'vista_lista.html?a=al&b=pr');
+      $(location).attr('href', 'vista_lista.php?a=al&b=pr');
    });
    
    $("#correo_alumno").mousedown (function ()
    {
       $(location).attr('href', 'correo.html?a=al');
    });
-   /*
+   
    $("#top_10_profesores").mousedown (function ()
    {
-      $(location).attr('href', 'ranking.html');
+      $(location).attr('href', 'ranking.php');
    });
-   */
+   
    $("#ajustes_perfil").mousedown (function ()
    {
       console.log ("ajustes_perfil");

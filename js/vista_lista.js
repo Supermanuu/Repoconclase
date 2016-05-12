@@ -3,7 +3,7 @@
    tokens = location.search.substr(1).split ("&");
    
    // Tipo de usuario
-   if (tokens [0] == "a=al")
+   if (tokens.includes ("a=al"))
    {
       // Añadimos la clase del usuario
       $("header").addClass ("green");
@@ -17,7 +17,7 @@
       $("#vista_lista_buscador").css ("backgroundColor", "#6AC46E");
       $("#vista_lista_submit").css ("backgroundColor", "#6AC46E");
    }
-   else if (tokens [0] == "a=pr")
+   else if (tokens.includes ("a=pr"))
    {
       // Añadimos la clase del usuario
       $("header").addClass ("blue");
@@ -46,30 +46,32 @@
       $("#vista_lista_submit").css ("backgroundColor", "#BA68C8");
    }
    
+   $vista = 'Alumnos';
+   
    // Lista que busca
-   if (tokens [1] == "b=al")
+   if (tokens.includes ("b=al"))
    {
       $('div[name="vista_lista_imagen_elemento[]"]').each (function ()
       {
          $(this).addClass ("vista_lista_imagen_elemento_alumno");
       });
-      $("#vista_lista_presentacion").html ('Mis Alumnos');
+      $vista = 'Alumnos';
    }
-   else if (tokens [1] == "b=pr")
+   else if (tokens.includes ("b=pr"))
    {
       $('div[name="vista_lista_imagen_elemento[]"]').each (function ()
       {
          $(this).addClass ("vista_lista_imagen_elemento_profesor");
       });
-      $("#vista_lista_presentacion").html ('Mis Profesores');
+      $vista = 'Profesores';
    }
-   else if (tokens [1] == "b=cl")
+   else if (tokens.includes ("b=cl"))
    {
       $('div[name="vista_lista_imagen_elemento[]"]').each (function ()
       {
          $(this).addClass ("vista_lista_imagen_elemento_clase");
       });
-      $("#vista_lista_presentacion").html ('Mis Clases');
+      $vista = 'Clases';
       if (tokens [0] == "a=pr")
          $("#vista_lista_editar").css ("display", "initial");
    }
@@ -78,11 +80,16 @@
       $('div[name="vista_lista_imagen_elemento[]"]').each (function ()
       {
          $(this).addClass ("vista_lista_imagen_elemento_grupo");
-         $("#vista_lista_presentacion").html ('Mis Grupos');
       });
+      $vista = 'Cursos';
       if (tokens [0] == "a=pr")
          $("#vista_lista_editar").css ("display", "initial");
    }
+   
+   if (tokens.includes ("c=mis"))
+      $("#vista_lista_presentacion").html ($vista);
+   else
+      $("#vista_lista_presentacion").html ('Mis ' + $vista);
    
    // Para controlar el borrado de elementos de la lista utilizo un hash map
    var seleccionados_borrar = [];

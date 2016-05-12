@@ -585,8 +585,8 @@ input#form_enviar, input#form_limpiar {
 
 body.ialumnos_body
 {
-   /*background-color: #A5D6A7;*/
-   background-image: url("../img/pizarra.jpg");
+   background-color: #A5D6A7;
+   /*background-image: url("../img/pizarra.jpg");*/
    background-repeat: no-repeat;
    background-size: cover;
 }
@@ -596,7 +596,7 @@ body.ialumnos_body
    background-color: #6AC46E;
    color: white;
    text-shadow: 1px 1px black;
-   box-shadow: 5px 5px 5px #118E56;
+   box-shadow: 5px 5px 5px #72B396;
 }
 
 @media (min-width: 768px)
@@ -605,7 +605,8 @@ body.ialumnos_body
      {
       font-weight: bold;
       font-size: 45px;
-      box-shadow: 5px 5px 5px #118E56;
+      border-bottom: #118E56;
+      border-style: solid;
       
       /* Para que la línea no se corte y sigua debajo */
       overflow:hidden;
@@ -647,6 +648,7 @@ body.ialumnos_body
      {
       font-weight: bold;
       font-size: 30px;
+      text-align: center;
       
       border: palegreen;
       border-style: solid;
@@ -669,7 +671,7 @@ body.ialumnos_body
    }
 }
 
-#mis_grupos > p, #mis_profesores > p
+#mis_cursos > p, #mis_profesores > p
 {
    /* Para que la línea no se corte y sigua debajo */
    overflow:hidden;
@@ -692,13 +694,20 @@ body.ialumnos_body
 #spam_principal, #spam_secundario_derecha, #spam_secundario_centro, #spam_secundario_izquierda
 {
    background-color: #6AC46E;
-   box-shadow: 5px 5px 5px #118E56;
+   box-shadow: 5px 5px 5px #72B396;
    color: white;
 }
 
-#spam_principal:hover, #spam_secundario_derecha:hover, #spam_secundario_centro:hover, #spam_secundario_izquierda:hover
+#spam_principal:hover, #spam_secundario_derecha:hover, #spam_secundario_centro:hover, #spam_secundario_izquierda:hover,
+#mis_profesores:hover, #mis_notas:hover, #buscar_profesor:hover, #contratar_profesor:hover, #correo_alumno:hover,
+#mis_cursos:hover, #top_10_profesores:hover, #mis_clases:hover, #ajustes_perfil:hover, #video_tutorial:hover
 {
-	background-color: #118E56;
+	background-color: #3EA742;
+}
+
+.pulsable
+{
+   cursor: hand;
 }
 
 #spam_principal_autor, #spam_secundario_derecha_titulo, #spam_secundario_centro_titulo, #spam_secundario_izquierda_titulo

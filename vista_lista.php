@@ -16,7 +16,7 @@
       </header>
 		<div id="vista_lista_principal">
          <div id="vista_lista_presentacion">
-            Mis Grupos
+            Mis Cursos
          </div>
          <div id="vista_lista_detalle">
             <div id="vista_lista_container_lista">

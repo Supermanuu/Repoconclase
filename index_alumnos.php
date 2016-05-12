@@ -22,63 +22,63 @@
                   Olga Seosa Pérez
                </div>
                <div id="acciones_rapidas">
-                  <h1 id="mis_notas">Mis notas</h1>
-                  <h1 id="buscar_profesor">Buscar profesor</h1>
-                  <h1 id="contratar_profesor">Contratar clase o profesor</h1>
+                  <h1 id="mis_notas" class="pulsable">Mis notas</h1>
+                  <h1 id="buscar_profesor" class="pulsable">Buscar profesor</h1>
+                  <h1 id="contratar_profesor" class="pulsable">Contratar clase o profesor</h1>
                </div>
             </div>
             <div id="bloque_1">
-               <div id="mis_profesores">
-                  <h1>Mis profesores</h1>
-                  <p id ="mis_profesores_1">Rafael del Vado López</p>
-                  <p id ="mis_profesores_2"><br></p>
-                  <p id ="mis_profesores_3"><br></p>
+               <div id="mis_profesores" class="pulsable">
+                  <h1 class="pulsable">Mis profesores</h1>
+                  <p id ="mis_profesores_1" class="pulsable">Rafael del Vado López</p>
+                  <p id ="mis_profesores_2" class="pulsable"><br></p>
+                  <p id ="mis_profesores_3" class="pulsable"><br></p>
                </div>
-               <div id="correo_alumno">
-                  <h1>Correo</h1>
-                  <p>Bandeja de entrada</p>
+               <div id="correo_alumno" class="pulsable">
+                  <h1 class="pulsable">Correo</h1>
+                  <p class="pulsable">Bandeja de entrada</p>
                </div>
             </div>
             <div id="bloque_2">
-               <div id="mis_grupos">
-                  <h1>Mis grupos</h1>
-                  <p id ="mis_grupos_1">Cusrso de Matemáticas de Segundo Curso de Bachiller</p>
-                  <p id ="mis_grupos_2"><br></p>
-                  <p id ="mis_grupos_3"><br></p>
+               <div id="mis_cursos" class="pulsable">
+                  <h1 class="pulsable">Mis cursos</h1>
+                  <p id ="mis_grupos_1" class="pulsable">Cusrso de Matemáticas de Segundo Curso de Bachiller</p>
+                  <p id ="mis_grupos_2" class="pulsable"><br></p>
+                  <p id ="mis_grupos_3" class="pulsable"><br></p>
                </div>
-               <div id="top_10_profesores">
-                  <h1>Top 10 profesores</h1>
-                  <p>Ranking</p>
+               <div id="top_10_profesores" class="pulsable">
+                  <h1 class="pulsable">Top 10 profesores</h1>
+                  <p class="pulsable">Ranking</p>
                </div>
             </div>
             <div id="bloque_3">
-               <div id="mis_clases">
-                  <h1>Mis clases</h1>
-                  <div id="mis_clases_1">
-                     <p id ="mis_clases_1_nombre">Clase de Guitarra Acústica</p>
-                     <p id ="mis_clases_1_horario">M,J - 6:30</p>
+               <div id="mis_clases" class="pulsable">
+                  <h1 class="pulsable">Mis clases</h1>
+                  <div id="mis_clases_1" class="pulsable">
+                     <p id ="mis_clases_1_nombre" class="pulsable">Clase de Guitarra Acústica</p>
+                     <p id ="mis_clases_1_horario" class="pulsable">M,J - 6:30</p>
                   </div>
-                  <div id="mis_clases_2">
-                     <p id ="mis_clases_2_nombre"><br></p>
-                     <p id ="mis_clases_2_horario"><br></p>
+                  <div id="mis_clases_2" class="pulsable">
+                     <p id ="mis_clases_2_nombre" class="pulsable"><br></p>
+                     <p id ="mis_clases_2_horario" class="pulsable"><br></p>
                   </div>
-                  <div id="mis_clases_3">
-                     <p id ="mis_clases_3_nombre"><br></p>
-                     <p id ="mis_clases_3_horario"><br></p>
+                  <div id="mis_clases_3" class="pulsable">
+                     <p id ="mis_clases_3_nombre" class="pulsable"><br></p>
+                     <p id ="mis_clases_3_horario" class="pulsable"><br></p>
                   </div>
                </div>
                <div id="acciones_no_tan_rapidas">
-                  <h1 id="ajustes_perfil">Ajustes de perfil</h1>
-                  <h1 id="video_tutorial">Video tutorial</h1>
+                  <h1 id="ajustes_perfil" class="pulsable">Ajustes de perfil</h1>
+                  <h1 id="video_tutorial" class="pulsable">Video tutorial</h1>
                </div>
             </div>
          </div>
          <div id="spam">
-            <div id="spam_principal"></div>
+            <div id="spam_principal" class="pulsable"></div>
             <div id="spam_secundario">
-               <div id="spam_secundario_izquierda"></div>
-               <div id="spam_secundario_centro"></div>
-               <div id="spam_secundario_derecha"></div>
+               <div id="spam_secundario_izquierda" class="pulsable"></div>
+               <div id="spam_secundario_centro" class="pulsable"></div>
+               <div id="spam_secundario_derecha" class="pulsable"></div>
             </div>
          </div>
       </div>

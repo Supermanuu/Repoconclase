@@ -940,24 +940,39 @@ div.ialumnos_principal
 
    #acciones_rapidas > h1
      {
-      margin: 10px;
+      padding: 10px;
+      padding-right: 0px;
+      margin-right: 10px;
    }
 
    #mis_profesores, #correo_alumno
      {
       margin: 20px 0;
+      padding: 10px;
       padding-right: 20px;
    }
 
-   #mis_grupos, #top_10_profesores
+   #mis_cursos, #top_10_profesores
      {
       margin: 20px 0;
+      padding: 10px;
       padding-right: 20px;
    }
 
-   #mis_clases, #acciones_no_tan_rapidas
+   #acciones_no_tan_rapidas
      {
       margin: 20px 0;
+   }
+   
+   #ajustes_perfil, #video_tutorial
+     {
+      padding: 3px 10px;
+   }
+   
+   #mis_clases
+     {
+      margin: 20px 0;
+      padding: 10px;
       padding-right: 20px;
    }
    
@@ -1026,9 +1041,8 @@ div.ialumnos_principal
    
    #acciones_rapidas, #bloque_1, #bloque_2, #bloque_3
      {
-      float: left;
-      margin: 10px 20px;
-      width: 230px;
+      margin: 10px auto;
+      width: 90%;
    }
    
    #spam_secundario_derecha, #spam_secundario_centro, #spam_secundario_izquierda
@@ -1052,12 +1066,13 @@ div.ialumnos_principal
 
 #mis_clases_1_nombre, #mis_clases_2_nombre, #mis_clases_3_nombre
 {
-   width: 50%;
+   width: 70%;
 }
 
 #mis_clases_1_horario, #mis_clases_2_horario, #mis_clases_3_horario
 {
-   width: 45%;
+   text-align: right;
+   width: 30%;
 }
 
 #spam_principal_por
