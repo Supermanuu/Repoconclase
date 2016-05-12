@@ -1157,6 +1157,7 @@ div.dashprofes_principal {
 
 div.dashboard {
   flex-direction: column;
+  height: 18%;
 }
 
 /* ----------Estructura - > miembros.html--------- */

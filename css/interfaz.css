@@ -746,13 +746,22 @@ body.ialumnos_body
 
 body.dashprofes_body {
   /* background-color: lightblue; */
-  background-image: url("../img/pizarra.jpg");
+
+  background: rgba(179,201,214,1);
+  background: -moz-linear-gradient(-45deg, rgba(179,201,214,1) 0%, rgba(116,151,175,1) 46%, rgba(116,151,175,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(179,201,214,1)), color-stop(46%, rgba(116,151,175,1)), color-stop(100%, rgba(116,151,175,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(179,201,214,1) 0%, rgba(116,151,175,1) 46%, rgba(116,151,175,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(179,201,214,1) 0%, rgba(116,151,175,1) 46%, rgba(116,151,175,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(179,201,214,1) 0%, rgba(116,151,175,1) 46%, rgba(116,151,175,1) 100%);
+  background: linear-gradient(135deg, rgba(179,201,214,1) 0%, rgba(116,151,175,1) 46%, rgba(116,151,175,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3c9d6', endColorstr='#7497af', GradientType=1 );
+
   color: white;
 }
 
 div.dashboard{
   border-color: #778EAA;
-  background-color: #6C8DBC;
+  background-color: #576881;
 }
 
 div.oscuro{
@@ -812,13 +821,13 @@ p.dashprofes_small_p.dashprofes_info
   }
 
   p.dashprofes_small_p {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1; /*Espaciado entre las frases*/
     text-align: left;
   }
 
   p.dashprofes_big_p {
-    font-size: 15px;
+    font-size: 20px;
     line-height: 1.6; /*Espaciado entre las frases*/
   }
 }
@@ -1045,8 +1054,27 @@ body.miembros_body
 /*  --------Interfaz - > ranking.html ----------- */
 
 body.ranking_body {
-  background-color: white;
+/*background-color: lightgray;*/
+
+  /*background: rgba(99,164,182,1);
+  background: -moz-linear-gradient(45deg, rgba(99,164,182,1) 0%, rgba(99,164,182,1) 10%, rgba(69,120,135,1) 20%, rgba(82,149,167,1) 39%, rgba(69,120,135,1) 50%, rgba(69,120,135,1) 65%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(99,164,182,1)), color-stop(10%, rgba(99,164,182,1)), color-stop(20%, rgba(69,120,135,1)), color-stop(39%, rgba(82,149,167,1)), color-stop(50%, rgba(69,120,135,1)), color-stop(65%, rgba(69,120,135,1)), color-stop(75%, rgba(69,120,135,1)), color-stop(75%, rgba(69,120,135,1)), color-stop(75%, rgba(69,120,135,1)), color-stop(100%, rgba(69,120,135,1)));
+  background: -webkit-linear-gradient(45deg, rgba(99,164,182,1) 0%, rgba(99,164,182,1) 10%, rgba(69,120,135,1) 20%, rgba(82,149,167,1) 39%, rgba(69,120,135,1) 50%, rgba(69,120,135,1) 65%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 100%);
+  background: -o-linear-gradient(45deg, rgba(99,164,182,1) 0%, rgba(99,164,182,1) 10%, rgba(69,120,135,1) 20%, rgba(82,149,167,1) 39%, rgba(69,120,135,1) 50%, rgba(69,120,135,1) 65%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 100%);
+  background: -ms-linear-gradient(45deg, rgba(99,164,182,1) 0%, rgba(99,164,182,1) 10%, rgba(69,120,135,1) 20%, rgba(82,149,167,1) 39%, rgba(69,120,135,1) 50%, rgba(69,120,135,1) 65%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 100%);
+  background: linear-gradient(45deg, rgba(99,164,182,1) 0%, rgba(99,164,182,1) 10%, rgba(69,120,135,1) 20%, rgba(82,149,167,1) 39%, rgba(69,120,135,1) 50%, rgba(69,120,135,1) 65%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63a4b6', endColorstr='#457887', GradientType=1 );*/
+ 
   /*background-image: url("../img/pizarra.jpg");*/
+
+  background: rgba(179,201,214,1);
+  background: -moz-linear-gradient(-45deg, rgba(179,201,214,1) 0%, rgba(116,151,175,1) 46%, rgba(116,151,175,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(179,201,214,1)), color-stop(46%, rgba(116,151,175,1)), color-stop(100%, rgba(116,151,175,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(179,201,214,1) 0%, rgba(116,151,175,1) 46%, rgba(116,151,175,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(179,201,214,1) 0%, rgba(116,151,175,1) 46%, rgba(116,151,175,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(179,201,214,1) 0%, rgba(116,151,175,1) 46%, rgba(116,151,175,1) 100%);
+  background: linear-gradient(135deg, rgba(179,201,214,1) 0%, rgba(116,151,175,1) 46%, rgba(116,151,175,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3c9d6', endColorstr='#7497af', GradientType=1 );
 }
 
 #ranking_titulo{
