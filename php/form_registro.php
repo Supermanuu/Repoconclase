@@ -46,10 +46,8 @@
 			exit();
 		}
 
-		$variable = "no";
-
 		$query = "INSERT INTO registra VALUES ('$usuario', '$correo', '$contrasena', '$perfil', 
-			'$nombre', '$apellido1', '$apellido2', '$variable', '$tipo_documento', 
+			'$nombre', '$apellido1', '$apellido2', '$nacimiento', '$tipo_documento', 
 			'$documento', '$cp', '$movil')";
 		$resultado = $mysqli->query($query);
 
