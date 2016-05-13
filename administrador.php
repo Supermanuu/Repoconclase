@@ -2,6 +2,10 @@
 
 session_start();
 
+if (!isset($_SESSION["login"]) || $_SESSION["login"] == false) { //Sesion no iniciada
+   header('Location: index.php');
+}
+
 function readHeader() {	//Leemos cabeceras de mensajes
 
 	$mysqli = new mysqli('localhost', 'profesores', 'profesConEstilo', 'profesoresConClase');
@@ -14,7 +18,7 @@ function readHeader() {	//Leemos cabeceras de mensajes
 	$resultado = $mysqli->query($query) or die ($mysqli->error);
 
 	while ($objeto = $resultado->fetch_assoc()){
-	    echo '<p id=' . $objeto["idMensaje"] . '>Correo:' . $objeto["correo"] . ' Tipo:' . $objeto["tipo"] . '</p>';
+	    echo '<p id=' . $objeto["idMensaje"] . '>Fecha: ' . $objeto["fecha"] . ' Tipo: ' . $objeto["tipo"] . '</p>';
 	    echo '<hr class="admin_linea">';
 	}
 
@@ -41,6 +45,10 @@ function readMess() {
        		 $resultado = $mysqli->query($query) or die ($mysqli->error);
 		 $objeto = $resultado->fetch_assoc();
 
+		 echo '<h1>Mensaje Recibido</h1>';
+		 echo '<p>Nombre: ' . $objeto["nombre"] . '</p>';
+		 echo '<p>Tipo: ' . $objeto["tipo"] . '</p>';
+		 echo '<p>Fecha: ' . $objeto["fecha"] . '</p>';
 		 echo '<pre>' . $objeto["mensaje"] . '</pre>';
 
   	         $resultado->free();

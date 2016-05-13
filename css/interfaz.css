@@ -333,7 +333,8 @@ header.purple > #volver {
    background-size: cover;
 }
 
-#correo_detallesCorreo > p, #correo_mostrarMensaje > pre,
+#correo_detallesCorreo_azul > p, #correo_detallesCorreo_verde > p,
+#correo_mostrarMensaje_azul > pre, #correo_mostrarMensaje_verde > pre,
 #correo_etiquetas > label {
    color: white;
    font-size: 1em;
@@ -341,25 +342,42 @@ header.purple > #volver {
    margin-bottom: 10px;
 }
 
-#correo_sub > input {
+#correo_sub_azul > input {
    background-color: #376092;
    border-color: #4F81BD;
    color: white;
    font-size: larger;
 }
 
-#correo_detallesCorreo > p{
+#correo_sub_verde > input {
+   background-color: #6AC46E;
+   border-color: #118E56;
+   color: white;
+   font-size: larger;
+}
+
+#correo_detallesCorreo_azul > p, #correo_detallesCorreo_verde {
    text-align: center;
 }
 
-#correo_correos > #correo_detallesCorreo, #correo_mostrarMensaje {
+#correo_correos > #correo_detallesCorreo_azul, #correo_mostrarMensaje_azul {
    box-shadow: 5px 5px 5px #376092;
    background-color: #4F81BD;
 }
 
-.correo_linea {
+#correo_correos > #correo_detallesCorreo_verde, #correo_mostrarMensaje_verde {
+   box-shadow: 5px 5px 5px #118E56;
+   background-color: #6AC46E;
+}
+
+.correo_linea_azul {
    margin: 0;
    border-color: #376092;
+}
+
+.correo_linea_verde {
+   margin: 0;
+   border-color: #118E56;
 }
 
 /* ---------Interfaz - > Contrata.html --------- */
