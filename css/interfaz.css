@@ -1071,20 +1071,7 @@ body.miembros_body
 
 /*  --------Interfaz - > ranking.html ----------- */
 
-body.ranking_body {
-/*background-color: lightgray;*/
-
-  /*background: rgba(99,164,182,1);
-  background: -moz-linear-gradient(45deg, rgba(99,164,182,1) 0%, rgba(99,164,182,1) 10%, rgba(69,120,135,1) 20%, rgba(82,149,167,1) 39%, rgba(69,120,135,1) 50%, rgba(69,120,135,1) 65%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 100%);
-  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(99,164,182,1)), color-stop(10%, rgba(99,164,182,1)), color-stop(20%, rgba(69,120,135,1)), color-stop(39%, rgba(82,149,167,1)), color-stop(50%, rgba(69,120,135,1)), color-stop(65%, rgba(69,120,135,1)), color-stop(75%, rgba(69,120,135,1)), color-stop(75%, rgba(69,120,135,1)), color-stop(75%, rgba(69,120,135,1)), color-stop(100%, rgba(69,120,135,1)));
-  background: -webkit-linear-gradient(45deg, rgba(99,164,182,1) 0%, rgba(99,164,182,1) 10%, rgba(69,120,135,1) 20%, rgba(82,149,167,1) 39%, rgba(69,120,135,1) 50%, rgba(69,120,135,1) 65%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 100%);
-  background: -o-linear-gradient(45deg, rgba(99,164,182,1) 0%, rgba(99,164,182,1) 10%, rgba(69,120,135,1) 20%, rgba(82,149,167,1) 39%, rgba(69,120,135,1) 50%, rgba(69,120,135,1) 65%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 100%);
-  background: -ms-linear-gradient(45deg, rgba(99,164,182,1) 0%, rgba(99,164,182,1) 10%, rgba(69,120,135,1) 20%, rgba(82,149,167,1) 39%, rgba(69,120,135,1) 50%, rgba(69,120,135,1) 65%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 100%);
-  background: linear-gradient(45deg, rgba(99,164,182,1) 0%, rgba(99,164,182,1) 10%, rgba(69,120,135,1) 20%, rgba(82,149,167,1) 39%, rgba(69,120,135,1) 50%, rgba(69,120,135,1) 65%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 75%, rgba(69,120,135,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#63a4b6', endColorstr='#457887', GradientType=1 );*/
- 
-  /*background-image: url("../img/pizarra.jpg");*/
-
+body.ranking_body_blue {
   background: rgba(179,201,214,1);
   background: -moz-linear-gradient(-45deg, rgba(179,201,214,1) 0%, rgba(116,151,175,1) 46%, rgba(116,151,175,1) 100%);
   background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(179,201,214,1)), color-stop(46%, rgba(116,151,175,1)), color-stop(100%, rgba(116,151,175,1)));
@@ -1095,13 +1082,46 @@ body.ranking_body {
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3c9d6', endColorstr='#7497af', GradientType=1 );
 }
 
+body.ranking_body_green {
+  background: rgba(166,223,114,1);
+  background: -moz-linear-gradient(-45deg, rgba(166,223,114,1) 0%, rgba(164,209,121,1) 27%, rgba(166,223,114,1) 66%, rgba(164,209,121,1) 85%, rgba(164,209,121,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(166,223,114,1)), color-stop(27%, rgba(164,209,121,1)), color-stop(66%, rgba(166,223,114,1)), color-stop(85%, rgba(164,209,121,1)), color-stop(100%, rgba(164,209,121,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(166,223,114,1) 0%, rgba(164,209,121,1) 27%, rgba(166,223,114,1) 66%, rgba(164,209,121,1) 85%, rgba(164,209,121,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(166,223,114,1) 0%, rgba(164,209,121,1) 27%, rgba(166,223,114,1) 66%, rgba(164,209,121,1) 85%, rgba(164,209,121,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(166,223,114,1) 0%, rgba(164,209,121,1) 27%, rgba(166,223,114,1) 66%, rgba(164,209,121,1) 85%, rgba(164,209,121,1) 100%);
+  background: linear-gradient(135deg, rgba(166,223,114,1) 0%, rgba(164,209,121,1) 27%, rgba(166,223,114,1) 66%, rgba(164,209,121,1) 85%, rgba(164,209,121,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a6df72', endColorstr='#a4d179', GradientType=1 );
+}
+
+body.ranking_body_purple {
+  background: rgba(223,114,242,1);
+  background: -moz-linear-gradient(-45deg, rgba(223,114,242,1) 0%, rgba(223,114,242,1) 9%, rgba(212,85,187,1) 30%, rgba(223,114,242,1) 57%, rgba(224,92,198,1) 78%, rgba(224,92,198,1) 100%);
+  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(223,114,242,1)), color-stop(9%, rgba(223,114,242,1)), color-stop(30%, rgba(212,85,187,1)), color-stop(57%, rgba(223,114,242,1)), color-stop(78%, rgba(224,92,198,1)), color-stop(100%, rgba(224,92,198,1)));
+  background: -webkit-linear-gradient(-45deg, rgba(223,114,242,1) 0%, rgba(223,114,242,1) 9%, rgba(212,85,187,1) 30%, rgba(223,114,242,1) 57%, rgba(224,92,198,1) 78%, rgba(224,92,198,1) 100%);
+  background: -o-linear-gradient(-45deg, rgba(223,114,242,1) 0%, rgba(223,114,242,1) 9%, rgba(212,85,187,1) 30%, rgba(223,114,242,1) 57%, rgba(224,92,198,1) 78%, rgba(224,92,198,1) 100%);
+  background: -ms-linear-gradient(-45deg, rgba(223,114,242,1) 0%, rgba(223,114,242,1) 9%, rgba(212,85,187,1) 30%, rgba(223,114,242,1) 57%, rgba(224,92,198,1) 78%, rgba(224,92,198,1) 100%);
+  background: linear-gradient(135deg, rgba(223,114,242,1) 0%, rgba(223,114,242,1) 9%, rgba(212,85,187,1) 30%, rgba(223,114,242,1) 57%, rgba(224,92,198,1) 78%, rgba(224,92,198,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#df72f2', endColorstr='#e05cc6', GradientType=1 );
+}
+
 #ranking_titulo{
-   background-color: #376092;
+   /* background-color: #376092; */
    text-align: center;
    text-shadow: 1px 1px 1px #333;
    font-size: 30px;
    padding: 20px;
 }
+
+#ranking_titulo.green{
+  background-color: #118E56;
+}
+#ranking_titulo.blue{
+  background-color: #376092;
+}
+#ranking_titulo.purple{
+  background-color: #6A1B9A;
+}
+
 
 #ranking_titulo > h1 {
   font-size: 1.5em;
@@ -1114,13 +1134,23 @@ body.ranking_body {
 /*------------Buscador Ranking------------*/
 
 #buscador_rank{
-    background-color: #4F81BD;
+    /*background-color: #4F81BD; */
     border-width: 1px;
     border-color: #223A57; 
     float: right;
     padding: 5px;
     margin: 10px auto;
     overflow: hidden;
+}
+
+#buscador_rank.green{
+  background-color: #118E56;
+}
+#buscador_rank.blue{
+  background-color: #376092;
+}
+#buscador_rank.purple{
+  background-color: #6A1B9A;
 }
 
 #search_rank, #submit_rank, #filter, #etq_filter {

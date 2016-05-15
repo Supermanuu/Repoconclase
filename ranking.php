@@ -1,6 +1,9 @@
-<?php if(!isset($_SESSION)){ 
-        session_start(); 
-      } ?>
+<?php 
+    session_start(); 
+    /*if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){
+        header('Location: ./index.php');
+    }*/
+?>
 
 <html>
     <head>
@@ -14,23 +17,53 @@
         <link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script type="text/javascript" src="js/jquery.color.js"></script>
 		<script type="text/javascript" src="js/ranking.js"></script>
 		<script type="text/javascript" src="js/common.js"></script>
     </head>
     
-    <body class="ranking_body">
+    <?php //pintamos el fondo de la web de diferente color dependiendo del tipo  de usuario
+        if ($_SESSION["type"] == "alumno") {  //Alumno
+            echo '<body class="ranking_body_green">';
+        }
+        elseif ($_SESSION["type"] == "profesor") {  //Profesor
+            echo '<body class="ranking_body_blue">';
+        }
+        elseif ($_SESSION["type"] == "administrador") {  //Admin
+            echo '<body class="ranking_body_purple">';
+        }
 
-        <?php require_once('./php/header.php'); ?>
+        require_once('./php/header.php');
+    ?>
 
         <div id="ranking_principal">
 
-            <div id="ranking_titulo">
-               <h1>TOP PROFESORES</h1>
-               <h2>¿Podrás llegar a lo más alto? </h2>
-            </div>
+        <?php    
+            if ($_SESSION["type"] == "alumno") {  //Alumno
+                echo '<div id="ranking_titulo" class="green">';
+            }
+            elseif ($_SESSION["type"] == "profesor") {  //Profesor
+                echo '<div id="ranking_titulo" class="blue">';
+            }
+            elseif ($_SESSION["type"] == "administrador") {  //Admin
+                echo '<div id="ranking_titulo" class="purple">';
+            }
 
-            <div id="busca_rank">
+            echo '<h1>TOP PROFESORES</h1>';
+            echo '<h2>¿Podrás llegar a lo más alto? </h2>';
+            echo '</div>';
+        ?>  
+
+        <?php 
+            if ($_SESSION["type"] == "alumno") {  //Alumno
+                echo '<div id="buscador_rank" class="green">';
+            }
+            elseif ($_SESSION["type"] == "profesor") {  //Profesor
+                echo '<div id="buscador_rank" class="blue">';
+            }
+            elseif ($_SESSION["type"] == "administrador") {  //Admin
+                echo '<div id="buscador_rank" class="purple">';
+            }   
+        ?>
             <form id="buscador_rank" action="">
                 <p id="etq_filter">Filtrar por: </p>
                 <select id="filter">
@@ -41,7 +74,7 @@
                 <input id="search_rank" type="text">
                 <input id="submit_rank" type="submit" value="Buscar">
             </form>
-            </div>
+            </div> <!-- Abirmos la etiq x php -->
 
             <ul id="rank">
     			<li id="profe">
@@ -154,5 +187,5 @@
 
         <?php require_once('./php/footer.php'); ?>
 
-    </body>
+    <?php echo '</body>'; ?>
 </html>

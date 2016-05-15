@@ -30,7 +30,7 @@ $(document).ready (function () {
 
    $("#correo").mousedown (function ()
    {
-      $(location).attr('href', 'correo.html');
+      $(location).attr('href', 'correo.php');
    });
 
 

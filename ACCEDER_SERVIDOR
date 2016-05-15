@@ -5,7 +5,7 @@ Pasos para modificar en el servidor:
 
 	2 - Escribimos en terminal : 
 		ssh -p 20064 root@147.96.85.115
-		pass : La que viene en correo
+		pass : la del correo 
 	
 	3 - Desde /var/www/html/ puedes cambiar lo que quieras.
 
@@ -13,6 +13,12 @@ Pasos para modificar en el servidor:
 		scp -r -P 20064 'archivo' root@147.96.85.115:/home/
 
 	5 - Mover el archivo de home a /var/www/html con sudo mv
+	
+Como acceder desde Filezilla al servidor:
+	1.- Servidor: sftp://147.96.85.115
+	2.- Nombre Usuario: root
+	3.- pass: la del correo
+	4.- Puerto: 20064
 
 Pasos para acceder a la base de datos:
 
