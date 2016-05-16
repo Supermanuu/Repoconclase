@@ -204,7 +204,7 @@
 		<div class="ialumnos_principal">
 			<div id="menu_alumno">
             <div id ="menu_alumno_principal">
-               <div id="nombre_alumno"> <?php echo $nombre; ?> </div>
+               <div id="nombre_alumno"> <?php echo $nombre . " " . $apellido1 . " " . $apellido2; ?> </div>
                <div id="acciones_rapidas">
                   <h1 id="mis_notas" class="pulsable">Mis notas</h1>
                   <h1 id="buscar_profesor" class="pulsable">Buscar profesor</h1>
