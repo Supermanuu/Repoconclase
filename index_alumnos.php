@@ -24,7 +24,7 @@
       echo "ERROR: NEW: " . $conexion->connect_error;
    if (mysqli_connect_error ())        // Para versiones de PHP < 5.3.0
       echo "ERROR: NEW: " . mysqli_connect_error ();
-   echo "OK: " . $conexion->host_info . "\n";
+   //echo "OK: " . $conexion->host_info . "\n";
    
    
    // Preparamos la query que vamos a ejecutar: Obtenemos el id del alumno
