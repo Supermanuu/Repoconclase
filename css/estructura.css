@@ -1514,7 +1514,7 @@ body
 #busca_rank{
    display: flex;
    flex-direction: row;
-   background-color: #4F81BD;
+   /* background-color: #4F81BD; */
 }
 
 #rank li #bloque1{

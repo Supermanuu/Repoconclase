@@ -52,17 +52,18 @@
             echo '<h2>¿Podrás llegar a lo más alto? </h2>';
             echo '</div>';
         ?>  
-
-
-            <div id="busca_rank">
+            
         <?php 
             if ($_SESSION["type"] == "alumno") {  //Alumno
+                echo '<div id="busca_rank" class="green">';
                 echo '<form id="buscador_rank" action="" class="green">';
             }
             elseif ($_SESSION["type"] == "profesor") {  //Profesor
+                echo '<div id="busca_rank" class="blue">';
                 echo '<form id="buscador_rank" action="" class="blue">';
             }
             elseif ($_SESSION["type"] == "administrador") {  //Admin
+                echo '<div id="busca_rank" class="purple">';
                 echo '<form id="buscador_rank" action="" class="purple">';
             }   
         ?>
@@ -73,9 +74,21 @@
                     <option>Mejores Valorados</option>
                 </select>
                 <input id="search_rank" type="text">
-                <input id="submit_rank" type="submit" value="Buscar">
-            <?php </form> ?> <!--Abrimos la etiq por php-->
-            </div>
+                
+                <?php 
+                    if ($_SESSION["type"] == "alumno") {  //Alumno
+                        echo '<input id="submit_rank" class="green" type="submit" value="Buscar">';
+                    }
+                    elseif ($_SESSION["type"] == "profesor") {  //Profesor
+                        echo '<input id="submit_rank" class="blue" type="submit" value="Buscar">';
+                    }
+                    elseif ($_SESSION["type"] == "administrador") {  //Admin
+                        echo '<input id="submit_rank" class="purple" type="submit" value="Buscar">';
+                    }   
+
+                    echo '</form>';  
+                    echo '</div>'; 
+                ?> 
 
 
 
