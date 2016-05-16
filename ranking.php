@@ -1,8 +1,8 @@
 <?php 
     session_start(); 
-    /*if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){
+    if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){
         header('Location: ./index.php');
-    }*/
+    }
 ?>
 
 <html>
@@ -53,18 +53,19 @@
             echo '</div>';
         ?>  
 
+
+            <div id="busca_rank">
         <?php 
             if ($_SESSION["type"] == "alumno") {  //Alumno
-                echo '<div id="buscador_rank" class="green">';
+                echo '<form id="buscador_rank" action="" class="green">';
             }
             elseif ($_SESSION["type"] == "profesor") {  //Profesor
-                echo '<div id="buscador_rank" class="blue">';
+                echo '<form id="buscador_rank" action="" class="blue">';
             }
             elseif ($_SESSION["type"] == "administrador") {  //Admin
-                echo '<div id="buscador_rank" class="purple">';
+                echo '<form id="buscador_rank" action="" class="purple">';
             }   
         ?>
-            <form id="buscador_rank" action="">
                 <p id="etq_filter">Filtrar por: </p>
                 <select id="filter">
                     <option selected>Nombre del Profesor</option>
@@ -73,8 +74,10 @@
                 </select>
                 <input id="search_rank" type="text">
                 <input id="submit_rank" type="submit" value="Buscar">
-            </form>
-            </div> <!-- Abirmos la etiq x php -->
+            <?php </form> ?> <!--Abrimos la etiq por php-->
+            </div>
+
+
 
             <ul id="rank">
     			<li id="profe">

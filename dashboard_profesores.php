@@ -1,10 +1,9 @@
 <?php
 	 session_start(); 
-
-	 //si no has iniciado sesion y accedes desde la url te tira al index
-	// if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){
-	 //    header('Location: ./index.php');
-	 //}
+	//si no has iniciado sesion y accedes desde la url te tira al index
+	if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){
+	    header('Location: ./index.php');
+	}
 
 ?>
 
