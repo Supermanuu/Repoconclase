@@ -1061,13 +1061,13 @@ div.ialumnos_principal
 #mis_clases_1_nombre , #mis_clases_2_nombre, #mis_clases_3_nombre
 {
    float: left;
-   width: 55%;
+   width: 70%;
 }
 
 #mis_clases_1_horario , #mis_clases_2_horario, #mis_clases_3_horario
 {
    float: right;
-   width: 45%;
+   width: 30%;
 }
 
 #spam_principal_por
