@@ -156,22 +156,22 @@
    
    // Preparamos la query que vamos a ejecutar: Obtenemos la informacion de un grupo seleccionado
    $sentencia->free_result ();
-   if (! ($sentencia = $conexion->prepare ("SELECT user FROM usuarios WHERE idUser IN (SELECT id_profesor FROM profes_seleccionados WHERE id_alumno = (?));")))
-      echo "ERROR: PREPARE (5): " . $conexion->error;
+   if (! ($sentencia = $conexion->prepare ("SELECT nombre, apellido1, apellido2 FROM registra WHERE usuario IN (SELECT user FROM usuarios WHERE idUser IN (SELECT id_profesor FROM profes_seleccionados WHERE id_alumno = (?)));")))
+      echo "ERROR: PREPARE (6): " . $conexion->error;
    // Asociamos la variable a la query: Es el id del usuario logeado
    if (!$sentencia->bind_param ("i", $_SESSION ["id_user"])) 
-      echo "ERROR: BIND PARAM (5): " . $conexion->error;
+      echo "ERROR: BIND PARAM (6): " . $conexion->error;
    // Ejecutamos la query en la BD
    if (!$sentencia->execute ())
-      echo "ERROR: EXECUTE (5): " . $conexion->error;
+      echo "ERROR: EXECUTE (6): " . $conexion->error;
    // Vinculamos la salida a otras variables: Esperamos la info de la clase
-   if (!$sentencia->bind_result ($user_profesor))
-      echo "ERROR: BIND RESULT (5): " . $conexion->error;
+   if (!$sentencia->bind_result ($nombre_profesor, $apellido1_profesor, $apellido2_profesor))
+      echo "ERROR: BIND RESULT (6): " . $conexion->error;
    // Recorremos las 3 primeras filas, si hay
    $i = 0;
    while ($sentencia->fetch () && i < 3)
    {
-      $profesores[] = $user_profesor;
+      $profesores[] = $nombre_profesor . " " . $apellido1_profesor . " " . $apellido2_profesor;
       $i++;
    }
    if ($i == 0)
@@ -204,28 +204,27 @@
 		<div class="ialumnos_principal">
 			<div id="menu_alumno">
             <div id ="menu_alumno_principal">
-               <div id="nombre_alumno"> <?php echo $nombre . " " . $apellido1 . " " . $apellido2; ?> </div>
+               <div id="nombre_alumno" title="<?php echo $nombre . " " . $apellido1 . " " . $apellido2; ?>"> <?php echo $nombre . " " . $apellido1 . " " . $apellido2; ?> </div>
                <div id="acciones_rapidas">
                   <h1 id="mis_notas" class="pulsable">Mis notas</h1>
                   <h1 id="buscar_profesor" class="pulsable">Buscar profesor</h1>
-                  <h1 id="contratar_profesor" class="pulsable">Contratar clase o profesor</h1>
+                  <h1 id="contratar_profesor" class="pulsable" title="Abre un wizard mediante el cual podrás contratar a un profesor">Contratar clase o profesor</h1>
                </div>
             </div>
             <div id="bloque_1">
-               <div id="mis_profesores" class="pulsable">
+               <div id="mis_profesores" class="pulsable" title="Muestra tu lista de profesores y permite gestionarla">
                   <h1 class="pulsable">Mis profesores</h1>
-                  <!--p id ="mis_profesores_1" class="pulsable">Rafael del Vado López</p-->
                   <p id ="mis_profesores_1" class="pulsable" title="<?php echo $profesores [0]; ?>"> <?php if ($profesores [0] != null) echo $profesores [0]; else echo '<br>'; ?> </p>
                   <p id ="mis_profesores_2" class="pulsable" title="<?php echo $profesores [1]; ?>"> <?php if ($profesores [1] != null) echo $profesores [1]; else echo '<br>'; ?> </p>
                   <p id ="mis_profesores_3" class="pulsable" title="<?php echo $profesores [2]; ?>"> <?php if ($profesores [2] != null) echo $profesores [2]; else echo '<br>'; ?> </p>
                </div>
                <div id="correo_alumno" class="pulsable">
-                  <h1 class="pulsable">Correo</h1>
+                  <h1 class="pulsable" title="Abre el cliente de correo">Correo</h1>
                   <p class="pulsable">Bandeja de entrada</p>
                </div>
             </div>
             <div id="bloque_2">
-               <div id="mis_cursos" class="pulsable">
+               <div id="mis_cursos" class="pulsable" title="Muestra tu lista de cursos para cualquier consulta">
                   <h1 class="pulsable">Mis cursos</h1>
                   <p id ="mis_grupos_1" class="pulsable" title="<?php echo $cursos [0]; ?>"> <?php if ($cursos [0] != null) echo $cursos [0]; else echo '<br>'; ?> </p>
                   <p id ="mis_grupos_2" class="pulsable" title="<?php echo $cursos [1]; ?>"> <?php if ($cursos [1] != null) echo $cursos [1]; else echo '<br>'; ?> </p>
@@ -237,7 +236,7 @@
                </div>
             </div>
             <div id="bloque_3">
-               <div id="mis_clases" class="pulsable">
+               <div id="mis_clases" class="pulsable" title="Accede a la lista de tus clases">
                   <h1 class="pulsable">Mis clases</h1>
                   <div id="mis_clases_1" class="pulsable">
                      <p id ="mis_clases_1_nombre" class="pulsable" title="<?php echo $clases [0]; ?>">  <?php if ($clases [0] != null) echo $clases [0]; else echo '<br>'; ?> </p>
@@ -254,7 +253,7 @@
                </div>
                <div id="acciones_no_tan_rapidas">
                   <h1 id="ajustes_perfil" class="pulsable">Ajustes de perfil</h1>
-                  <h1 id="video_tutorial" class="pulsable">Video tutorial</h1>
+                  <h1 id="video_tutorial" class="pulsable" title="Video para aprender a usar la página web">Video tutorial</h1>
                </div>
             </div>
          </div>
