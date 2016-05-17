@@ -46,23 +46,28 @@
 			exit();
 		}
 
-		$query = "INSERT INTO registra VALUES ('$usuario', '$correo', '$contrasena', '$perfil', 
-			'$nombre', '$apellido1', '$apellido2', '$nacimiento', '$tipo_documento', 
-			'$documento', '$cp', '$movil')";
-		$resultado = $mysqli->query($query);
-
-		if (!$resultado)
-			echo '<h1 class="my_hy">Formulario de registro no enviado... ¡Vuelva a intentarlo!</h1>';
-		else
-			echo '<h1 class="my_hy">¡Formulario de registro enviado!</h1>';
-
 		$query = "INSERT INTO usuarios VALUES (0, '$usuario', '$contrasena', '$perfil')";
 		$resultado = $mysqli->query($query);
+		$id = $mysqli->insert_id;
 
-		if (!$resultado)
+		if (!$resultado) {
 			echo '<h1 class="my_hy">Formulario de registro no enviado... ¡Vuelva a intentarlo!</h1>';
-		else
-			echo '<h1 class="my_hy">¡Formulario de registro enviado!</h1>';
+		}
+		else {
+			
+   			$query = "INSERT INTO registra VALUES ('$id', '$correo', '$contrasena', '$perfil', 
+				'$nombre', '$apellido1', '$apellido2', '$nacimiento', '$tipo_documento', 
+				'$documento', '$cp', '$movil')";
+		
+			$resultado = $mysqli->query($query);
+
+			if (!$resultado)
+				echo '<h1 class="my_hy">Formulario de registro no enviado... ¡Vuelva a intentarlo!</h1>';
+			else
+				echo '<h1 class="my_hy">¡Formulario de registro enviado!</h1>';
+
+		}
+
 		$mysqli->close();
 
 	}
