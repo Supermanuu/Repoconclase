@@ -55,7 +55,7 @@
 		}
 		else {
 			
-   			$query = "INSERT INTO registra VALUES ('$id', '$correo', '$contrasena', '$perfil', 
+   			$query = "INSERT INTO registra VALUES ('$id', '$correo', '$perfil', 
 				'$nombre', '$apellido1', '$apellido2', '$nacimiento', '$tipo_documento', 
 				'$documento', '$cp', '$movil')";
 		
