@@ -1,7 +1,30 @@
-﻿<html>
+﻿<?php
+   session_start (); 
+   
+   function print_item (nitem, titulo, descripcion)
+   {
+      echo '<div name="vista_lista_elemento[]" class="vista_lista_elemento">'
+         echo '<div id="vista_lista_imagen_elemento_' . $nitem . '" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>'
+         echo '<div class="vista_lista_contenido_elemento">'
+            echo '<div id="vista_lista_titulo_elemento_' . $nitem . '" class="vista_lista_titulo_elemento">'
+               echo $titulo
+            echo '</div>'
+            echo '<div id="vista_lista_descripcion_elemento_' . $nitem . '" class="vista_lista_descripcion_elemento">'
+               echo $descripcion
+            echo '</div>'
+         echo '</div>'
+         echo '<div id="vista_lista_borrar_elemento_' . $nitem . '" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>'
+      echo '</div>'
+   }
+?>
+
+<html lang="es-ES">
 	<head>
 		<title>Profesores con clase</title>
 		<meta charset="utf-8"/>
+      <meta name="author" content="Sistemas web 15/16">
+      <meta name="description" content="Muestra listas de cosas">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
       <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" type="text/css" href="css/reset.css"/>
 		<link rel="stylesheet" type="text/css" href="css/estructura.css"/>
@@ -30,174 +53,16 @@
                   <input id="vista_lista_submit" type="submit" value="Buscar">
                </form>
                <div id="vista_lista_lista">
-                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
-                     <div id="vista_lista_imagen_elemento_1" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
-                     <div class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_1" class="vista_lista_titulo_elemento">
-                           Eusebio Martín Pérez
-                        </div>
-                        <div id="vista_lista_descripcion_elemento_1" class="vista_lista_descripcion_elemento">
-                           Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
-                        </div>
-                     </div>
-                     <div id="vista_lista_borrar_elemento_1" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
-                  </div>
-                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
-                     <div id="vista_lista_imagen_elemento_2" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
-                     <div class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_2" class="vista_lista_titulo_elemento">
-                           Eusebio Martín Pérez
-                        </div>
-                        <div id="vista_lista_descripcion_elemento_2" class="vista_lista_descripcion_elemento">
-                           Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
-                        </div>
-                     </div>
-                     <div id="vista_lista_borrar_elemento_2" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
-                  </div>
-                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
-                     <div id="vista_lista_imagen_elemento_3" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
-                     <div class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_3" class="vista_lista_titulo_elemento">
-                           Eusebio Martín Pérez
-                        </div>
-                        <div id="vista_lista_descripcion_elemento_3" class="vista_lista_descripcion_elemento">
-                           Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
-                        </div>
-                     </div>
-                     <div id="vista_lista_borrar_elemento_3" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
-                  </div>
-                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
-                     <div id="vista_lista_imagen_elemento_4" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
-                     <div class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_4" class="vista_lista_titulo_elemento">
-                           Eusebio Martín Pérez
-                        </div>
-                        <div id="vista_lista_descripcion_elemento_4" class="vista_lista_descripcion_elemento">
-                           Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
-                        </div>
-                     </div>
-                     <div id="vista_lista_borrar_elemento_4" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
-                  </div>
-                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
-                     <div id="vista_lista_imagen_elemento_5" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
-                     <div class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_5" class="vista_lista_titulo_elemento">
-                           Eusebio Martín Pérez
-                        </div>
-                        <div id="vista_lista_descripcion_elemento_5" class="vista_lista_descripcion_elemento">
-                           Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
-                        </div>
-                     </div>
-                     <div id="vista_lista_borrar_elemento_5" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
-                  </div>
-                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
-                     <div id="vista_lista_imagen_elemento_6" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
-                     <div class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_6" class="vista_lista_titulo_elemento">
-                           Eusebio Martín Pérez
-                        </div>
-                        <div id="vista_lista_descripcion_elemento_6" class="vista_lista_descripcion_elemento">
-                           Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
-                        </div>
-                     </div>
-                     <div id="vista_lista_borrar_elemento_6" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
-                  </div>
-                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
-                     <div id="vista_lista_imagen_elemento_7" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
-                     <div class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_7" class="vista_lista_titulo_elemento">
-                           Eusebio Martín Pérez
-                        </div>
-                        <div id="vista_lista_descripcion_elemento_7" class="vista_lista_descripcion_elemento">
-                           Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
-                        </div>
-                     </div>
-                     <div id="vista_lista_borrar_elemento_7" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
-                  </div>
-                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
-                     <div id="vista_lista_imagen_elemento_8" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
-                     <div class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_8" class="vista_lista_titulo_elemento">
-                           Eusebio Martín Pérez
-                        </div>
-                        <div id="vista_lista_descripcion_elemento_8" class="vista_lista_descripcion_elemento">
-                           Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
-                        </div>
-                     </div>
-                     <div id="vista_lista_borrar_elemento_8" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
-                  </div>
-                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
-                     <div id="vista_lista_imagen_elemento_9" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
-                     <div class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_9" class="vista_lista_titulo_elemento">
-                           Eusebio Martín Pérez
-                        </div>
-                        <div id="vista_lista_descripcion_elemento_9" class="vista_lista_descripcion_elemento">
-                           Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
-                        </div>
-                     </div>
-                     <div id="vista_lista_borrar_elemento_9" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
-                  </div>
-                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
-                     <div id="vista_lista_imagen_elemento_10" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
-                     <div class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_10" class="vista_lista_titulo_elemento">
-                           Eusebio Martín Pérez
-                        </div>
-                        <div id="vista_lista_descripcion_elemento_10" class="vista_lista_descripcion_elemento">
-                           Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
-                        </div>
-                     </div>
-                     <div id="vista_lista_borrar_elemento_10" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
-                  </div>
-                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
-                     <div id="vista_lista_imagen_elemento_11" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
-                     <div class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_11" class="vista_lista_titulo_elemento">
-                           Eusebio Martín Pérez
-                        </div>
-                        <div id="vista_lista_descripcion_elemento_11" class="vista_lista_descripcion_elemento">
-                           Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
-                        </div>
-                     </div>
-                     <div id="vista_lista_borrar_elemento_11" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
-                  </div>
-                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
-                     <div id="vista_lista_imagen_elemento_12" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
-                     <div class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_12" class="vista_lista_titulo_elemento">
-                           Eusebio Martín Pérez
-                        </div>
-                        <div id="vista_lista_descripcion_elemento_12" class="vista_lista_descripcion_elemento">
-                           Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
-                        </div>
-                     </div>
-                     <div id="vista_lista_borrar_elemento_12" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
-                  </div>
-                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
-                     <div id="vista_lista_imagen_elemento_13" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
-                     <div class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_13" class="vista_lista_titulo_elemento">
-                           Eusebio Martín Pérez
-                        </div>
-                        <div id="vista_lista_descripcion_elemento_13" class="vista_lista_descripcion_elemento">
-                           Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
-                        </div>
-                     </div>
-                     <div id="vista_lista_borrar_elemento_13" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
-                  </div>
-                  <div name="vista_lista_elemento[]" class="vista_lista_elemento">
-                     <div id="vista_lista_imagen_elemento_14" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>
-                     <div class="vista_lista_contenido_elemento">
-                        <div id="vista_lista_titulo_elemento_14" class="vista_lista_titulo_elemento">
-                           Eusebio Martín Pérez
-                        </div>
-                        <div id="vista_lista_descripcion_elemento_14" class="vista_lista_descripcion_elemento">
-                           Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
-                        </div>
-                     </div>
-                     <div id="vista_lista_borrar_elemento_14" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>
-                  </div>
+                  <?php 
+                  
+                     if (!isset ($_RESOUCE ["c"]) || $_RESOUCE ["c"] != mis)
+                     {
+                        $i = 0;
+                        while (i++ < 13)
+                           print_item ($i, 'Eusebio Martín Pérez', 'Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...')
+                     }
+                     
+                  ?>
                </div>
             </div>
             <div id="vista_lista_vista">
