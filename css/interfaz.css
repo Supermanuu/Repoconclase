@@ -791,6 +791,31 @@ div.oscuro{
   text-align: center;
 }
 
+/*-----SLIDE UL ES UNA LISTA GIRATORIA GENERADA POR PHP CON LAS PROX CLASES DEL PROFESOR QUE INICIA SESION-----*/
+#slide ul {
+  display: flex; /* Caja flexible, con sus hijos tambien flexibles */
+  padding: 0;
+  width: 400%;
+  animation: giraProxEventos 20s infinite; /* La animacion dura 20s, se repite indefinidamente,*/
+}
+#slide li {
+  width: 100%;
+}
+
+@keyframes giraProxEventos {
+  0% {margin-left:0;}
+  20% {margin-left:0;} /* 20% de 20s = 4s */
+                        /* 5% de 20s = 1s, transicion a la segunda imagen */
+  25% {margin-left:-100%;}
+  48% {margin-left:-100%;}
+
+  53% {margin-left:-200%;}
+  75% {margin-left:-200%;}
+
+  80% {margin-left:-300%;}
+  100% {margin-left:-300%;}
+}
+
 p.dashprofes_small_p
 {
 	color: lightgray;

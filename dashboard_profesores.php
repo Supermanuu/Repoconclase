@@ -30,14 +30,19 @@
 		    	<p class="dashprofes_small_p dashprofes_info">Proximos Eventos: </p>
           <?php 
             $k = 0;
+            echo '<div id="slide">';
+            echo '<ul>';
             while ($k < $_SESSION ["nclases"])
-            { 
+            {  
+              echo  '<li>';
               echo '<p class="dashprofes_small_p dashprofes_info" id="tusEventos">'; 
               echo $clases[$k] . " - " . $horas_clases[$k];  
               echo '</p>';
-
+              echo '</li>';
               $k++;
             } 
+            echo '</ul>';
+            echo '</div>';
           ?>
 		 	    </div>
 
