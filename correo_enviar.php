@@ -20,7 +20,7 @@ echo '<form id="correo_formulario" method="post">';
 	     echo '<label for="asun">Asunto : </label></br>';
 	   echo '</div>';
 	   echo '<div id="correo_entradas">';
-	    echo '<input name="dest" type="text" value="Jose@gmail.com"></></br>';
+	    echo '<input name="dest" type="text" value="pepe@ucm.es"></></br>';
 	    echo '<input name="asun" type="text" value="Clase Lunes"></></br>';
 	   echo '</div>';
 	echo '</div>';

@@ -30,7 +30,7 @@
 
         		 ?>
   			 <option value="recibidos" selected>Mensajes Recibidos</option>
-  			 <option value="envidados">Mensajes Enviados</option>
+  			 <option value="enviados">Mensajes Enviados</option>
   			 <option value="borrados">Mensajes Eliminados</option>
 			 </select>
 			 <?php
@@ -42,9 +42,31 @@
 				}
 			?>
                 	</div>
-			<?php include('php/clienteDetalles.php'); ?>
+			<?php
+				if ($_SESSION["type"] == "alumno"){
+				   $color = "verde";
+				}
+				elseif ($_SESSION["type"] == "profesor"){
+				   $color = "azul";
+				}
+				$temp = "correo_detallesCorreo_" . $color;
+				echo '<div id=' . $temp . '>';
+				include('php/clienteDetalles.php');
+				echo '</div>';
+			?>
 		</div>
-		<?php include('php/clienteMensaje.php'); ?>
+		<?php
+			if ($_SESSION["type"] == "alumno"){
+				$color = "verde";
+			}
+			elseif($_SESSION["type"] == "profesor"){
+				$color = "azul";
+			}
+			$temporal = "correo_mostrarMensaje_" . $color;
+			echo '<div id=' . $temporal . '>';
+			include('php/clienteMensaje.php');
+			echo '</div>';
+		?>
         </div>
         <?php include('php/footer.php'); ?>
     </body>
