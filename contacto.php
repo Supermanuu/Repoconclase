@@ -21,7 +21,7 @@
 			</div>
 			<div class="form_contenido">
 				<h1 class="my_h1">Contacta con nosotros</h1>
-				<form class="form_box" method="post" action="./php/form_contacto.php">
+				<form id="form_contacto" class="form_box" method="post" action="./php/form_contacto.php">
 					<div class="form_etiquetas">
 						<text class="form_text">Formulario de contacto</text></br>
 						<label class="form_label" for="Nombre">Nombre</label></br>
@@ -31,19 +31,19 @@
 					</div>
 					<div class="form_entradas">
 						</br> <!-- Formulario de contacto -->
-						<input class="form_input" id="field1" type="text" name="Nombre" maxlength="20" size="20" placeholder="Para tratar con ud." required/><label class="form_checker" id="input_chk1">  <</label></br>
-						<input class="form_input" id="field2" type="email" name="Email" maxlength="30" size="20" placeholder="Para que podamos contactarle" required/><label class="form_checker" id="input_chk2">  <</label></br>
+						<input class="form_input" id="field1" type="text" name="Nombre" maxlength="20" size="20" placeholder="Para tratar con ud." autocomplete="off" required/><label class="form_checker" id="input_chk1" autocomplete="off">  <</label></br>
+						<input class="form_input" id="field2" type="email" name="Email" maxlength="30" size="20" placeholder="Para que podamos contactarle" autocomplete="off" required/><label class="form_checker" id="input_chk2">  <</label></br>
 						<select class="blue" id="field3" name="Tipo">
   							<option class="form_option" value="Sugerencias" selected>Sugerencias</option>
   							<option class="form_option" value="Criticas">Criticas</option>
   							<option class="form_option" value="Evaluación">Evaluación</option>
   							<option class="form_option" value="otros">Otros</option>
 						</select><label class="form_checker" id="input_chk3">  <</label></br>
-						<textarea class="blue" id=text_chk name="Mensaje" rows="15" cols="25" maxlength="300" placeholder="Tiene 300 caracteres para escribir su mensaje." required></textarea></br></br>
+						<textarea class="blue" id=text_chk name="Mensaje" rows="15" cols="25" maxlength="300" placeholder="Tiene 300 caracteres para escribir su mensaje." autocomplete="off"></textarea></br></br>
 					</div>
 					<div class="form_botonera">
-						<label for="verif"/> <input type="checkbox" required>Verifico que he leído y acepto los términos y condiciones del servicio.</br>
-						<input class="blue" id="form_enviar" type="submit" value="Send request"/>
+						<label for="verif"/> <input id="chkbx" type="checkbox" required>Verifico que he leído y acepto los términos y condiciones del servicio.</br>
+						<input class="blue" id="form_enviar" type="button" value="Send request"/>
 						<input class="blue" id="form_limpiar" type="reset" value="Clear"/>
 					</div>
 				</form>

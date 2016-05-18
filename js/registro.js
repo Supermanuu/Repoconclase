@@ -77,119 +77,156 @@ $(document).ready(function() {
 
 	}
 
-	$("input#field1").keyup(function() {
+	function field1() {
 		
-		if ($(this).val() === "")
-			$("label#input_chk1").css("color", "white");
+		if ($("input#field1").val() === "")
+			$("label#input_chk1").css("color", "red");
 
 		else {
 
-			if (check_alpha_8_12($(this).val()))
+			if (check_alpha_8_12($("input#field1").val())) {
 				$("label#input_chk1").css("color", "#4F81BD");
+				return true;
+			}
 			else
 				$("label#input_chk1").css("color", "red");
 
 		}
 
-	});
+		return false;
 
-	$("input#field2").keyup(function() {
+	}
 
-		if ($(this).val() === "")
-			$("label#input_chk2").css("color", "white");
+	$("input#field1").keyup(field1);
+
+	function field2() {
+
+		if ($("input#field2").val() === "") 
+			$("label#input_chk2").css("color", "red");
 
 		else {
 
-			if (check_email($(this).val()))
+			if (check_email($("input#field2").val())) {
 				$("label#input_chk2").css("color", "#4F81BD");
+				return true;
+			}
 			else
 				$("label#input_chk2").css("color", "red");
 
 		}
 
-	});
+		return false;
 
-	$("input#field3").keyup(function() {
+	}
+
+	$("input#field2").keyup(field2);
+
+	function field3() {
 		
-		if ($(this).val() === "")
-			$("label#input_chk3").css("color", "white");
+		if ($("input#field3").val() === "")
+			$("label#input_chk3").css("color", "red");
 
 		else {
 
-			if (check_alpha_8_12($(this).val()))
+			if (check_alpha_8_12($("input#field3").val())) {
 				$("label#input_chk3").css("color", "#4F81BD");
+				return true;
+			}
 			else
 				$("label#input_chk3").css("color", "red");
 
 		}
 
-	});
+		return false;
 
-	$("input#field4").keyup(function() {
+	}
+
+	$("input#field3").keyup(field3);
+
+	function field4() {
 		
-		if ($(this).val() === "")
-			$("label#input_chk4").css("color", "white");
+		if ($("input#field4").val() === "")
+			$("label#input_chk4").css("color", "red");
 
 		else {
 
-			if (check_alpha_8_12($(this).val()) && $(this).val() === $("input#field3").val())
+			if (check_alpha_8_12($("input#field4").val()) && $("input#field4").val() === $("input#field3").val()) {
 				$("label#input_chk4").css("color", "#4F81BD");
+				return true;
+			}
 			else
 				$("label#input_chk4").css("color", "red");
 
 		}
 
-	});
+		return false;
+
+	}
+
+	$("input#field4").keyup(field4);
 
 	$("label#input_chk5").css("color", "#4F81BD");
 
 	function is_fill($field, $label) {
-		if ($field === "")
-			$($label).css("color", "white");
-		else
+		if ($field === "") {
+			$($label).css("color", "red");
+			return false;
+		}
+		else {
 			$($label).css("color", "#4F81BD");
+			return true;
+		}
 	}
 
 	$("input#field6").keyup(function() {
 		is_fill($(this).val(), $("label#input_chk6"));
 	});
+
 	$("input#field7").keyup(function() {
 		is_fill($(this).val(), $("label#input_chk7"));
 	});
+
 	$("input#field8").keyup(function() {
 		is_fill($(this).val(), $("label#input_chk8"));
 	});
 
-	$("input#field9").keyup(function() {
-		console.log($(this).val());
-		if ($(this).val() === "")
-			$("label#input_chk9").css("color", "white");
+	function field9() {
+
+		if ($("input#field9").val() === "")
+			$("label#input_chk9").css("color", "red");
 
 		else {
 
-			if (check_date($(this).val()))
+			if (check_date($("input#field9").val())) {
 				$("label#input_chk9").css("color", "#4F81BD");
+				return true;
+			}
 			else
 				$("label#input_chk9").css("color", "red");
 
 		}
 		
+		return false;
+		
+	}
 
-	});
+	$("input#field9").keyup(field9);
 
 	$("label#input_chk10").css("color", "#4F81BD");
 
-	$("input#field11").keyup(function() {
+	function field11() {
 
-		if ($(this).val() === "")
-			$("label#input_chk11").css("color", "white");
+		if ($("input#field11").val() === "")
+			$("label#input_chk11").css("color", "red");
 
 		else {
 
 			if ($("#field10").val() === "NIF") {
 
-				if (check_nif($(this).val()))
+				if (check_nif($("input#field11").val())) {
 					$("label#input_chk11").css("color", "#4F81BD");
+					return true;
+				}
 				else
 					$("label#input_chk11").css("color", "red");
 
@@ -197,8 +234,10 @@ $(document).ready(function() {
 
 			else {
 
-				if (check_nie($(this).val()))
+				if (check_nie($("input#field11").val())) {
 					$("label#input_chk11").css("color", "#4F81BD");
+					return true;
+				}
 				else
 					$("label#input_chk11").css("color", "red");
 
@@ -207,76 +246,69 @@ $(document).ready(function() {
 			
 		}
 		
+		return false;
 
-	});
+	}
 
-	$("input#field12").keyup(function() {
+	$("input#field11").keyup(field11);
 
-		if ($(this).val() === "")
-			$("label#input_chk12").css("color", "white");
+	function field12() {
+
+		if ($("input#field12").val() === "")
+			$("label#input_chk12").css("color", "red");
 
 		else {
 
-			if (check_numeric_5($(this).val()))
+			if (check_numeric_5($("input#field12").val())) {
 				$("label#input_chk12").css("color", "#4F81BD");
+				return true;
+			}
 			else
 				$("label#input_chk12").css("color", "red");
 
 		}
 		
+		return false;
 
-	});
+	}
 
-	$("input#field14").keyup(function() {
+	$("input#field12").keyup(field12);
+
+	function field14() {
 		
-		if ($(this).val() === "")
-			$("label#input_chk14").css("color", "white");
+		if ($("input#field14").val() === "")
+			$("label#input_chk14").css("color", "red");
 
 		else {
 
-			if (check_mobileno($(this).val()))
+			if (check_mobileno($("input#field14").val())) {
 				$("label#input_chk14").css("color", "#4F81BD");
+				return true;
+			}
 			else
 				$("label#input_chk14").css("color", "red");
 
 		}
 
-	});
+		return false;
+
+	}
+
+	$("input#field14").keyup(field14);
 
 	$("input#form_enviar").click(function() {
 
-		if ($("input#field1").val() === "")
-			$("label#input_chk1").css("color", "red");
-
-		if ($("input#field2").val() === "")
-			$("label#input_chk2").css("color", "red");
-
-		if ($("input#field3").val() === "")
-			$("label#input_chk3").css("color", "red");
-
-		if ($("input#field4").val() === "")
-			$("label#input_chk4").css("color", "red");
-
-		if ($("input#field6").val() === "")
-			$("label#input_chk6").css("color", "red");
-
-		if ($("input#field7").val() === "")
-			$("label#input_chk7").css("color", "red");
-
-		if ($("input#field8").val() === "")
-			$("label#input_chk8").css("color", "red");
-
-		if ($("input#field9").val() === "")
-			$("label#input_chk9").css("color", "red");
-
-		if ($("input#field11").val() === "")
-			$("label#input_chk11").css("color", "red");
-
-		if ($("input#field12").val() === "")
-			$("label#input_chk12").css("color", "red");
-
-		if ($("input#field14").val() === "")
-			$("label#input_chk14").css("color", "red");
+		if (field1() && field2() && field3() && field4() && is_fill($("input#field6").val(), $("label#input_chk6")) 
+			&& is_fill($("input#field7").val(), $("label#input_chk7")) && is_fill($("input#field8").val(), $("label#input_chk8")) 
+			&& field9() && field11() &&field12() && field14()) {
+			if ($("input#chkbx").is(':checked'))
+				$("form#form_registro").submit();
+			else
+				alert( "Acepta los términos y condiciones." );
+		}
+			
+		else
+			alert( "Algún campo no es válido. Revisa el formulario." );
 
 	});
 
@@ -297,5 +329,23 @@ $(document).ready(function() {
 
 	});
 
+	function clean() {
+
+		$("input#field1").val("");
+		$("input#field2").val("");
+		$("input#field1").val("");
+		$("input#field3").val("");
+		$("input#field4").val("");
+		$("input#field6").val("");
+		$("input#field7").val("");
+		$("input#field8").val("");
+		$("input#field9").val("");
+		$("input#field11").val("");
+		$("input#field12").val("");
+		$("input#field14").val("");
+
+	}
+
+	clean();
 
 });

@@ -11,43 +11,68 @@ $(document).ready(function() {
 
 	}
 
-	$("input#field1").keyup(function() {
+	function field1() {
 
-		if ($(this).val() === "")
-			$("label#input_chk1").css("color", "white");
+		if ($("input#field1").val() === "")
+			$("label#input_chk1").css("color", "red");
 		else
 			$("label#input_chk1").css("color", "#4F81BD");
 
-	});
+	}
 
-	$("input#field2").keyup(function() {
+	$("input#field1").keyup(field1);
 
-		if ($(this).val() === "")
-			$("label#input_chk2").css("color", "white");
+	$("input#field1").val("");
+
+	function field2() {
+
+		if ($("input#field2").val() === "")
+			$("label#input_chk2").css("color", "red");
 
 		else {
 
-			if (check_email($(this).val()))
+			if (check_email($("input#field2").val()))
 				$("label#input_chk2").css("color", "#4F81BD");
 			else
 				$("label#input_chk2").css("color", "red");
 
 		}
 
-	});
+	}
+
+	$("input#field2").keyup(field2);
+
+	$("input#field2").val("");
 
 	$("label#input_chk3").css("color", "#4F81BD");
 
 	$("input#form_enviar").click(function() {
 
-		if ($("input#field1").val() === "")
+		var send = true;
+
+		if ($("input#field1").val() === "") {
 			$("label#input_chk1").css("color", "red");
+			send = false;
+		}
 
-		if ($("input#field2").val() === "")
+		if (!check_email($("input#field2").val()) || $("input#field2").val() === "") {
 			$("label#input_chk2").css("color", "red");
+			send = false;
+		}
 
-		if ($("#text_chk").val() === "")
+		if ($("#text_chk").val() === "" || $("#text_chk").val() === "¿No tienes nada que contarnos?") {
 			$("#text_chk").val("¿No tienes nada que contarnos?");
+			send = false;
+		}
+
+		if (send) {
+			if ($("input#chkbx").is(':checked'))
+				$("form#form_contacto").submit();
+			else
+				alert( "Acepta los términos y condiciones." );
+		}
+		else
+			alert( "Algún campo no es válido. Revisa el formulario." );
 
 	});
 
