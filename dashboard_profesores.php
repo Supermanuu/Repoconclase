@@ -1,10 +1,6 @@
-<?php
-	 session_start(); 
-	//si no has iniciado sesion y accedes desde la url te tira al index
-	if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){
-	    header('Location: ./index.php');
-	}
-
+<?php 
+   session_start ();
+   include "php/getProfesorInfo.php";
 ?>
 
 <html>
@@ -29,11 +25,21 @@
 
         <div class="dashprofes_principal" id="principal">
 
-        	<div id="tuInfo" class="dashboard oscuro">
-		    	<p class="dashprofes_big_p"> Leandro Gado Mata</p>
+        	<div id="tuInfo" class="dashboard oscuro" title="<?php echo $_SESSION["nombre"]; ?>">
+		    	<p class="dashprofes_big_p"> <?php echo $_SESSION["nombre"]; ?> </p>
 		    	<p class="dashprofes_small_p dashprofes_info">Proximos Eventos: </p>
-		    	<p class="dashprofes_small_p dashprofes_info" id="tusEventos"> Quimica - Grupo 2 : 18:00 </p>
-		 	</div>
+          <?php 
+            $k = 0;
+            while ($k < $_SESSION ["nclases"])
+            { 
+              echo '<p class="dashprofes_small_p dashprofes_info" id="tusEventos">'; 
+              echo $clases[$k] . " - " . $horas_clases[$k];  
+              echo '</p>';
+
+              $k++;
+            } 
+          ?>
+		 	    </div>
 
         	<div id="tusClases" class="dashboard claro">
 		    	<p class="dashprofes_big_p">Tus Clases</p>
