@@ -1,4 +1,6 @@
-$(function() {
+$(function(){
+
+   setInterval(load,1000);
 
    var cargaDetalles = function(bandeja) {
 	pagina = "./php/clienteDetalles.php?" + "bandeja=" + bandeja;
@@ -22,6 +24,8 @@ $(function() {
         }
 		
    });
+
+   function load(){
 
    $("#correo_nuevo").click(function() {
 	
@@ -67,6 +71,8 @@ $(function() {
 
        $(this).css("background-color", "#6AC46E");
    });
+
+   };
 
 });
 
