@@ -41,6 +41,13 @@
               echo '</li>';
               $k++;
             } 
+            if($_SESSION ["nclases"] == 0){ //no hay clases para el profesor, imprimimos mensaje por defecto emitido por el php
+              echo  '<li>';
+              echo '<p class="dashprofes_small_p dashprofes_info" id="tusEventos">'; 
+              echo $clases[0];  
+              echo '</p>';
+              echo '</li>';
+            }
             echo '</ul>';
             echo '</div>';
           ?>
