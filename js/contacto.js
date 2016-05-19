@@ -16,7 +16,7 @@ $(document).ready(function() {
 		if ($("input#field1").val() === "")
 			$("label#input_chk1").css("color", "red");
 		else
-			$("label#input_chk1").css("color", "#4F81BD");
+			$("label#input_chk1").css("color", "#6AC46E");
 
 	}
 
@@ -32,7 +32,7 @@ $(document).ready(function() {
 		else {
 
 			if (check_email($("input#field2").val()))
-				$("label#input_chk2").css("color", "#4F81BD");
+				$("label#input_chk2").css("color", "#6AC46E");
 			else
 				$("label#input_chk2").css("color", "red");
 
@@ -44,7 +44,7 @@ $(document).ready(function() {
 
 	$("input#field2").val("");
 
-	$("label#input_chk3").css("color", "#4F81BD");
+	$("label#input_chk3").css("color", "#6AC46E");
 
 	$("input#form_enviar").click(function() {
 

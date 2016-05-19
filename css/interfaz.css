@@ -37,7 +37,7 @@ header.purple
   background-image: url(../img/profesconclase_azul.png);
 }
 
-button.green, select.green
+button.green, select.green, input.green
 {
    /* Color de acción */
    background-color: #6AC46E;
@@ -53,7 +53,7 @@ button.green, select.green
 
 }
 
-button.blue, select.blue
+button.blue, select.blue, input.blue
 {
    /* Color de acción */
    background-color: #4F81BD;
@@ -69,7 +69,7 @@ button.blue, select.blue
 
 }
 
-button.purple, select.purple
+button.purple, select.purple, input.purple
 {
    /* Color de acción */
    background-color: #BA68C8;
@@ -83,6 +83,18 @@ button.purple, select.purple
    /* Tamaño de la fuente */
    font-size: larger;
 
+}
+
+text.blue {
+   color: #4F81BD;
+}
+
+text.purple {
+   color: #BA68C8;
+}
+
+text.green {
+   color: #6AC46E;
 }
 
 form.blue_search {
@@ -469,19 +481,8 @@ div.form_principal {
     color: white;
 }
 
-text.form_text {
-   color: #4F81BD;
-}
-
 label.form_checker {
    font-size:20px;
-}
-
-input#form_enviar, input#form_limpiar {
-   background-color: #4F81BD;
-   border-color: #223A57;
-   color: white;
-   font-size: larger;
 }
 
 @media (min-width: 768px) {
@@ -538,7 +539,7 @@ input#form_enviar, input#form_limpiar {
     white-space: nowrap;
   }
 
-  text.form_text {
+  text#form_text {
     position: absolute;
   }
 

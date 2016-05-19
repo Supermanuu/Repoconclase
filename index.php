@@ -28,8 +28,24 @@
             <!-- Botones para registrarse -->
             <div id="index_botonesInfo">
                 <div id="index_botonesInfo2">
-                    <button class="blue" id="index_toProfes" type="button" >¿Buscas profesores?</br>¡Este es tu sitio!</button>
-                    <button class="blue" id="index_toAlumnos" type="button" >¿Buscas alumnos?</br>¡Este es tu sitio!</button>
+                    <?php
+                        if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){ //Sesion no iniciada
+                          echo '<button class="blue" id="index_toProfes" type="button" >¿Buscas profesores?</br>¡Este es tu sitio!</button>';
+                          echo '<button class="blue" id="index_toAlumnos" type="button" >¿Buscas alumnos?</br>¡Este es tu sitio!</button>';
+                        }
+                        elseif ($_SESSION["type"] == "alumno") {  //Alumno
+                          echo '<button class="green" id="index_toProfes" type="button" >¿Buscas profesores?</br>¡Este es tu sitio!</button>';
+                          echo '<button class="green" id="index_toAlumnos" type="button" >¿Buscas alumnos?</br>¡Este es tu sitio!</button>';
+                        }
+                        elseif ($_SESSION["type"] == "profesor") {  //Profesor
+                          echo '<button class="blue" id="index_toProfes" type="button" >¿Buscas profesores?</br>¡Este es tu sitio!</button>';
+                          echo '<button class="blue" id="index_toAlumnos" type="button" >¿Buscas alumnos?</br>¡Este es tu sitio!</button>';
+                        }
+                        elseif ($_SESSION["type"] == "administrador") {  //Admin
+                          echo '<button class="purple" id="index_toProfes" type="button" >¿Buscas profesores?</br>¡Este es tu sitio!</button>';
+                          echo '<button class="purple" id="index_toAlumnos" type="button" >¿Buscas alumnos?</br>¡Este es tu sitio!</button>';
+                        }
+                    ?>
                 </div>
             </div>
         </div>

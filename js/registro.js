@@ -85,7 +85,7 @@ $(document).ready(function() {
 		else {
 
 			if (check_alpha_8_12($("input#field1").val())) {
-				$("label#input_chk1").css("color", "#4F81BD");
+				$("label#input_chk1").css("color", "#6AC46E");
 				return true;
 			}
 			else
@@ -107,7 +107,7 @@ $(document).ready(function() {
 		else {
 
 			if (check_email($("input#field2").val())) {
-				$("label#input_chk2").css("color", "#4F81BD");
+				$("label#input_chk2").css("color", "#6AC46E");
 				return true;
 			}
 			else
@@ -129,7 +129,7 @@ $(document).ready(function() {
 		else {
 
 			if (check_alpha_8_12($("input#field3").val())) {
-				$("label#input_chk3").css("color", "#4F81BD");
+				$("label#input_chk3").css("color", "#6AC46E");
 				return true;
 			}
 			else
@@ -151,7 +151,7 @@ $(document).ready(function() {
 		else {
 
 			if (check_alpha_8_12($("input#field4").val()) && $("input#field4").val() === $("input#field3").val()) {
-				$("label#input_chk4").css("color", "#4F81BD");
+				$("label#input_chk4").css("color", "#6AC46E");
 				return true;
 			}
 			else
@@ -165,7 +165,7 @@ $(document).ready(function() {
 
 	$("input#field4").keyup(field4);
 
-	$("label#input_chk5").css("color", "#4F81BD");
+	$("label#input_chk5").css("color", "#6AC46E");
 
 	function is_fill($field, $label) {
 		if ($field === "") {
@@ -173,7 +173,7 @@ $(document).ready(function() {
 			return false;
 		}
 		else {
-			$($label).css("color", "#4F81BD");
+			$($label).css("color", "#6AC46E");
 			return true;
 		}
 	}
@@ -198,7 +198,7 @@ $(document).ready(function() {
 		else {
 
 			if (check_date($("input#field9").val())) {
-				$("label#input_chk9").css("color", "#4F81BD");
+				$("label#input_chk9").css("color", "#6AC46E");
 				return true;
 			}
 			else
@@ -212,7 +212,7 @@ $(document).ready(function() {
 
 	$("input#field9").keyup(field9);
 
-	$("label#input_chk10").css("color", "#4F81BD");
+	$("label#input_chk10").css("color", "#6AC46E");
 
 	function field11() {
 
@@ -224,7 +224,7 @@ $(document).ready(function() {
 			if ($("#field10").val() === "NIF") {
 
 				if (check_nif($("input#field11").val())) {
-					$("label#input_chk11").css("color", "#4F81BD");
+					$("label#input_chk11").css("color", "#6AC46E");
 					return true;
 				}
 				else
@@ -235,7 +235,7 @@ $(document).ready(function() {
 			else {
 
 				if (check_nie($("input#field11").val())) {
-					$("label#input_chk11").css("color", "#4F81BD");
+					$("label#input_chk11").css("color", "#6AC46E");
 					return true;
 				}
 				else
@@ -260,7 +260,7 @@ $(document).ready(function() {
 		else {
 
 			if (check_numeric_5($("input#field12").val())) {
-				$("label#input_chk12").css("color", "#4F81BD");
+				$("label#input_chk12").css("color", "#6AC46E");
 				return true;
 			}
 			else
@@ -282,7 +282,7 @@ $(document).ready(function() {
 		else {
 
 			if (check_mobileno($("input#field14").val())) {
-				$("label#input_chk14").css("color", "#4F81BD");
+				$("label#input_chk14").css("color", "#6AC46E");
 				return true;
 			}
 			else
