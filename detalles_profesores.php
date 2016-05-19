@@ -1,4 +1,6 @@
-﻿<html>
+﻿<?php session_start(); ?>
+
+<html>
     <head>
       <title>Profesores con clase</title>
       <meta charset="utf-8"/>
