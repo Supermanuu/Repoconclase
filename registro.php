@@ -14,10 +14,9 @@
       	<script src="js/registro.js"></script>
     </head>
     <body class ="form_body">
-		<?php 
-			$_SESSION["volverIndex"] = 1;
-			include './php/header.php'; 
-		?>
+		<header class="blue">
+			<button class="blue" id="registrarse">Registrarse</button>';
+		</header>
 		<div class="form_principal">
 			<div class="form_contenido">
 				<h1 class="my_h1">¡¡¡Registrate en Profesores con Clase!!!</h1>
