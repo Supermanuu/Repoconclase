@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <?php
 
 	function send() {
@@ -25,7 +27,7 @@
 		date_default_timezone_set("Europe/Madrid");
 		$date = getdate();
 		$my_date = $date[mon]."/".$date[mday]."/".$date[year]." - ".$date[hours].":".$date[minutes].":".$date[seconds];
-		$query = "INSERT INTO contacta VALUES ('$nombre', '$email', '$tipo', 0, '$mensaje', '$my_date')";
+		$query = "INSERT INTO contacta VALUES (0, '$nombre', '$email', '$tipo', 0, '$mensaje', '$my_date')";
 		$resultado = $mysqli->query($query);
 
 		if (!$resultado)

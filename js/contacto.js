@@ -46,6 +46,8 @@ $(document).ready(function() {
 
 	$("label#input_chk3").css("color", "#6AC46E");
 
+	$("textarea#text_chk").val("");
+	
 	$("input#form_enviar").click(function() {
 
 		var send = true;
