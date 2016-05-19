@@ -91,7 +91,7 @@
       $j++;
    }
    if ($i == 0)
-      $clases[] = "Hoy no tienes mucho que hacer..."; 
+      $clases[] = "Hoy no tienes mucho que hacer..., Crea una nueva Clase o Curso!"; 
     
    $_SESSION ["nclases"] = $i;
    $_SESSION ["clases"] = $clases;
