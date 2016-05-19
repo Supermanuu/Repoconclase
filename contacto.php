@@ -52,36 +52,41 @@
 						<?php
 	                        if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){ //Sesion no iniciada
 	                          echo '<select class="blue" id="field3" name="Tipo">';
+	                          echo '<option class="blue" value="Sugerencias" selected>Sugerencias</option>';
+  							  echo '<option class="blue" value="Criticas">Criticas</option>';
+  							  echo '<option class="blue" value="Evaluación">Evaluación</option>';
+  							  echo '<option class="blue" value="otros">Otros</option>';
+							  echo '</select><label class="form_checker" id="input_chk3">  <</label></br>';
+							  echo '<textarea class="blue" id=text_chk name="Mensaje" rows="15" cols="25" maxlength="300" placeholder="Tiene 300 caracteres para escribir su mensaje." autocomplete="off"></textarea></br></br>';
 	                        }
 	                        elseif ($_SESSION["type"] == "alumno") {  //Alumno
 	                          echo '<select class="green" id="field3" name="Tipo">';
+	                          echo '<option class="green" value="Sugerencias" selected>Sugerencias</option>';
+  							  echo '<option class="green" value="Criticas">Criticas</option>';
+  							  echo '<option class="green" value="Evaluación">Evaluación</option>';
+  							  echo '<option class="green" value="otros">Otros</option>';
+							  echo '</select><label class="form_checker" id="input_chk3">  <</label></br>';
+							  echo '<textarea class="green" id=text_chk name="Mensaje" rows="15" cols="25" maxlength="300" placeholder="Tiene 300 caracteres para escribir su mensaje." autocomplete="off"></textarea></br></br>';
 	                        }
 	                        elseif ($_SESSION["type"] == "profesor") {  //Profesor
 	                          echo '<select class="blue" id="field3" name="Tipo">';
+	                          echo '<option class="blue" value="Sugerencias" selected>Sugerencias</option>';
+  							  echo '<option class="blue" value="Criticas">Criticas</option>';
+  							  echo '<option class="blue" value="Evaluación">Evaluación</option>';
+  							  echo '<option class="blue" value="otros">Otros</option>';
+							  echo '</select><label class="form_checker" id="input_chk3">  <</label></br>';
+							  echo '<textarea class="blue" id=text_chk name="Mensaje" rows="15" cols="25" maxlength="300" placeholder="Tiene 300 caracteres para escribir su mensaje." autocomplete="off"></textarea></br></br>';
 	                        }
 	                        elseif ($_SESSION["type"] == "administrador") {  //Admin
 	                          echo '<select class="purple" id="field3" name="Tipo">';
+	                          echo '<option class="purple" value="Sugerencias" selected>Sugerencias</option>';
+  							  echo '<option class="purple" value="Criticas">Criticas</option>';
+  							  echo '<option class="purple" value="Evaluación">Evaluación</option>';
+  							  echo '<option class="purple" value="otros">Otros</option>';
+							  echo '</select><label class="form_checker" id="input_chk3">  <</label></br>';
+							  echo '<textarea class="purple" id=text_chk name="Mensaje" rows="15" cols="25" maxlength="300" placeholder="Tiene 300 caracteres para escribir su mensaje." autocomplete="off"></textarea></br></br>';
 	                        }
                     	?>
-  							<option class="form_option" value="Sugerencias" selected>Sugerencias</option>
-  							<option class="form_option" value="Criticas">Criticas</option>
-  							<option class="form_option" value="Evaluación">Evaluación</option>
-  							<option class="form_option" value="otros">Otros</option>
-						</select><label class="form_checker" id="input_chk3">  <</label></br>
-						<?php
-	                        if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){ //Sesion no iniciada
-	                          echo '<textarea class="blue" id=text_chk name="Mensaje" rows="15" cols="25" maxlength="300" placeholder="Tiene 300 caracteres para escribir su mensaje." autocomplete="off"></textarea></br></br>';
-	                        }
-	                        elseif ($_SESSION["type"] == "alumno") {  //Alumno
-	                          echo '<textarea class="green" id=text_chk name="Mensaje" rows="15" cols="25" maxlength="300" placeholder="Tiene 300 caracteres para escribir su mensaje." autocomplete="off"></textarea></br></br>';
-	                        }
-	                        elseif ($_SESSION["type"] == "profesor") {  //Profesor
-	                          echo '<textarea class="blue" id=text_chk name="Mensaje" rows="15" cols="25" maxlength="300" placeholder="Tiene 300 caracteres para escribir su mensaje." autocomplete="off"></textarea></br></br>';
-	                        }
-	                        elseif ($_SESSION["type"] == "administrador") {  //Admin
-	                          echo '<textarea class="purple" id=text_chk name="Mensaje" rows="15" cols="25" maxlength="300" placeholder="Tiene 300 caracteres para escribir su mensaje." autocomplete="off"></textarea></br></br>';
-	                        }
-                        ?>
 					</div>
 					<div class="form_botonera">
 						<label for="verif"/> <input id="chkbx" type="checkbox" required>Verifico que he leído y acepto los términos y condiciones del servicio.</br>

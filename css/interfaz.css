@@ -37,7 +37,7 @@ header.purple
   background-image: url(../img/profesconclase_azul.png);
 }
 
-button.green, select.green, input.green
+button.green, select.green, input.green, option.green
 {
    /* Color de acción */
    background-color: #6AC46E;
@@ -53,7 +53,7 @@ button.green, select.green, input.green
 
 }
 
-button.blue, select.blue, input.blue
+button.blue, select.blue, input.blue, option.blue
 {
    /* Color de acción */
    background-color: #4F81BD;
@@ -69,7 +69,7 @@ button.blue, select.blue, input.blue
 
 }
 
-button.purple, select.purple, input.purple
+button.purple, select.purple, input.purple, option.purple
 {
    /* Color de acción */
    background-color: #BA68C8;
