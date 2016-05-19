@@ -88,9 +88,13 @@
       	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       	<script src="../js/common.js"></script>
       	<script src="../js/contacto.js"></script>
-    </head>
+    </head> 
     <body class="form_body">
-		<?php include './header.php'; ?>
+		<?php 
+			echo '<header class="blue">';
+     		echo '<button class="blue" id="login">Login</button>';
+     		echo '</header>';
+     	?>
 		<div class="form_principal">
 			<div id="login_placement">
 				<?php include './login.php'; ?>

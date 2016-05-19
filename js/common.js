@@ -3,32 +3,32 @@ $(function() {
 
 	$("#registrarse").click(function(){
 		
-		$(location).attr('href', 'registro.php');
+		$(location).attr('href', './registro.php');
 	
 	});
 
 	$("#logout").click(function(){
 		
-		$(location).attr('href', 'php/logout.php');
+		$(location).attr('href', './php/logout.php');
 
 
 	});
 
 	$("#contacto_lnk").click(function(){
 		
-		$(location).attr('href', 'contacto.php');
+		$(location).attr('href', './contacto.php');
 	
 	});
 
 	$("#miembros_lnk").click(function(){
 		
-		$(location).attr('href', 'miembros.php');
+		$(location).attr('href', './miembros.php');
 	
 	});
 
 	$("#inicio_lnk").click(function(){
 		
-		$(location).attr('href', 'index.php');
+		$(location).attr('href', './index.php');
 	
 	});
 
