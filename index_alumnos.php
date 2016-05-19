@@ -19,7 +19,10 @@
       <script src="js/index_alumnos.js"></script>
 	</head>
 	<body class="ialumnos_body">
-		<?php include "php/header.php"; ?>
+		<?php 
+         $_SESSION["volverIndex"] = 0;
+         include "php/header.php"; 
+      ?>
 		<div class="ialumnos_principal">
 			<div id="menu_alumno">
             <div id ="menu_alumno_principal">

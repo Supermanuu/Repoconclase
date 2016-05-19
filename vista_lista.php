@@ -34,9 +34,10 @@
       <script src="js/vista_lista.js"></script>
 	</head>
 	<body id="vista_lista_body">
-		<header>
-         <button id="logout">Logout</button>
-      </header>
+		<?php 
+         $_SESSION["volverIndex"] = 1;
+         include './php/header.php'; 
+      ?>
 		<div id="vista_lista_principal">
          <div id="vista_lista_presentacion">
             Mis Cursos

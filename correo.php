@@ -16,7 +16,10 @@
         <script src="js/correo.js"></script>
     </head>
     <body id="correo_body">
-	<?php include('php/header.php'); ?>
+	<?php 
+		$_SESSION["volverIndex"] = 1;
+		include('php/header.php'); 
+	?>
         <div id="correo_principal">
          	<div id="correo_correos">
                 	<div id="correo_tipoCorreo">

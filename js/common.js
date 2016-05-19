@@ -10,10 +10,13 @@ $(function() {
 	$("#logout").click(function(){
 		
 		$(location).attr('href', './php/logout.php');
-
-
 	});
 
+	$("#volver").click(function(){
+		
+		$(location).attr('href', './php/volverIndex.php'); //php que redirige segun tu sesion
+
+	});
 	$("#contacto_lnk").click(function(){
 		
 		$(location).attr('href', './contacto.php');

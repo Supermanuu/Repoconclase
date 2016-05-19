@@ -31,6 +31,7 @@
             echo '<body class="ranking_body_purple">';
         }
 
+		$_SESSION["volverIndex"] = 1;
         require_once('./php/header.php');
     ?>
 

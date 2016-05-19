@@ -16,7 +16,10 @@
 	<script src="js/common.js"></script>
     </head>
     <body id="index_body">
-        <?php include './php/header.php'; ?>
+        <?php 
+            $_SESSION["volverIndex"] = 1;
+            include './php/header.php'; 
+        ?>
         <div id="index_principal">
 	    <!-- Contenido al pulsar login -->
             <div id="login_placement">

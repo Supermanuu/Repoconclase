@@ -18,7 +18,10 @@
     </head>
 
     <body class="miembros_body">
-        <?php include './php/header.php'; ?>
+        <?php 
+            $_SESSION["volverIndex"] = 1;
+            include './php/header.php'; 
+        ?>
 
         <div class="miembros_principal">
             <div id="login_placement">

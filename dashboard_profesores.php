@@ -21,7 +21,10 @@
     
     <body class="dashprofes_body">
 
-        <?php require_once('./php/header.php'); ?>
+        <?php 
+          $_SESSION["volverIndex"] = 0;
+          require_once('./php/header.php'); 
+        ?>
 
         <div class="dashprofes_principal" id="principal">
 

@@ -16,7 +16,10 @@
 		<?php include './php/header.php'; ?>
 		<div class="d_principal">
          <div id="login_placement">
-            <?php include './php/login.php'; ?>
+            <?php 
+               $_SESSION["volverIndex"] = 1;
+               include './php/login.php'; 
+            ?>
          </div>
          <h1 class="my_h1">Bienvenidos alumnos</h1>
 			<article>
