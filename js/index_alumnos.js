@@ -53,7 +53,7 @@
    
    $("#correo_alumno").mousedown (function ()
    {
-      $(location).attr('href', 'correo.html?a=al');
+      $(location).attr('href', 'correo.php?a=al');
    });
    
    $("#top_10_profesores").mousedown (function ()

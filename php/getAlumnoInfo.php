@@ -118,13 +118,14 @@
       echo "ERROR: BIND RESULT (4): " . $conexion->error;
    // Recorremos las 3 primeras filas, si hay
    $i = 0;
-   while ($sentencia->fetch () && i < 3)
+   while ($sentencia->fetch ())
    {
       $cursos[] = $nombre_curso . " a las " . $hora_ini . " - " . $dias_semana;
       $i++;
    }
    if ($i == 0)
       $cursos[] = "¡Estaría bien apuntarse a uno!";
+   $_SESSION ["ncursos"] = $i;
    $_SESSION ["cursos"] = $cursos;
    
    // Los cursos de este alumno estan en el array cursos
@@ -145,13 +146,14 @@
       echo "ERROR: BIND RESULT (5): " . $conexion->error;
    // Recorremos las 3 primeras filas, si hay
    $i = 0;
-   while ($sentencia->fetch () && i < 3)
+   while ($sentencia->fetch ())
    {
       $profesores[] = $nombre_profesor . " " . $apellido1_profesor . " " . $apellido2_profesor;
       $i++;
    }
    if ($i == 0)
       $profesores[] = "¿Ningun profesor interesante?";
+   $_SESSION ["nprofesores"] = $i;
    $_SESSION ["profesores"] = $profesores;
    
    // Los profesores de este alumno estan en el array profesores

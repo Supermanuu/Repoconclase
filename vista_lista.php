@@ -1,20 +1,20 @@
 ﻿<?php
    session_start (); 
    
-   function print_item (nitem, titulo, descripcion)
+   function print_item ($nitem, $titulo, $descripcion)
    {
-      echo '<div name="vista_lista_elemento[]" class="vista_lista_elemento">'
-         echo '<div id="vista_lista_imagen_elemento_' . $nitem . '" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>'
-         echo '<div class="vista_lista_contenido_elemento">'
-            echo '<div id="vista_lista_titulo_elemento_' . $nitem . '" class="vista_lista_titulo_elemento">'
-               echo $titulo
-            echo '</div>'
-            echo '<div id="vista_lista_descripcion_elemento_' . $nitem . '" class="vista_lista_descripcion_elemento">'
-               echo $descripcion
-            echo '</div>'
-         echo '</div>'
-         echo '<div id="vista_lista_borrar_elemento_' . $nitem . '" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>'
-      echo '</div>'
+      echo '<div name="vista_lista_elemento[]" class="vista_lista_elemento">';
+         echo '<div id="vista_lista_imagen_elemento_' . $nitem . '" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>';
+         echo '<div class="vista_lista_contenido_elemento">';
+            echo '<div id="vista_lista_titulo_elemento_' . $nitem . '" class="vista_lista_titulo_elemento">';
+               echo $titulo;
+            echo '</div>';
+            echo '<div id="vista_lista_descripcion_elemento_' . $nitem . '" class="vista_lista_descripcion_elemento">';
+               echo $descripcion;
+            echo '</div>';
+         echo '</div>';
+         echo '<div id="vista_lista_borrar_elemento_' . $nitem . '" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>';
+      echo '</div>';
    }
 ?>
 
@@ -55,11 +55,35 @@
                <div id="vista_lista_lista">
                   <?php 
                   
-                     if (!isset ($_RESOUCE ["c"]) || $_RESOUCE ["c"] != mis)
+                     if (!isset ($_REQUEST ["c"]) || $_REQUEST ["c"] != 'mis')
                      {
+						if ($_REQUEST ["b"] == 'al')
+						{
+							$lista = "alumnos";
+							$nelems = "nalumnos";
+						}
+						else if ($_REQUEST ["b"] == 'pr')
+						{
+							$lista = "profesores";
+							$nelems = "nprofesores";
+						}
+						else if ($_REQUEST ["b"] == 'cl')
+						{
+							$lista = "clases";
+							$nelems = "nclases";
+						}
+						else
+						{
+							$lista = "cursos";
+							$nelems = "ncursos";
+						}
+					 
                         $i = 0;
-                        while (i++ < 13)
-                           print_item ($i, 'Eusebio Martín Pérez', 'Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...')
+                        while ($i < $_SESSION [$nelems])
+						{
+                           print_item ($i, $_SESSION [$lista][$i], 'Descripcion');
+						   $i++;
+						}
                      }
                      
                   ?>
