@@ -13,11 +13,9 @@ function readHeader($bandeja){
    $id = $_SESSION["id_user"];
 
    if ($bandeja == 1) {
-      $temporal = " Emisor: ";
       $query = "SELECT * FROM correo where id_receptor=" . $id; //Mensajes recibidos
    }
    else {
-      $temporal = " Receptor: ";
       $query = "SELECT * FROM correo where id_emisor=" . $id; //Mensajes Enviados
    }
 
@@ -32,7 +30,13 @@ function readHeader($bandeja){
         }
 	$resultado2 = $mysqli->query($query2) or die ($mysqli->error);
 	$objeto2 = $resultado2->fetch_assoc();
-	echo '<p id=' . $objeto["id_mensaje"] . '>Fecha: ' . $objeto["fecha"] . $temporal  . $objeto2["user"] . '</p>';
+    	if ($objeto["leido"] == 0 && $bandeja == 1){
+ 	 $idMensaje = "X" . $objeto["id_mensaje"];
+         echo '<p class=noleido id=' . $idMensaje . '>' . $objeto["fecha"] . ' - ' . $objeto2["user"] . '<br>Asunto: ' . $objeto["asunto"] . '</p>';
+        }
+        else{
+         echo '<p id=' . $objeto["id_mensaje"] . '>' . $objeto["fecha"] . ' - ' . $objeto2["user"] . '<br>Asunto: ' . $objeto["asunto"] . '</p>';
+        }
         echo '<hr class=correo_linea_azul>';
 	$resultado2->free();
    }

@@ -346,7 +346,6 @@ header.purple > #volver {
 }
 
 #correo_detallesCorreo_azul > p, #correo_detallesCorreo_verde > p,
-#correo_mostrarMensaje_azul > pre, #correo_mostrarMensaje_verde > pre,
 #correo_etiquetas > label {
    color: white;
    font-size: 1em;
@@ -390,6 +389,10 @@ header.purple > #volver {
 .correo_linea_verde {
    margin: 0;
    border-color: #118E56;
+}
+
+.noleido{
+   border-right: #118E56 solid 6px;
 }
 
 /* ---------Interfaz - > Contrata.html --------- */
