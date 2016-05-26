@@ -22,14 +22,14 @@
 				<h1 class="my_h1">¡¡¡Registrate en Profesores con Clase!!!</h1>
 				<form id="form_registro" class="form_box" method="post" action="./php/form_registro.php">
 					<div class="form_etiquetas">
-						<text class="form_text">Datos de usuario</text></br>
+						<text class="blue" id="form_text">Datos de usuario</text></br>
 						<label class="form_label" for="Usuario">Su usuario</label></br>
 						<label class="form_label" for="Correo">Su correo</label></br>
 						<label class="form_label" for="Contraseña1">Su contraseña</label></br>
 						<label class="form_label" for="Contraseña2">¡Repítela!</label></br>
 						<label class="form_label" for="Perfil">Su perfil</label></br>
 						</br>
-						<text class="form_text">Datos personales</text></br>
+						<text class="blue" id="form_text">Datos personales</text></br>
 						<label class="form_label" for="Nombre">Nombre</label></br>
 						<label class="form_label" for="Apellido_1">Apellido 1</label></br>
 						<label class="form_label" for="Apellido_2">Apellido 2</label></br>
@@ -37,11 +37,15 @@
 						<label class="form_label" for="Tipo_Documento">NIF/NIE</label></br>
 						<label class="form_label" for="Documento">Documento</label></br>
 						</br>
-						<text class="form_text">Datos postales</text></br>
+						<text class="blue" id="form_text">Datos postales</text></br>
 						<label class="form_label" for="CP">Código postal</label></br>
 						</br>
-						<text class="form_text">Datos de contacto</text></br>
+						<text class="blue" id="form_text">Datos de contacto</text></br>
 						<label class="form_label" for="Móvil">Móvil</label></br>
+						</br>
+						<text class="blue" id="form_text">Ficheros requeridos</text></br>
+						<label class="form_label" for="Foto">Fotografía</label></br>
+						<label class="form_label" for="CV">Currículum</label></br>
 						</br>
 					</div>
 					<div class="form_entradas">
@@ -51,9 +55,9 @@
 
 						<input class="form_input" id="field2" type="email" name="Correo" maxlength="40" size="20" placeholder="Escribe tu correo electrónico" autocomplete="off" required/><label class="form_checker" id="input_chk2">  <</label></br>
 
-						<input class="form_input" id="field3" type="password" name="Contraseña1" maxlength="20" size="20" placeholder="Alfanumérica (8-12 dígitos)" pattern="[A-Za-z0-9]{8,12}" autocomplete="off"><label class="form_checker" id="input_chk3">  <</label></br>
+						<input class="form_input" id="field3" type="password" name="Contraseña1" maxlength="20" size="20" placeholder="Alfanumérica (8-12 dígitos)" autocomplete="off" oncopy="return false" onpaste="return false"><label class="form_checker" id="input_chk3" required>  <</label></br>
 
-						<input class="form_input" id="field4" type="password" name="Contraseña2" maxlength="20" size="20" placeholder="Repita su contraseña" autocomplete="off" required/><label class="form_checker" id="input_chk4">  <</label></br>
+						<input class="form_input" id="field4" type="password" name="Contraseña2" maxlength="20" size="20" placeholder="Repita su contraseña" autocomplete="off" oncopy="return false" onpaste="return false" required/><label class="form_checker" id="input_chk4">  <</label></br>
 
 						<select class="blue" id="field5" name="Perfil">
   							<option class="form_option" value="alumno" selected>Alumno de PcC</option>
@@ -82,6 +86,10 @@
 
 						</br></br> <!-- Datos de contacto -->
 						<input class="form_input" id="field14" type="text" name="Móvil" maxlength="20" size="20" placeholder="Tu teléfono de contacto" autocomplete="off" required/><label class="form_checker" id="input_chk14">  <</label></br>
+
+						</br></br> <!-- Ficheros requeridos -->
+						<input class="form_input" id="field15" type="file" name="Foto" accept=".jpg" autocomplete="off" required/><label class="form_checker" id="input_chk15">  <</label></br>
+						<input class="form_input" id="field16" type="file" name="CV" accept=".pdf" autocomplete="off" required/><label class="form_checker" id="input_chk16">  <</label></br>
 
 					</div>
 					<div class="form_botonera">
