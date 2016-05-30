@@ -767,8 +767,9 @@ body.ialumnos_body
 /* ----------Interfaz - > dashboard_profesores.html--------- */
 
 body.dashprofes_body {
-  /* background-color: lightblue; */
+  background-color: #e6e6e6;
 
+  /*
   background: rgba(179,201,214,1);
   background: -moz-linear-gradient(-45deg, rgba(179,201,214,1) 0%, rgba(116,151,175,1) 46%, rgba(116,151,175,1) 100%);
   background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(179,201,214,1)), color-stop(46%, rgba(116,151,175,1)), color-stop(100%, rgba(116,151,175,1)));
@@ -777,7 +778,7 @@ body.dashprofes_body {
   background: -ms-linear-gradient(-45deg, rgba(179,201,214,1) 0%, rgba(116,151,175,1) 46%, rgba(116,151,175,1) 100%);
   background: linear-gradient(135deg, rgba(179,201,214,1) 0%, rgba(116,151,175,1) 46%, rgba(116,151,175,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3c9d6', endColorstr='#7497af', GradientType=1 );
-
+*/
   color: white;
 }
 
@@ -799,11 +800,26 @@ div.oscuro{
 #slide ul {
   display: flex; /* Caja flexible, con sus hijos tambien flexibles */
   padding: 0;
-  width: 400%;
   animation: giraProxEventos 20s infinite; /* La animacion dura 20s, se repite indefinidamente,*/
 }
+
+#slide.1{
+  width: 100%;
+}
+#slide.2{
+  width: 200%;
+}
+#slide.3{
+  width: 300%;
+}
+#slide.4{
+  width: 400%;
+}
+
+
 #slide li {
   width: 100%;
+  overflow: hidden;
 }
 
 @keyframes giraProxEventos {
@@ -1101,7 +1117,8 @@ body.miembros_body
 /*  --------Interfaz - > ranking.html ----------- */
 
 body.ranking_body_blue {
-  background: rgba(179,201,214,1);
+  background: #e6e6e6;
+  /*
   background: -moz-linear-gradient(-45deg, rgba(179,201,214,1) 0%, rgba(116,151,175,1) 46%, rgba(116,151,175,1) 100%);
   background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(179,201,214,1)), color-stop(46%, rgba(116,151,175,1)), color-stop(100%, rgba(116,151,175,1)));
   background: -webkit-linear-gradient(-45deg, rgba(179,201,214,1) 0%, rgba(116,151,175,1) 46%, rgba(116,151,175,1) 100%);
@@ -1109,6 +1126,7 @@ body.ranking_body_blue {
   background: -ms-linear-gradient(-45deg, rgba(179,201,214,1) 0%, rgba(116,151,175,1) 46%, rgba(116,151,175,1) 100%);
   background: linear-gradient(135deg, rgba(179,201,214,1) 0%, rgba(116,151,175,1) 46%, rgba(116,151,175,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3c9d6', endColorstr='#7497af', GradientType=1 );
+  */
 }
 
 body.ranking_body_green {
