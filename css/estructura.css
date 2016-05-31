@@ -16,12 +16,9 @@ header
 {
   /* Anchura mínima en un bloque normal */
   min-height: 6%;
-  
-  /* Margen superior para que se vea la pizarra de fondo */
-  margin-top: 40px;
 
   /* Margenes de 20px laterales en header y footer para que se quede una barra de navegacion flotante*/
-  margin: 0px 20px;
+  margin: 20px 20px 0px 20px; /*Margenes laterales 20px, superior 20px, inferior 0px */
    
   /* Esta instrucción indica que el borde debe ocmportarse como si
   fuese un elementro interno del header */
@@ -1517,6 +1514,7 @@ body
 #busca_rank{
    display: flex;
    flex-direction: row;
+   margin: 0px 20px;
    /* background-color: #4F81BD; */
 }
 

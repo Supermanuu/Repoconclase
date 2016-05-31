@@ -17,6 +17,7 @@ header
 {
    background-color : #376092;
    background-image: url(../img/profesconclase_azul.png);
+   box-shadow: #576881 3px 3px 3px;
 }
 
 header.green
@@ -128,6 +129,7 @@ form.blue_search > #submit:hover {
 footer 
 {
   background-color : #376092;
+  margin: 0px 20px 10px 20px;
 }
 
 footer.green
@@ -797,35 +799,60 @@ div.oscuro{
 }
 
 /*-----SLIDE UL ES UNA LISTA GIRATORIA GENERADA POR PHP CON LAS PROX CLASES DEL PROFESOR QUE INICIA SESION-----*/
-#slide ul {
+/*#slide ul {
+  display: flex; /* Caja flexible, con sus hijos tambien flexibles 
+  padding: 0;
+  /*width: 400%;
+  animation: giraProxEventos 20s infinite; /* La animacion dura 20s, se repite indefinidamente,
+}*/
+
+#slide2 ul{
   display: flex; /* Caja flexible, con sus hijos tambien flexibles */
   padding: 0;
-  animation: giraProxEventos 20s infinite; /* La animacion dura 20s, se repite indefinidamente,*/
-}
-
-#slide.1{
-  width: 100%;
-}
-#slide.2{
+  animation: giraProxEventosdos 10s infinite; /* La animacion dura 10s, se repite indefinidamente,*/
   width: 200%;
 }
-#slide.3{
+#slide3 ul{
+  display: flex; /* Caja flexible, con sus hijos tambien flexibles */
+  padding: 0;
+  animation: giraProxEventostres 15s infinite; /* La animacion dura 15s, se repite indefinidamente,*/
   width: 300%;
 }
-#slide.4{
+#slide4 ul{
+  display: flex; /* Caja flexible, con sus hijos tambien flexibles */
+  padding: 0;
+  animation: giraProxEventoscuatro 20s infinite; /* La animacion dura 20s, se repite indefinidamente,*/
   width: 400%;
 }
 
 
 #slide li {
   width: 100%;
-  overflow: hidden;
 }
 
-@keyframes giraProxEventos {
+@keyframes giraProxEventosdos { /* 40% de 10s = 4s */ /* 10% de 10s = 1s, transicion a la segunda imagen */
   0% {margin-left:0;}
-  20% {margin-left:0;} /* 20% de 20s = 4s */
-                        /* 5% de 20s = 1s, transicion a la segunda imagen */
+  40% {margin-left:0;} 
+
+  50% {margin-left:-100%;}
+  100% {margin-left:-100%;}
+}
+
+@keyframes giraProxEventostres {
+  0% {margin-left:0;}
+  22% {margin-left:0;}  
+
+  30% {margin-left:-100%;}
+  52% {margin-left:-100%;}
+
+  68% {margin-left:-200%;}
+  100% {margin-left:-200%;}
+}
+
+@keyframes giraProxEventoscuatro { /* 20% de 20s = 4s */ /* 5% de 20s = 1s, transicion a la segunda imagen */
+  0% {margin-left:0;}
+  20% {margin-left:0;} 
+                        
   25% {margin-left:-100%;}
   48% {margin-left:-100%;}
 
