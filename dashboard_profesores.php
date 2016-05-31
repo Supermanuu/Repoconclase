@@ -40,9 +40,14 @@
             }
             else{ //hay alguna clase
               $k = 0;
-              echo '<div id="slide">';
+              if($_SESSION ["nclases"] > 4)
+                $nc = 4;
+              else  
+                $nc = $_SESSION ["nclases"];
+
+              echo '<div id="slide'.$nc.'">'; //diferente formato en la css dependiendo del num de elems
               echo '<ul>';
-              while ($k < $_SESSION ["nclases"])
+              while ($k < $nc)
               {  
                 echo  '<li>';
                 echo '<p class="dashprofes_small_p dashprofes_info" id="tusEventos">'; 
