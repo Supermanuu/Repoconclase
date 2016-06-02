@@ -206,12 +206,13 @@ footer
    #admin_parte2{
       display: flex;
       flex-direction: row;
-      height: 25%;
-      min-height: 100px;
    }
 
    #admin_estado{
-      flex-basis: 70%;
+      display : flex;
+      flex-direction: row;
+      height : 30%;
+      min-height : 200px;
       overflow: auto;
    }
 
@@ -261,6 +262,11 @@ footer
 
    #admin_gestionUsuarios{
       min-height: 45px;
+   }
+
+   #admin_estado {
+      height: 250px;
+      overflow: auto; 
    }
 }
 

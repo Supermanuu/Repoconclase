@@ -268,8 +268,30 @@ header.purple > #volver {
    background-repeat: no-repeat;
 }
 
-#admin_estado > p, #admin_informacionMensajes > pre
-{
+#admin_informacionMensajes > pre {
+ 
+   color: white;
+   font-size: 1.2em;
+   margin-left: 60px;
+}
+
+#admin_informacionMensajes > p {
+ 
+   color: white;
+   font-size: 1em;
+   margin-left: 60px;
+}
+
+#admin_informacionMensajes > h1 {
+ 
+   color: white;
+   font-size: 1.4em;
+   text-align: center;
+   margin-top: 15px;
+   margin-bottom: 15px;
+}
+
+#admin_estado > p {
    color: white;
    font-size: 1em;
    margin-top: 10px;
@@ -282,9 +304,17 @@ header.purple > #volver {
    font-size: 1em;
 }
 
+#admin_bandejaEntrada > p:hover {
+  background-color: #CE93D8;
+}
+
 .admin_linea {
    height: 0px;
    border-color: #6A1B9A;
+}
+
+.admin_noleido {
+  border-right: #CE93D8 solid 6px;
 }
 
 #admin_gestionUsuarios > h1, #admin_bandejaEntrada > h1, #admin_estado > h1 {
