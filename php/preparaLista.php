@@ -56,7 +56,6 @@
       {
          // Buscar todos los alumnos
          // Preparamos la query que vamos a ejecutar: Obtenemos la informacion de un grupo seleccionado
-         $sentencia->free_result ();
          if (! ($sentencia = $conexion->prepare ("SELECT id, nombre, apellido1, apellido2, nacimiento, comunidad, cp, correo FROM registra WHERE perfil = 'alumno';")))
             echo "ERROR: PREPARE (5): " . $conexion->error;
          // Ejecutamos la query en la BD
@@ -79,7 +78,6 @@
       {
          // Buscar todos los profesores
          // Preparamos la query que vamos a ejecutar: Obtenemos la informacion de un grupo seleccionado
-         $sentencia->free_result ();
          if (! ($sentencia = $conexion->prepare ("SELECT id, nombre, apellido1, apellido2, nacimiento, comunidad, cp, correo  FROM registra WHERE perfil = 'profesor';")))
             echo "ERROR: PREPARE (5): " . $conexion->error;
          // Ejecutamos la query en la BD
@@ -102,7 +100,6 @@
       {
          // Buscar todas las clases
          // Preparamos la query que vamos a ejecutar: Obtenemos la informacion de una clase seleccionada
-         $sentencia->free_result ();
          if (! ($sentencia = $conexion->prepare ("SELECT id_asignatura, hora_ini, dias_semana, descripcion FROM clases WHERE id_clases IN (SELECT id_clase FROM clases_seleccionadas);")))
             echo "ERROR: PREPARE (2): " . $conexion->error;
          // Ejecutamos la query en la BD
@@ -150,7 +147,6 @@
       {
          // Buscar todos los cursos
          // Preparamos la query que vamos a ejecutar: Obtenemos la informacion de un grupo seleccionado
-         $sentencia->free_result ();
          if (! ($sentencia = $conexion->prepare ("SELECT nombre_curso, hora_ini, dias_semana, descripcion FROM cursos WHERE id_curso IN (SELECT id_curso FROM cursos_seleccionados);")))
             echo "ERROR: PREPARE (4): " . $conexion->error;
          // Ejecutamos la query en la BD

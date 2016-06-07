@@ -125,6 +125,7 @@
          $(this).addClass ("vista_lista_elemento_activo");
          seleccionado = this;
          
+         vista_lista_titulo.innerText = this.children [1].firstChild.innerText;
          vista_lista_contenido.innerText = this.lastChild.innerText;
       }
    });
