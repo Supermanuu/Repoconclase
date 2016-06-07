@@ -800,17 +800,6 @@ body.ialumnos_body
 
 body.dashprofes_body {
   background-color: #e6e6e6;
-
-  /*
-  background: rgba(179,201,214,1);
-  background: -moz-linear-gradient(-45deg, rgba(179,201,214,1) 0%, rgba(116,151,175,1) 46%, rgba(116,151,175,1) 100%);
-  background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(179,201,214,1)), color-stop(46%, rgba(116,151,175,1)), color-stop(100%, rgba(116,151,175,1)));
-  background: -webkit-linear-gradient(-45deg, rgba(179,201,214,1) 0%, rgba(116,151,175,1) 46%, rgba(116,151,175,1) 100%);
-  background: -o-linear-gradient(-45deg, rgba(179,201,214,1) 0%, rgba(116,151,175,1) 46%, rgba(116,151,175,1) 100%);
-  background: -ms-linear-gradient(-45deg, rgba(179,201,214,1) 0%, rgba(116,151,175,1) 46%, rgba(116,151,175,1) 100%);
-  background: linear-gradient(135deg, rgba(179,201,214,1) 0%, rgba(116,151,175,1) 46%, rgba(116,151,175,1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3c9d6', endColorstr='#7497af', GradientType=1 );
-*/
   color: white;
 }
 
@@ -828,69 +817,43 @@ div.oscuro{
   text-align: center;
 }
 
-/*-----SLIDE UL ES UNA LISTA GIRATORIA GENERADA POR PHP CON LAS PROX CLASES DEL PROFESOR QUE INICIA SESION-----*/
-/*#slide ul {
-  display: flex; /* Caja flexible, con sus hijos tambien flexibles 
-  padding: 0;
-  /*width: 400%;
-  animation: giraProxEventos 20s infinite; /* La animacion dura 20s, se repite indefinidamente,
-}*/
+/*-----Lista slider con los proximos eventos-----*/
 
-#slide2 ul{
-  display: flex; /* Caja flexible, con sus hijos tambien flexibles */
-  padding: 0;
-  animation: giraProxEventosdos 10s infinite; /* La animacion dura 10s, se repite indefinidamente,*/
-  width: 200%;
-}
-#slide3 ul{
-  display: flex; /* Caja flexible, con sus hijos tambien flexibles */
-  padding: 0;
-  animation: giraProxEventostres 15s infinite; /* La animacion dura 15s, se repite indefinidamente,*/
-  width: 300%;
-}
-#slide4 ul{
-  display: flex; /* Caja flexible, con sus hijos tambien flexibles */
-  padding: 0;
-  animation: giraProxEventoscuatro 20s infinite; /* La animacion dura 20s, se repite indefinidamente,*/
-  width: 400%;
+#slider {
+  margin: auto;
+  position: relative;
+  overflow: hidden;
+  display: none; /*ocultamos todos los elems de la lista*/
 }
 
-
-#slide li {
+#tusEventos{
   width: 100%;
 }
 
-@keyframes giraProxEventosdos { /* 40% de 10s = 4s */ /* 10% de 10s = 1s, transicion a la segunda imagen */
-  0% {margin-left:0;}
-  40% {margin-left:0;} 
-
-  50% {margin-left:-100%;}
-  100% {margin-left:-100%;}
+/*flechitas para pasar el slider */
+.btn-prev, .btn-next {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.7);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  line-height: 40px;
+  font-size: 30px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 50%;
+  font-family: monospace;
+  cursor: pointer;
 }
-
-@keyframes giraProxEventostres {
-  0% {margin-left:0;}
-  22% {margin-left:0;}  
-
-  30% {margin-left:-100%;}
-  52% {margin-left:-100%;}
-
-  68% {margin-left:-200%;}
-  100% {margin-left:-200%;}
+.btn-prev:hover, .btn-next:hover {
+  background: white;
 }
-
-@keyframes giraProxEventoscuatro { /* 20% de 20s = 4s */ /* 5% de 20s = 1s, transicion a la segunda imagen */
-  0% {margin-left:0;}
-  20% {margin-left:0;} 
-                        
-  25% {margin-left:-100%;}
-  48% {margin-left:-100%;}
-
-  53% {margin-left:-200%;}
-  75% {margin-left:-200%;}
-
-  80% {margin-left:-300%;}
-  100% {margin-left:-300%;}
+.btn-prev {
+  left: 10px;
+}
+.btn-next {
+  right: 10px;
 }
 
 p.dashprofes_small_p

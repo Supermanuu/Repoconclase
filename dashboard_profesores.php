@@ -45,11 +45,11 @@
               else  
                 $nc = $_SESSION ["nclases"];
 
-              echo '<div id="slide'.$nc.'">'; //diferente formato en la css dependiendo del num de elems
+              echo '<div id="slider">'; //-------------------generamos el slider
               echo '<ul>';
               while ($k < $nc)
               {  
-                echo  '<li>';
+                echo '<li>';
                 echo '<p class="dashprofes_small_p dashprofes_info" id="tusEventos">'; 
                 echo $clases[$k] . " - " . $horas_clases[$k];  
                 echo '</p>';
@@ -57,10 +57,13 @@
                 $k++;
               } 
               echo '</ul>';
+              //flechitas para pasar el slider
+              echo '<div id="btn-prev" class="btn-prev"> &#60; </div>';
+              echo '<div id="btn-next" class="btn-next"> &#62; </div>';
               echo '</div>';
-            }
+            }                           //-------------------slider
           ?>
-		 	    </div>
+          </div>
 
         	<div id="tusClases" class="dashboard claro">
 		    	<p class="dashprofes_big_p">Tus Clases</p>

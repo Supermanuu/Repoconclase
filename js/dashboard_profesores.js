@@ -54,4 +54,47 @@ $(document).ready (function () {
       $(location).attr('href', ' ');
    });
 
+   //------------Animacion JS del slider del profesor------------
+
+   //almacenar slider en una variable
+   var slider = $('#slider');
+   //almacenar botones
+   var siguiente = $('#btn-next');
+   var anterior = $('#btn-prev');
+
+   //mover ultima imagen al primer lugar
+   $('#slider .dashprofes_info:last').insertBefore('#slider .dashprofes_info:first');
+   //mostrar la primera imagen con un margen de -100%
+   slider.css('margin-left', 0+'%');
+   
+   siguiente.on('click',function() {
+       moverD();
+   });
+
+   anterior.on('click',function() {
+       moverI();
+   });
+
+   function moverD() {
+       slider.animate({
+           marginLeft:0
+       } ,700, function(){
+         $('#slider .dashprofes_info:first').insertAfter('#slider .dashprofes_info:last'); //recolocamos los elems de la lista
+         $('#slider .dashprofes_info:first').css('display: inline'); //mostramos solo el primer elem de la lista, lo demas esta oculto por css
+           //slider.css('margin-left', '-'+100+'%');
+       });
+   }
+
+   function moverI() {
+       slider.animate({
+           marginLeft:0
+       } ,700, function(){
+         $('#slider .dashprofes_info:last').insertBefore('#slider .dashprofes_info:first'); //recolocamos los elems de la lista
+         $('#slider .dashprofes_info:first').css('display: inline'); //mostramos solo el primer elem de la lista, lo demas esta oculto por css
+           //slider.css('margin-left', '-'+100+'%');
+       });
+   }
+
+   
+
 });
