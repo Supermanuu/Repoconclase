@@ -1,5 +1,6 @@
 ﻿<?php
    session_start (); 
+   include './php/preparaLista.php';
    
    function print_item ($nitem, $titulo, $descripcion)
    {
@@ -55,61 +56,36 @@
                </form>
                <div id="vista_lista_lista">
                   <?php 
-                  
-                     if (!isset ($_REQUEST ["c"]) || $_REQUEST ["c"] != 'mis')
+                     $i = 0;
+                     while ($i < $nelems)
                      {
-						if ($_REQUEST ["b"] == 'al')
-						{
-							$lista = "alumnos";
-							$nelems = "nalumnos";
-						}
-						else if ($_REQUEST ["b"] == 'pr')
-						{
-							$lista = "profesores";
-							$nelems = "nprofesores";
-						}
-						else if ($_REQUEST ["b"] == 'cl')
-						{
-							$lista = "clases";
-							$nelems = "nclases";
-						}
-						else
-						{
-							$lista = "cursos";
-							$nelems = "ncursos";
-						}
-					 
-                        $i = 0;
-                        while ($i < $_SESSION [$nelems])
-						{
-                           print_item ($i, $_SESSION [$lista][$i], 'Descripcion');
-						   $i++;
-						}
+                        print_item ($i, $lista [$i], substr ($descr [$i], 0, 60) . '...');
+                        $i++;
                      }
-                     
+                     if ($nelems == 0)
+                     {
+                        echo '<div>';
+                           echo '<div class="vista_lista_titulo_elemento">';
+                              echo 'Ningún elemento';
+                           echo '</div>';
+                        echo '</div>';
+                     }
                   ?>
                </div>
             </div>
             <div id="vista_lista_vista">
                <div id="vista_lista_titulo">
-                  Eusebio Martín Pérez
+                  <?php echo $lista [0]; ?>
                </div>
                <div id="vista_lista_contenido">
-                  Es un profesor muyyy majo que nos cayó muy bien y decidimos comentar...
-                  Por eso blaaa bla bla bla bla bla bla bl alaalasflaj sah kjshk hsakdh kashd jsh 
-                  dj dalk ljs lkj s ljl jlasj lsj lsj la jºsadjalskj skjdh j kjh k k jhkjhsdkjhsk 
-                  kshksahdk jh k hak sjhk jkjhskjhdkjshk  ksjhdk hka hsk khdsakhdk khdkhk dk hdkj
-                  sld lajs lsjkdlkjldj  lkjsdl jl jlsdjl l kjl jsl jlkjasldskjdl j lkjsdl lksjl lkj
-                  Y yo le dije: Cuál es el sueño de una servilleta? y el me dijo... Ser billete! asique
-                  sñjdlja lj lkj ajs lj ljksljlsj  ldkj lk jl kj lkjlkjsljd oleoiu owje ljdj slkjd la
-                  jsl kjlsdjlaj flj jro ijoie lkjwel después de un tiempo lo volvimos a contar y tuvo
-                  muucha gracia, le direon un premio novel y todos suuuper contentos, menos yo... que
-                  me quedé sin un chiste más que contar.
+                  <?php
+                     echo nl2br ($descr [0]);
+                  ?>
                </div>
                <div id="vista_lista_imagen" class="vista_lista_imagen"></div>
             </div>
          </div>
 		</div>
-		<footer></footer>
+		<?php include './php/footer.php'; ?>
 	</body>
 </html>
