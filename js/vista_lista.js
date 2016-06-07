@@ -90,7 +90,7 @@
       $("#vista_lista_presentacion").html ($vista);
    else
       $("#vista_lista_presentacion").html ('Mis ' + $vista);
-   
+
    // Para controlar el borrado de elementos de la lista utilizo un hash map
    var seleccionados_borrar = [];
    $('div[name="vista_lista_borrar_elemento[]"]').mousedown (function ()
@@ -116,19 +116,16 @@
       if (seleccionado == this)
       {
          $(this).removeClass ("vista_lista_elemento_activo");
-         $(this).addClass ("vista_lista_elemento_pasivo");
          seleccionado = null;
       }
       else
       {
          if (seleccionado != null)
-         {
             $(seleccionado).removeClass ("vista_lista_elemento_activo");
-            $(seleccionado).addClass ("vista_lista_elemento_pasivo");
-         }
-         $(this).removeClass ("vista_lista_elemento_pasivo");
          $(this).addClass ("vista_lista_elemento_activo");
          seleccionado = this;
+         
+         vista_lista_contenido.innerText = this.lastChild.innerText;
       }
    });
 });

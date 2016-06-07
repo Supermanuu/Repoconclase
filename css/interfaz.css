@@ -1087,9 +1087,9 @@ body.miembros_body
    background-color: white;
 }
 
-.vista_lista_elemento.vista_lista_elemento_pasivo
+.vista_lista_elemento_oculto
 {
-   background-color: lightgray;
+   display: none;
 }
 
 .vista_lista_elemento

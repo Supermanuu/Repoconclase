@@ -4,17 +4,18 @@
    
    function print_item ($nitem, $titulo, $descripcion)
    {
-      echo '<div name="vista_lista_elemento[]" class="vista_lista_elemento">';
+      echo '<div id="vista_lista_elemento_' . $nitem . '" name="vista_lista_elemento[]" class="vista_lista_elemento">';
          echo '<div id="vista_lista_imagen_elemento_' . $nitem . '" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>';
          echo '<div class="vista_lista_contenido_elemento">';
             echo '<div id="vista_lista_titulo_elemento_' . $nitem . '" class="vista_lista_titulo_elemento">';
                echo $titulo;
             echo '</div>';
             echo '<div id="vista_lista_descripcion_elemento_' . $nitem . '" class="vista_lista_descripcion_elemento">';
-               echo $descripcion;
+               echo substr ($descripcion, 0, 60) . "...";
             echo '</div>';
          echo '</div>';
          echo '<div id="vista_lista_borrar_elemento_' . $nitem . '" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>';
+         echo '<div id="vista_lista_elemento_oculto_' . $nitem . '" class="vista_lista_elemento_oculto">' . nl2br ($descripcion) . '</div>';
       echo '</div>';
    }
 ?>
@@ -50,16 +51,16 @@
                   <button id="vista_lista_editar">Editar</button>
                   <button id="vista_lista_borrar_seleccionados">Borrar</button>
                </div>
-               <form id="vista_lista_buscador" action="">
+               <div id="vista_lista_buscador">
                   <input id="vista_lista_search" type="text" placeholder="Búsqueda por asignatura">
-                  <input id="vista_lista_submit" type="submit" value="Buscar">
-               </form>
+                  <button id="vista_lista_submit">Buscar</button>
+               </div>
                <div id="vista_lista_lista">
                   <?php 
                      $i = 0;
                      while ($i < $nelems)
                      {
-                        print_item ($i, $lista [$i], substr ($descr [$i], 0, 60) . '...');
+                        print_item ($i, $lista [$i], $descr [$i]);
                         $i++;
                      }
                      if ($nelems == 0)
