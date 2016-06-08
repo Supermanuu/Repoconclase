@@ -1,6 +1,7 @@
 ﻿$(document).ready(function()
 {
    tokens = location.search.substr(1).split ("&");
+   $perfil = 'al';
    
    // Tipo de usuario
    if (tokens.includes ("a=al"))
@@ -16,6 +17,7 @@
       // Cambiamos el color del buscador
       $("#vista_lista_buscador").css ("backgroundColor", "#6AC46E");
       $("#vista_lista_submit").css ("backgroundColor", "#6AC46E");
+      $perfil = 'al';
    }
    else if (tokens.includes ("a=pr"))
    {
@@ -30,6 +32,7 @@
       // Cambiamos el color del buscador
       $("#vista_lista_buscador").css ("backgroundColor", "#4F81BD");
       $("#vista_lista_submit").css ("backgroundColor", "#4F81BD");
+      $perfil = 'pr';
    }
    else
    {
@@ -44,6 +47,7 @@
       // Cambiamos el color del buscador
       $("#vista_lista_buscador").css ("backgroundColor", "#BA68C8");
       $("#vista_lista_submit").css ("backgroundColor", "#BA68C8");
+      $perfil = 'ad';
    }
    
    $vista = 'Alumnos';
@@ -76,7 +80,7 @@
       });
       $vista = 'Clases';
       $tabla = 'cl';
-      if (tokens [0] == "a=pr")
+      if ($perfil == "pr")
          $("#vista_lista_editar").css ("display", "initial");
    }
    else if (tokens.includes ("b=as"))
@@ -98,7 +102,7 @@
       });
       $vista = 'Cursos';
       $tabla = 'cu';
-      if (tokens [0] == "a=pr")
+      if ($perfil == "pr")
          $("#vista_lista_editar").css ("display", "initial");
    }
    
@@ -138,10 +142,10 @@
          {
             type: "POST",
             url: "./php/eliminaDeVistaLista.php",
-            data: { "tabla" : $tabla, "mis" : !tokens.includes ("c=mis"), "id" :  seleccionados_borrar [i].parentElement.children [4].innerText},
+            data: { "perfil" : $perfil, "tabla" : $tabla, "mis" : !tokens.includes ("c=mis"), "id" :  seleccionados_borrar [i].parentElement.children [4].innerText},
             success: function (data)
             {
-               alert(data);
+               alert (data);
             }
          });
          // Eliminamos el elemento del frontend

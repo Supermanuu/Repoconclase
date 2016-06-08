@@ -46,6 +46,13 @@
          $nelems = $_SESSION ["nclases"];
          $ids = $_SESSION ["id_clases"];
       }
+      else if ($_REQUEST ["b"] == 'as')
+      {
+         $lista = $_SESSION ["asignaturas"];
+         $descr = $_SESSION ["descr_asignaturas"];
+         $nelems = $_SESSION ["nasignaturas"];
+         $ids = $_SESSION ["id_asignaturas"];
+      }
       else
       {
          $lista = $_SESSION ["cursos"];

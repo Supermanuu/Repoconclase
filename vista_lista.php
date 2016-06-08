@@ -59,9 +59,13 @@
                <div id="vista_lista_lista">
                   <?php 
                      $i = 0;
+                     $elementos_nulos = 0;
                      while ($i < $nelems)
                      {
-                        print_item ($i, $lista [$i], $descr [$i], $ids [$i]);
+                        if ($ids [$i] != null)
+                           print_item ($i, $lista [$i], $descr [$i], $ids [$i]);
+                        else
+                           $elementos_nulos++;
                         $i++;
                      }
                   ?>
@@ -70,7 +74,7 @@
             <div id="vista_lista_vista">
                <div id="vista_lista_titulo">
                   <?php
-                     if ($nelems == 0)
+                     if ($nelems == 0 || $elementos_nulos == $nelems)
                         echo 'Ningún elemento';
                      else
                         echo 'Ningún elemento seleccionado';

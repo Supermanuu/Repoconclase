@@ -141,7 +141,7 @@
 
    // Preparamos la query que vamos a ejecutar: Obtenemos la informacion de un grupo seleccionado
    $sentencia->free_result ();
-   if (! ($sentencia = $conexion->prepare ("SELECT id, nombre, apellido1, apellido2 FROM registra WHERE id IN (SELECT id_profesor FROM profes_seleccionados WHERE id_alumno = (?));")))
+   if (! ($sentencia = $conexion->prepare ("SELECT id, nombre, apellido1, apellido2, nacimiento, comunidad, cp, correo FROM registra WHERE id IN (SELECT id_profesor FROM profes_seleccionados WHERE id_alumno = (?));")))
       echo "ERROR: PREPARE (5): " . $conexion->error;
    // Asociamos la variable a la query: Es el id del usuario logeado
    if (!$sentencia->bind_param ("i", $_SESSION ["id_user"])) 
@@ -150,7 +150,7 @@
    if (!$sentencia->execute ())
       echo "ERROR: EXECUTE (5): " . $conexion->error;
    // Vinculamos la salida a otras variables: Esperamos la info de la clase
-   if (!$sentencia->bind_result ($id_prof, $nombre_profesor, $apellido1_profesor, $apellido2_profesor))
+   if (!$sentencia->bind_result ($id_prof, $nombre_profesor, $apellido1_profesor, $apellido2_profesor, $nacimiento, $com, $cod_post, $correo))
       echo "ERROR: BIND RESULT (5): " . $conexion->error;
    // Recorremos las 3 primeras filas, si hay
    $i = 0;
@@ -158,6 +158,7 @@
    {
       $profesores[] = $nombre_profesor . " " . $apellido1_profesor . " " . $apellido2_profesor;
       $id_profesores[] = $id_prof;
+      $descr_profesores[] = "ID: " . $id_prof . "\n Fecha de nacimiento: " . $nacimiento . "\n Comunidad autónoma: " . $com . "\n C.P.: " . $cod_post . "\n Correo: " . $correo;
       $i++;
    }
    if ($i == 0)
@@ -165,6 +166,7 @@
    $_SESSION ["nprofesores"] = $i;
    $_SESSION ["profesores"] = $profesores;
    $_SESSION ["id_profesores"] = $id_profesores;
+   $_SESSION ["descr_profesores"] = $descr_profesores;
    
    // Los profesores de este alumno estan en el array profesores
    
