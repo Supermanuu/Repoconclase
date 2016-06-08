@@ -1082,6 +1082,7 @@ body.miembros_body
 {
    font-weight: bold;
    font-size: 30px;
+   text-align: center;
 }
 
 @media (min-width: 768px)

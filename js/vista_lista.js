@@ -90,7 +90,7 @@
       $("#vista_lista_presentacion").html ($vista);
    else
       $("#vista_lista_presentacion").html ('Mis ' + $vista);
-
+   
    // Para controlar el borrado de elementos de la lista utilizo un hash map
    var seleccionados_borrar = [];
    $('div[name="vista_lista_borrar_elemento[]"]').mousedown (function ()
@@ -99,13 +99,27 @@
       {
          $(this).removeClass ("vista_lista_borrar_elemento_activo");
          $(this).addClass ("vista_lista_borrar_elemento_pasivo");
-         seleccionados_borrar [seleccionados_borrar.indexOf (this)] = null;
+         seleccionados_borrar.splice (seleccionados_borrar.indexOf (this), 1);
       }
       else
       {
          $(this).removeClass ("vista_lista_borrar_elemento_pasivo");
          $(this).addClass ("vista_lista_borrar_elemento_activo");
          seleccionados_borrar.push (this);
+      }
+   });
+   
+   // Accion de borrado
+   $("#vista_lista_borrar_seleccionados").click (function borrar_seleccionados ()
+   {
+      for (var i = 0; i < seleccionados_borrar.length; i++)
+         vista_lista_lista.removeChild (seleccionados_borrar [i].parentElement);
+      seleccionados_borrar.splice (0, seleccionados_borrar.length);
+      
+      if (vista_lista_lista.childElementCount == 0)
+      {
+         vista_lista_titulo.innerText = "Ningún elemento";
+         vista_lista_contenido = "";
       }
    });
    

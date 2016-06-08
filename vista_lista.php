@@ -63,20 +63,17 @@
                         print_item ($i, $lista [$i], $descr [$i]);
                         $i++;
                      }
-                     if ($nelems == 0)
-                     {
-                        echo '<div>';
-                           echo '<div class="vista_lista_titulo_elemento">';
-                              echo 'Ningún elemento';
-                           echo '</div>';
-                        echo '</div>';
-                     }
                   ?>
                </div>
             </div>
             <div id="vista_lista_vista">
                <div id="vista_lista_titulo">
-                  <?php echo $lista [0]; ?>
+                  <?php
+                     if ($nelems == 0)
+                        echo 'Ningún elemento';
+                     else
+                        echo $lista [0];
+                  ?>
                </div>
                <div id="vista_lista_contenido">
                   <?php
