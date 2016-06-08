@@ -52,7 +52,7 @@
 
    // Preparamos la query que vamos a ejecutar: Obtenemos la informacion de una clase seleccionada
    $sentencia->free_result ();
-   if (! ($sentencia = $conexion->prepare ("SELECT id_asignatura, hora_ini, dias_semana, descripcion FROM clases WHERE id_clases IN (SELECT id_clase FROM clases_seleccionadas WHERE id_alumno = (?));")))
+   if (! ($sentencia = $conexion->prepare ("SELECT id_clases, id_asignatura, hora_ini, dias_semana, descripcion FROM clases WHERE id_clases IN (SELECT id_clase FROM clases_seleccionadas WHERE id_alumno = (?));")))
       echo "ERROR: PREPARE (2): " . $conexion->error;
    // Asociamos la variable a la query: Es el id del usuario logeado
    if (!$sentencia->bind_param ("i", $_SESSION ["id_user"])) 
@@ -61,7 +61,7 @@
    if (!$sentencia->execute ())
       echo "ERROR: EXECUTE (2): " . $conexion->error;
    // Vinculamos la salida a otras variables: Esperamos la info de la clase
-   if (!$sentencia->bind_result ($id_asignatura, $hora_ini, $dias_semana, $descripcion))
+   if (!$sentencia->bind_result ($id_clase, $id_asignatura, $hora_ini, $dias_semana, $descripcion))
       echo "ERROR: BIND RESULT (2): " . $conexion->error;
    // Recorremos las 3 primeras filas, si hay
    $i = 0;
@@ -70,6 +70,7 @@
       $horas_clases[] = $hora_ini . " - " . $dias_semana;
       $id_asignaturas[] = $id_asignatura;
       $descr_clases[] = $descripcion;
+      $id_clases[] = $id_clase;
       $i++;
    }
    $j = 0;
@@ -101,13 +102,14 @@
    $_SESSION ["clases"] = $clases;
    $_SESSION ["horas_clases"] = $horas_clases;
    $_SESSION ["descr_clases"] = $descr_clases;
+   $_SESSION ["id_clases"] = $id_clases;
 
    // Las clases de este alumno estan en el array clases y horas_clases
 
 
    // Preparamos la query que vamos a ejecutar: Obtenemos la informacion de un grupo seleccionado
    $sentencia->free_result ();
-   if (! ($sentencia = $conexion->prepare ("SELECT nombre_curso, hora_ini, dias_semana, descripcion FROM cursos WHERE id_curso IN (SELECT id_curso FROM cursos_seleccionados WHERE id_alumno = (?));")))
+   if (! ($sentencia = $conexion->prepare ("SELECT id_curso, nombre_curso, hora_ini, dias_semana, descripcion FROM cursos WHERE id_curso IN (SELECT id_curso FROM cursos_seleccionados WHERE id_alumno = (?));")))
       echo "ERROR: PREPARE (4): " . $conexion->error;
    // Asociamos la variable a la query: Es el id del usuario logeado
    if (!$sentencia->bind_param ("i", $_SESSION ["id_user"])) 
@@ -116,7 +118,7 @@
    if (!$sentencia->execute ())
       echo "ERROR: EXECUTE (4): " . $conexion->error;
    // Vinculamos la salida a otras variables: Esperamos la info de la clase
-   if (!$sentencia->bind_result ($nombre_curso, $hora_ini, $dias_semana, $descripcion))
+   if (!$sentencia->bind_result ($id_curso, $nombre_curso, $hora_ini, $dias_semana, $descripcion))
       echo "ERROR: BIND RESULT (4): " . $conexion->error;
    // Recorremos las 3 primeras filas, si hay
    $i = 0;
@@ -124,6 +126,7 @@
    {
       $cursos[] = $nombre_curso . " a las " . $hora_ini . " - " . $dias_semana;
       $descr_cursos[] = $descripcion;
+      $id_cursos[] = $id_curso;
       $i++;
    }
    if ($i == 0)
@@ -131,6 +134,7 @@
    $_SESSION ["ncursos"] = $i;
    $_SESSION ["cursos"] = $cursos;
    $_SESSION ["descr_cursos"] = $descr_cursos;
+   $_SESSION ["id_cursos"] = $id_cursos;
    
    // Los cursos de este alumno estan en el array cursos
 

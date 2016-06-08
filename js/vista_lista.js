@@ -47,6 +47,7 @@
    }
    
    $vista = 'Alumnos';
+   $tabla = 'al';
    
    // Lista que busca
    if (tokens.includes ("b=al"))
@@ -56,6 +57,7 @@
          $(this).addClass ("vista_lista_imagen_elemento_alumno");
       });
       $vista = 'Alumnos';
+      $tabla = 'al';
    }
    else if (tokens.includes ("b=pr"))
    {
@@ -64,6 +66,7 @@
          $(this).addClass ("vista_lista_imagen_elemento_profesor");
       });
       $vista = 'Profesores';
+      $tabla = 'pr';
    }
    else if (tokens.includes ("b=cl"))
    {
@@ -72,7 +75,19 @@
          $(this).addClass ("vista_lista_imagen_elemento_clase");
       });
       $vista = 'Clases';
+      $tabla = 'cl';
       if (tokens [0] == "a=pr")
+         $("#vista_lista_editar").css ("display", "initial");
+   }
+   else if (tokens.includes ("b=as"))
+   {
+      $('div[name="vista_lista_imagen_elemento[]"]').each (function ()
+      {
+         $(this).addClass ("vista_lista_imagen_elemento_asignatura");
+      });
+      $vista = 'Asignaturas';
+      $tabla = 'as';
+      if (tokens [0] == "a=ad")
          $("#vista_lista_editar").css ("display", "initial");
    }
    else
@@ -82,10 +97,12 @@
          $(this).addClass ("vista_lista_imagen_elemento_grupo");
       });
       $vista = 'Cursos';
+      $tabla = 'cu';
       if (tokens [0] == "a=pr")
          $("#vista_lista_editar").css ("display", "initial");
    }
    
+   // Controlamos si la lista es de mis cosas o de cosas generales
    if (tokens.includes ("c=mis"))
       $("#vista_lista_presentacion").html ($vista);
    else
@@ -95,12 +112,14 @@
    var seleccionados_borrar = [];
    $('div[name="vista_lista_borrar_elemento[]"]').mousedown (function ()
    {
+      // Si el elemento ya habia sido marcado
       if (seleccionados_borrar.includes (this))
       {
          $(this).removeClass ("vista_lista_borrar_elemento_activo");
          $(this).addClass ("vista_lista_borrar_elemento_pasivo");
          seleccionados_borrar.splice (seleccionados_borrar.indexOf (this), 1);
       }
+      // Si no habia sido marcado
       else
       {
          $(this).removeClass ("vista_lista_borrar_elemento_pasivo");
@@ -113,13 +132,34 @@
    $("#vista_lista_borrar_seleccionados").click (function borrar_seleccionados ()
    {
       for (var i = 0; i < seleccionados_borrar.length; i++)
+      {
+         // Ejecutamos el php que eliminara el elemento de la tabla en el backend
+         $.ajax (
+         {
+            type: "POST",
+            url: "./php/eliminaDeVistaLista.php",
+            data: { "tabla" : $tabla, "mis" : !tokens.includes ("c=mis"), "id" :  seleccionados_borrar [i].parentElement.children [4].innerText},
+            success: function (data)
+            {
+               alert(data);
+            }
+         });
+         // Eliminamos el elemento del frontend
          vista_lista_lista.removeChild (seleccionados_borrar [i].parentElement);
+      }
+      // Liberamos el array de elementos a eliminar
       seleccionados_borrar.splice (0, seleccionados_borrar.length);
       
+      // Refrescamos la vista del elemento
       if (vista_lista_lista.childElementCount == 0)
       {
          vista_lista_titulo.innerText = "Ningún elemento";
-         vista_lista_contenido = "";
+         vista_lista_contenido.innerText = "";
+      }
+      else
+      {
+         vista_lista_titulo.innerText = vista_lista_lista.children [0].children [1].firstChild.innerText;
+         vista_lista_contenido.innerText = vista_lista_lista.children [0].children [3].innerText;
       }
    });
    
@@ -140,7 +180,7 @@
          seleccionado = this;
          
          vista_lista_titulo.innerText = this.children [1].firstChild.innerText;
-         vista_lista_contenido.innerText = this.lastChild.innerText;
+         vista_lista_contenido.innerText = this.children [3].innerText;
       }
    });
 });

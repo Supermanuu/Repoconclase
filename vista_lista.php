@@ -2,7 +2,7 @@
    session_start (); 
    include './php/preparaLista.php';
    
-   function print_item ($nitem, $titulo, $descripcion)
+   function print_item ($nitem, $titulo, $descripcion, $id)
    {
       echo '<div id="vista_lista_elemento_' . $nitem . '" name="vista_lista_elemento[]" class="vista_lista_elemento">';
          echo '<div id="vista_lista_imagen_elemento_' . $nitem . '" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>';
@@ -15,7 +15,8 @@
             echo '</div>';
          echo '</div>';
          echo '<div id="vista_lista_borrar_elemento_' . $nitem . '" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>';
-         echo '<div id="vista_lista_elemento_oculto_' . $nitem . '" class="vista_lista_elemento_oculto">' . nl2br ($descripcion) . '</div>';
+         echo '<div id="vista_lista_descripcion_oculto_' . $nitem . '" class="vista_lista_elemento_oculto">' . nl2br ($descripcion) . '</div>';
+         echo '<div id="vista_lista_id_oculto_' . $nitem . '" class="vista_lista_elemento_oculto">' . $id . '</div>';
       echo '</div>';
    }
 ?>
@@ -60,7 +61,7 @@
                      $i = 0;
                      while ($i < $nelems)
                      {
-                        print_item ($i, $lista [$i], $descr [$i]);
+                        print_item ($i, $lista [$i], $descr [$i], $ids [$i]);
                         $i++;
                      }
                   ?>
@@ -72,13 +73,10 @@
                      if ($nelems == 0)
                         echo 'Ningún elemento';
                      else
-                        echo $lista [0];
+                        echo 'Ningún elemento seleccionado';
                   ?>
                </div>
                <div id="vista_lista_contenido">
-                  <?php
-                     echo nl2br ($descr [0]);
-                  ?>
                </div>
                <div id="vista_lista_imagen" class="vista_lista_imagen"></div>
             </div>

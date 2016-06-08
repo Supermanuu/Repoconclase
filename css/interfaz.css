@@ -1010,6 +1010,12 @@ body.miembros_body
    background-image: url("../img/clase.png");
 }
 
+/* De esta forma se hereda el comportamiento de la clase .vista_lista_imagen_elemento */
+.vista_lista_imagen_elemento.vista_lista_imagen_elemento_asignatura
+{
+   background-image: url("../img/asignatura.png");
+}
+
 .vista_lista_imagen_elemento
 {
    background-repeat: no-repeat;

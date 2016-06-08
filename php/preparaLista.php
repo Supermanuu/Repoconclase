@@ -29,6 +29,7 @@
          // Buscar info de alumnos
          $descr = $_SESSION ["descr_alumnos"];
          $nelems = $_SESSION ["nalumnos"];
+         $ids = $_SESSION ["id_alumnos"];
       }
       else if ($_REQUEST ["b"] == 'pr')
       {
@@ -36,18 +37,21 @@
          // Buscar info de profesores
          $descr = $_SESSION ["descr_profesores"];
          $nelems = $_SESSION ["nprofesores"];
+         $ids = $_SESSION ["id_profesores"];
       }
       else if ($_REQUEST ["b"] == 'cl')
       {
          $lista = $_SESSION ["clases"];
          $descr = $_SESSION ["descr_clases"];
          $nelems = $_SESSION ["nclases"];
+         $ids = $_SESSION ["id_clases"];
       }
       else
       {
          $lista = $_SESSION ["cursos"];
          $descr = $_SESSION ["descr_cursos"];
          $nelems = $_SESSION ["ncursos"];
+         $ids = $_SESSION ["id_cursos"];
       }
    }
    else
@@ -69,7 +73,8 @@
          while ($sentencia->fetch ())
          {
             $lista[] = $nombre_alumno . " " . $apellido1_alumno . " " . $apellido2_alumno;
-            $descr[] = "ID: " . $id_alumno . " Fecha de nacimiento: " . $nacimiento . " Comunidad autónoma: " . $com . " C.P.: " . $cod_post . " Correo: " . $correo;
+            $descr[] = "ID: " . $id_alumno . "\n Fecha de nacimiento: " . $nacimiento . "\n Comunidad autónoma: " . $com . "\n C.P.: " . $cod_post . "\n Correo: " . $correo;
+            $ids[] = $id_alumno;
             $i++;
          }
          $nelems = $i;
@@ -91,7 +96,8 @@
          while ($sentencia->fetch ())
          {
             $lista[] = $nombre_profesor . " " . $apellido1_profesor . " " . $apellido2_profesor;
-            $descr[] = "ID: " . $id_prof . " Fecha de nacimiento: " . $nacimiento . " Comunidad autónoma: " . $com . " C.P.: " . $cod_post . " Correo: " . $correo;
+            $descr[] = "ID: " . $id_prof . "\n Fecha de nacimiento: " . $nacimiento . "\n Comunidad autónoma: " . $com . "\n C.P.: " . $cod_post . "\n Correo: " . $correo;
+            $ids[] = $id_prof;
             $i++;
          }
          $nelems = $i;
@@ -100,21 +106,22 @@
       {
          // Buscar todas las clases
          // Preparamos la query que vamos a ejecutar: Obtenemos la informacion de una clase seleccionada
-         if (! ($sentencia = $conexion->prepare ("SELECT id_asignatura, hora_ini, dias_semana, descripcion FROM clases WHERE id_clases IN (SELECT id_clase FROM clases_seleccionadas);")))
+         if (! ($sentencia = $conexion->prepare ("SELECT id_clases, id_asignatura, hora_ini, hora_fin, dias_semana, fecha_ini, fecha_end, descripcion FROM clases;")))
             echo "ERROR: PREPARE (2): " . $conexion->error;
          // Ejecutamos la query en la BD
          if (!$sentencia->execute ())
             echo "ERROR: EXECUTE (2): " . $conexion->error;
          // Vinculamos la salida a otras variables: Esperamos la info de la clase
-         if (!$sentencia->bind_result ($id_asignatura, $hora_ini, $dias_semana, $descripcion))
+         if (!$sentencia->bind_result ($id_clase, $id_asignatura, $hora_ini, $hora_fin, $dias_semana, $fecha_ini, $fecha_fin, $descripcion))
             echo "ERROR: BIND RESULT (2): " . $conexion->error;
          // Recorremos las 3 primeras filas, si hay
          $i = 0;
          while ($sentencia->fetch ())
          {
-            $horas_clases[] = $hora_ini . " - " . $dias_semana;
+            $horas_clases[] = " de " . $hora_ini . " a " . $hora_fin . " - " . $dias_semana;
             $id_asignaturas[] = $id_asignatura;
-            $descr_clases[] = $descripcion;
+            $descr_clases[] = $descripcion . "\n\nFecha de inicio: " . $fecha_ini . "\nFecha de fin: " . $fecha_fin;
+            $ids[] = $id_clase;
             $i++;
          }
          $j = 0;
@@ -137,30 +144,54 @@
             if (!$sentencia->fetch ())
                echo "ERROR: FETCH (3): No se encontro ninguna asignatura con id " . $id_asignaturas [$j];
             
-            $lista[] = $nombre_asignatura . " " . $nivel . " " . $curso . ". Horario: " . $horas_clases [$i];
+            $lista[] = $nombre_asignatura . " " . $nivel . " " . $curso . $horas_clases [$i];
             $j++;
          } 
          $nelems = $i;
          $descr = $descr_clases;
       }
+      else if ($_REQUEST ["b"] == 'as')
+      {
+         // Buscar todas las asignaturas
+         // Preparamos la query que vamos a ejecutar: Obtenemos la informacion de un grupo seleccionado
+         if (! ($sentencia = $conexion->prepare ("SELECT id_asignatura, nombre_asignatura, nivel, curso FROM asignaturas;")))
+            echo "ERROR: PREPARE (5): " . $conexion->error;
+         // Ejecutamos la query en la BD
+         if (!$sentencia->execute ())
+            echo "ERROR: EXECUTE (5): " . $conexion->error;
+         // Vinculamos la salida a otras variables: Esperamos la info de la clase
+         if (!$sentencia->bind_result ($id_asignatura, $nombre_asignatura, $nivel, $curso))
+            echo "ERROR: BIND RESULT (5): " . $conexion->error;
+         // Recorremos las 3 primeras filas, si hay
+         $i = 0;
+         while ($sentencia->fetch ())
+         {
+            $lista[] = $nombre_asignatura . " " . $nivel . " " . $curso;
+            $descr[] = "ID: " . $id_asignatura;
+            $ids[] = $id_asignatura;
+            $i++;
+         }
+         $nelems = $i;
+      }
       else
       {
          // Buscar todos los cursos
          // Preparamos la query que vamos a ejecutar: Obtenemos la informacion de un grupo seleccionado
-         if (! ($sentencia = $conexion->prepare ("SELECT nombre_curso, hora_ini, dias_semana, descripcion FROM cursos WHERE id_curso IN (SELECT id_curso FROM cursos_seleccionados);")))
+         if (! ($sentencia = $conexion->prepare ("SELECT id_curso, nombre_curso, hora_ini, hora_fin, dias_semana, fecha_ini, fecha_fin, descripcion FROM cursos")))
             echo "ERROR: PREPARE (4): " . $conexion->error;
          // Ejecutamos la query en la BD
          if (!$sentencia->execute ())
             echo "ERROR: EXECUTE (4): " . $conexion->error;
          // Vinculamos la salida a otras variables: Esperamos la info de la clase
-         if (!$sentencia->bind_result ($nombre_curso, $hora_ini, $dias_semana, $descripcion))
+         if (!$sentencia->bind_result ($id_curso, $nombre_curso, $hora_ini, $hora_fin, $dias_semana, $fecha_ini, $fecha_fin, $descripcion))
             echo "ERROR: BIND RESULT (4): " . $conexion->error;
          // Recorremos las 3 primeras filas, si hay
          $i = 0;
          while ($sentencia->fetch ())
          {
-            $lista[] = $nombre_curso . " a las " . $hora_ini . " - " . $dias_semana;
-            $descr[] = $descripcion;
+            $lista[] = $nombre_curso . " de " . $hora_ini . " a " . $hora_fin . " - " . $dias_semana;
+            $descr[] = $descripcion . "\n\nFecha de inicio: " . $fecha_ini . "\nFecha de fin: " . $fecha_fin;
+            $ids[] = $id_curso;
             $i++;
          }
          $nelems = $i;
