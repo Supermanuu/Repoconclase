@@ -245,10 +245,6 @@ textarea.green {
    background-color: white;
 }
 
-header.purple > #volver {
-  visibility: hidden;
-}
-
 #admin_form > input {
    background-color: #6A1B9A;
    border-color: #AB47BC;

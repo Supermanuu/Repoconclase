@@ -2,7 +2,7 @@
 
  session_start();
 
- function findId($correo) {
+ function findId($dest) {
 
     $mysqli = new mysqli('localhost', 'profesores', 'profesConEstilo', 'profesoresConClase');
     if (mysqli_connect_errno()) {
@@ -10,8 +10,25 @@
           exit();
     }
 
-    $temp = '"' . $correo . '"';
-    $query = "SELECT id FROM registra where correo=" . $temp;
+    //Parsear destinatario
+    for ($i = 0; i < strlen($dest); $i++){
+        if ($dest[$i] != ' ')
+            $nombre .= $dest[$id];
+        else{
+            $i_save = $i;
+            $i = strlen($dest); //Salir
+        }
+    }
+
+    $apellido1 = substr($dest, ($i_save+1), strlen($dest));
+
+    echo '<p>' . $nombre . '</p>';
+    echo '<p>' . $apellido1 . '</p>';
+    die();
+
+    $temp = '"' . $nombre . '"';
+    $temp2 = '"' . $apellido1 . '"';
+    $query = "SELECT id FROM registra where nombre=" . $temp . "and apellido1=" . $temp2;
     $resultado = $mysqli->query($query) or die ($mysqli->error);
     $objeto = $resultado->fetch_assoc();
 
@@ -56,7 +73,7 @@
 
 
  $asunto = $_REQUEST["asun"];
- $dest = $_REQUEST["dest"];
+ $dest = $_REQUEST["destinatario"];
  $texto = $_REQUEST["texto"];
 
  if (!isset($asunto) || !isset($dest) || !isset($texto)) {

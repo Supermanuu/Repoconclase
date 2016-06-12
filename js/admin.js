@@ -3,7 +3,7 @@ $(document).ready(function() {
 	$("#admin_gestionUsuarios").click(function(){
 
 		//Peticion al servidor - AJAX
-		$("#admin_principal").load("admin_Usuarios.txt");
+		$(location).attr('href', 'administrador_gestor.php');
 	});
 
 	$("#admin_gestionUsuarios").mouseover(function(){
@@ -61,12 +61,10 @@ $(document).ready(function() {
 	   
 	    var opciones = {
  		region: 'ES',
-		displayMode: 'markers',
 		resolution: 'provinces',
-		colorAxis: {colors: ['#00853f', 'black', '#e31b23']},
+		displayMode:'markers',
 		backgroundColor: '#81d4fa',
 		datalessRegionColor: '#f8bbd0',
-		defaultColor: '#f5f5f5',
 		width: '500',
 		height: '300',
 	    };

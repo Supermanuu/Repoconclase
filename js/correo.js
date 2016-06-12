@@ -39,8 +39,18 @@ $(function(){
    });
 
    $("#correo_detallesCorreo_azul > p").click(function() {
+	
+	option = $("#correo_tipoCorreo > select").val();
+        var bandeja;
 
-        pagina = "./php/clienteMensaje.php?" + "idMensaje=" + $(this).attr('id');
+        if (option == "recibidos"){
+           bandeja = 1;
+        }
+        else if(option == "enviados"){
+           bandeja = 2;
+        }
+
+        pagina = "php/clienteMensaje.php?" + "idMensaje=" + $(this).attr('id') + "&bandeja=" + bandeja;
 	$("#correo_mostrarMensaje_azul").load(pagina);
 
    });
@@ -56,8 +66,17 @@ $(function(){
    });
 
    $("#correo_detallesCorreo_verde > p").click(function() {
-
-	pagina = "php/clienteMensaje.php?" + "idMensaje=" + $(this).attr('id');
+	option = $("#correo_tipoCorreo > select").val();
+	var bandeja;
+   
+        if (option == "recibidos"){
+           bandeja = 1;
+        }
+        else if(option == "enviados"){
+           bandeja = 2;
+        }
+	
+	pagina = "php/clienteMensaje.php?" + "idMensaje=" + $(this).attr('id') + "&bandeja=" + bandeja;
 	$("#correo_mostrarMensaje_verde").load(pagina);
 
    });

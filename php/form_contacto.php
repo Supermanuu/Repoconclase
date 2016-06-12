@@ -2,6 +2,21 @@
 
 <?php
 
+	function parserMess($message) {
+
+	    $long = strlen($message);
+	    echo '<p>' . $long . '</p>';
+	    for ($i = 0; $i < $long; $i++){
+		if ($i % 40 == 0){
+		  $newMensaje .= "\n";
+		}
+		$newMensaje .= $message[$i];
+	    }
+
+	    return $newMensaje;
+
+    }
+
 	function send() {
 
 		$nombre = $_REQUEST["Nombre"];
@@ -24,10 +39,11 @@
 			exit();
 		}
 
+		$newMess = parserMess($mensaje);
 		date_default_timezone_set("Europe/Madrid");
 		$date = getdate();
 		$my_date = $date[mon]."/".$date[mday]."/".$date[year]." - ".$date[hours].":".$date[minutes].":".$date[seconds];
-		$query = "INSERT INTO contacta VALUES (0, '$nombre', '$email', '$tipo', 0, '$mensaje', '$my_date')";
+		$query = "INSERT INTO contacta VALUES (0, '$nombre', '$email', '$tipo', 0, '$newMess', '$my_date')";
 		$resultado = $mysqli->query($query);
 
 		if (!$resultado)

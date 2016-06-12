@@ -8,11 +8,11 @@ function readMessage($id, $bandeja) {
     exit();
   }
 
-  if (substr($id, 0, 1) == "X" && $bandeja == "recibidos"){
+  if (substr($id, 0, 1) == "X" && $bandeja == 1){
     $leido = 1;
     $newId = substr($id, 1);
   }
-  elseif (substr($id, 0, 1) == "X" && $bandeja == "enviados"){
+  elseif (substr($id, 0, 1) == "X" && $bandeja == 2){
     $leido = 0;
     $newId = substr($id, 1);
   }

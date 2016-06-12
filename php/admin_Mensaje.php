@@ -34,6 +34,11 @@ function readMess($id) {
 	echo '<hr class=admin_linea>';
         echo '<h1>Contenido del mensaje</h1>';
         echo '<pre>' . $objeto["mensaje"] . '</pre>';
+	echo '<form id="admin_form" method="POST" action="php/admin_contesta.php">';
+	echo '<textarea name="text" class="purple" rows="6">';
+	echo '</textarea>';
+	echo '<input class="purple" type="submit" value="Enviar Mensaje"></input>';
+	echo '</form>';
         $resultado->free();
         $mysqli->close();
 }
