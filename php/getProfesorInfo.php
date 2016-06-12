@@ -40,13 +40,8 @@
    // Preparamos la query que vamos a ejecutar: Obtenemos la informacion de una clase seleccionada
    $sentencia->free_result ();
 
-   $hoy = getdate(); //obtenemos los datos del dia actual para solo obtener la info de las clases de hoy
-   $dia = $hoy['mday']; //dia en el mes en formato 1 a 31
-   $mes = $hoy['mon']; //numero de mes 1 a 12
-   $año = $hoy['year']; //año en 4 digitos ej 2016
-   $fechaAComparar = $año."-".$mes."-".$dia; //nos construimos un string con el mismo formato de la BBDD paar comparar con lo que almacena
 
-   if (! ($sentencia = $conexion->prepare ("SELECT id_asignatura, hora_ini, dias_semana FROM clases WHERE id_profesor = (?);")))
+   if (! ($sentencia = $conexion->prepare ("SELECT id_asignatura, fecha_ini, fecha_end, hora_ini, dias_semana FROM clases WHERE id_profesor = (?) ORDER BY fecha_ini, hora_ini;")))
       echo "ERROR: PREPARE (2): " . $conexion->error;
    // Asociamos la variable a la query: Es el id del usuario logeado
    if (!$sentencia->bind_param ("i", $_SESSION ["id_user"])) 
@@ -55,16 +50,25 @@
    if (!$sentencia->execute ())
       echo "ERROR: EXECUTE (2): " . $conexion->error;
    // Vinculamos la salida a otras variables: Esperamos la info de la clase
-   if (!$sentencia->bind_result ($id_asignatura, $hora_ini, $dias_semana))
+   if (!$sentencia->bind_result ($id_asignatura, $fecha_ini, $fecha_fin, $hora_ini, $dias_semana))
       echo "ERROR: BIND RESULT (2): " . $conexion->error;
+
+   //obtenemos los datos del dia actual para solo obtener la info de las clases que no se han pasado ya
+   $hoy = date('Y-m-d');
 
     // Recorremos las filas que cumplen la condicion de la query y contabilizamos el resultado
    $i = 0;
    while ($sentencia->fetch())
-   {
-      $horas_clases[] = $hora_ini;
-      $id_asignaturas[] = $id_asignatura;
-      $i++;
+   {  //el inicio es mayor que la fecha actual o ya se paso el inicio pero todavia no ha acabado
+      if(($fecha_ini >= $hoy) || ($fecha_ini <= $hoy && $fecha_fin >= $hoy)){ 
+         $horas_clases[] = $hora_ini;
+         $fechas_clases[] = $fecha_ini;
+         $id_asignaturas[] = $id_asignatura;
+         $obj_fecha = date_create_from_format('Y-m-d', $fecha_ini);
+         $fecha_newFormat = date_format($obj_fecha, "d/m");
+         $datosClases[] = $fecha_newFormat . " - " . $hora_ini;
+         $i++;
+      }
    }
 
    $j = 0;
@@ -87,7 +91,7 @@
       if (!$sentencia->fetch ())
          echo "ERROR: FETCH (3): No se encontro ninguna asignatura con id " . $id_asignaturas [$j];
       
-      $clases[] = $nombre_asignatura . " - " . $nivel . " " . $curso;
+      $clases[] = $nivel . " " . $curso . " - " . $nombre_asignatura; 
       $j++;
    }
    if ($i == 0)

@@ -80,7 +80,7 @@ $(document).ready (function () {
            marginLeft:0
        } ,700, function(){
          $('#slider .dashprofes_info:first').insertAfter('#slider .dashprofes_info:last'); //recolocamos los elems de la lista
-         $('#slider .dashprofes_info:first').css('display: inline'); //mostramos solo el primer elem de la lista, lo demas esta oculto por css
+         $('#tusEventos').innerHTML = $('#slideUl>li:first-child').innerHTML; //mostramos solo el primer elem de la lista escribiendole en el parrafo
            //slider.css('margin-left', '-'+100+'%');
        });
    }
@@ -90,7 +90,7 @@ $(document).ready (function () {
            marginLeft:0
        } ,700, function(){
          $('#slider .dashprofes_info:last').insertBefore('#slider .dashprofes_info:first'); //recolocamos los elems de la lista
-         $('#slider .dashprofes_info:first').css('display: inline'); //mostramos solo el primer elem de la lista, lo demas esta oculto por css
+         $('#tusEventos').innerHTML = $('#slideUl>li:first-child').innerHTML; //mostramos solo el primer elem de la lista escribiendole en el parrafo
            //slider.css('margin-left', '-'+100+'%');
        });
    }

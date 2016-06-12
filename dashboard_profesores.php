@@ -46,17 +46,20 @@
                 $nc = $_SESSION ["nclases"];
 
               echo '<div id="slider">'; //-------------------generamos el slider
-              echo '<ul>';
+              //lista oculta que contendra los prox eventos del profesor y nos servira para imprimir su primer elem en el parrafo de abajo
+              echo '<ul id="slideUl">';
               while ($k < $nc)
               {  
                 echo '<li>';
                 echo '<p class="dashprofes_small_p dashprofes_info" id="tusEventos">'; 
-                echo $clases[$k] . " - " . $horas_clases[$k];  
+                echo $clases[$k] . "  " . $datosClases[$k];  
                 echo '</p>';
                 echo '</li>';
                 $k++;
               } 
               echo '</ul>';
+              //parrafo vacio sobre el que mostrar el primer evento de la lista
+              echo '<p class="dashprofes_small_p dashprofes_info" id="tusEventos">'; 
               //flechitas para pasar el slider
               echo '<div id="btn-prev" class="btn-prev"> &#60; </div>';
               echo '<div id="btn-next" class="btn-next"> &#62; </div>';

@@ -823,7 +823,10 @@ div.oscuro{
   margin: auto;
   position: relative;
   overflow: hidden;
-  display: none; /*ocultamos todos los elems de la lista*/
+}
+
+#slideUl {
+   /*display: none; /*ocultamos todos los elems de la lista*/
 }
 
 #tusEventos{
