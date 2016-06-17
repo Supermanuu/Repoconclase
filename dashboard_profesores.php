@@ -12,11 +12,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
         <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="css/estructura.css"/>
         <link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="js/common.js"></script>
         <script src="js/dashboard_profesores.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </head>
     
     <body class="dashprofes_body">
@@ -29,7 +31,8 @@
         <div class="dashprofes_principal" id="principal">
 
         	<div id="tuInfo" class="dashboard oscuro" title="<?php echo $_SESSION["nombre"]; ?>">
-		    	<p class="dashprofes_big_p"> <?php echo $_SESSION["nombre"]; ?> </p>
+          
+		    	<p class="dashprofes_big_p"> <?php echo $_SESSION["nombre"]; ?> <span class="glyphicon glyphicon-user" ></span> </p>
 		    	<p class="dashprofes_small_p dashprofes_info">Proximos Eventos: </p>
           <?php 
            
@@ -69,7 +72,7 @@
           </div>
 
         	<div id="tusClases" class="dashboard claro">
-		    	<p class="dashprofes_big_p">Tus Clases</p>
+		    	<p class="dashprofes_big_p">Tus Clases </p>
 		    	<p class="dashprofes_small_p" id="gestionaAlumnos">Aqui encontrarás todo lo que necesitas para gestionar tus clases particulares con otros alumnos</p>
 		 	</div>
 
@@ -79,7 +82,7 @@
 		 	</div>
 
 		 	<div id="busqueda" class="dashboard claro">
-		    	<p class="dashprofes_big_p">Búsqueda</p>
+		    	<p class="dashprofes_big_p">Búsqueda <span class="glyphicon glyphicon-search"></span> </p>
 		    	<p class="dashprofes_small_p" id="busca">Utiliza este servicio para encontrar alumnos u otros usuarios usando filtros en pocos pasos</p>
 		 	</div>
 
