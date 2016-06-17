@@ -104,28 +104,10 @@
 
    		$movil = htmlspecialchars(trim(strip_tags($movil)));
 
-   		$dir_subida = '/pccdata';///userid_'.$documento.'/data/';
-   		$foto = $dir_subida.basename($_FILES['Foto']['name']);
-   		$cv = $dir_subida.basename($_FILES['CV']['name']);
-
-		if(!mkdir($dir_subida, 0777)) {
-		    echo "Fallo al crear las carpetas...\n";
-		}
-
-   		if (move_uploaded_file($_FILES['Foto']['tmp_name'], $foto) &&
-   			move_uploaded_file($_FILES['CV']['tmp_name'], $cv)) {
-    			echo "El fichero es válido y se subió con éxito.\n";
-		} 
-
-		else {
-    		echo "¡Posible ataque de subida de ficheros!\n";
-		}
-
-
 		$mysqli = new mysqli('localhost', 'profesores', 'profesConEstilo', 'profesoresConClase');
 		if (mysqli_connect_errno()) {
 			echo '<h1 class="my_hy">Error interno... ¡Vuelva a intentarlo!</h1>';
-			exit();
+			return false;
 		}
 
 		$query = "INSERT INTO usuarios VALUES (0, '$usuario', '$contrasena', '$perfil')";
@@ -134,6 +116,7 @@
 
 		if (!$resultado) {
 			echo '<h1 class="my_hy">Formulario de registro no enviado... ¡Vuelva a intentarlo!</h1>';
+			return false;
 		}
 		else {
 
@@ -141,18 +124,50 @@
 
    			$query = "INSERT INTO registra VALUES ('$id', '$correo', '$perfil', 
 				'$nombre', '$apellido1', '$apellido2', '$nacimiento', '$tipo_documento', 
-				'$documento', '$cp', '$comunidad', '$movil', '$dir_subida')";
+				'$documento', '$cp', '$comunidad', '$movil')";
 		
 			$resultado = $mysqli->query($query);
 
-			if (!$resultado)
+			if (!$resultado) {
 				echo '<h1 class="my_hy">Formulario de registro no enviado... ¡Vuelva a intentarlo!</h1>';
-			else
-				echo '<h1 class="my_hy">¡Formulario de registro enviado!</h1>';
+				return false;
+			}
+
+			$query = "INSERT INTO folders VALUES ('$id', '$dir_subida')";
+		
+			$resultado = $mysqli->query($query);
+
+			if (!$resultado) {
+				echo '<h1 class="my_hy">Formulario de registro no enviado... ¡Vuelva a intentarlo!</h1>';
+				return false;
+			}
 
 		}
 
 		$mysqli->close();
+
+		$dir_subida = '/pccdata/userid_'.$documento.'/';	
+		mkdir($dir_subida, 0777);
+
+		if( isset($_FILES['Foto']) ){
+	
+			$foto = "foto";
+			$foto_tmp = $_FILES['Foto']['tmp_name'];
+
+			move_uploaded_file($foto_tmp, $dir_subida.$foto);
+
+		}
+
+		if( isset($_FILES['CV']) ){
+	
+			$cv = "cv";
+			$cv_tmp = $_FILES['CV']['tmp_name'];
+
+			move_uploaded_file($cv_tmp, $dir_subida.$cv);
+
+		}
+
+		return true;
 
 	}
 
@@ -180,15 +195,15 @@
      		echo '</header>';
      	?>
 		<div class="form_principal">
-			<div id="login_placement">
-				<?php include './login.php'; ?>
-			</div>
 			<div class="form_contenido">
-				<?php 
-					send();
+				<?php
+					if (send()) {
+						header("Location: ../formulario_enviado.php");
+					}
+					else
+						header("Location: ../formulario_no_enviado.php");
 				?>
 			</div>
 		</div>
-		<?php include './footer.php'; ?>
 	</body>
 </html>

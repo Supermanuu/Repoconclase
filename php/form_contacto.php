@@ -36,7 +36,7 @@
 		$mysqli = new mysqli('localhost', 'profesores', 'profesConEstilo', 'profesoresConClase');
 		if (mysqli_connect_errno()) {
 			echo '<h1 class="my_hy">Error interno... ¡Vuelva a intentarlo!</h1>';
-			exit();
+			return false;
 		}
 
 		$newMess = parserMess($mensaje);
@@ -46,11 +46,14 @@
 		$query = "INSERT INTO contacta VALUES (0, '$nombre', '$email', '$tipo', 0, '$newMess', '$my_date')";
 		$resultado = $mysqli->query($query);
 
-		if (!$resultado)
+		if (!$resultado) {
 			echo '<h1 class="my_hy">Formulario de contacto no enviado... ¡Vuelva a intentarlo!</h1>';
-		else
-			echo '<h1 class="my_hy">¡Formulario de contacto enviado!</h1>';
+			return false;
+		}
+
 		$mysqli->close();
+
+		return true;
 
 	}
 
@@ -79,7 +82,11 @@
 			</div>
 			<div class="form_contenido">
 				<?php 
-					send();
+					if (send()) {
+						header("Location: ../formulario_enviado.php");
+					}
+					else
+						header("Location: ../formulario_no_enviado.php");
 				?>
 			</div>
 		</div>

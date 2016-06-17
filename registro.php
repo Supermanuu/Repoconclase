@@ -88,8 +88,8 @@
 						<input class="form_input" id="field14" type="text" name="Móvil" maxlength="20" size="20" placeholder="Tu teléfono de contacto" autocomplete="off" required/><label class="form_checker" id="input_chk14">  <</label></br>
 
 						</br></br> <!-- Ficheros requeridos -->
-						<input class="form_input" id="field15" type="file" name="Foto" accept=".jpg" autocomplete="off" required/><label class="form_checker" id="input_chk15">  <</label></br>
-						<input class="form_input" id="field16" type="file" name="CV" accept=".pdf" autocomplete="off" required/><label class="form_checker" id="input_chk16">  <</label></br>
+						<input class="form_input" id="field15" type="file" name="Foto" accept=".jpg" autocomplete="off"/> </br>
+						<input class="form_input" id="field16" type="file" name="CV" accept=".pdf" autocomplete="off"/>    </br>
 
 					</div>
 					<div class="form_botonera">
