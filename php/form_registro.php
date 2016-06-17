@@ -104,6 +104,8 @@
 
    		$movil = htmlspecialchars(trim(strip_tags($movil)));
 
+   		$dir_subida = '/pccdata/userid_'.$documento.'/';	
+
 		$mysqli = new mysqli('localhost', 'profesores', 'profesConEstilo', 'profesoresConClase');
 		if (mysqli_connect_errno()) {
 			echo '<h1 class="my_hy">Error interno... ¡Vuelva a intentarlo!</h1>';
@@ -145,8 +147,7 @@
 		}
 
 		$mysqli->close();
-
-		$dir_subida = '/pccdata/userid_'.$documento.'/';	
+	
 		mkdir($dir_subida, 0777);
 
 		if( isset($_FILES['Foto']) ){
