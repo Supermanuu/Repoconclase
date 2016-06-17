@@ -42,11 +42,7 @@
 						</br>
 						<text class="blue" id="form_text">Datos de contacto</text></br>
 						<label class="form_label" for="Móvil">Móvil</label></br>
-						</br>
-						<text class="blue" id="form_text">Ficheros requeridos</text></br>
-						<label class="form_label" for="Foto">Fotografía</label></br>
-						<label class="form_label" for="CV">Currículum</label></br>
-						</br>
+
 					</div>
 					<div class="form_entradas">
 						</br>  <!--Datos de usuario -->
@@ -87,16 +83,26 @@
 						</br></br> <!-- Datos de contacto -->
 						<input class="form_input" id="field14" type="text" name="Móvil" maxlength="20" size="20" placeholder="Tu teléfono de contacto" autocomplete="off" required/><label class="form_checker" id="input_chk14">  <</label></br>
 
-						</br></br> <!-- Ficheros requeridos -->
-						<input class="form_input" id="field15" type="file" name="Foto" accept=".jpg" autocomplete="off"/> </br>
-						<input class="form_input" id="field16" type="file" name="CV" accept=".pdf" autocomplete="off"/>    </br>
-
 					</div>
+
 					<div class="form_botonera">
+						</br>
+						<h1 class="my_h1">¿Quieres subir una foto y tu CV?</h1>
+						<text class="blue" id="form_text">Fotografía</text></br>
+						<input class="form_input" id="field15" type="file" name="Foto" accept=".jpg" autocomplete="off"/> </br>
+						<text class="blue" id="form_text">Curriculum vitae</text></br>
+						<input class="form_input" id="field16" type="file" name="CV" accept=".pdf" autocomplete="off"/>    </br></br>
+					</div>
+
+					<div class="form_botonera">
+
 						<label for="verif"/> <input id="chkbx" type="checkbox" required>Verifico que he leído y acepto los términos y condiciones del servicio.</br>
 						<input class="blue" id ="form_enviar" type="button" value="Send request"/>
 						<input class="blue" id ="form_limpiar" type="reset" value="Clear"/>
+
 					</div>
+
+
 				</form>
 			</div>
 		</div>
