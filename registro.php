@@ -20,7 +20,7 @@
 		<div class="form_principal">
 			<div class="form_contenido">
 				<h1 class="my_h1">¡¡¡Registrate en Profesores con Clase!!!</h1>
-				<form id="form_registro" class="form_box" method="post" action="./php/form_registro.php">
+				<form id="form_registro" class="form_box" method="post" action="./php/form_registro.php" enctype="multipart/form-data">
 					<div class="form_etiquetas">
 						<text class="blue" id="form_text">Datos de usuario</text></br>
 						<label class="form_label" for="Usuario">Su usuario</label></br>
