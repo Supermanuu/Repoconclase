@@ -102,7 +102,8 @@
 
    		$movil = htmlspecialchars(trim(strip_tags($movil)));
 
-   		$dir_subida = '/pccdata/userid_'.$documento.'/';	
+   		$folder = '/pccdata/userid_'.$documento.'/';
+   		$dir_subida = '/var/www/html/pccdata/userid_'.$documento.'/';
 
 		$mysqli = new mysqli('localhost', 'profesores', 'profesConEstilo', 'profesoresConClase');
 		if (mysqli_connect_errno()) {
@@ -133,7 +134,7 @@
 				return false;
 			}
 
-			$query = "INSERT INTO folders VALUES ('$id', '$dir_subida')";
+			$query = "INSERT INTO folders VALUES ('$id', '$folder')";
 		
 			$resultado = $mysqli->query($query);
 
