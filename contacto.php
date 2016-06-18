@@ -79,9 +79,9 @@
 						echo '<label for="verif"/> <input id="chkbx" type="checkbox" required>Verifico que he leído y acepto los términos y condiciones del servicio.</br>';
 						echo '<input class='.$color.'  id="form_enviar" type="button" value="Send request"/>';
 						echo '<input class='.$color.'  id="form_limpiar" type="reset" value="Clear"/>';
-
+					echo '</div>';
                     	?>
-					</div>
+					
 				</form>
 			</div>
 		</div>

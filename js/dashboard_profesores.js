@@ -36,7 +36,7 @@ $(document).ready (function () {
 
    $("#infoPersonal").mousedown (function ()
    {
-      $(location).attr('href', 'editar_usuario.html');
+      $(location).attr('href', 'editar_usuario.php');
    });
 
    $("#valoraciones").mousedown (function ()

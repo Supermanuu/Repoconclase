@@ -80,8 +80,6 @@
 
 		$movil = $_REQUEST["Móvil"];
 
-		$movil = $_REQUEST["Móvil"];
-
 		if (!isset($usuario) || !isset($correo) || !isset($contrasena) || !isset($perfil) || !isset($nombre)
 			 || !isset($apellido1) || !isset($apellido2) || !isset($nacimiento) || !isset($tipo_documento) || !isset($documento)
 			  || !isset($cp) || !isset($movil)){
