@@ -149,7 +149,7 @@
 	
 		mkdir($dir_subida, 0777);
 
-		if( isset($_FILES['Foto']) ){
+		if( is_uploaded_file($_FILES['Foto']['tmp_name']) ){
 	
 			$foto = "foto";
 			$foto_tmp = $_FILES['Foto']['tmp_name'];
@@ -158,7 +158,7 @@
 
 		}
 
-		if( isset($_FILES['CV']) ){
+		if( is_uploaded_file($_FILES['CV']['tmp_name']) ){
 	
 			$cv = "cv";
 			$cv_tmp = $_FILES['CV']['tmp_name'];

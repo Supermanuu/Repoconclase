@@ -108,10 +108,11 @@
 
 									$_SESSION["editar_foto"] = $usuario["folder"].'foto';
 									$_SESSION["editar_cv"] = $usuario["folder"].'cv';
+									$_SESSION["editar_folder"] = $usuario["folder"];
 
-									$tmp = '/var/www/html'.$_SESSION["editar_foto"];
+									$foto = '/var/www/html'.$_SESSION["editar_foto"];
 
-									if (file_exists($tmp))
+									if (file_exists($foto))
 										echo '<img src="'.$_SESSION["editar_foto"].'" height="256" width="256">';
 									else
 										echo '<h1 class="my_h1">¡Sube una foto!</h1>';
@@ -128,7 +129,7 @@
 								echo '<text class="blue" id="form_text">Curriculum vitae</text></br>';
 								echo '<input class="form_input" id="field16" type="file" name="CV" accept=".pdf" autocomplete="off"/>    </br></br>';
 								echo '<div class="form_botonera">';
-									echo '<input class='.$color.'  id="form_enviar_contenido" type="button" value="Subir"/>';
+									echo '<input class='.$color.'  id="form_enviar_contenido" type="submit" value="Subir"/>';
 									echo '<input class='.$color.'  id="form_limpiar_contenido" type="reset" value="Limpiar"/>';
 								echo '</div>';
 
