@@ -23,7 +23,7 @@
 
 		$mysqli = new mysqli('localhost', 'profesores','profesConEstilo','profesoresConClase');
 		if (mysqli_connect_errno())
-			die();
+			return false;
 
 		$temp = '"'.$id.'"';
 		$query = "SELECT * FROM registra where id = " . $temp;
@@ -70,7 +70,10 @@
       	<script src="js/editar.js"></script>
     </head>
     <body class ="form_body">
-		<?php include './php/header.php'; ?>
+		<?php 
+			$_SESSION["volverIndex"] = 1;
+			include './php/header.php'; 
+		?>
 		<div class="form_principal">
 			<h1 class="my_h1">Edita tu perfil en Profesores con Clase</h1>
 			<div class="form_editar">
@@ -97,7 +100,7 @@
 									$_SESSION["editar_cv"] = $usuario["folder"].'cv';
 
 									$tmp = '/var/www/html'.$_SESSION["editar_foto"];
-									
+
 									if (file_exists($tmp))
 										echo '<img src="'.$_SESSION["editar_foto"].'" height="256" width="256">';
 									else
@@ -119,7 +122,7 @@
 				</div>
 
 				<div id="editar_right">
-					<form class="form_box" method="post" action="./php/form_editar_datos.php">
+					<form id="form_editar_usuario" class="form_box" method="post" action="./php/form_editar_usuario.php">
 					<?php
 
 						echo '<div class="form_etiquetas">';
@@ -192,9 +195,8 @@
 						echo '</div>';
 
 						echo '<div class="form_botonera">';
-							echo '<label for="verif"/> <input id="chkbx" type="checkbox" required>Verifico que he leído y acepto los términos y condiciones del servicio.</br>';
-							echo '<input class='.$color.'  id="form_enviar" type="button" value="Send request"/>';
-							echo '<input class='.$color.'  id="form_limpiar" type="reset" value="Clear"/>';
+							echo '<input class='.$color.'  id="form_enviar" type="button" value="Guardar"/>';
+							echo '<input class='.$color.'  id="form_limpiar" type="reset" value="Limpiar"/>';
 						echo '</div>';
 
                 	?>

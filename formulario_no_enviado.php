@@ -16,7 +16,10 @@
         <script src="js/contacto.js"></script>
     </head>
     <body class="form_body">
-        <?php include './php/header.php'; ?>
+        <?php 
+            $_SESSION["volverIndex"] = 1;
+            include './php/header.php'; 
+        ?>
         <div class="form_principal">
             <div id="login_placement">
                 <?php include './php/login.php'; ?>

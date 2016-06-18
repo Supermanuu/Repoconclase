@@ -241,10 +241,7 @@ $(document).ready(function() {
 		if (field2() && field3() && field4() && is_fill($("input#field6").val(), $("label#input_chk6")) 
 			&& is_fill($("input#field7").val(), $("label#input_chk7")) && is_fill($("input#field8").val(), $("label#input_chk8")) 
 			&& field9() &&field12() && field14()) {
-			if ($("input#chkbx").is(':checked'))
-				$("form#form_registro").submit();
-			else
-				alert( "Acepta los términos y condiciones." );
+			$("form#form_registro").submit();
 		}
 			
 		else
