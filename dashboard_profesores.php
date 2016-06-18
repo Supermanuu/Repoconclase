@@ -42,27 +42,27 @@
               echo '</p>';
             }
             else{ //hay alguna clase
-              $k = 0;
+              
               if($_SESSION ["nclases"] > 4)
                 $nc = 4;
               else  
                 $nc = $_SESSION ["nclases"];
 
-              echo '<div id="slider">'; //-------------------generamos el slider
-              //lista oculta que contendra los prox eventos del profesor y nos servira para imprimir su primer elem en el parrafo de abajo
-              echo '<ul id="slideUl">';
+               //lista oculta que contendra los prox eventos del profesor y nos servira para imprimir su primer elem en el parrafo de abajo
+              $k = 0;
+              echo '<ul id="listaOculta">';
               while ($k < $nc)
               {  
                 echo '<li>';
-                echo '<p class="dashprofes_small_p dashprofes_info" id="tusEventos">'; 
-                echo $clases[$k] . "  " . $datosClases[$k];  
-                echo '</p>';
+                echo $clases[$k] . "  " . $datosClases[$k];   
                 echo '</li>';
                 $k++;
               } 
               echo '</ul>';
+
+              echo '<div id="slider">'; //-------------------generamos el slider
               //parrafo vacio sobre el que mostrar el primer evento de la lista
-              echo '<p class="dashprofes_small_p dashprofes_info" id="tusEventos">'; 
+              echo '<p class="dashprofes_small_p dashprofes_info" id="tusEventos"> </p>'; 
               //flechitas para pasar el slider
               echo '<div id="btn-prev" class="btn-prev"> &#60; </div>';
               echo '<div id="btn-next" class="btn-next"> &#62; </div>';
@@ -72,12 +72,12 @@
           </div>
 
         	<div id="tusClases" class="dashboard claro">
-		    	<p class="dashprofes_big_p">Tus Clases </p>
+		    	<p class="dashprofes_big_p">Tus Clases <span class="glyphicon glyphicon-education"> </p>
 		    	<p class="dashprofes_small_p" id="gestionaAlumnos">Aqui encontrarás todo lo que necesitas para gestionar tus clases particulares con otros alumnos</p>
 		 	</div>
 
 		 	<div id="tusCursos" class="dashboard claro">
-		    	<p class="dashprofes_big_p">Tus Cursos</p>
+		    	<p class="dashprofes_big_p">Tus Cursos <span class="glyphicon glyphicon-list-alt"></p>
 		    	<p class="dashprofes_small_p" id="gestionaGrupos">Este es el espacio podrás admnistrar todo lo relacionado con tus clases a un grupo de alumnos</p>
 		 	</div>
 
@@ -87,22 +87,44 @@
 		 	</div>
 
         	<div id="correo" class="dashboard claro">
-		    	<p class="dashprofes_big_p">Correo</p>
-		    	<p class="dashprofes_small_p" id="redactarMensaje">Cliente de mensajería personalizado para la comunicación con cualquier usuario de esta web</p>
+		    	<p class="dashprofes_big_p">Correo <span class="glyphicon glyphicon-envelope"></span> </p>
+          <?php 
+           
+            if($_SESSION ["ncorreos"] == 0){ //no hay mensajes nuevos sin leer
+              echo '<p class="dashprofes_small_p" id="nuevosMensajes">Ningun mensaje nuevo</p>';
+            }
+            else{ //hay algun mensaje sin leer
+              $k = 0;
+              if($_SESSION ["ncorreos"] > 4)
+                $nmen = 4;
+              else 
+                $nmen = $_SESSION ["ncorreos"];
+              
+              $k = 0;
+              
+              while ($k < $nmen)
+              {  
+                echo '<p class="dashprofes_small_p " id="nuevosMensajes">';
+                echo $clases[$k] . "  " . $datosClases[$k];   
+                echo '</p>';
+                $k++;
+              }
+            } 
+          ?>
 		 	</div>
 
 		 	<div id="infoPersonal" class="dashboard claro">
-		    	<p class="dashprofes_big_p">Información Personal</p>
+		    	<p class="dashprofes_big_p">Modificar Información <span class="glyphicon glyphicon-cog"> </p>
 		    	<p class="dashprofes_small_p" id="editarInfo">Actualiza tu información personal para mostrar al mundo tus más recientes aptitudes</p>
 		 	</div>
 
 		 	<div id="valoraciones" class="dashboard claro">
-		    	<p class="dashprofes_big_p">Valoraciones y Estadisticas</p>
+		    	<p class="dashprofes_big_p">Valoraciones y Estadisticas <span class="glyphicon glyphicon-check"> </p>
 		    	<p class="dashprofes_small_p" id="verValoraciones">Consulta tus valoraciones o las de diferentes grupos y alumnos. ¡Son una parte muy importante de esta web!</p>
 		 	</div>
 
 		 	<div id="ranking" class="dashboard claro">
-		    	<p class="dashprofes_big_p">Ranking</p>
+		    	<p class="dashprofes_big_p">Ranking <span class="glyphicon glyphicon-star-empty"> </p>
 		    	<p class="dashprofes_small_p" id="verTop">¡Comprueba tu puesto en la clasificación de Profesores y demuestra quien tiene mas Clase!</p>
 		 	</div>
 

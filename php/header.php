@@ -10,7 +10,8 @@
      echo '<header class="green">';
      echo '<button class="green" id="logout">Logout</button>';
 	 if($_SESSION["volverIndex"] == 1){
-        echo '<button class="green" id="volver">Mi Sitio</button>'; //en common.js proceso el click
+        echo '<button class="green" id="volver"><span class="glyphicon glyphicon-home"></span></button>'; //en common.js proceso el click 
+        //echo '<button class="green" id="volver">Mi Sitio</button>';
      }
 
      echo '</header>';
@@ -20,7 +21,7 @@
      echo '<button class="blue" id="logout">Logout</button>';
 
      if($_SESSION["volverIndex"] == 1){
-        echo '<button class="blue" id="volver">Mi Sitio</button>';
+        echo '<button class="blue" id="volver"><span class="glyphicon glyphicon-home"></button>';
      }
 
      echo '</header>';
@@ -30,7 +31,7 @@
      echo '<button class="purple" id="logout">Logout</button>';
      
      if($_SESSION["volverIndex"] == 1){
-        echo '<button class="purple" id="volver">Mi Sitio</button>';
+        echo '<button class="purple" id="volver"><span class="glyphicon glyphicon-home"></button>';
      }
 
      echo '</header>';

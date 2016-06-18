@@ -6,7 +6,7 @@
 
 	/* Desde aqui, esta claro que el login es correcto, asique rellenamos la pagina web con la info del alumno */
 
-   // Conectamos con la base de datos
+   //------------------ CONECTAMOS CON LA BASE DE DATOS ------------------
    $conexion = new mysqli ('localhost', 'profesores', 'profesConEstilo', 'profesoresConClase');
    if ($conexion->connect_error)       // Para versiones de PHP > 5.3.0
       echo "ERROR: NEW: " . $conexion->connect_error;
@@ -14,8 +14,8 @@
       echo "ERROR: NEW: " . mysqli_connect_error ();
    //echo "OK: " . $conexion->host_info . "\n";
    
-   
-   // Preparamos la query que vamos a ejecutar: Obtenemos el nombre real del alumno
+   //------------------ OBTENEMOS LA IDENTIFICACION DEL PROFESOR ------------------
+   // Preparamos la query que vamos a ejecutar: Obtenemos el nombre real del profesor
    if (! ($sentencia = $conexion->prepare ("SELECT perfil, nombre, apellido1, apellido2 FROM registra WHERE id = (?);")))
       echo "ERROR: PREPARE (1): " . $conexion->error;
    // Asociamos la variable a la query: Es el id del alumno
@@ -37,10 +37,10 @@
    
    // El nombre y los apellidos del profesor estan en nombre, apellido1, apellido2
 
-   // Preparamos la query que vamos a ejecutar: Obtenemos la informacion de una clase seleccionada
    $sentencia->free_result ();
 
-
+   //------------------ OBTENEMOS LAS PROXIMAS CLASES O EVENTOS DEL PROFESOR ------------------
+   // Preparamos la query que vamos a ejecutar: Obtenemos la informacion de una clase seleccionada
    if (! ($sentencia = $conexion->prepare ("SELECT id_asignatura, fecha_ini, fecha_end, hora_ini, dias_semana FROM clases WHERE id_profesor = (?) ORDER BY fecha_ini, hora_ini;")))
       echo "ERROR: PREPARE (2): " . $conexion->error;
    // Asociamos la variable a la query: Es el id del usuario logeado
@@ -103,4 +103,57 @@
 
    // Las clases de este alumno estan en el array clases y horas_clases
 
+   $sentencia->free_result ();
+
+   //------------------ OBTENEMOS LOS NUEVOS CORREOS PENDIENTES DE LEER ------------------
+   // Preparamos la query que vamos a ejecutar: Obtenemos los correos pendientes del profesor
+   if (! ($sentencia = $conexion->prepare ("SELECT id_emisor, asunto FROM correo WHERE id_receptor = (?) and leido = 0 ORDER BY fecha;")))
+      echo "ERROR: PREPARE (4): " . $conexion->error;
+   // Asociamos la variable a la query: Es el id del profesor
+   if (!$sentencia->bind_param ("i", $_SESSION ["id_user"])) 
+      echo "ERROR: BIND PARAM (4): " . $conexion->error;
+   // Ejecutamos la query en la BD
+   if (!$sentencia->execute ())
+      echo "ERROR: EXECUTE (4): " . $conexion->error;
+   // Vinculamos la salida a otras variables: Guardamos el perfil y el nombre del alumno
+   if (!$sentencia->bind_result ($id_emisor, $asunto_msg))
+      echo "ERROR: BIND RESULT (4): " . $conexion->error;
+
+   // Comprobamos que existen resultados
+   /*
+   $i=0;
+   while ($sentencia->fetch()){
+      $emisores[] = $id_emisor;
+      $asuntos[] = $asunto_msg;
+      $i++;
+   }
+   
+   $j = 0;
+   while ($j < $i)
+   {
+      // Preparamos la query que vamos a ejecutar: Obtenemos la informacion del emisor del mensaje
+      $sentencia->free_result ();
+      if (! ($sentencia = $conexion->prepare ("SELECT nombre, apellido1 FROM registra WHERE id = (?);")))
+      echo "ERROR: PREPARE (5): " . $conexion->error;
+      // Asociamos la variable a la query: Es el id del emisor
+      if (!$sentencia->bind_param ("i", $emisores[$j])) 
+      echo "ERROR: BIND PARAM (5): " . $conexion->error;
+      // Ejecutamos la query en la BD
+      if (!$sentencia->execute ())
+         echo "ERROR: EXECUTE (5): " . $conexion->error;
+      // Vinculamos la salida a otras variables: Esperamos la info de la asignatura
+      if (!$sentencia->bind_result ($nombre_emisor, $ap1_emisor))
+         echo "ERROR: BIND RESULT (5): " . $conexion->error;
+      // Comprobamos que existe una fila
+      if (!$sentencia->fetch ())
+         echo "ERROR: FETCH (5): No se encontro ningun usuario con ese id " . $emisores[$j]);
+      
+      $correo_nuevo[] = $nombre_emisor . " " . $ap1_emisor . " - " . $asuntos[$j]; 
+      $j++;
+   }
+
+   $_SESSION ["ncorreos"] = $i; //numero de correos totales sin leer
+
+   $sentencia->free_result ();
+   */
 ?>

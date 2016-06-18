@@ -815,14 +815,15 @@ div.oscuro{
 
 /*-----Lista slider con los proximos eventos-----*/
 
-#slider {
+#slider { /*contenedor del slider*/
   margin: auto;
   position: relative;
+  height: 40px;
   overflow: hidden;
 }
 
-#slideUl {
-   /*display: none; /*ocultamos todos los elems de la lista*/
+#listaOculta {
+  display: none; /*ocultamos todos los elems de la lista*/
 }
 
 #tusEventos{

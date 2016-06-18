@@ -62,10 +62,7 @@ $(document).ready (function () {
    var siguiente = $('#btn-next');
    var anterior = $('#btn-prev');
 
-   //mover ultima imagen al primer lugar
-   $('#slider .dashprofes_info:last').insertBefore('#slider .dashprofes_info:first');
-   //mostrar la primera imagen con un margen de -100%
-   slider.css('margin-left', 0+'%');
+   $('slider>#tusEventos').innerText = "SCRIBO POR JS";
    
    siguiente.on('click',function() {
        moverD();
@@ -76,23 +73,13 @@ $(document).ready (function () {
    });
 
    function moverD() {
-       slider.animate({
-           marginLeft:0
-       } ,700, function(){
-         $('#slider .dashprofes_info:first').insertAfter('#slider .dashprofes_info:last'); //recolocamos los elems de la lista
-         $('#tusEventos').innerHTML = $('#slideUl>li:first-child').innerHTML; //mostramos solo el primer elem de la lista escribiendole en el parrafo
-           //slider.css('margin-left', '-'+100+'%');
-       });
+      $('#listaOculta:first').insertAfter('#listaOculta:last'); //recolocamos los elems de la lista
+      $('#tusEventos').innerText = $('#listaOculta>li:first-child').innerText; //mostramos solo el primer elem de la lista escribiendole en el parrafo
    }
 
    function moverI() {
-       slider.animate({
-           marginLeft:0
-       } ,700, function(){
-         $('#slider .dashprofes_info:last').insertBefore('#slider .dashprofes_info:first'); //recolocamos los elems de la lista
-         $('#tusEventos').innerHTML = $('#slideUl>li:first-child').innerHTML; //mostramos solo el primer elem de la lista escribiendole en el parrafo
-           //slider.css('margin-left', '-'+100+'%');
-       });
+      $('#listaOculta:last').insertBefore('#listaOculta:first'); //recolocamos los elems de la lista
+      $('#tusEventos').innerText = $('#listaOculta>li:first-child').innerText; //mostramos solo el primer elem de la lista escribiendole en el parrafo       });
    }
 
    
