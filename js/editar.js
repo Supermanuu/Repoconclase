@@ -236,12 +236,12 @@ $(document).ready(function() {
 
 	$("input#field14").keyup(field14);
 
-	$("input#form_enviar").click(function() {
+	$("input#form_enviar_usuario").click(function() {
 
 		if (field2() && field3() && field4() && is_fill($("input#field6").val(), $("label#input_chk6")) 
 			&& is_fill($("input#field7").val(), $("label#input_chk7")) && is_fill($("input#field8").val(), $("label#input_chk8")) 
 			&& field9() &&field12() && field14()) {
-			$("form#form_registro").submit();
+			$("form#form_editar_usuario").submit();
 		}
 			
 		else
@@ -249,7 +249,7 @@ $(document).ready(function() {
 
 	});
 
-	$("input#form_limpiar").click(function() {
+	$("input#form_limpiar_usuario").click(function() {
 
 		$("label#input_chk2").css("color", "white");
 		$("label#input_chk3").css("color", "#6AC46E");

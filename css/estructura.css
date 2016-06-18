@@ -734,7 +734,7 @@ div.form_principal {
   }
 
   div#editar_left {
-    flex-basis: 20%;
+    flex-basis: 10%;
     order: 1;
     margin: auto;
   }
@@ -749,7 +749,7 @@ div.form_principal {
   }
 
   div#editar_right {
-    flex-basis: 80%;
+    flex-basis: 90%;
     order: 2;
     margin: auto;
   }
@@ -797,7 +797,7 @@ div.form_principal {
 
   div.form_avatar {
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
   }
 
   div.form_image {
@@ -807,7 +807,7 @@ div.form_principal {
   }
 
   div.form_notes {
-    flex-basis: 80%;
+    flex-basis: 30%;
     order: 2;
     text-align: center;
     margin-left: 5%;

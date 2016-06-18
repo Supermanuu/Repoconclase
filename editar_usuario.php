@@ -81,9 +81,20 @@
 					<form class="form_box" method="post" action="./php/form_editar_contenido.php" enctype="multipart/form-data">
 						<div class="form_etiquetas">
 						<div class="form_avatar">
-							<div class="form_image">
 							<?php
 
+							if ($_SESSION["type"] == "alumno") {  //Alumno
+	                          $color = "green";
+	                        }
+	                        elseif ($_SESSION["type"] == "profesor") {  //Profesor
+	                          $color = "blue";
+	                        }
+	                        elseif ($_SESSION["type"] == "administrador") {  //Admin
+	                          $color = "purple";
+	                        }
+
+							echo '<div class="form_image">';
+							
 								$id = $_SESSION["id_user"];
 
 								$mysqli = new mysqli('localhost', 'profesores','profesConEstilo','profesoresConClase');
@@ -109,12 +120,21 @@
 
 								}
 
+							
+							echo '</div>';
+							echo '<div class="form_notes">';
+								echo '<text class="blue" id="form_text">Fotografía</text></br>';
+								echo '<input class="form_input" id="field15" type="file" name="Foto" accept=".jpg" autocomplete="off"/> </br>';
+								echo '<text class="blue" id="form_text">Curriculum vitae</text></br>';
+								echo '<input class="form_input" id="field16" type="file" name="CV" accept=".pdf" autocomplete="off"/>    </br></br>';
+								echo '<div class="form_botonera">';
+									echo '<input class='.$color.'  id="form_enviar_contenido" type="button" value="Subir"/>';
+									echo '<input class='.$color.'  id="form_limpiar_contenido" type="reset" value="Limpiar"/>';
+								echo '</div>';
+
+							echo '</div>';
+
 							?>
-							</div>
-							<div class="form_notes">
-								<label class="form_label">Subir foto</label></br>
-								<label class="form">Subir CV</label></br>
-							</div>
 						</div>
 						</div>
 					</form>
@@ -194,8 +214,8 @@
 						echo '</div>';
 
 						echo '<div class="form_botonera">';
-							echo '<input class='.$color.'  id="form_enviar" type="button" value="Guardar"/>';
-							echo '<input class='.$color.'  id="form_limpiar" type="reset" value="Limpiar"/>';
+							echo '<input class='.$color.'  id="form_enviar_usuario" type="button" value="Guardar"/>';
+							echo '<input class='.$color.'  id="form_limpiar_usuario" type="reset" value="Limpiar"/>';
 						echo '</div>';
 
                 	?>
