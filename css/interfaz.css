@@ -813,6 +813,7 @@ div.oscuro{
   text-align: center;
 }
 
+
 /*-----Lista slider con los proximos eventos-----*/
 
 #slider { /*contenedor del slider*/
@@ -824,6 +825,11 @@ div.oscuro{
 
 #listaOculta {
   display: none; /*ocultamos todos los elems de la lista*/
+}
+
+#listaCorreo {
+  width: 100%;
+  text-align: center;
 }
 
 #tusEventos{

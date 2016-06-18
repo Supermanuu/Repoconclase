@@ -107,7 +107,7 @@
 
    //------------------ OBTENEMOS LOS NUEVOS CORREOS PENDIENTES DE LEER ------------------
    // Preparamos la query que vamos a ejecutar: Obtenemos los correos pendientes del profesor
-   if (! ($sentencia = $conexion->prepare ("SELECT id_emisor, asunto FROM correo WHERE id_receptor = (?) and leido = 0 ORDER BY fecha;")))
+   if (! ($sentencia = $conexion->prepare ("SELECT id_emisor, asunto, fecha FROM correo WHERE id_receptor = (?) and leido = 0 ORDER BY fecha;")))
       echo "ERROR: PREPARE (4): " . $conexion->error;
    // Asociamos la variable a la query: Es el id del profesor
    if (!$sentencia->bind_param ("i", $_SESSION ["id_user"])) 
@@ -116,44 +116,46 @@
    if (!$sentencia->execute ())
       echo "ERROR: EXECUTE (4): " . $conexion->error;
    // Vinculamos la salida a otras variables: Guardamos el perfil y el nombre del alumno
-   if (!$sentencia->bind_result ($id_emisor, $asunto_msg))
+   if (!$sentencia->bind_result ($id_emisor, $asunto_msg, $fecha_msg))
       echo "ERROR: BIND RESULT (4): " . $conexion->error;
 
    // Comprobamos que existen resultados
-   /*
-   $i=0;
-   while ($sentencia->fetch()){
+   
+   $l=0;
+   while ($sentencia->fetch())
+   {
       $emisores[] = $id_emisor;
       $asuntos[] = $asunto_msg;
-      $i++;
+      $fechas_msg[] = $fecha_msg;
+      $l++;
    }
    
-   $j = 0;
-   while ($j < $i)
+   $t = 0;
+   while ($t < $l)
    {
       // Preparamos la query que vamos a ejecutar: Obtenemos la informacion del emisor del mensaje
       $sentencia->free_result ();
       if (! ($sentencia = $conexion->prepare ("SELECT nombre, apellido1 FROM registra WHERE id = (?);")))
       echo "ERROR: PREPARE (5): " . $conexion->error;
       // Asociamos la variable a la query: Es el id del emisor
-      if (!$sentencia->bind_param ("i", $emisores[$j])) 
+      if (!$sentencia->bind_param ("i", $emisores[$t])) 
       echo "ERROR: BIND PARAM (5): " . $conexion->error;
       // Ejecutamos la query en la BD
       if (!$sentencia->execute ())
          echo "ERROR: EXECUTE (5): " . $conexion->error;
-      // Vinculamos la salida a otras variables: Esperamos la info de la asignatura
+      // Vinculamos la salida a otras variables: Esperamos la info del emisor
       if (!$sentencia->bind_result ($nombre_emisor, $ap1_emisor))
          echo "ERROR: BIND RESULT (5): " . $conexion->error;
       // Comprobamos que existe una fila
       if (!$sentencia->fetch ())
-         echo "ERROR: FETCH (5): No se encontro ningun usuario con ese id " . $emisores[$j]);
+         echo "ERROR: FETCH (3): ningun usuario registrado corresponde con el emisor";
       
-      $correo_nuevo[] = $nombre_emisor . " " . $ap1_emisor . " - " . $asuntos[$j]; 
-      $j++;
+      $correo_nuevo[] = $nombre_emisor . " " . $ap1_emisor . " - " . $asuntos[$t] . " - " . $fechas_msg[$t];
+      $t++; 
    }
-
-   $_SESSION ["ncorreos"] = $i; //numero de correos totales sin leer
+   
+   $_SESSION ["ncorreos"] = $t; //numero de correos totales sin leer
 
    $sentencia->free_result ();
-   */
+   
 ?>

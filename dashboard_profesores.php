@@ -86,29 +86,35 @@
 		    	<p class="dashprofes_small_p" id="busca">Utiliza este servicio para encontrar alumnos u otros usuarios usando filtros en pocos pasos</p>
 		 	</div>
 
-        	<div id="correo" class="dashboard claro">
+      <div id="correo" class="dashboard claro">
 		    	<p class="dashprofes_big_p">Correo <span class="glyphicon glyphicon-envelope"></span> </p>
           <?php 
-           
+            
             if($_SESSION ["ncorreos"] == 0){ //no hay mensajes nuevos sin leer
               echo '<p class="dashprofes_small_p" id="nuevosMensajes">Ningun mensaje nuevo</p>';
             }
             else{ //hay algun mensaje sin leer
-              $k = 0;
-              if($_SESSION ["ncorreos"] > 4)
-                $nmen = 4;
-              else 
-                $nmen = $_SESSION ["ncorreos"];
-              
-              $k = 0;
-              
-              while ($k < $nmen)
-              {  
-                echo '<p class="dashprofes_small_p " id="nuevosMensajes">';
-                echo $clases[$k] . "  " . $datosClases[$k];   
-                echo '</p>';
-                $k++;
+
+              echo '<p class="dashprofes_small_p dashprofes_info">Nuevos correos: ' . $_SESSION ["ncorreos"] . ' </p>';
+              if($_SESSION ["ncorreos"] > 4){
+                $nmen = 3; //mostramos maximo 3 mensajes
               }
+              else {
+                $nmen = $_SESSION ["ncorreos"];
+              }
+
+              $m = 0;
+              echo '<ul id="listaCorreo">';
+              while ($m < $nmen)
+              {  
+                echo '<li>';
+                echo '<p class="dashprofes_small_p " id="nuevosMensajes">';
+                echo $correo_nuevo[$k];   
+                echo '</p>';
+                echo '</li>';
+                $m++;
+              }
+              echo '</ul>';
             } 
           ?>
 		 	</div>
