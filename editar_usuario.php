@@ -26,7 +26,7 @@
 			return false;
 
 		$temp = '"'.$id.'"';
-		$query = "SELECT * FROM registra where id = " . $temp;
+		$query = "SELECT * FROM registra WHERE id = " . $temp;
 		$resultado = $mysqli->query($query);
 
 		$usuario = $resultado->fetch_assoc();
@@ -43,7 +43,6 @@
 			$_SESSION["editar_cp"] = $usuario["cp"];
 
 			$_SESSION["editar_movil"] = $usuario["movil"];
-
 		}
 
 		$mysqli->close();
