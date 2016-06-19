@@ -251,15 +251,7 @@ $(document).ready(function() {
 
 	$("input#form_limpiar_usuario").click(function() {
 
-		$("label#input_chk2").css("color", "white");
-		$("label#input_chk3").css("color", "#6AC46E");
-		$("label#input_chk4").css("color", "#6AC46E");
-		$("label#input_chk6").css("color", "white");
-		$("label#input_chk7").css("color", "white");
-		$("label#input_chk8").css("color", "white");
-		$("label#input_chk9").css("color", "white");
-		$("label#input_chk12").css("color", "white");
-		$("label#input_chk14").css("color", "white");
+		clean();
 
 	});
 

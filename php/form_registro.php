@@ -134,8 +134,6 @@
 		}
 		else {
 
-			$resultado->free();
-
 			$comunidad = getComunidad($cp);
 
    			$query = "INSERT INTO registra VALUES ('$id', '$correo', '$perfil', 
@@ -151,8 +149,6 @@
 
 			else {
 
-				$resultado->free();
-
 				$query = "INSERT INTO folders VALUES ('$id', '$folder')";
 			
 				$resultado = $mysqli->query($query);
@@ -166,7 +162,6 @@
 
 		}
 
-		$resultado->free();
 		$mysqli->close();
 	
 		mkdir($dir_subida, 0777);

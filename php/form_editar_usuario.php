@@ -102,14 +102,12 @@
    		$objeto = $resultado->fetch_assoc();
 		$old_contrasena = $objeto["password"];
 		$old_sal = $objeto["salt"];
-		$resultado->free();
 
    		if (!empty($contrasena) && sha1($contrasena.$old_sal."pcc") !== sha1($old_contrasena."pcc")) {
    			$sal = getRandomString(16);
 			$contrasena = sha1($contrasena.$sal."pcc");
    			$query = "UPDATE usuarios SET password='$contrasena', salt='$sal' WHERE idUser='$id'";
    			$resultado = $mysqli->query($query);
-   			$resultado->free();
    		}
 
    		$comunidad = getComunidad($cp);
@@ -122,7 +120,6 @@
 			return false;
 		}
 
-		$resultado->free();
 		$mysqli->close();
 
 		return true;

@@ -51,7 +51,6 @@
 			return false;
 		}
 
-		$resultado->free();
 		$mysqli->close();
 
 		return true;

@@ -49,7 +49,6 @@
 			else
 				echo '<h1 class="my_h1">¡Sube una foto!</h1>';
 
-			$resultado->free();
 			$mysqli->close();
 
 		}
