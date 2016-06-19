@@ -28,9 +28,8 @@
             <div id ="menu_alumno_principal">
                <div id="nombre_alumno" title="<?php echo $nombre . " " . $apellido1 . " " . $apellido2; ?>"> <?php echo $nombre . " " . $apellido1 . " " . $apellido2; ?> </div>
                <div id="acciones_rapidas">
-                  <h1 id="mis_notas" class="pulsable">Mis notas</h1>
-                  <h1 id="buscar_profesor" class="pulsable">Buscar profesor</h1>
-                  <h1 id="contratar_profesor" class="pulsable" title="Abre un wizard mediante el cual podrás contratar a un profesor">Contratar clase o profesor</h1>
+                  <h1 id="buscar_profesor" class="pulsable">Búsqueda</h1>
+                  <h1 id="contratar_profesor" class="pulsable" title="Abre un asistente mediante el cual podrás contratar a un profesor">Contrata</h1>
                </div>
             </div>
             <div id="bloque_1">
@@ -74,7 +73,7 @@
                   </div>
                </div>
                <div id="acciones_no_tan_rapidas">
-                  <h1 id="ajustes_perfil" class="pulsable">Ajustes de perfil</h1>
+                  <h1 id="ajustes_perfil" class="pulsable">Editar usuario</h1>
                   <h1 id="video_tutorial" class="pulsable" title="Video para aprender a usar la página web">Video tutorial</h1>
                </div>
             </div>

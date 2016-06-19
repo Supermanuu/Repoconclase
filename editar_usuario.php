@@ -1,56 +1,7 @@
-<?php session_start();
-
-	if (!load()) error();
-	
-	function error() {
-		if ($_SESSION["type"] == "administrador"){
-			header('Location: ../administrador.php');
-		}
-		elseif ($_SESSION["type"] == "alumno"){
-			header('Location: ../index_alumnos.php');
-		}
-		elseif ($_SESSION["type"] == "profesor"){
-			header('Location: ../dashboard_profesores.php');
-		}
-		else{
-			header('Location: ../index.php');
-		}
-	}
-
-	function load() {
-
-		$id = $_SESSION["id_user"];
-
-		$mysqli = new mysqli('localhost', 'profesores','profesConEstilo','profesoresConClase');
-		if (mysqli_connect_errno())
-			return false;
-
-		$temp = '"'.$id.'"';
-		$query = "SELECT * FROM registra WHERE id = " . $temp;
-		$resultado = $mysqli->query($query);
-
-		$usuario = $resultado->fetch_assoc();
-		if (is_null($usuario)){
-			return false;
-		}
-		else {
-			$_SESSION["editar_correo"] = $usuario["correo"];
-			$_SESSION["editar_nombre"] = $usuario["nombre"];
-			$_SESSION["editar_apellido_1"] = $usuario["apellido1"];
-			$_SESSION["editar_apellido_2"] = $usuario["apellido2"];
-			$_SESSION["editar_nacimiento"] = $usuario["nacimiento"];
-
-			$_SESSION["editar_cp"] = $usuario["cp"];
-
-			$_SESSION["editar_movil"] = $usuario["movil"];
-		}
-
-		$mysqli->close();
-
-		return true;
-
-	}
-
+<?php 
+   session_start ();
+   include "php/form_editar_load.php";
+   if (!load_user()) error();
 ?>
 
 <html lang="es-ES">
@@ -94,39 +45,15 @@
 	                        }
 
 							echo '<div class="form_image">';
-							
-								$id = $_SESSION["id_user"];
-
-								$mysqli = new mysqli('localhost', 'profesores','profesConEstilo','profesoresConClase');
-								if (!mysqli_connect_errno()) {
-
-									$temp = '"'.$id.'"';
-									$query = "SELECT * FROM folders where id = " . $temp;
-									$resultado = $mysqli->query($query);
-
-									$usuario = $resultado->fetch_assoc();
-
-									$_SESSION["editar_foto"] = $usuario["folder"].'foto';
-									$_SESSION["editar_cv"] = $usuario["folder"].'cv';
-									$_SESSION["editar_folder"] = $usuario["folder"];
-
-									$foto = '/var/www/html'.$_SESSION["editar_foto"];
-
-									if (file_exists($foto))
-										echo '<img src="'.$_SESSION["editar_foto"].'" height="256" width="256">';
-									else
-										echo '<h1 class="my_h1">¡Sube una foto!</h1>';
-
-									$mysqli->close();
-
-								}
-
+											
+							load_content();
 							
 							echo '</div>';
+
 							echo '<div class="form_notes">';
-								echo '<text class="blue" id="form_text">Fotografía</text></br>';
+								echo '<text class='.$color.' id="form_text">Fotografía</text></br>';
 								echo '<input class="form_input" id="field15" type="file" name="Foto" accept=".jpg" autocomplete="off"/> </br>';
-								echo '<text class="blue" id="form_text">Curriculum vitae</text></br>';
+								echo '<text class='.$color.' id="form_text">Curriculum vitae</text></br>';
 								echo '<input class="form_input" id="field16" type="file" name="CV" accept=".pdf" autocomplete="off"/>    </br></br>';
 								echo '<div class="form_botonera">';
 									echo '<input class='.$color.'  id="form_enviar_contenido" type="submit" value="Subir"/>';

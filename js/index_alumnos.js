@@ -63,7 +63,7 @@
    
    $("#ajustes_perfil").mousedown (function ()
    {
-      console.log ("ajustes_perfil");
+      $(location).attr('href', 'editar_usuario.php');
    });
    
    $("#video_tutorial").mousedown (function ()
