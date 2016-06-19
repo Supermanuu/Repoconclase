@@ -3,6 +3,7 @@
     if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){
         header('Location: ./index.php');
     }
+    include "php/ranking_info.php";
 ?>
 
 <html>
@@ -19,24 +20,15 @@
 		<script type="text/javascript" src="js/common.js"></script>
     </head>
     
+    <body class="ranking_body">
     <?php //pintamos el fondo de la web de diferente color dependiendo del tipo  de usuario
-        if ($_SESSION["type"] == "alumno") {  //Alumno
-            echo '<body class="ranking_body_green">';
-        }
-        elseif ($_SESSION["type"] == "profesor") {  //Profesor
-            echo '<body class="ranking_body_blue">';
-        }
-        elseif ($_SESSION["type"] == "administrador") {  //Admin
-            echo '<body class="ranking_body_purple">';
-        }
-
 		$_SESSION["volverIndex"] = 1;
         require_once('./php/header.php');
     ?>
 
         <div id="ranking_principal">
 
-        <?php    
+        <?php //COLOREAMOS LA BARRA DEL TITULO DEPENDIENDO EL COLOR DEL USUARIO   
             if ($_SESSION["type"] == "alumno") {  //Alumno
                 echo '<div id="ranking_titulo" class="green">';
             }
@@ -52,7 +44,7 @@
             echo '</div>';
         ?>  
             
-        <?php 
+        <?php //COLOREAMOS LA BARRA DE BUSQUEDA DEPENDIENDO EL COLOR DEL USUARIO
             if ($_SESSION["type"] == "alumno") {  //Alumno
                 echo '<div id="busca_rank" class="green">';
                 echo '<form id="buscador_rank" action="" class="green">';
@@ -74,7 +66,7 @@
                 </select>
                 <input id="search_rank" type="text">
                 
-                <?php 
+                <?php //COLOREAMOS EL BOTON DE BUSCAR DEPENDIENDO EL COLOR DEL USUARIO
                     if ($_SESSION["type"] == "alumno") {  //Alumno
                         echo '<input id="submit_rank" class="green" type="submit" value="Buscar">';
                     }
@@ -92,7 +84,29 @@
 
 
             <ul id="rank">
-    			<li id="profe">
+                <?php
+                    $npr = $_SESSION ["numprofesrank"];
+                    $k = 0;
+
+                    while ($k < $npr)
+                    {  
+                        echo '<li id="profe">';
+                        echo '<div id="bloque1"> <img src="./img/img-not-available.jpg"/> </div>';
+
+                        echo '<div id="bloque2">';
+                        echo '<h1 id="nombre"> ' . $profesores[$k] .' </h1>';
+                        echo '<p id="asignatura">Asignatura que destaca</p> <br>';
+                        echo '<p id="valorar">Valorar: 
+                                <div class="rating">
+                                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                                </div>
+                              </p>';
+                        echo '</div>'; //bloque2      
+                        echo '</li>';
+                        $k++;
+                    } 
+                ?>
+    		<!--	<li id="profe">
         			<div id="bloque1">
             			<img src="./img/img-not-available.jpg"/>
             		</div>
@@ -198,9 +212,9 @@
             		</div>
             	</li>
     		</ul>
-        </div> <!-- PRINCIPAL -->
+        </div> PRINCIPAL -->
 
         <?php require_once('./php/footer.php'); ?>
 
-    <?php echo '</body>'; ?>
+    </body>
 </html>
