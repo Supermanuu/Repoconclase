@@ -30,7 +30,8 @@
    else {
 	$noFind = 0;
 	$pass = $objeto["password"];
-        $type = $objeto["type"];
+   $salt = $objeto["salt"];
+   $type = $objeto["type"];
 	$id = $objeto["idUser"];
    }
 
@@ -43,7 +44,7 @@
 	   $_SESSION["login"] = false;
 	   header('Location: ../index.php');
 	}
-	elseif ($password == $pass){
+	elseif ($pass === sha1($password.$salt."pcc")){
 	   $_SESSION["login"] = true;
 	   $_SESSION["id_user"] = $id;
 	   $_SESSION["type"] = $type;

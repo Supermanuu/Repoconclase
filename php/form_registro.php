@@ -1,5 +1,15 @@
 <?php
 	
+	function getRandomString($tamaño) {
+	    $caracteres = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	    $ncaracteres = strlen($caracteres);
+	    $output = '';
+	    for ($i = 0; $i < $tamaño; $i++) {
+	        $output .= $caracteres[rand(0, $ncaracteres - 1)];
+	    }
+	    return $output;
+	}
+
 	function getComunidad($cp) {
 
 		$comunidades = array (
@@ -111,7 +121,10 @@
 			return false;
 		}
 
-		$query = "INSERT INTO usuarios VALUES (0, '$usuario', '$contrasena', '$perfil')";
+		$sal = getRandomString(16);
+		$contrasena = sha1($contrasena.$sal."pcc");
+
+		$query = "INSERT INTO usuarios VALUES (0, '$usuario', '$contrasena', '$sal', '$perfil')";
 		$resultado = $mysqli->query($query);
 		$id = $mysqli->insert_id;
 
