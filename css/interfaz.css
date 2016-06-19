@@ -213,6 +213,12 @@ textarea.green {
   box-shadow: 5px 5px 5px #4E8C50;
 }
 
+img {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 5px;
+}
+
 /*  --------Interfaz - > Index.html ----------- */
 
 #index_body
