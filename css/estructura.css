@@ -1601,3 +1601,10 @@ body
   }
 
 }
+
+
+/*-------------busqueda.php-----------*/
+
+#resultados {
+  min-height: 300px;
+}
