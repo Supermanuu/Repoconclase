@@ -1,3 +1,10 @@
+<?php 
+    session_start(); 
+    if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){
+        header('Location: ./index.php');
+    }
+?>
+
 <html>
     <head id="Hola">
         <title>Profesores Con Clase</title>
@@ -13,9 +20,11 @@
         <script src="js/common.js"></script>
     </head>
     <body id="stats_body">
-        <header class="blue">
-            <button class="blue" id="logout" type="button">Logout</button>
-        </header>
+        <?php 
+            $_SESSION["volverIndex"] = 1;
+            require_once('./php/header.php');
+        ?>
+
         <div id="stats_main">
             <div id="stats_sts">
                 <div id="stats_opts">
@@ -64,7 +73,8 @@
                 </div>
             </div>
         </div>
-        <footer class="blue">
-        </footer>
+
+        <?php require_once('./php/footer.php'); ?>
+        
     </body>
 </html>

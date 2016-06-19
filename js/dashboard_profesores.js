@@ -41,7 +41,7 @@ $(document).ready (function () {
 
    $("#valoraciones").mousedown (function ()
    {
-      $(location).attr('href', 'estadisticas.html');
+      $(location).attr('href', 'estadisticas.php');
    });
 
    $("#ranking").mousedown (function ()

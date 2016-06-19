@@ -21,7 +21,7 @@
     </head>
     
     <body class="ranking_body">
-    <?php //pintamos el fondo de la web de diferente color dependiendo del tipo  de usuario
+    <?php
 		$_SESSION["volverIndex"] = 1;
         require_once('./php/header.php');
     ?>
