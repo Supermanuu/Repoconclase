@@ -134,6 +134,8 @@
 		}
 		else {
 
+			$resultado->free();
+
 			$comunidad = getComunidad($cp);
 
    			$query = "INSERT INTO registra VALUES ('$id', '$correo', '$perfil', 
@@ -147,17 +149,24 @@
 				return false;
 			}
 
-			$query = "INSERT INTO folders VALUES ('$id', '$folder')";
-		
-			$resultado = $mysqli->query($query);
+			else {
 
-			if (!$resultado) {
-				echo '<h1 class="my_hy">Formulario de registro no enviado... ¡Vuelva a intentarlo!</h1>';
-				return false;
+				$resultado->free();
+
+				$query = "INSERT INTO folders VALUES ('$id', '$folder')";
+			
+				$resultado = $mysqli->query($query);
+
+				if (!$resultado) {
+					echo '<h1 class="my_hy">Formulario de registro no enviado... ¡Vuelva a intentarlo!</h1>';
+					return false;
+				}
+
 			}
 
 		}
 
+		$resultado->free();
 		$mysqli->close();
 	
 		mkdir($dir_subida, 0777);

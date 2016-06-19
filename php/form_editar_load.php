@@ -34,11 +34,22 @@
 
 			$foto = '/var/www/html'.$_SESSION["editar_foto"];
 
+			if ($_SESSION["type"] == "alumno") {  //Alumno
+				$color = "green";
+			}
+			elseif ($_SESSION["type"] == "profesor") {  //Profesor
+				$color = "blue";
+			}
+			elseif ($_SESSION["type"] == "administrador") {  //Admin
+				$color = "purple";
+			}
+
 			if (file_exists($foto))
-				echo '<img src="'.$_SESSION["editar_foto"].'" height="256" width="256">';
+				echo '<img class='.$color.' src="'.$_SESSION["editar_foto"].'" height="256" width="256">';
 			else
 				echo '<h1 class="my_h1">¡Sube una foto!</h1>';
 
+			$resultado->free();
 			$mysqli->close();
 
 		}
