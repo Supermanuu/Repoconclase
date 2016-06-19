@@ -30,10 +30,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
       <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
       <link rel="stylesheet" type="text/css" href="css/reset.css"/>
-      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="css/estructura.css"/>
       <link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
       <script src="js/common.js"></script>
       <script src="js/vista_lista.js"></script>
