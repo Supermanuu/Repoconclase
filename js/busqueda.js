@@ -4,6 +4,7 @@ $(function(){
 	})
 	$('#search').keyup(function(){
 		var envio = $('#search').val();
+		$('#resultados').html();
 		$.ajax({
 			type: 'POST',
 			url: 'php/busqueda2.php',
