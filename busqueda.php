@@ -25,11 +25,12 @@
 			-->
 			<div class="form_contenido">
 			<h1 class="my_h1">Búsqueda por nombre o apellido</h1>
-			<form class="blue_search" action="" name="search_form">
+			<form class="blue_search" method="post" action="" name="search_form" id="search_form">
 				<input class="blue" id="search" type="text" placeholder=" Introduzca nombre/apellido"/>
 				<input class="blue" id="submit" type="submit" value="Buscar"/>
 			</form>
 			<div id="resultados">
+				
 			</div>
 		</div>
 		</div>
