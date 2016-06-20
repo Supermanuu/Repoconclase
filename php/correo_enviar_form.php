@@ -2,7 +2,7 @@
 
 <html>
     <head id="Hola">
-        <title>Profesores Con Clase</title>
+        <title>Enviando mensaje...</title>
         <meta charset="utf-8"/>
         <meta name="author" content="SWTeam"/>
         <meta name="description" content="cliente_mensajeria"/>
@@ -17,6 +17,7 @@
     </head>
     <body id="correo_body">
     <?php
+      $_SESSION["volverIndex"] = 0;
       include('header.php');
     ?>
     <div id="correo_principal">
@@ -190,6 +191,5 @@
 
 ?>
   </div>
-  <?php include('footer.php'); ?>
   </body>
 </html>
