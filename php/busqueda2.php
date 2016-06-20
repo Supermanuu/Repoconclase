@@ -1,11 +1,11 @@
 <?php
-	require_once("php/busq_connect.php");
+	require_once("../php/busq_connect.php");
 	sleep(1);
 	$search = '';
 	if (isset($POST['search'])) {
 		$search = $_POST['search'];
 	}
-	$consulta = "SELECT * FROM registra WHERE apellido1 LIKE '%".$search."%' OR nombre LIKE '%".$search."%' ORDER BY visitas LIMIT 5";
+	$consulta = "SELECT * FROM registra WHERE apellido1 LIKE '%".$search."%' OR nombre LIKE '%".$search."%'";
 	$resultado = $connect->query($consulta);
 	$fila = mysqli_fetch_assoc($resultado);
 	$total = mysqli_num_rows($resultado);
@@ -13,7 +13,8 @@
 <?php if ($total>0 && $search!=''){ ?>
 	<h2>Resultados de la búsqueda</h2>
 	<?php do { ?>
-		<div class="result">
+		<?php echo $fila['nombre'] ?>
+		<div class="resultados">
 			<?php echo $fila['nombre'] ?>
 			<?php echo $fila['apellido1'] ?>
 			<?php echo $fila['apellido2'] ?> <br>
@@ -28,3 +29,4 @@
 <?php }
 else echo '<h2>No se encontraron resultados</h2>';
 ?>
+
