@@ -1100,16 +1100,37 @@ body.miembros_body
 
 .vista_lista_borrar_elemento
 {
-    background-size: 30px 30px;
+    background-size: 30px;
     background-repeat: no-repeat;
     min-width: 30px;
     min-height: 30px;
+    margin-left: 3px;
+}
+
+.vista_lista_aceptar_elemento.vista_lista_aceptar_elemento_activo
+{
+   background-image: url("../img/tick_verde.png");
+}
+
+.vista_lista_aceptar_elemento
+{
+    background-size: 25px;
+    background-repeat: no-repeat;
+    min-width: 25px;
+    min-height: 25px;
+    margin-top: 3px;
     margin-left: auto;
+    background-image: url("../img/tick.png");
 }
 
 .vista_lista_borrar_elemento:hover
 {
    background-image: url("../img/basura.png");
+}
+
+.vista_lista_aceptar_elemento:hover
+{
+   background-image: url("../img/tick_verde.png");
 }
 
 .vista_lista_elemento:hover

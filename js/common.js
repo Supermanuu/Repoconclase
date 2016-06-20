@@ -37,6 +37,7 @@ $(function() {
 
   	$("#login").click (function () {
        	     $("#index_loginForm2").toggle();
+              $('#index_loginForm>#index_loginForm2>form>#index_entradas>input[name="dni"]').focus ();
    	});
 
 	$("#index_loginForm2 > form").submit(function(event) {

@@ -14,9 +14,14 @@
                echo substr ($descripcion, 0, 60) . "...";
             echo '</div>';
          echo '</div>';
+         echo '<div id="vista_lista_aceptar_elemento_' . $nitem . '" name="vista_lista_aceptar_elemento[]" class="vista_lista_aceptar_elemento"></div>';
          echo '<div id="vista_lista_borrar_elemento_' . $nitem . '" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>';
-         echo '<div id="vista_lista_descripcion_oculto_' . $nitem . '" class="vista_lista_elemento_oculto">' . nl2br ($descripcion) . '</div>';
-         echo '<div id="vista_lista_id_oculto_' . $nitem . '" class="vista_lista_elemento_oculto">' . $id . '</div>';
+         echo '<div id="vista_lista_descripcion_oculto_' . $nitem . '" class="vista_lista_elemento_oculto">';
+            echo nl2br ($descripcion);
+         echo '</div>';
+         echo '<div id="vista_lista_id_oculto_' . $nitem . '" class="vista_lista_elemento_oculto">';
+            echo $id;
+         echo '</div>';
       echo '</div>';
    }
 ?>

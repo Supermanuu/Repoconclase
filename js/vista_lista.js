@@ -184,7 +184,41 @@
          seleccionado = this;
          
          vista_lista_titulo.innerText = this.children [1].firstChild.innerText;
-         vista_lista_contenido.innerText = this.children [3].innerText;
+         vista_lista_contenido.innerText = this.children [4].innerText;
       }
    });
+   
+   // Para controlar el tick de elementos de la lista
+   $('div[name="vista_lista_aceptar_elemento[]"]').mousedown (function ()
+   {
+      $(this).addClass ("vista_lista_aceptar_elemento_activo");
+      $(this).fadeOut ("slow", function ()
+      {
+         this.nextSibling.style.marginLeft = "auto";
+      });
+   });
+   
+   // Filtro de busqueda
+   /*
+   $("#vista_lista_search").change (function ()
+   {
+      var str_div, ind, ind_div, fallo;
+      var str_busqueda = this.value;
+      $('div[name="vista_lista_elemento[]"]').each ( function ()
+      {
+         str_div = this.children [1].firstChild.innerText + " " + this.children [4].innerText;
+         
+         ind = 0;
+         ind_div = 0;
+         fallo = false;
+         while (ind_div < str_div.length && ind < str_busqueda.length && !fallo)
+         {
+            if (str_div [ind_div] !== str_busqueda [ind])
+               fallo = true;
+         }
+         
+         if (fallo)
+            $(this).css ("visibility", "hidden");
+      });
+   });*/
 });
