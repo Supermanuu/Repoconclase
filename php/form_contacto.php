@@ -3,19 +3,23 @@
 <?php
 
 	function parserMess($message) {
+     $temporal = 0;
+     $long = strlen($message);
+     for ($i = 0; $i < $long; $i++){
+          if ($i % 40 == 0 && $i != 0){
+			$temporal = 1; //Necesario salto de linea
+          }
+	  	  if ($temporal == 1 && $message[$i] == ' '){ //Salto de linea
+             $newMensaje .= "\n";
+	     	 $temporal = 0;
+	  	  }
+          else{
+             $newMensaje .= $message[$i];
+	  	  }
+      }
 
-	    $long = strlen($message);
-	    echo '<p>' . $long . '</p>';
-	    for ($i = 0; $i < $long; $i++){
-		if ($i % 40 == 0){
-		  $newMensaje .= "\n";
-		}
-		$newMensaje .= $message[$i];
-	    }
-
-	    return $newMensaje;
-
-    }
+      return $newMensaje;
+ 	}
 
 	function send() {
 

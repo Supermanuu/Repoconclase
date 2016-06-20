@@ -1,10 +1,10 @@
 $(function(){
 
-   setInterval(load,1000);
+   setInterval(load,50);
 
    var cargaDetalles = function(bandeja) {
-	pagina = "./php/clienteDetalles.php?" + "bandeja=" + bandeja;
-	if ($("#correo_detallesCorreo_azul").children().length > 0){
+	pagina = "php/clienteDetalles.php?" + "bandeja=" + bandeja;
+	if ($("header").attr('class') == "blue"){
 	    $("#correo_detallesCorreo_azul").load(pagina);
         }
 	else {
@@ -22,6 +22,9 @@ $(function(){
 	else if(option == "enviados"){
 	   cargaDetalles ('2');
         }
+	else{
+	   cargaDetalles ('3');
+	}
 		
    });
 
@@ -29,12 +32,12 @@ $(function(){
 
    $("#correo_nuevo").click(function() {
 	
-	if ($("#correo_mostrarMensaje_azul").children().length > 0){
+	if ($("header").attr('class') == "blue"){
 	    $("#correo_mostrarMensaje_azul").load("correo_enviar.php");
         }
 	else {
 	    $("#correo_mostrarMensaje_verde").load("correo_enviar.php");
-	}
+        }
 
    });
 
@@ -49,10 +52,12 @@ $(function(){
         else if(option == "enviados"){
            bandeja = 2;
         }
+	else {
+	   bandeja = 3;
+ 	}
 
         pagina = "php/clienteMensaje.php?" + "idMensaje=" + $(this).attr('id') + "&bandeja=" + bandeja;
 	$("#correo_mostrarMensaje_azul").load(pagina);
-
    });
 
    $("#correo_detallesCorreo_azul > p").mouseover(function(){
@@ -75,10 +80,12 @@ $(function(){
         else if(option == "enviados"){
            bandeja = 2;
         }
+        else {
+	   bandeja = 3;
+        }
 	
 	pagina = "php/clienteMensaje.php?" + "idMensaje=" + $(this).attr('id') + "&bandeja=" + bandeja;
 	$("#correo_mostrarMensaje_verde").load(pagina);
-
    });
 
    $("#correo_detallesCorreo_verde > p").mouseover(function(){
@@ -91,7 +98,33 @@ $(function(){
        $(this).css("background-color", "#6AC46E");
    });
 
+
+   $("#correo_entradas > select").change(function(){
+
+	$("#invis > input").val($("#de option:selected").text());
+
+   });
+
+   $("#eliM").click(function(){
+
+	option = $("#correo_tipoCorreo > select").val();
+        var bandeja;
+
+        if (option == "recibidos"){
+           bandeja = 1;
+        }
+        else {
+           bandeja = 2;
+        }
+
+	pagina = 'php/correo_elimina.php?bandeja=' + bandeja + '&idMensaje=' + $("#invis > input").val(); 
+	$(location).attr('href', pagina);
+
+   });
+
+
    };
+
 
 });
 

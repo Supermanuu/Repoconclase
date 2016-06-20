@@ -18,29 +18,40 @@
    }
 
    $resultado = $mysqli->query($query) or die ($mysqli->error);
-   echo '<select name="destinatarios">';
-   echo '<option value="0">Selecciona destinatario</option>';
+   echo '<select id="de" name="destinatarios" required>';
+   echo '<option value="">Selecciona destinatario</option>';
    $i = 1;
 
    while ($objeto = $resultado->fetch_assoc()){
-        
+
         //Consulta del nuevo destinatario
         $query2 = "SELECT nombre,apellido1 from registra where id=" . $objeto["id"];
-        
-		$resultado2 = $mysqli->query($query2) or die ($mysqli->error);
-		$objeto2 = $resultado2->fetch_assoc();
-	   	
-		//Nueva option del select
-		$nombre = $objeto2["nombre"] . " " . $objeto2["apellido1"];
-		echo '<option value=' . $i . '>' . $name . '</option>';
-		$i++;
-		//Liberamos
-		$resultado2->free();
+
+	$resultado2 = $mysqli->query($query2) or die ($mysqli->error);
+	$objeto2 = $resultado2->fetch_assoc();
+
+	//Nueva option del select
+	$nombre = $objeto2["nombre"] . " " . $objeto2["apellido1"];
+	echo '<option value=' . $i . '>' . $nombre . '</option>';
+	$i++;
+	//Liberamos
+	$resultado2->free();
+   }
+
+   if ($i > 1){
+	echo '<option value=' . $i . '>Difusion</option>';
    }
 
    echo '</select><br>';
    $resultado->free();
    $mysqli->close();
+
+   if ($i == 1 && $_SESSION["type"] == "alumno"){
+	echo '<h1>Debes Agregar profesores en Mis Progfesores</h1>';
+   }
+   if ($i == 1 && $_SESSION["type"] == "profesor"){
+	echo '<h1>Debes Agregar alumnos en Mis Alumnos</h1>';
+   }
 
 }
 
@@ -64,6 +75,9 @@ echo '<form id="correo_formulario" method="post" action="php/correo_enviar_form.
 	   echo '<div id="correo_entradas">';
 	    readDest($_SESSION["id_user"], $_SESSION["type"]);
 	    echo '<input name="asun" type="text" required></></br>';
+	    echo '<div id="invis">';
+	    echo '<input name="invi" type="text"></><br>';
+	    echo '</div>';
 	   echo '</div>';
 	echo '</div>';
 	echo '<div id="correo_men">';

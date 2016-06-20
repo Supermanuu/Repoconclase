@@ -391,6 +391,13 @@ img.purple {
    background-size: cover;
 }
 
+#correo_principal > h1 {
+   color: white;
+   font-size: 1.5em;
+   margin-top: 60px;
+   text-align:center;
+}
+
 #correo_detallesCorreo_azul > p, #correo_detallesCorreo_verde > p,
 #correo_etiquetas > label {
    color: white;
@@ -439,6 +446,41 @@ img.purple {
 
 .noleido{
    border-right: #118E56 solid 6px;
+}
+
+#invis{
+  visibility: hidden;
+}
+
+#correo_cabecera > h1, #correo_cuerpo > h1{
+
+   color: white;
+   font-size: 1.4em;
+   text-align: center;
+   margin-top: 15px;
+   margin-bottom: 15px;
+}
+
+#correo_cabecera > p{
+
+   color: white;
+   margin-left: 60px;
+   font-size: 1em;
+}
+
+#correo_cuerpo > pre {
+
+   color: white;
+   font-size: 1.2em;
+   margin-left: 60px;
+}
+
+#correo_mostrarMensaje_azul > h1, #correo_mostrarMensaje_verde > h1{
+ 
+   color: white;
+   font-size:1.5em;
+   text-align: center;
+   margin-top: 60px;
 }
 
 /* ---------Interfaz - > Contrata.html --------- */
