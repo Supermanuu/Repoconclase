@@ -13,7 +13,6 @@
 <?php if ($total>0 && $search!=''){ ?>
 	<h2>Resultados de la búsqueda</h2>
 	<?php do { ?>
-		<?php echo $fila['nombre'] ?>
 		<div class="resultados">
 			<?php echo $fila['nombre'] ?>
 			<?php echo $fila['apellido1'] ?>
