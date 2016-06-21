@@ -199,26 +199,18 @@
    });
    
    // Filtro de busqueda
-   /*
-   $("#vista_lista_search").change (function ()
+   $("#vista_lista_search").keyup (function ()
    {
-      var str_div, ind, ind_div, fallo;
-      var str_busqueda = this.value;
+      var str_busqueda = this.value.toLowerCase ();
       $('div[name="vista_lista_elemento[]"]').each ( function ()
       {
-         str_div = this.children [1].firstChild.innerText + " " + this.children [4].innerText;
-         
-         ind = 0;
-         ind_div = 0;
-         fallo = false;
-         while (ind_div < str_div.length && ind < str_busqueda.length && !fallo)
-         {
-            if (str_div [ind_div] !== str_busqueda [ind])
-               fallo = true;
-         }
-         
-         if (fallo)
-            $(this).css ("visibility", "hidden");
+         var str_div = this.children [1].firstChild.innerHTML + " " + this.children [4].innerText;
+         str_div = str_div.toLowerCase ();
+                 
+         if (str_div.search (str_busqueda) > -1)
+            $(this).show ("slide", {direction: "left"}, 250);
+         else
+            $(this).hide ("slide", {direction: "left"}, 250);
       });
-   });*/
+   });
 });
