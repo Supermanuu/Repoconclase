@@ -142,14 +142,14 @@
          {
             type: "POST",
             url: "./php/eliminaDeVistaLista.php",
-            data: { "perfil" : $perfil, "tabla" : $tabla, "mis" : !tokens.includes ("c=mis"), "id" :  seleccionados_borrar [i].parentElement.children [4].innerText},
+            data: {"perfil" : $perfil, "tabla" : $tabla, "mis" : !tokens.includes ("c=mis"), "id" :  seleccionados_borrar [i].parentElement.children [5].innerText},
             success: function (data)
             {
-               alert (data);
+               //alert (data); // Esto por si quieres ver la query que se ha ejecutado e info de depuración
             }
          });
-         // Eliminamos el elemento del frontend
-         vista_lista_lista.removeChild (seleccionados_borrar [i].parentElement);
+         // Animación
+         $("#" + seleccionados_borrar [i].parentElement.id).hide ("slide", {direction: "left"}, 250);
       }
       // Liberamos el array de elementos a eliminar
       seleccionados_borrar.splice (0, seleccionados_borrar.length);
@@ -162,8 +162,8 @@
       }
       else
       {
-         vista_lista_titulo.innerText = vista_lista_lista.children [0].children [1].firstChild.innerText;
-         vista_lista_contenido.innerText = vista_lista_lista.children [0].children [3].innerText;
+         vista_lista_titulo.innerText = "Ningún elemento seleccionado";
+         vista_lista_contenido.innerText = "";
       }
    });
    
@@ -196,6 +196,16 @@
       {
          this.nextSibling.style.marginLeft = "auto";
       });
+      $.ajax (
+         {
+            type: "POST",
+            url: "./php/aceptaVistaLista.php",
+            data: {"perfil" : $perfil, "tabla" : $tabla, "mis" : !tokens.includes ("c=mis"), "id" :  this.parentElement.children [5].innerText},
+            success: function (data)
+            {
+               alert (data);
+            }
+         });
    });
    
    // Filtro de busqueda
