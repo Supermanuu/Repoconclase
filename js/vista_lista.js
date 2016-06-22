@@ -1,5 +1,10 @@
 ﻿$(document).ready(function()
 {
+   function clearString (str)
+   {
+      return str.replace ('\n', ' ').trim ().toLowerCase ().replace(/á/gi,"a").replace(/é/gi,"e").replace(/í/gi,"i").replace(/ó/gi,"o").replace(/ú/gi,"u")
+   }
+   
    tokens = location.search.substr(1).split ("&");
    $perfil = 'al';
    
@@ -212,12 +217,24 @@
    $("#vista_lista_search").keyup (function ()
    {
       var str_busqueda = this.value.toLowerCase ();
+      str_busqueda = clearString (str_busqueda);
+      var tokensBusqueda = str_busqueda.split (" ");
+      
       $('div[name="vista_lista_elemento[]"]').each ( function ()
       {
          var str_div = this.children [1].firstChild.innerHTML + " " + this.children [4].innerText;
-         str_div = str_div.toLowerCase ();
+         str_div = clearString (str_div);
+         
+         var aceptado = true;
+         for (var index in tokensBusqueda)
+         {
+            if (str_div.search (tokensBusqueda [index]) > -1 && aceptado)
+               aceptado = true;
+            else
+               aceptado = false;
+         }
                  
-         if (str_div.search (str_busqueda) > -1)
+         if (aceptado)
             $(this).show ("slide", {direction: "left"}, 250);
          else
             $(this).hide ("slide", {direction: "left"}, 250);
