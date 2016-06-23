@@ -98,6 +98,7 @@
       $tabla = 'as';
       if (tokens [0] == "a=ad")
          $("#vista_lista_editar").css ("display", "initial");
+      $('div[name="vista_lista_borrar_elemento[]"]').css ("display", "none");
    }
    else
    {
@@ -113,9 +114,37 @@
    
    // Controlamos si la lista es de mis cosas o de cosas generales
    if (tokens.includes ("c=mis"))
+   {
       $("#vista_lista_presentacion").html ($vista);
+      if ($perfil == 'al')
+         $('div[name="vista_lista_borrar_elemento[]"]').css ("display", "none");
+      if ($perfil == 'pr' && $tabla != 'pr' && $tabla != 'as')
+         $('div[name="vista_lista_borrar_elemento[]"]').css ("display", "none");
+      if ($perfil == 'ad')
+      {
+         $('div[name="vista_lista_aceptar_elemento[]"]').css ("display", "none");
+         $('div[name="vista_lista_borrar_elemento[]"]').css ("margin-left", "auto");
+      }
+   }
    else
+   {
       $("#vista_lista_presentacion").html ('Mis ' + $vista);
+      if ($perfil == 'al' || $perfil == 'ad')
+      {
+         $('div[name="vista_lista_aceptar_elemento[]"]').css ("display", "none");
+         $('div[name="vista_lista_borrar_elemento[]"]').css ("margin-left", "auto");
+      }
+      // Los profesores solo pueden aceptar clases que no hayan aceptado dar
+      if ($perfil == 'pr')
+      {
+         // Eliminar el aceptar de las clases que ya tiene como suyas
+         if (false)
+         {
+            $('div[name="vista_lista_aceptar_elemento[]"]').css ("display", "none");
+            $('div[name="vista_lista_borrar_elemento[]"]').css ("margin-left", "auto");
+         }
+      }
+   }
    
    // Para controlar el borrado de elementos de la lista utilizo un hash map
    var seleccionados_borrar = [];
@@ -208,7 +237,7 @@
             data: {"perfil" : $perfil, "tabla" : $tabla, "mis" : !tokens.includes ("c=mis"), "id" :  this.parentElement.children [5].innerText},
             success: function (data)
             {
-               alert (data);
+               //alert (data); // Esto por si quieres ver la query que se ha ejecutado e info de depuración
             }
          });
    });

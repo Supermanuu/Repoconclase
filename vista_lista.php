@@ -1,21 +1,21 @@
-﻿<?php
+<?php
    session_start (); 
    include './php/preparaLista.php';
    
    function print_item ($nitem, $titulo, $descripcion, $id)
    {
-      echo '<div id="vista_lista_elemento_' . $nitem . '" name="vista_lista_elemento[]" class="vista_lista_elemento">';
-         echo '<div id="vista_lista_imagen_elemento_' . $nitem . '" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento"></div>';
+      echo '<div id="vista_lista_elemento_' . $nitem . '" name="vista_lista_elemento[]" class="vista_lista_elemento pulsable">';
+         echo '<div id="vista_lista_imagen_elemento_' . $nitem . '" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento pulsable"></div>';
          echo '<div class="vista_lista_contenido_elemento">';
-            echo '<div id="vista_lista_titulo_elemento_' . $nitem . '" class="vista_lista_titulo_elemento">';
+            echo '<div id="vista_lista_titulo_elemento_' . $nitem . '" class="vista_lista_titulo_elemento pulsable">';
                echo $titulo;
             echo '</div>';
-            echo '<div id="vista_lista_descripcion_elemento_' . $nitem . '" class="vista_lista_descripcion_elemento">';
+            echo '<div id="vista_lista_descripcion_elemento_' . $nitem . '" class="vista_lista_descripcion_elemento pulsable">';
                echo substr ($descripcion, 0, 60) . "...";
             echo '</div>';
          echo '</div>';
-         echo '<div id="vista_lista_aceptar_elemento_' . $nitem . '" name="vista_lista_aceptar_elemento[]" class="vista_lista_aceptar_elemento"></div>';
-         echo '<div id="vista_lista_borrar_elemento_' . $nitem . '" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo"></div>';
+         echo '<div id="vista_lista_aceptar_elemento_' . $nitem . '" name="vista_lista_aceptar_elemento[]" class="vista_lista_aceptar_elemento pulsable"></div>';
+         echo '<div id="vista_lista_borrar_elemento_' . $nitem . '" name="vista_lista_borrar_elemento[]" class="vista_lista_borrar_elemento vista_lista_borrar_elemento_pasivo pulsable"></div>';
          echo '<div id="vista_lista_descripcion_oculto_' . $nitem . '" class="vista_lista_elemento_oculto">';
             echo nl2br ($descripcion);
          echo '</div>';
@@ -43,7 +43,7 @@
       <script src="js/vista_lista.js"></script>
 	</head>
 	<body id="vista_lista_body">
-		<?php 
+		<?php
          $_SESSION["volverIndex"] = 1;
          include './php/header.php'; 
       ?>
@@ -54,9 +54,9 @@
          <div id="vista_lista_detalle">
             <div id="vista_lista_container_lista">
                <div id="vista_lista_acciones">
-                  <button id="vista_lista_nuevo">Nuevo</button>
-                  <button id="vista_lista_editar">Editar</button>
-                  <button id="vista_lista_borrar_seleccionados">Borrar</button>
+                  <button id="vista_lista_nuevo" class="pulsable">Nuevo</button>
+                  <button id="vista_lista_editar" class="pulsable">Editar</button>
+                  <button id="vista_lista_borrar_seleccionados" class="pulsable">Borrar</button>
                </div>
                <div id="vista_lista_buscador">
                   <input id="vista_lista_search" type="text" placeholder="Búsqueda por asignatura">

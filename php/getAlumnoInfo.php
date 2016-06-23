@@ -52,7 +52,7 @@
 
    // Preparamos la query que vamos a ejecutar: Obtenemos la informacion de una clase seleccionada
    $sentencia->free_result ();
-   if (! ($sentencia = $conexion->prepare ("SELECT id_clases, id_asignatura, hora_ini, dias_semana, descripcion FROM clases WHERE id_clases IN (SELECT id_clase FROM clases_seleccionadas WHERE id_alumno = (?));")))
+   if (! ($sentencia = $conexion->prepare ("SELECT id_clases, id_asignatura, hora_ini, hora_fin, dias_semana, fecha_ini, fecha_end, descripcion FROM clases WHERE id_clases IN (SELECT id_clase FROM clases_seleccionadas WHERE id_alumno = (?));")))
       echo "ERROR: PREPARE (2): " . $conexion->error;
    // Asociamos la variable a la query: Es el id del usuario logeado
    if (!$sentencia->bind_param ("i", $_SESSION ["id_user"])) 
@@ -61,7 +61,7 @@
    if (!$sentencia->execute ())
       echo "ERROR: EXECUTE (2): " . $conexion->error;
    // Vinculamos la salida a otras variables: Esperamos la info de la clase
-   if (!$sentencia->bind_result ($id_clase, $id_asignatura, $hora_ini, $dias_semana, $descripcion))
+   if (!$sentencia->bind_result ($id_clase, $id_asignatura, $hora_ini, $hora_fin, $dias_semana, $fecha_ini, $fecha_fin, $descripcion))
       echo "ERROR: BIND RESULT (2): " . $conexion->error;
    // Recorremos las 3 primeras filas, si hay
    $i = 0;
@@ -69,7 +69,7 @@
    {
       $horas_clases[] = $hora_ini . " - " . $dias_semana;
       $id_asignaturas[] = $id_asignatura;
-      $descr_clases[] = $descripcion;
+      $descr_clases[] = $descripcion . "\n\nHora de inicio: " . $hora_ini . "\nHora de fin: " . $hora_fin . "\nDias de la semana: " . $dias_semana . "\nFecha de inicio: " . $fecha_ini . "\nFecha de fin: " . $fecha_fin;
       $id_clases[] = $id_clase;
       $i++;
    }
@@ -109,7 +109,7 @@
 
    // Preparamos la query que vamos a ejecutar: Obtenemos la informacion de un grupo seleccionado
    $sentencia->free_result ();
-   if (! ($sentencia = $conexion->prepare ("SELECT id_curso, nombre_curso, hora_ini, dias_semana, descripcion FROM cursos WHERE id_curso IN (SELECT id_curso FROM cursos_seleccionados WHERE id_alumno = (?));")))
+   if (! ($sentencia = $conexion->prepare ("SELECT id_curso, nombre_curso, hora_ini, hora_fin, dias_semana, fecha_ini, fecha_fin, descripcion FROM cursos WHERE id_curso IN (SELECT id_curso FROM cursos_seleccionados WHERE id_alumno = (?));")))
       echo "ERROR: PREPARE (4): " . $conexion->error;
    // Asociamos la variable a la query: Es el id del usuario logeado
    if (!$sentencia->bind_param ("i", $_SESSION ["id_user"])) 
@@ -118,14 +118,14 @@
    if (!$sentencia->execute ())
       echo "ERROR: EXECUTE (4): " . $conexion->error;
    // Vinculamos la salida a otras variables: Esperamos la info de la clase
-   if (!$sentencia->bind_result ($id_curso, $nombre_curso, $hora_ini, $dias_semana, $descripcion))
+   if (!$sentencia->bind_result ($id_curso, $nombre_curso, $hora_ini, $hora_fin, $dias_semana, $fecha_ini, $fecha_fin, $descripcion))
       echo "ERROR: BIND RESULT (4): " . $conexion->error;
    // Recorremos las 3 primeras filas, si hay
    $i = 0;
    while ($sentencia->fetch ())
    {
       $cursos[] = $nombre_curso . " a las " . $hora_ini . " - " . $dias_semana;
-      $descr_cursos[] = $descripcion;
+      $descr_cursos[] = $descripcion . "\n\nHora de inicio: " . $hora_ini . "\nHora de fin: " . $hora_fin . "\nDias de la semana: " . $dias_semana . "\nFecha de inicio: " . $fecha_ini . "\nFecha de fin: " . $fecha_fin;;
       $id_cursos[] = $id_curso;
       $i++;
    }
@@ -139,7 +139,7 @@
    // Los cursos de este alumno estan en el array cursos
 
 
-   // Preparamos la query que vamos a ejecutar: Obtenemos la informacion de un grupo seleccionado
+   // Preparamos la query que vamos a ejecutar: Obtenemos la informacion de un profesor
    $sentencia->free_result ();
    if (! ($sentencia = $conexion->prepare ("SELECT id, nombre, apellido1, apellido2, nacimiento, comunidad, cp, correo FROM registra WHERE id IN (SELECT id_profesor FROM profes_seleccionados WHERE id_alumno = (?));")))
       echo "ERROR: PREPARE (5): " . $conexion->error;
@@ -149,10 +149,10 @@
    // Ejecutamos la query en la BD
    if (!$sentencia->execute ())
       echo "ERROR: EXECUTE (5): " . $conexion->error;
-   // Vinculamos la salida a otras variables: Esperamos la info de la clase
+   // Vinculamos la salida a otras variables: Esperamos la info del profesor
    if (!$sentencia->bind_result ($id_prof, $nombre_profesor, $apellido1_profesor, $apellido2_profesor, $nacimiento, $com, $cod_post, $correo))
       echo "ERROR: BIND RESULT (5): " . $conexion->error;
-   // Recorremos las 3 primeras filas, si hay
+   // Recorremos la respuesta
    $i = 0;
    while ($sentencia->fetch ())
    {

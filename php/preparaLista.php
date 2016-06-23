@@ -125,7 +125,7 @@
          $i = 0;
          while ($sentencia->fetch ())
          {
-            $horas_clases[] = " de " . $hora_ini . " a " . $hora_fin . " - " . $dias_semana;
+            $horas_clases[] = "de " . $hora_ini . " a " . $hora_fin . " - " . $dias_semana;
             $id_asignaturas[] = $id_asignatura;
             $descr_clases[] = $descripcion . "\n\nFecha de inicio: " . $fecha_ini . "\nFecha de fin: " . $fecha_fin;
             $ids[] = $id_clase;
@@ -151,7 +151,7 @@
             if (!$sentencia->fetch ())
                echo "ERROR: FETCH (3): No se encontro ninguna asignatura con id " . $id_asignaturas [$j];
             
-            $lista[] = $nombre_asignatura . " " . $nivel . " " . $curso . $horas_clases [$i];
+            $lista[] = $nombre_asignatura . " " . $nivel . " " . $curso . " " . $horas_clases [$j];
             $j++;
          } 
          $nelems = $i;
