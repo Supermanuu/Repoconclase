@@ -102,16 +102,14 @@
       url: "./php/getSpamCentral.php",
       success: function (data)
       {
-         alert (data);
-         /*
-         if (data == '' || data.seach ("ERROR") > -1)
+         if (data == '' || data.search ("ERROR") > -1)
          {
             spam_principal_curso.innerText = 'No se pueden mostrar los cursos :(';
             spam_principal_ver_mas.innerText = ' ';
-            if (data.seach ("ERROR") > -1)
+            if (data.search ("ERROR") > -1)
                alert (data);
          }
-         else*/
+         else
          {
             carrusel_central = JSON.parse (data);
             next_spam_central ();
@@ -122,7 +120,7 @@
    // Variables importantes del spam inferior
    var selector_spam = ["spam_secundario_izquierda", "spam_secundario_centro", "spam_secundario_derecha"];
    var carrusel_inferior;
-   var index_inferior = 1;
+   var index_inferior = 4;
    
    // Funcion que cambia el spam inferior
    function next_spam_inferior ()
@@ -130,9 +128,9 @@
       var selector = selector_spam [index_inferior % 3];
       $("#" + selector).slideUp (200, function () 
       {
-         this.children [0].innerText = carrusel_inferior.spam_i [index_inferior].titulo;
-         this.children [1].innerText = carrusel_inferior.spam_i [index_inferior].apoderado;
-         index_inferior = (index_inferior + 1) % carrusel_inferior.spam_i.length;
+         this.children [0].innerText = carrusel_inferior.spam_i [index_inferior % carrusel_inferior.spam_i.length].titulo;
+         this.children [1].innerText = carrusel_inferior.spam_i [index_inferior % carrusel_inferior.spam_i.length].apoderado;
+         index_inferior++;
          $("#" + selector).slideDown (200);
          if ((index_inferior % 3) == 0)
             setTimeout (next_spam_inferior, 20000);
@@ -148,9 +146,7 @@
       url: "./php/getSpamInferior.php",
       success: function (data)
       {
-         alert (data);
-         /*
-         if (data == '' || data.seach ("ERROR") > -1)
+         if (data == '' || data.search ("ERROR") > -1)
          {
             spam_secundario_izquierda.children [0].innerText = 'No se pueden mostrar los comentarios';
             spam_secundario_izquierda.children [1].innerText = ':(';
@@ -158,12 +154,18 @@
             spam_secundario_centro.children [1].innerText = ':(';
             spam_secundario_derecha.children [0].innerText = 'No se pueden mostrar los comentarios';
             spam_secundario_derecha.children [1].innerText = ':(';
-            if (data.seach ("ERROR") > -1)
+            if (data.search ("ERROR") > -1)
                alert (data);
          }
-         else*/
+         else
          {
             carrusel_inferior = JSON.parse (data);
+            spam_secundario_izquierda.children [0].innerText = carrusel_inferior.spam_i [0].titulo;
+            spam_secundario_izquierda.children [1].innerText = carrusel_inferior.spam_i [0].apoderado;
+            spam_secundario_centro.children [0].innerText = carrusel_inferior.spam_i [1].titulo;
+            spam_secundario_centro.children [1].innerText = carrusel_inferior.spam_i [1].apoderado;
+            spam_secundario_derecha.children [0].innerText = carrusel_inferior.spam_i [2].titulo;
+            spam_secundario_derecha.children [1].innerText = carrusel_inferior.spam_i [2].apoderado;
             next_spam_inferior ();
          }
       }

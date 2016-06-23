@@ -1,3 +1,0 @@
-<div id="spam_secundario_centro_titulo" class="pulsable">Mejor profesor del mes</div>
-<div id="spam_secundario_izquierda_apoderado" class="pulsable">Igor Dito Rico</div>
-<p id = "spam_secundario_izquierda_ver_mas" class="pulsable">Ver más</p>

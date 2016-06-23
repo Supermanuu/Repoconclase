@@ -808,11 +808,15 @@ body.ialumnos_body
    color: white;
 }
 
-#spam_principal:hover, #spam_secundario_derecha:hover, #spam_secundario_centro:hover, #spam_secundario_izquierda:hover,
+#spam_principal:hover, #spam_secundario_derecha:hover, #spam_secundario_centro:hover, #spam_secundario_izquierda:hover
+{
+   background-color: #6AC46E;
+}
+
 #mis_profesores:hover, #mis_notas:hover, #buscar_profesor:hover, #contratar_profesor:hover, #correo_alumno:hover,
 #mis_cursos:hover, #top_10_profesores:hover, #mis_clases:hover, #ajustes_perfil:hover, #video_tutorial:hover, #contratar_curso:hover
 {
-	background-color: #6AC46E;
+	background-color: #15a765;
 }
 
 .pulsable

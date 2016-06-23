@@ -1,3 +1,0 @@
-<div id="spam_secundario_centro_titulo" class="pulsable">Mejor profesora de CTM</div>
-<div id="spam_secundario_izquierda_apoderado" class="pulsable">Julieta Rada Martín</div>
-<p id = "spam_secundario_izquierda_ver_mas" class="pulsable">Ver más</p>
