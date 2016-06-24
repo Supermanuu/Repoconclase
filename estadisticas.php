@@ -1,9 +1,7 @@
-<?php 
-    session_start(); 
-    if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){
-        header('Location: ./index.php');
-    }
-?>
+<?php if(!isset($_SESSION)){ 
+        session_start(); 
+      } ?>
+<?php  require_once 'php/rateajax.php'; ?>
 
 <html>
     <head id="Hola">
@@ -18,12 +16,23 @@
         <link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script src="js/common.js"></script>
+        <script src="js/rate.js"></script>
     </head>
     <body id="stats_body">
-        <?php 
-            $_SESSION["volverIndex"] = 1;
-            require_once('./php/header.php');
-        ?>
+
+        <?php require_once('./php/header.php'); ?>
+
+        <?php
+	        if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){ //Sesion no iniciada
+	            $color = "blue";
+	        }elseif ($_SESSION["type"] == "alumno") {  //Alumno
+				$color = "green";
+	        }elseif ($_SESSION["type"] == "profesor") {  //Profesor
+	            $color = "blue";
+	        }elseif ($_SESSION["type"] == "administrador") {  //Admin
+	            $color = "purple";
+	        }
+	    ?>
 
         <div id="stats_main">
             <div id="stats_sts">
@@ -53,28 +62,53 @@
                     
                 </div>
                 <div id="valoracion_global">
-                    <img src="img/graficaStats.png" height="190" />
-                    <img src="img/graficaStats2.png" height="190" />
+                    <p>Valorar:</p><br>
+                    <div class="rate-cnt">
+                        <div id="1" class="rate-btn-1 rate-btn"></div>
+                        <div id="2" class="rate-btn-2 rate-btn"></div>
+                        <div id="3" class="rate-btn-3 rate-btn"></div>
+                        <div id="4" class="rate-btn-4 rate-btn"></div>
+                        <div id="5" class="rate-btn-5 rate-btn"></div>
+                    </div>
+                    <div id=rate_comentario>
+                        <br>
+                        <textarea class="blue" id=text_chk name="Mensaje" rows="8" cols="30" maxlength="150" placeholder="Escriba aquí su valoración sobre el profesor (max 200 caracteres)." required></textarea>
+                        <br><br>
+                        <input id="rate_enviar" type="submit" value="Enviar valoración"/>
+                    </div>
                 </div>
                 <div id="valoracion_reciente">
-                    <div class="rating2">
-                        <p id="rating2">Valoración: </p><span>☆</span><span>☆</span><span>☆</span>☆☆
+
+                    <p>Valoración:</p>
+                    <div class="rate-result-cnt">
+                        <div class="rate-bg" style="width:<?php echo $rate_bg; ?>%"></div>
+                        <div class="rate-stars"></div>
                     </div>
-                    <p>Buen profesor, va al grano, y logré aprobar gracias a él.</br></br>
-                    <div class="rating2">
-                        <p id="rating2">Valoración: </p><span>☆</span><span>☆</span><span>☆</span><span>☆</span>☆
+                    <p>ID_ALUM: Buen profesor, va al grano, y logré aprobar gracias a él.</p></br></br>
+
+                    <p>Valoración:</p>
+                    <div class="rate-result-cnt">
+                        <div class="rate-bg" style="width:<?php echo $rate_bg; ?>%"></div>
+                        <div class="rate-stars"></div>
                     </div>
-                    <p>Métodos didácticos eficientes, muy recomendable para cualquiera que necesite un aprobado urgente e incluso lograr buenas notas.</br></br>
-                    <div class="rating2">
-                        <p id="rating2">Valoración: </p><span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+                    <p>ID_ALUM: Métodos didácticos eficientes, muy recomendable para cualquiera que necesite un aprobado urgente e incluso lograr buenas notas.</p></br></br>
+
+                    <p>Valoración:</p>
+                    <div class="rate-result-cnt">
+                        <div class="rate-bg" style="width:<?php echo $rate_bg; ?>%"></div>
+                        <div class="rate-stars"></div>
                     </div>
-                    <p>Perfecto, explica con mucha claridad, sabe y ayuda a saber. ¡5 sobre 5!</br></br>
+                    <p>ID_ALUM: Perfecto, explica con mucha claridad, sabe y ayuda a saber. ¡5 sobre 5!</p></br></br>
                     </p>
+                    
+
                 </div>
             </div>
         </div>
 
         <?php require_once('./php/footer.php'); ?>
         
+        
     </body>
 </html>
+
