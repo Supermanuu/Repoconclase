@@ -20,7 +20,10 @@
     </head>
     <body id="stats_body">
 
-        <?php require_once('./php/header.php'); ?>
+        <?php 
+            $_SESSION["volverIndex"] = 1; 
+            require_once('./php/header.php'); 
+        ?>
 
         <?php
 	        if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){ //Sesion no iniciada

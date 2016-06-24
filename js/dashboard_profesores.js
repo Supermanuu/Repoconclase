@@ -63,26 +63,18 @@ $(document).ready (function () {
    var siguiente = $('#btn-next');
    var anterior = $('#btn-prev');
 
-   $('slider>#tusEventos').innerText = "SCRIBO POR JS";
    
-   siguiente.on('click',function() {
-       moverD();
-   });
-
-   anterior.on('click',function() {
-       moverI();
-   });
-
-   function moverD() {
+   
+   siguiente.mousedown(function() {
       $('#listaOculta:first').insertAfter('#listaOculta:last'); //recolocamos los elems de la lista
-      $('#tusEventos').innerText = $('#listaOculta>li:first-child').innerText; //mostramos solo el primer elem de la lista escribiendole en el parrafo
-   }
+      var txto = $('#listaOculta:first').val();
+      $("#tusEventos").html('<p id="tusEventos" class="dashprofes_small_p dashprofes_info">'+ txto +'</p>');
+   });
 
-   function moverI() {
+   anterior.mousedown(function() {
       $('#listaOculta:last').insertBefore('#listaOculta:first'); //recolocamos los elems de la lista
-      $('#tusEventos').innerText = $('#listaOculta>li:first-child').innerText; //mostramos solo el primer elem de la lista escribiendole en el parrafo       });
-   }
-
-   
+      var txto = $('#listaOculta:first').val();
+      $("#tusEventos").html('<p id="tusEventos" class="dashprofes_small_p dashprofes_info">'+ txto +'</p>');
+   });
 
 });

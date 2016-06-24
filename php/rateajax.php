@@ -20,7 +20,7 @@
     	}
 
     	if(@count($rate_db) == 0 ){
-    		mysql_query("INSERT INTO rating (id_profe, ip, rate)VALUES('$theprof', '$ip', '$therate')") //cambiar ip por id_alum;
+    		mysql_query("INSERT INTO rating (id_profe, ip, rate)VALUES('$theprof', '$ip', '$therate')"); //cambiar ip por id_alum;
     	}else{
     		mysql_query("UPDATE tabla_rating SET rate= '$therate' WHERE ip = '$ip'"); //cambiar ip por id_alum
     	}

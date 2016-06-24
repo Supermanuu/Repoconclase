@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <html lang="es-ES">
     <head>
         <title id="Title">Profesores con clase</title>
@@ -14,7 +15,10 @@
         <script src="js/common.js"></script>
     </head>
     <body class="form_body">
-		<?php include './php/header.php'; ?>
+		<?php 
+			$_SESSION["volverIndex"] = 1; 
+			include './php/header.php'; 
+		?>
 
 		<div class="form_principal">
 

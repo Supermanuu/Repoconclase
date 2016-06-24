@@ -59,15 +59,16 @@
               } 
               echo '</ul>';
 
-              echo '<div id="slider">'; //-------------------generamos el slider
-              //parrafo vacio sobre el que mostrar el primer evento de la lista
-              echo '<p class="dashprofes_small_p dashprofes_info" id="tusEventos"> </p>'; 
-              //flechitas para pasar el slider
-              echo '<div id="btn-prev" class="btn-prev"> &#60; </div>';
-              echo '<div id="btn-next" class="btn-next"> &#62; </div>';
+              echo '<div id="slider">';
+              echo '<p id="tusEventos" class="dashprofes_small_p dashprofes_info"> </p>';
+              /* flechitas para pasar el slider */
+              echo '<input id="btn-prev" class="btn-prev" type="button"> &#60 </input>';
+              echo '<input id="btn-next" class="btn-next" type="button"> &#62 </input>';
               echo '</div>';
-            }                           //-------------------slider
+            }                           //-------------------slider 
           ?>
+            
+
           </div>
 
       <!-- _________ CORREO _________-->
