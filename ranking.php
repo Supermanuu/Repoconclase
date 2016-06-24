@@ -12,6 +12,7 @@
         <meta charset="utf-8"/>
         <meta name="author" content="SWTeam"/>
         <meta name="description" content="Ranking de Profesores"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
         <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/reset.css"/>
         <link rel="stylesheet" type="text/css" href="css/estructura.css"/>
@@ -93,7 +94,7 @@
 
                     while ($k < $npr)
                     {  
-                        echo '<div id="profe">';
+                        echo '<li id="profe">';
 
                         echo '<div id="bloque1"> <img src="./img/img-not-available.jpg"/> </div>';
 
@@ -107,7 +108,7 @@
                               </p>';
                         echo '</div>'; //bloque2   
 
-                        echo '</div>'; //profe 
+                        echo '</li>'; //profe 
                         $k++;
                     } 
                 ?>
