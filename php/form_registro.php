@@ -163,20 +163,39 @@
 		mkdir($dir_subida, 0777);
 
 		if( is_uploaded_file($_FILES['Foto']['tmp_name']) ){
-	
-			$foto = "foto";
-			$foto_tmp = $_FILES['Foto']['tmp_name'];
+			
+			if ($_FILES['Foto']['size'] <= 5000000) { 
 
-			move_uploaded_file($foto_tmp, $dir_subida.$foto);
+				$finfo = new finfo(FILEINFO_MIME);
+				$type = $finfo->file($_FILES['Foto']['tmp_name']);
+
+				if ($type === "image/jpeg; charset=binary") {
+
+					$foto = "foto";
+					$foto_tmp = $_FILES['Foto']['tmp_name'];
+					move_uploaded_file($foto_tmp, $dir_subida.$foto);
+				}
+
+			}
 
 		}
 
 		if( is_uploaded_file($_FILES['CV']['tmp_name']) ){
-	
-			$cv = "cv";
-			$cv_tmp = $_FILES['CV']['tmp_name'];
+			
+			if ($_FILES['CV']['size'] <= 5000000) {
 
-			move_uploaded_file($cv_tmp, $dir_subida.$cv);
+				$finfo = new finfo(FILEINFO_MIME);
+				$type = $finfo->file($_FILES['CV']['tmp_name']);
+
+				if ($type === "application/pdf; charset=binary") {
+
+					$cv = "cv";
+					$cv_tmp = $_FILES['CV']['tmp_name'];
+					move_uploaded_file($cv_tmp, $dir_subida.$cv);
+
+				}
+
+			}
 
 		}
 

@@ -1,7 +1,9 @@
-<?php 
-   session_start ();
-   include "php/form_editar_load.php";
-   if (!load_user()) error();
+<?php
+
+	session_start ();
+	include "php/form_editar_load.php";
+	if (!load_user()) error();
+
 ?>
 
 <html lang="es-ES">
@@ -51,9 +53,9 @@
 							echo '</div>';
 
 							echo '<div class="form_notes">';
-								echo '<text class='.$color.' id="form_text">Fotografía</text></br>';
+								echo '<text class='.$color.' id="form_text">Foto (max. 5MB)</text></br>';
 								echo '<input class="form_input" id="field15" type="file" name="Foto" accept=".jpg" autocomplete="off"/> </br>';
-								echo '<text class='.$color.' id="form_text">Curriculum vitae</text></br>';
+								echo '<text class='.$color.' id="form_text">CV (max. 5MB)</text></br>';
 								echo '<input class="form_input" id="field16" type="file" name="CV" accept=".pdf" autocomplete="off"/>    </br></br>';
 								echo '<div class="form_botonera">';
 									echo '<input class='.$color.'  id="form_enviar_contenido" type="submit" value="Subir"/>';

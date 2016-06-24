@@ -88,9 +88,9 @@
 					<div class="form_botonera">
 						</br>
 						<h1 class="my_h1">¿Quieres subir una foto y tu CV?</h1>
-						<text class="blue" id="form_text">Fotografía</text></br>
-						<input class="form_input" id="field15" type="file" name="Foto" accept=".jpg" autocomplete="off"/> </br>
-						<text class="blue" id="form_text">Curriculum vitae</text></br>
+						<text class="blue" id="form_text">Foto (max. 5MB) </text></br>
+						<input class="form_input" id="field15" type="file" name="Foto" accept=".jpeg" autocomplete="off"/> </br>
+						<text class="blue" id="form_text">CV (max. 5MB)</text></br>
 						<input class="form_input" id="field16" type="file" name="CV" accept=".pdf" autocomplete="off"/>    </br></br>
 					</div>
 
