@@ -78,6 +78,7 @@
       $sentencia->free_result ();
    if (!$conexion->close ())
       echo "ERROR: CLOSE: " . $conexion->error;
-  
-   //{ "spam_i" : [ { "titulo":"John" , "apoderado":"Doe" }, { "titulo":"Peter" , "apoderado":"Jones" } ]}
+   
+   // Lo que debería de devolver tendría que ser:
+   //{ "spam_i" : [ { "titulo":"titulo" , "apoderado":"apoderado" }, ... ]}
 ?>

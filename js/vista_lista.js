@@ -12,9 +12,6 @@
    if (tokens.includes ("a=al"))
    {
       // Añadimos la clase del usuario
-      $("header").addClass ("green");
-      $("#logout").addClass ("green");
-      $("footer").addClass ("green");
       $("#vista_lista_nuevo").addClass ("green");
       $("#vista_lista_editar").addClass ("green");
       $("#vista_lista_borrar_seleccionados").addClass ("green");
@@ -27,9 +24,6 @@
    else if (tokens.includes ("a=pr"))
    {
       // Añadimos la clase del usuario
-      $("header").addClass ("blue");
-      $("#logout").addClass ("blue");
-      $("footer").addClass ("blue");
       $("#vista_lista_nuevo").addClass ("blue");
       $("#vista_lista_editar").addClass ("blue");
       $("#vista_lista_borrar_seleccionados").addClass ("blue");
@@ -42,9 +36,6 @@
    else
    {
       // Añadimos la clase del usuario
-      $("header").addClass ("purple");
-      $("#logout").addClass ("purple");
-      $("footer").addClass ("purple");
       $("#vista_lista_nuevo").addClass ("purple");
       $("#vista_lista_editar").addClass ("purple");
       $("#vista_lista_borrar_seleccionados").addClass ("purple");

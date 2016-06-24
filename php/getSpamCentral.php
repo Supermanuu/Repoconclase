@@ -18,7 +18,8 @@
    //echo "OK: " . $conexion->host_info . "\n";
    
    
-   $titulo = "Impartido por: ";
+   
+   $intro = "Impartido por: ";
    // Preparamos la query que vamos a ejecutar: Conseguimos los cursos
    if (! ($sentencia = $conexion->prepare ("SELECT id_curso, nombre_curso, hora_ini, dias_semana FROM cursos")))
       echo "ERROR: PREPARE (1): " . $conexion->error;
@@ -60,7 +61,7 @@
          echo "ERROR: FETCH (2): " . $conexion->error;
       
       // Inlcuimos los datos en la trama JSON
-      echo '{ "titulo":"' . $titulo . '" , "autor":"' . $nombre . ' ' . $apellido1 . ' ' . $apellido2 . '" , "curso":"' . $cursos [$j] . '" , "horario":"' . $dias_semanas [$j] . " - " . $hora_inis [$j] . '" }';
+      echo '{ "intro":"' . $intro . '" , "autor":"' . $nombre . ' ' . $apellido1 . ' ' . $apellido2 . '" , "curso":"' . $cursos [$j] . '" , "horario":"' . $dias_semanas [$j] . " - " . $hora_inis [$j] . '" }';
       $j++;
       if ($j < $i)
          echo ', ';
@@ -68,11 +69,15 @@
    // Finalizamos la trama JSON
    echo ' ] }';
    
+   
+   
+   
    // Cerramos conexion con la base de datos
    if (isset ($sentencia))
       $sentencia->free_result ();
    if (!$conexion->close ())
       echo "ERROR: CLOSE: " . $conexion->error;
    
-   //{ "spam_c" : [ { "titulo":"John" , "autor":"Doe" , "curso":"Anna" , "horario":"Smith" }, { "firstName":"Peter" , "lastName":"Jones" } ]}
+   // Lo que debería de devolver tendría que ser:
+   //{ "spam_c" : [ { "intro":"intro" , "autor":"autor" , "curso":"curso" , "horario":"horario" }, ... ]}
 ?>
