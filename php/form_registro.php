@@ -117,7 +117,6 @@
 
 		$mysqli = new mysqli('localhost', 'profesores', 'profesConEstilo', 'profesoresConClase');
 		if (mysqli_connect_errno()) {
-			echo '<h1 class="my_hy">Error interno... ¡Vuelva a intentarlo!</h1>';
 			return false;
 		}
 
@@ -129,7 +128,6 @@
 		$id = $mysqli->insert_id;
 
 		if (!$resultado) {
-			echo '<h1 class="my_hy">Formulario de registro no enviado... ¡Vuelva a intentarlo!</h1>';
 			return false;
 		}
 		else {
@@ -143,7 +141,6 @@
 			$resultado = $mysqli->query($query);
 
 			if (!$resultado) {
-				echo '<h1 class="my_hy">Formulario de registro no enviado... ¡Vuelva a intentarlo!</h1>';
 				return false;
 			}
 
@@ -154,7 +151,6 @@
 				$resultado = $mysqli->query($query);
 
 				if (!$resultado) {
-					echo '<h1 class="my_hy">Formulario de registro no enviado... ¡Vuelva a intentarlo!</h1>';
 					return false;
 				}
 

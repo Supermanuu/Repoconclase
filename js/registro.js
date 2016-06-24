@@ -77,6 +77,35 @@ $(document).ready(function() {
 
 	}
 
+	var valid_user = false;
+	var valid_doc = false;
+
+	$("input#field1").blur(function(){
+		valid_user = false;
+    	$.ajax({
+        	url: "php/form_comprobar_duplicados.php",
+        	async: true,
+       		type: "post",
+       		data : {
+        		clave : "user",
+        		valor : $(this).val(),
+        		tabla : "usuarios"
+    		},
+       		success: function(data){
+       			if (data === "LIBRE") {
+					valid_user = true;
+       			}
+           		else if (data === "OCUPADO") {
+           			valid_user = false;
+           			$("label#input_chk1").css("color", "red");
+           			alert( "Usuario ocupado, escoja otro por favor." );
+           		}
+           		else
+           			console.log("Error comprobando duplicados");
+           	}
+    	});
+	});
+
 	function field1() {
 		
 		if ($("input#field1").val() === "")
@@ -214,6 +243,32 @@ $(document).ready(function() {
 
 	$("label#input_chk10").css("color", "#6AC46E");
 
+	$("input#field11").blur(function(){
+		valid_doc = false;
+    	$.ajax({
+        	url: "php/form_comprobar_duplicados.php",
+        	async: true,
+       		type: "post",
+       		data : {
+        		clave : "documento",
+        		valor : $(this).val(),
+        		tabla : "registra"
+    		},
+       		success: function(data){
+       			if (data === "LIBRE") {
+					valid_doc = true;
+       			}
+           		else if (data === "OCUPADO") {
+           			valid_doc = false;
+           			$("label#input_chk11").css("color", "red");
+           			alert( "Documento de identidad ya registrado." );
+           		}
+           		else
+           			console.log("Error comprobando duplicados");
+           	}
+    	});
+	});
+
 	function field11() {
 
 		if ($("input#field11").val() === "")
@@ -300,15 +355,20 @@ $(document).ready(function() {
 
 		if (field1() && field2() && field3() && field4() && is_fill($("input#field6").val(), $("label#input_chk6")) 
 			&& is_fill($("input#field7").val(), $("label#input_chk7")) && is_fill($("input#field8").val(), $("label#input_chk8")) 
-			&& field9() && field11() &&field12() && field14()) {
+			&& field9() && field11() &&field12() && field14() && valid_doc && valid_user) {
 			if ($("input#chkbx").is(':checked'))
 				$("form#form_registro").submit();
 			else
 				alert( "Acepta los términos y condiciones." );
 		}
 			
-		else
+		else {
+			if (!valid_user)
+				$("label#input_chk1").css("color", "red");
+			if (!valid_doc)
+				$("label#input_chk11").css("color", "red");
 			alert( "Algún campo no es válido. Revisa el formulario." );
+		}
 
 	});
 
