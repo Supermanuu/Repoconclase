@@ -1307,10 +1307,24 @@ body.ranking_body{
    margin-bottom: 50px;
 }
 
+#elemento_titulo
+{
+   background-color: #81c37c;
+   padding: 10px;
+}
+
+#elemento_contenido
+{
+   background-color: #b7efb0;
+   padding: 20px;
+}
+
 #elemento_precio > p
 {
    text-align: center;
    font-size: 50px;
+   background-color: #81c37c;
+   padding: 10px;
 }
 
 #elemento_titulo > p

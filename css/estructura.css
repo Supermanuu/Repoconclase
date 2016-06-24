@@ -1436,8 +1436,13 @@ body
    width : 20%;
 }
 
-#elemento_contratar
+#elemento_aceptar
 {
    margin-left : auto;
    width : 20%;
+}
+
+.elemento_oculto
+{
+   display: none;
 }

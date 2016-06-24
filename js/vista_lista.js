@@ -220,17 +220,41 @@
       $(this).fadeOut ("slow", function ()
       {
          this.nextSibling.style.marginLeft = "auto";
-      });
-      $.ajax (
+         
+         if ($tabla != 'cu' && $tabla != 'cl')
          {
-            type: "POST",
-            url: "./php/aceptaVistaLista.php",
-            data: {"perfil" : $perfil, "tabla" : $tabla, "mis" : !tokens.includes ("c=mis"), "id" :  this.parentElement.children [5].innerText},
-            success: function (data)
+            $.ajax (
             {
-               //alert (data); // Esto por si quieres ver la query que se ha ejecutado e info de depuración
-            }
-         });
+               type: "SPOST",
+               url: "./php/aceptaVistaLista.php",
+               data: {"perfil" : $perfil, "tabla" : $tabla, "mis" : !tokens.includes ("c=mis"), "id" :  this.parentElement.children [5].innerText},
+               success: function (data)
+               {
+                  //alert (data); // Esto por si quieres ver la query que se ha ejecutado e info de depuración
+               }
+            });
+         }
+         else
+         {
+            $.ajax (
+            {
+               type: "POST",
+               url: "elemento.php",
+               data: {
+                  "titulo" : this.parentElement.children [1].firstChild.innerText, 
+                  "contenido" : this.parentElement.children [4].innerText, 
+                  "id" : this.parentElement.children [5].innerText
+               },
+               success: function (data)
+               {
+                  vista_lista_principal.innerHTML = data;
+                  $("#elemento_principal").hide ();
+                  $.getScript ("js/elemento.js");
+               }
+            });
+         }
+      });
+      
    });
    
    // Filtro de busqueda
