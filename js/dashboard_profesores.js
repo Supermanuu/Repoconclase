@@ -13,12 +13,12 @@ $(document).ready (function () {
    });
 
  // ACCIONES AL PULSAR SOBRE LOS PANELES 
-   $("#tusClases").mousedown (function ()
+   $("#misAlumnos").mousedown (function ()
    {
       $(location).attr('href', 'vista_lista.php?a=pr&b=al');
    });
 
-   $("#tusCursos").mousedown (function ()
+   $("#misCursos").mousedown (function ()
    {
       $(location).attr('href', 'vista_lista.php?a=pr&b=gr');
    });
@@ -49,7 +49,7 @@ $(document).ready (function () {
       $(location).attr('href', 'ranking.php');
    });
 
-   $("#video").mousedown (function ()
+   $("#misClases").mousedown (function ()
    {
       $(location).attr('href', ' ');
    });

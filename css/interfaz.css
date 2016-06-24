@@ -1265,6 +1265,25 @@ body.ranking_body{
   font-size: 1em;
 }
 
+/*Division de las fotos del ranking*/
+#bloque1 {
+    width: 35%;
+    text-align: right;
+    line-height: 250%;
+    /* margin-left: 2.5%; */
+    /* margin-right: 1.25%; */
+}
+
+/*Division de los datos del ranking*/
+#bloque2 {
+    width: 50%;
+    text-align: left;
+    /* text-align: left; */
+    /* line-height: 250%; */
+    margin-left: 40%;
+    /* margin-right: 2.5%; */
+}
+
 /*------------Buscador Ranking------------*/
 
 #busca_rank.green{

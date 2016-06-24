@@ -28,11 +28,10 @@
           require_once('./php/header.php'); 
         ?>
 
+        <!-- _________ PRINCIPAL CON LA INFO DEL PROFESOR _________-->
         <div class="dashprofes_principal" id="principal">
-
-        	<div id="tuInfo" class="dashboard oscuro" title="<?php echo $_SESSION["nombre"]; ?>">
-          
-		    	<p class="dashprofes_big_p"> <?php echo $_SESSION["nombre"]; ?> <span class="glyphicon glyphicon-user" ></span> </p>
+        	<div id="tuInfo" class="dashboard oscuro" title="<?php echo $_SESSION["nombre"]; ?>">       
+		    	<p class="dashprofes_big_p"> <?php echo $_SESSION["nombre"]; ?> <span class="glyphicon glyphicon-info-sign" ></span> </p>
 		    	<p class="dashprofes_small_p dashprofes_info">Proximos Eventos: </p>
           <?php 
            
@@ -71,23 +70,9 @@
           ?>
           </div>
 
-        	<div id="tusClases" class="dashboard claro">
-		    	<p class="dashprofes_big_p">Tus Clases <span class="glyphicon glyphicon-education"> </p>
-		    	<p class="dashprofes_small_p" id="gestionaAlumnos">Aqui encontrarás todo lo que necesitas para gestionar tus clases particulares con otros alumnos</p>
-		 	</div>
-
-		 	<div id="tusCursos" class="dashboard claro">
-		    	<p class="dashprofes_big_p">Tus Cursos <span class="glyphicon glyphicon-list-alt"></p>
-		    	<p class="dashprofes_small_p" id="gestionaGrupos">Este es el espacio podrás admnistrar todo lo relacionado con tus clases a un grupo de alumnos</p>
-		 	</div>
-
-		 	<div id="busqueda" class="dashboard claro">
-		    	<p class="dashprofes_big_p">Búsqueda <span class="glyphicon glyphicon-search"></span> </p>
-		    	<p class="dashprofes_small_p" id="busca">Utiliza este servicio para encontrar alumnos u otros usuarios usando filtros en pocos pasos</p>
-		 	</div>
-
+      <!-- _________ CORREO _________-->
       <div id="correo" class="dashboard claro">
-		    	<p class="dashprofes_big_p">Correo <span class="glyphicon glyphicon-envelope"></span> </p>
+          <p class="dashprofes_big_p">Correo <span class="glyphicon glyphicon-envelope"></span> </p>
           <?php 
             
             if($_SESSION ["ncorreos"] == 0){ //no hay mensajes nuevos sin leer
@@ -117,27 +102,49 @@
               echo '</ul>';
             } 
           ?>
+      </div>
+
+      <!-- _________ BUSQUEDA _________-->
+      <div id="busqueda" class="dashboard claro">
+          <p class="dashprofes_big_p">Búsqueda <span class="glyphicon glyphicon-search"></span> </p>
+          <p class="dashprofes_small_p" id="busca">Utiliza este servicio para encontrar alumnos u otros usuarios usando filtros en pocos pasos</p>
+      </div>
+
+      <!-- _________ TUS CLASES _________-->
+      <div id="misClases" class="dashboard claro">
+		    	<p class="dashprofes_big_p">Mis Clases <span class="glyphicon glyphicon-education"> </p>
+		    	<p class="dashprofes_small_p" id="gestionaAlumnos">Aqui encontrarás todo lo que necesitas para gestionar tus clases particulares con otros alumnos</p>
 		 	</div>
 
-		 	<div id="infoPersonal" class="dashboard claro">
-		    	<p class="dashprofes_big_p">Modificar Información <span class="glyphicon glyphicon-cog"> </p>
-		    	<p class="dashprofes_small_p" id="editarInfo">Actualiza tu información personal para mostrar al mundo tus más recientes aptitudes</p>
+      <!-- _________ TUS CURSOS _________-->
+		 	<div id="misCursos" class="dashboard claro">
+		    	<p class="dashprofes_big_p">Mis Cursos <span class="glyphicon glyphicon-list-alt"> </p>
+		    	<p class="dashprofes_small_p" id="gestionaGrupos">Este es el espacio podrás admnistrar todo lo relacionado con tus clases a un grupo de alumnos</p>
 		 	</div>
 
+      <!-- _________ MIS ALUMNOS _________-->
+		 	<div id="misAlumnos" class="dashboard claro">
+          <p class="dashprofes_big_p">Mis Alumnos <span class="glyphicon glyphicon-user" > </p>
+          <p class="dashprofes_small_p">Una forma rapida de gestionar tus alumnos</p>
+      </div>
+
+      <!-- _________ VALORACIONES Y ESTADISTICAS _________-->
 		 	<div id="valoraciones" class="dashboard claro">
 		    	<p class="dashprofes_big_p">Valoraciones y Estadisticas <span class="glyphicon glyphicon-check"> </p>
 		    	<p class="dashprofes_small_p" id="verValoraciones">Consulta tus valoraciones o las de diferentes grupos y alumnos. ¡Son una parte muy importante de esta web!</p>
 		 	</div>
 
+      <!-- _________ RANKING _________-->
 		 	<div id="ranking" class="dashboard claro">
 		    	<p class="dashprofes_big_p">Ranking <span class="glyphicon glyphicon-star-empty"> </p>
 		    	<p class="dashprofes_small_p" id="verTop">¡Comprueba tu puesto en la clasificación de Profesores y demuestra quien tiene mas Clase!</p>
 		 	</div>
 
-		 	<div id="video" class="dashboard claro">
-		    	<p class="dashprofes_big_p">Video Tutorial</p>
-		    	<p class="dashprofes_small_p">Vídeo ilustrativo para aprender a usar la imponente web de Profesores Con Clase</p>
-		 	</div>		
+      <!-- _________ MODIFICAR INFORMACION _________-->
+		 	<div id="infoPersonal" class="dashboard claro">
+          <p class="dashprofes_big_p">Modificar Información <span class="glyphicon glyphicon-cog"> </p>
+          <p class="dashprofes_small_p" id="editarInfo">Actualiza tu información personal para mostrar al mundo tus más recientes aptitudes</p>
+      </div>
 
         </div>
 

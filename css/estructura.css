@@ -18,7 +18,7 @@ header
   min-height: 6%;
 
   /* Margenes de 20px laterales en header y footer para que se quede una barra de navegacion flotante*/
-  margin: 20px 20px 0px 20px; /*Margenes laterales 20px, superior 20px, inferior 0px */
+  margin: 20px 1% 0px 1%; /*Margenes laterales 20px, superior 20px, inferior 0px */
    
   /* Esta instrucción indica que el borde debe ocmportarse como si
   fuese un elementro interno del header */
@@ -1513,7 +1513,9 @@ body
 #rank{ 
    display: flex;
    flex-direction: column;
+   /* flex-direction: row; */
    list-style:none; 
+   flex-wrap: wrap;
    margin:30px auto; 
 }
 
@@ -1524,6 +1526,24 @@ body
    /* background-color: #4F81BD; */
 }
 
+#ranking_datos {
+    display: flex;
+    
+}
+
+#bloque1 {
+    flex-basis: 46.25%;
+    flex-grow: 3;
+    order: 1;
+}
+
+#bloque2 {
+    flex-basis: 46.25%;
+    flex-shrink: 12;
+    order: 2;
+}
+
+/*
 #rank li #bloque1{
    margin: auto;
 }
@@ -1536,7 +1556,7 @@ body
    text-align: right;
    margin: auto;
 }
-
+*/
 
 @media (min-width: 768px){ /*Tamaño escritorio*/
    #rank li{ 
@@ -1547,6 +1567,7 @@ body
 
    #profe{
       width: 40%;
+      margin: auto;
    }
 }
 

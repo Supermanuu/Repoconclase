@@ -28,6 +28,8 @@
 
         <div id="ranking_principal">
 
+        <!-- ________________ CABECERA DEL RANKING ________________ -->
+
         <?php //COLOREAMOS LA BARRA DEL TITULO DEPENDIENDO EL COLOR DEL USUARIO   
             if ($_SESSION["type"] == "alumno") {  //Alumno
                 echo '<div id="ranking_titulo" class="green">';
@@ -38,12 +40,13 @@
             elseif ($_SESSION["type"] == "administrador") {  //Admin
                 echo '<div id="ranking_titulo" class="purple">';
             }
-
-            echo '<h1>TOP PROFESORES</h1>';
-            echo '<h2>¿Podrás llegar a lo más alto? </h2>';
-            echo '</div>';
         ?>  
+            <h1>TOP PROFESORES</h1>
+            <h2>¿Podrás llegar a lo más alto? </h2>
+        </div>
             
+        <!-- ________________ BARRA DE BUSCADOR ________________ -->
+
         <?php //COLOREAMOS LA BARRA DE BUSQUEDA DEPENDIENDO EL COLOR DEL USUARIO
             if ($_SESSION["type"] == "alumno") {  //Alumno
                 echo '<div id="busca_rank" class="green">';
@@ -81,16 +84,17 @@
                     echo '</div>'; 
                 ?> 
 
+            <!-- ________________ DATOS DE LOS PROFESORES ________________ -->
 
-
-            <ul id="rank">
-                <?php
+            <div id="rank">
+                <?php 
                     $npr = $_SESSION ["numprofesrank"];
                     $k = 0;
 
                     while ($k < $npr)
                     {  
-                        echo '<li id="profe">';
+                        echo '<div id="profe">';
+
                         echo '<div id="bloque1"> <img src="./img/img-not-available.jpg"/> </div>';
 
                         echo '<div id="bloque2">';
@@ -101,11 +105,14 @@
                                     <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
                                 </div>
                               </p>';
-                        echo '</div>'; //bloque2      
-                        echo '</li>';
+                        echo '</div>'; //bloque2   
+
+                        echo '</div>'; //profe 
                         $k++;
                     } 
                 ?>
+            </div>
+
     		<!--	<li id="profe">
         			<div id="bloque1">
             			<img src="./img/img-not-available.jpg"/>
