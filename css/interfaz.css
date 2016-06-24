@@ -483,6 +483,83 @@ img.purple {
    margin-top: 60px;
 }
 
+/* ---------Interfaz - > Contrata.html --------- */
+
+#contrata_cabecera {
+  background-color: #6AC46E;
+  box-shadow: 5px 5px 5px #118E56;
+}
+
+#contrata_cabecera > h1 {
+  font-size: 2em;
+  font-weight: normal;
+}
+
+#materia_Wizard > p, #zona_horario_Wizard > p,
+#profesor_Wizard > p, #pago_Wizard > p, #profesores_info > p {
+
+  font-size: 1.5em;
+  margin: 10px;
+
+}
+
+#numeroFase {
+  position: absolute;
+  visibility: hidden;
+}
+
+/*Primer paso */
+#contrata_pasosWizard > #materia_Wizard {
+  background-color: #118E56;
+}
+
+/* Segundo paso */
+#contrata_pasosWizard > #zona_horario_Wizard {
+  background-color: #6AC46E;
+}
+
+/* Tercer paso */
+#contrata_pasosWizard > #profesor_Wizard {
+  background-color: #6AC46E;
+}
+
+/* Cuarto paso */
+#contrata_pasosWizard > #pago_Wizard {
+  background-color: #6AC46E;
+}
+
+#entradas > select, #entradas > input,
+#entradas > select > option {
+  color: black;
+}
+
+.desp {
+    background-color: #118E56;
+}
+
+.desp > p{
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 25px;
+    margin: 5px;
+}
+
+.flecha_contrata {
+  background-image: url("../img/flecha_contrata.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+#contrata_pasosWizard {
+  background-color: #6AC46E;
+  box-shadow: 5px 5px 5px #118E56;
+}
+
+#contrata_muestraDatos {
+  background-color: #6AC46E;
+  box-shadow: 5px 5px 5px #118E56;
+}
+
 /*  --------Interfaz - > Formularios ----------- */
 
 body.form_body {
@@ -1210,6 +1287,9 @@ body.ranking_body{
     /* margin-right: 2.5%; */
 }
 
+li:nth-child(even) { background: #ddd }
+li:nth-child(odd) { background: #fff}
+
 /*------------Buscador Ranking------------*/
 
 #busca_rank.green{
@@ -1301,36 +1381,4 @@ body.ranking_body{
 #filter_rk{
    height: 23px;
    margin: 0 0 0 5px;
-}
-
-/*-------------contrata.php-----------*/
-
-#elemento_principal  p
-{
-   margin-bottom: 50px;
-}
-
-#elemento_titulo
-{
-   background-color: #81c37c;
-   padding: 10px;
-}
-
-#elemento_contenido
-{
-   background-color: #b7efb0;
-   padding: 20px;
-}
-
-#elemento_precio > p
-{
-   text-align: center;
-   font-size: 50px;
-   background-color: #81c37c;
-   padding: 10px;
-}
-
-#elemento_titulo > p
-{
-   font-size: 40px;
 }

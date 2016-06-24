@@ -156,6 +156,10 @@
    
    $_SESSION ["ncorreos"] = $t; //numero de correos totales sin leer
 
-   $sentencia->free_result ();
+   // Cerramos conexion con la base de datos
+   if (isset ($sentencia))
+      $sentencia->free_result ();
+   if (!$conexion->close ())
+      echo "ERROR: CLOSE: " . $conexion->error;
    
 ?>

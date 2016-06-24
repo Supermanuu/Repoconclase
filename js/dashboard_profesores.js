@@ -13,19 +13,25 @@ $(document).ready (function () {
    });
 
  // ACCIONES AL PULSAR SOBRE LOS PANELES 
-   $("#misAlumnos").mousedown (function ()
+
+   $("#misClases").mousedown (function ()
    {
-      $(location).attr('href', 'vista_lista.php?a=pr&b=al');
+      $(location).attr('href', 'vista_lista.php?a=pr&b=cl&c=mis');
    });
 
    $("#misCursos").mousedown (function ()
    {
-      $(location).attr('href', 'vista_lista.php?a=pr&b=gr');
+      $(location).attr('href', 'vista_lista.php?a=pr&b=cu&c=mis');
+   });
+
+   $("#misAlumnos").mousedown (function ()
+   {
+      $(location).attr('href', 'vista_lista.php?a=pr&b=al&c=mis');
    });
 
    $("#busqueda").mousedown (function ()
    {
-      $(location).attr('href', 'buscador.html');
+      $(location).attr('href', 'busqueda.php');
    });
 
    $("#correo").mousedown (function ()
@@ -47,11 +53,6 @@ $(document).ready (function () {
    $("#ranking").mousedown (function ()
    {
       $(location).attr('href', 'ranking.php');
-   });
-
-   $("#misClases").mousedown (function ()
-   {
-      $(location).attr('href', ' ');
    });
 
    //------------Animacion JS del slider del profesor------------
