@@ -266,9 +266,16 @@ $(document).ready(function() {
 		$("label#input_chk9").css("color", "#6AC46E");
 		$("label#input_chk12").css("color", "#6AC46E");
 		$("label#input_chk14").css("color", "#6AC46E");
+		$("input#form_dar_baja_confirmar").hide();
 
 	}
 
 	clean();
+
+	$("input#form_dar_baja").click(function() {
+
+		$("input#form_dar_baja_confirmar").show();
+
+	});
 
 });

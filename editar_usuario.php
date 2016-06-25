@@ -158,10 +158,11 @@
 
 			<?php 
 
-				echo '<form class="form_box" method="post" action="./php/form_dar_baja.php" enctype="multipart/form-data">';
+				echo '<form class="form_box" method="post" action="./php/form_dar_baja.php">';
 
 				echo '<div class="form_botonera">';
-					echo '<input class='.$color.'  id="form_dar_baja" type="submit" value="Dar de baja mi cuenta"/></br></br>';
+					echo '<input class='.$color.' id="form_dar_baja" type="button" value="Dar de baja mi cuenta"/></br></br>';
+					echo '<input class='.$color.' id="form_dar_baja_confirmar" type="submit" value="Confirmar"/></br></br>';
 				echo '</div>';
 
 				echo '</form>';
