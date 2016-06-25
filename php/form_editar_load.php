@@ -47,7 +47,7 @@
 			if (file_exists($foto))
 				echo '<img class='.$color.' src="'.$_SESSION["editar_foto"].'" height="256" width="256">';
 			else
-				echo '<h1 class="my_h1">¡Sube una foto!</h1>';
+				echo '<img class='.$color.' src="img/avatar.jpg" height="256" width="256">';
 
 			$mysqli->close();
 
@@ -77,9 +77,7 @@
 			$_SESSION["editar_apellido_1"] = $usuario["apellido1"];
 			$_SESSION["editar_apellido_2"] = $usuario["apellido2"];
 			$_SESSION["editar_nacimiento"] = $usuario["nacimiento"];
-
 			$_SESSION["editar_cp"] = $usuario["cp"];
-
 			$_SESSION["editar_movil"] = $usuario["movil"];
 		}
 

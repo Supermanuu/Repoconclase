@@ -1,4 +1,9 @@
-<?php session_start(); ?>
+<?php 
+	session_start();
+	if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){
+        header('Location: ./index.php');
+    }
+?>
 <html lang="es-ES">
     <head>
         <title id="Title">Profesores con clase</title>

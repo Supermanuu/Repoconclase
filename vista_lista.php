@@ -1,5 +1,8 @@
 <?php
-   session_start (); 
+   session_start ();
+   if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){
+      header('Location: ./index.php');
+   }
    include './php/preparaLista.php';
    
    function print_item ($nitem, $titulo, $descripcion, $id)

@@ -28,19 +28,21 @@
     ?>
 
         <div id="ranking_principal">
-
+        <?php //COLOREAMOS LA BARRA DEL TITULO DEPENDIENDO EL COLOR DEL USUARIO   
+            if ($_SESSION["type"] == "alumno") {  //Alumno
+                $color = "green";
+            }
+            elseif ($_SESSION["type"] == "profesor") {  //Profesor
+                $color = "blue";
+            }
+            elseif ($_SESSION["type"] == "administrador") {  //Admin
+                $color = "purple";
+            }
+        ?>
         <!-- ________________ CABECERA DEL RANKING ________________ -->
 
         <?php //COLOREAMOS LA BARRA DEL TITULO DEPENDIENDO EL COLOR DEL USUARIO   
-            if ($_SESSION["type"] == "alumno") {  //Alumno
-                echo '<div id="ranking_titulo" class="green">';
-            }
-            elseif ($_SESSION["type"] == "profesor") {  //Profesor
-                echo '<div id="ranking_titulo" class="blue">';
-            }
-            elseif ($_SESSION["type"] == "administrador") {  //Admin
-                echo '<div id="ranking_titulo" class="purple">';
-            }
+             echo '<div id="ranking_titulo" class="'.$color.'">';
         ?>  
             <h1>TOP PROFESORES</h1>
             <h2>¿Podrás llegar a lo más alto? </h2>
@@ -49,18 +51,8 @@
         <!-- ________________ BARRA DE BUSCADOR ________________ -->
 
         <?php //COLOREAMOS LA BARRA DE BUSQUEDA DEPENDIENDO EL COLOR DEL USUARIO
-            if ($_SESSION["type"] == "alumno") {  //Alumno
-                echo '<div id="busca_rank" class="green">';
-                echo '<form id="buscador_rank" action="" class="green">';
-            }
-            elseif ($_SESSION["type"] == "profesor") {  //Profesor
-                echo '<div id="busca_rank" class="blue">';
-                echo '<form id="buscador_rank" action="" class="blue">';
-            }
-            elseif ($_SESSION["type"] == "administrador") {  //Admin
-                echo '<div id="busca_rank" class="purple">';
-                echo '<form id="buscador_rank" action="" class="purple">';
-            }   
+            echo '<div id="busca_rank" class="'.$color.'">';
+            echo '<form id="buscador_rank" action="" class="'.$color.'">';  
         ?>
                 <p id="etq_filter">Filtrar por: </p>
                 <select id="filter">
@@ -70,20 +62,11 @@
                 </select>
                 <input id="search_rank" type="text">
                 
-                <?php //COLOREAMOS EL BOTON DE BUSCAR DEPENDIENDO EL COLOR DEL USUARIO
-                    if ($_SESSION["type"] == "alumno") {  //Alumno
-                        echo '<input id="submit_rank" class="green" type="submit" value="Buscar">';
-                    }
-                    elseif ($_SESSION["type"] == "profesor") {  //Profesor
-                        echo '<input id="submit_rank" class="blue" type="submit" value="Buscar">';
-                    }
-                    elseif ($_SESSION["type"] == "administrador") {  //Admin
-                        echo '<input id="submit_rank" class="purple" type="submit" value="Buscar">';
-                    }   
-
-                    echo '</form>';  
-                    echo '</div>'; 
-                ?> 
+        <?php //COLOREAMOS EL BOTON DE BUSCAR DEPENDIENDO EL COLOR DEL USUARIO
+            echo '<input id="submit_rank" class="'.$color.'" type="submit" value="Buscar">'; 
+            echo '</form>';  
+            echo '</div>'; 
+        ?> 
 
             <!-- ________________ DATOS DE LOS PROFESORES ________________ -->
 
@@ -96,7 +79,9 @@
                     {  
                         echo '<li id="profe">';
 
-                        echo '<div id="bloque1"> <img src="./img/img-not-available.jpg"/> </div>';
+                        echo '<div id="bloque1">';
+                            load_content($id_profesores[$k], $color);
+                        echo '</div>';
 
                         echo '<div id="bloque2">';
                         echo '<h1 id="nombre"> ' . $profesores[$k] .' </h1>';

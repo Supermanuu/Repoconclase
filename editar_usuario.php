@@ -1,6 +1,9 @@
 <?php
 
 	session_start ();
+	if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){
+    	header('Location: ./index.php');
+  	}
 	include "php/form_editar_load.php";
 	if (!load_user()) error();
 

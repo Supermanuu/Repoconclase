@@ -37,6 +37,4 @@
 
 	comprobar_duplicados();
 
-	die();
-
 ?>

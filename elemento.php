@@ -1,6 +1,8 @@
 ﻿<?php
    session_start ();
-   
+   if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){
+      header('Location: ./index.php');
+   }
    $titulo = $_REQUEST ["titulo"];
    $contenido = $_REQUEST ["contenido"];
    $id = $_REQUEST ["id"];
