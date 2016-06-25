@@ -69,21 +69,21 @@
 
             <div id="rank">
                 <?php 
-                    $npr = $_SESSION ["numprofesrank"];
+                    $nrslt = $_SESSION ["numresultrank"];
                     $k = 0;
 
-                    while ($k < $npr)
-                    {  
+                    while ($k < $nrslt)
+                    { 
                         echo '<li id="profe">';
 
                         echo '<div id="bloque1">';
-                            load_content($id_profesores[$k], $color);
+                            load_content($idprofesores[$k], $color);
                         echo '</div>';
 
                         echo '<div id="bloque2">';
-                        echo '<h1 id="nombre"> ' . $profesores[$k] .' </h1>';
-                        echo '<p id="asignatura">Asignatura que destaca</p> <br>';
-                        echo '<p id="valorar">Valorar: 
+                        echo '<h1 id="nombre"> ' . $nombresprofes[$k] .' </h1>';
+                        echo '<p id="asignatura">' . $profesxAsignaturas[$k] . '</p> <br>';
+                        echo '<p id="valorar">Valorar: ' . $valoracionxasig[$k] . '
                                 <div class="rating">
                                     <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
                                 </div>
@@ -95,114 +95,6 @@
                     } 
                 ?>
             </div>
-
-    		<!--	<li id="profe">
-        			<div id="bloque1">
-            			<img src="./img/img-not-available.jpg"/>
-            		</div>
-            		<div id="bloque2">
-            			<h1 id="nombre">Berto Carlos Huevos</h1> 
-            			<p id="asignatura">Mejor Profesor de Fisica</p>
-                        <br>
-            			<p id="valorar">Valorar: 
-            				<div class="rating">
-                					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-            				</div>
-            			</p>
-            		</div>
-            	</li>
-
-    			<li id="profe"> 
-            		<div id="bloque1">
-            			<img src="./img/img-not-available.jpg"/>
-            		</div>
-            		<div id="bloque2">
-            			<h1 id="nombre">Alba Ñoguarra</h1>
-            			<p id="asignatura">Mejor Profesor de Lengua</p>
-            			<p id="valorar">Valorar: 
-            				<div class="rating">
-                					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-            				</div>
-            			</p>
-            		</div>
-    			</li>
-
-    			<li id="profe">
-            		<div id="bloque1">
-            			<img src="./img/img-not-available.jpg"/>
-            		</div>
-            		<div id="bloque2">
-            			<h1 id="nombre">Antonio Suelta Melo</h1>
-            			<p id="asignatura">Mejor Profesor de Deporte</p>
-            			<p id="valorar">Valorar: 
-            				<div class="rating">
-                					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-            				</div>
-            			</p>
-            		</div>
-    			</li>
-
-    			<li id="profe">
-            		<div id="bloque1">
-            			<img src="./img/img-not-available.jpg"/>
-            		</div>
-            		<div id="bloque2">
-            			<h1 id="nombre">Chema Pamundi</h1>
-            			<p id="asignatura">Mejor Profesor de Historia</p>
-            			<p id="valorar">Valorar: 
-            				<div class="rating">
-                					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-            				</div>
-            			</p>
-            		</div>
-    			</li>
-
-    			<li id="profe">
-            		<div id="bloque1">
-            			<img src="./img/img-not-available.jpg"/>
-            		</div>
-            		<div id="bloque2">
-            			<h1 id="nombre">Consuelo Alatriste</h1>
-            			<p id="asignatura">Mejor Profesor de Filosofia</p>
-            			<p id="valorar">Valorar: 
-            				<div class="rating">
-                					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-            				</div>
-            			</p>
-            		</div>
-            	</li>
-
-    			<li id="profe"> 
-            		<div id="bloque1">
-            			<img src="./img/img-not-available.jpg"/>
-            		</div>
-            		<div id="bloque2">
-            			<h1 id="nombre">Andres Trozado</h1>
-            			<p id="asignatura">Mejor Profesor de Economia</p>
-            			<p id="valorar">Valorar: 
-            				<div class="rating">
-                					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-            				</div>
-            			</p>
-            		</div>
-    			</li>
-
-    			<li id="profe">
-            		<div id="bloque1">
-            			<img src="./img/img-not-available.jpg"/>
-            		</div>
-            		<div id="bloque2">
-            			<h1 id="nombre">Ricardo Borriquero</h1>
-            			<p id="asignatura">Mejor Profesor de Tecnologia</p>
-            			<p id="valorar">Valorar: 
-            				<div class="rating">
-                					<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-            				</div>
-            			</p>
-            		</div>
-            	</li>
-    		</ul>
-        </div> PRINCIPAL -->
 
         <?php require_once('./php/footer.php'); ?>
 
