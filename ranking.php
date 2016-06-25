@@ -16,6 +16,7 @@
         <link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script type="text/javascript" src="js/common.js"></script>
+		<script src="js/ranking.js"></script>
     </head>
     
     <body class="ranking_body">
@@ -52,15 +53,15 @@
             echo '<form id="buscador_rank" action="" class="'.$color.'">';  
         ?>
                 <p id="etq_filter">Filtrar por: </p>
-                <select id="filter">
-                    <option selected>Nombre del Profesor</option>
-                    <option>Asignaturas</option>
-                    <option>Mejores Valorados</option>
+                <select id="select_filter">
+                    <option value="asignaturas" selected>Asignaturas</option>
+                    <option value="total">Valoracion Total</option>
+
+
+
                 </select>
-                <input id="search_rank" type="text">
                 
         <?php //COLOREAMOS EL BOTON DE BUSCAR DEPENDIENDO EL COLOR DEL USUARIO
-            echo '<input id="submit_rank" class="'.$color.'" type="submit" value="Buscar">'; 
             echo '</form>';  
             echo '</div>'; 
         ?> 
@@ -69,30 +70,7 @@
 
             <div id="rank">
                 <?php 
-                    $nrslt = $_SESSION ["numresultrank"];
-                    $k = 0;
-
-                    while ($k < $nrslt)
-                    { 
-                        echo '<li id="profe">';
-
-                        echo '<div id="bloque1">';
-                            load_content($idprofesores[$k], $color);
-                        echo '</div>';
-
-                        echo '<div id="bloque2">';
-                        echo '<h1 id="nombre"> ' . $nombresprofes[$k] .' </h1>';
-                        echo '<p id="asignatura">' . $profesxAsignaturas[$k] . '</p> <br>';
-                        echo '<p id="valorar">Valorar: ' . $valoracionxasig[$k] . '
-                                <div class="rating">
-                                    <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-                                </div>
-                              </p>';
-                        echo '</div>'; //bloque2   
-
-                        echo '</li>'; //profe 
-                        $k++;
-                    } 
+                    include "php/ranking_info.php"; 
                 ?>
             </div>
 

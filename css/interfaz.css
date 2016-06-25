@@ -214,19 +214,19 @@ textarea.green {
 }
 
 img.blue {
-    border: 25px solid #376092;
+    border: 15px solid #376092;
     border-radius: 8px;
     padding: 5px;
 }
 
 img.green {
-    border: 25px solid #118E56;
+    border: 15px solid #118E56;
     border-radius: 8px;
     padding: 5px;
 }
 
 img.purple {
-    border: 25px solid #6A1B9A;
+    border: 15px solid #6A1B9A;
     border-radius: 8px;
     padding: 5px;
 }
@@ -1293,6 +1293,10 @@ body.ranking_body{
     /* margin-right: 2.5%; */
 }
 
+.nombreRanking {
+  font-size: 22px;
+  padding-bottom: 10px;
+}
 li:nth-child(even) { background: #ddd }
 li:nth-child(odd) { background: #fff}
 

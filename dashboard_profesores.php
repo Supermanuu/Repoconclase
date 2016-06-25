@@ -108,19 +108,19 @@
       <!-- _________ BUSQUEDA _________-->
       <div id="busqueda" class="dashboard claro">
           <p class="dashprofes_big_p">Búsqueda <span class="glyphicon glyphicon-search"></span> </p>
-          <p class="dashprofes_small_p" id="busca">Utiliza este servicio para encontrar alumnos u otros usuarios usando filtros en pocos pasos</p>
+          <p class="dashprofes_small_p" id="busca">Enlace al buscador de la web</p>
       </div>
 
       <!-- _________ TUS CLASES _________-->
       <div id="misClases" class="dashboard claro">
 		    	<p class="dashprofes_big_p">Mis Clases <span class="glyphicon glyphicon-education"> </p>
-		    	<p class="dashprofes_small_p" id="gestionaAlumnos">Aqui encontrarás todo lo que necesitas para gestionar tus clases particulares con otros alumnos</p>
+		    	<p class="dashprofes_small_p" id="gestionaAlumnos">Gestiona tus clases particulares con otros alumnos</p>
 		 	</div>
 
       <!-- _________ TUS CURSOS _________-->
 		 	<div id="misCursos" class="dashboard claro">
 		    	<p class="dashprofes_big_p">Mis Cursos <span class="glyphicon glyphicon-list-alt"> </p>
-		    	<p class="dashprofes_small_p" id="gestionaGrupos">Este es el espacio podrás admnistrar todo lo relacionado con tus clases a un grupo de alumnos</p>
+		    	<p class="dashprofes_small_p" id="gestionaGrupos">Crea, Edita, comparte tus conocimientos impartiendo un curso</p>
 		 	</div>
 
       <!-- _________ MIS ALUMNOS _________-->
@@ -132,7 +132,7 @@
       <!-- _________ VALORACIONES Y ESTADISTICAS _________-->
 		 	<div id="valoraciones" class="dashboard claro">
 		    	<p class="dashprofes_big_p">Valoraciones y Estadisticas <span class="glyphicon glyphicon-check"> </p>
-		    	<p class="dashprofes_small_p" id="verValoraciones">Consulta tus valoraciones o las de diferentes grupos y alumnos. ¡Son una parte muy importante de esta web!</p>
+		    	<p class="dashprofes_small_p" id="verValoraciones">Consulta tus valoraciones. ¡Son una parte muy importante de esta web!</p>
 		 	</div>
 
       <!-- _________ RANKING _________-->
@@ -144,7 +144,7 @@
       <!-- _________ MODIFICAR INFORMACION _________-->
 		 	<div id="infoPersonal" class="dashboard claro">
           <p class="dashprofes_big_p">Modificar Información <span class="glyphicon glyphicon-cog"> </p>
-          <p class="dashprofes_small_p" id="editarInfo">Actualiza tu información personal para mostrar al mundo tus más recientes aptitudes</p>
+          <p class="dashprofes_small_p" id="editarInfo">Actualiza tu información personal</p>
       </div>
 
         </div>
