@@ -5,6 +5,30 @@
 	}
 	/* Desde aqui, esta claro que el login es correcto, asique rellenamos la pagina web con la info del alumno */
 
+   //----DESDE EL RANKING DEBEMOS MOSTRAR UNA CONSULTA U OTRA DEPENDIENDO DE LA VISTA SELECCIONADA
+   if(!isset($_GET["view"])){
+     $vista = 1;
+   }
+   else{
+     $vista = $_GET["view"];
+   }
+
+   if ($_SESSION["type"] == "alumno") {  //Alumno
+       $color = "green";
+   }
+   elseif ($_SESSION["type"] == "profesor") {  //Profesor
+       $color = "blue";
+   }
+   elseif ($_SESSION["type"] == "administrador") {  //Admin
+       $color = "purple";
+   }
+
+   cargaInfo($vista);
+
+function cargaInfo($vista){
+
+if($vista == 1){ //vista de valoraciones de los profesores y sus asignaturas
+
    //------------------ CONECTAMOS CON LA BASE DE DATOS ------------------
    $conexion = new mysqli ('localhost', 'profesores', 'profesConEstilo', 'profesoresConClase');
    if ($conexion->connect_error)       // Para versiones de PHP > 5.3.0
@@ -92,8 +116,124 @@
 
       $k++;
    }
-   
 
+   //-----ESCRIBIMOS EN PHP EN EL RANKING
+
+     $nrslt = $_SESSION ["numresultrank"];
+     $k = 0;
+
+     while ($k < $nrslt)
+     { 
+         echo '<li id="profe">';
+
+         echo '<div id="bloque1">';
+             load_content($idprofesores[$k], $color);
+         echo '</div>';
+
+         echo '<div id="bloque2">';
+         echo '<h1 id="nombre" class="nombreRanking"> ' . $nombresprofes[$k] .' </h1>';
+         echo '<p id="asignatura">' . $profesxAsignaturas[$k] . '</p> <br>';
+         echo '<p id="valorar">Valoracion: ' . $valoracionxasig[$k] . '</p>';
+         echo '</div>'; //bloque2   
+
+         echo '</li>'; //profe 
+         $k++;
+     } 
+
+} //if
+
+else{ //vista de valoraciones de los profesores en total
+
+   //------------------ CONECTAMOS CON LA BASE DE DATOS ------------------
+   $conexion = new mysqli ('localhost', 'profesores', 'profesConEstilo', 'profesoresConClase');
+   if ($conexion->connect_error)       // Para versiones de PHP > 5.3.0
+      echo "ERROR: NEW: " . $conexion->connect_error;
+   if (mysqli_connect_error ())        // Para versiones de PHP < 5.3.0
+      echo "ERROR: NEW: " . mysqli_connect_error ();
+   //echo "OK: " . $conexion->host_info . "\n";
+
+   //------------------ OBTENEMOS TODOS LOS PROFESORES REGISTRADOS ------------------
+   // Preparamos la query que vamos a ejecutar: Obtenemos todos los ids de profes registrados
+   if (! ($sentencia = $conexion->prepare ("SELECT id FROM registra WHERE perfil = 'profesor';")))
+   echo "ERROR: PREPARE (1): " . $conexion->error;
+   // Ejecutamos la query en la BD
+   if (!$sentencia->execute ())
+      echo "ERROR: EXECUTE (1): " . $conexion->error;
+   // Vinculamos la salida a otras variables: id del profesor
+   if (!$sentencia->bind_result ($idstotal))
+      echo "ERROR: BIND RESULT (1): " . $conexion->error;
+
+   while ($sentencia->fetch())
+   {
+      $idsprofestotal[] = $idstotal;
+   }
+
+   // Preparamos la query que vamos a ejecutar: Obtenemos todos los datos de profesores que imparten asignaturas
+   if (! ($sentencia = $conexion->prepare ("SELECT sum(valoracion) FROM imparte WHERE idProfe = (?);")))
+   echo "ERROR: PREPARE (1): " . $conexion->error;
+   // ---------------------- Asociamos la variable a la query: Es el id del profesor
+   if (!$sentencia->bind_param ("i", $idsprofestotal[$k])) 
+      echo "ERROR: BIND PARAM (1): " . $conexion->error;
+   // Ejecutamos la query en la BD
+   if (!$sentencia->execute ())
+      echo "ERROR: EXECUTE (1): " . $conexion->error;
+   // Vinculamos la salida a otras variables: Guardamos el perfil y el nombre del alumno
+   if (!$sentencia->bind_result ($sumatotal))
+      echo "ERROR: BIND RESULT (1): " . $conexion->error;
+
+   $valstotal=0;
+   while ($sentencia->fetch())
+   {
+      //nos faltan los nombres de los profesores de la consulta que aparecen en el ranking
+      if (! ($sentencia = $conexion->prepare ("SELECT nombre, apellido1, apellido2 FROM registra WHERE id = (?);")))
+      echo "ERROR: PREPARE (1): " . $conexion->error;
+      // Ejecutamos la query en la BD
+      if (!$sentencia->execute ())
+         echo "ERROR: EXECUTE (1): " . $conexion->error;
+      // Vinculamos la salida a otras variables: id del profesor
+      if (!$sentencia->bind_result ($nombre, $ap1, $ap2))
+         echo "ERROR: BIND RESULT (1): " . $conexion->error;
+
+      while ($sentencia->fetch())
+      {
+         $nombresprofes[] = $nombre . " " . $ap1 . " " . $ap2;
+      }
+
+      $sumatotalxprofe[] = $sumatotal;
+      $valstotal++;
+   }
+
+   $_SESSION ["numvalstotal"] = $valstotal; //numero de resultados obtenidos de la bd
+   
+   $sentencia->free_result ();
+
+   //-----ESCRIBIMOS EN PHP EN EL RANKING
+   $nrslt = $_SESSION ["numresultrank"];
+   $k = 0;
+
+   while ($k < $valstotal)
+   { 
+      echo '<li id="profe">';
+
+      echo '<div id="bloque1">';
+          load_content($idsprofestotal[$k], $color);
+      echo '</div>';
+
+      echo '<div id="bloque2">';
+      echo '<h1 id="nombre" class="nombreRanking"> ' . $nombresprofes[$k] .' </h1>';
+      echo '<p id="valorar">Valoracion total: ' . $sumatotalxprofe[$k] . '</p>';
+      echo '</div>'; //bloque2   
+
+      echo '</li>'; //profe 
+      $k++;
+   } 
+
+
+} //else
+
+}
+
+   //------------------ OBTENEMOS LAS FOTOS DE PERFIL DE CADA PROFESOR EN EL RANKING ------------------
    function load_content($id, $color) {
 
       $mysqli = new mysqli('localhost', 'profesores','profesConEstilo','profesoresConClase');
@@ -122,6 +262,5 @@
       }
 
    }
-
    
 ?>
