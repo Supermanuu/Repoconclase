@@ -36,7 +36,6 @@
 				<div id="editar_left">
 					<form class="form_box" method="post" action="./php/form_editar_contenido.php" enctype="multipart/form-data">
 						<div class="form_etiquetas">
-						<div class="form_avatar">
 							<?php
 
 							if ($_SESSION["type"] == "alumno") {  //Alumno
@@ -62,13 +61,12 @@
 								echo '<input class="form_input" id="field16" type="file" name="CV" accept=".pdf" autocomplete="off"/>    </br></br>';
 								echo '<div class="form_botonera">';
 									echo '<input class='.$color.'  id="form_enviar_contenido" type="submit" value="Subir"/>';
-									echo '<input class='.$color.'  id="form_limpiar_contenido" type="reset" value="Limpiar"/>';
+									echo '<input class='.$color.'  id="form_limpiar_contenido" type="reset" value="Limpiar"/></br></br>';
 								echo '</div>';
 
 							echo '</div>';
 
 							?>
-						</div>
 						</div>
 					</form>
 				</div>
@@ -148,7 +146,7 @@
 
 						echo '<div class="form_botonera">';
 							echo '<input class='.$color.'  id="form_enviar_usuario" type="button" value="Guardar"/>';
-							echo '<input class='.$color.'  id="form_limpiar_usuario" type="reset" value="Limpiar"/>';
+							echo '<input class='.$color.'  id="form_limpiar_usuario" type="reset" value="Limpiar"/></br></br>';
 						echo '</div>';
 
                 	?>
@@ -157,6 +155,19 @@
 				</div>
 
 			</div>
+
+			<?php 
+
+				echo '<form class="form_box" method="post" action="./php/form_dar_baja.php" enctype="multipart/form-data">';
+
+				echo '<div class="form_botonera">';
+					echo '<input class='.$color.'  id="form_dar_baja" type="submit" value="Dar de baja mi cuenta"/></br></br>';
+				echo '</div>';
+
+				echo '</form>';
+
+			?>
+
 		</div>
 		<?php include './php/footer.php'; ?>
 	</body>

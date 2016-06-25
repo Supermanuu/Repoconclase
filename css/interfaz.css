@@ -604,6 +604,12 @@ label.form_checker {
     margin-left: 1.25%;
     margin-right: 2.5%;
   }
+
+  div.form_botonera {
+    text-align: center;
+    line-height: 150%;
+  }
+  
 }
 
 @media (max-width: 768px) {

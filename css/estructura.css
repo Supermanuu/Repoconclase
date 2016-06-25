@@ -511,8 +511,13 @@ div.form_principal {
     padding-bottom: 1.5%;
   }
 
+  form.form_box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
   div#editar_left {
-    flex-basis: 10%;
     order: 1;
     margin: auto;
   }
@@ -527,15 +532,8 @@ div.form_principal {
   }
 
   div#editar_right {
-    flex-basis: 90%;
     order: 2;
     margin: auto;
-  }
-
-  form.form_box {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
   }
 
   div.form_etiquetas {
@@ -554,6 +552,7 @@ div.form_principal {
     flex-basis: 100%;
     order: 3;
   }
+
 }
 
 @media (max-width: 768px) {
@@ -567,19 +566,18 @@ div.form_principal {
     padding-bottom: 3%;
   }
 
+  form.form_box {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
   div#editar_left {
-    flex-basis: 20%;
     order: 1;
     margin: auto;
   }
 
-  div.form_avatar {
-    display:flex;
-    flex-direction:column;
-  }
-
   div.form_image {
-    flex-basis: 20%;
     order: 1;
     margin-right: 5%;
   }
@@ -592,15 +590,8 @@ div.form_principal {
   }
 
   div#editar_right {
-    flex-basis: 80%;
     order: 2;
     margin: auto;
-  }
-
-  form.form_box {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
   }
 
   div.form_etiquetas {
@@ -619,6 +610,7 @@ div.form_principal {
     flex-basis: 100%;
     order: 3;
   }
+
 }
 
 /* ----------Estructura - > detalles_alumnos.html y detalles_profesores.html--------- */
