@@ -1,6 +1,8 @@
 <?php
 
-  include './php/sesion.php';
+include './php/sesion.php';
+
+$_SESSION["volverIndex"] = 0;
 
 ?>
 

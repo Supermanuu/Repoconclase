@@ -35,14 +35,28 @@ header
    
   /* Para mantener los botones dentro del header */
   overflow: hidden;
+
+  display: flex;
+  flex-direction: row;
+}
+
+#pcc_botones {
+
+   width: 100%;
+}
+
+#pcc_azul, #pcc_verde, #pcc_morado {
+
+   min-height: 50px;
+   width: 50%;
 }
 
 button#registrarse, button#login, button#logout, button#volver
 {
    float: right;
    
-   min-width: 10%;
-   min-height: 6%;
+   min-width: 120px;
+   min-height: 50px;
 }
 
 form.blue_search {
@@ -94,13 +108,13 @@ footer
 #index_principal{
    display: flex;
    flex-direction: column;
-   height: 75%;
+   min-height: 75%;
 }
 
 #index_logoPrincipal {
    margin: auto;
    width: 75%;
-   min-height: 35%;
+   min-height: 160px;
 }
 
 #index_loginForm {

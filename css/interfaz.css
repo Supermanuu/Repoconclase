@@ -13,29 +13,39 @@
    cursor: default;
 }
 
-header 
-{
-   background-color : #376092;
+#pcc_azul, #pcc_morado {
+
    background-image: url(../img/profesconclase_azul.png);
-   box-shadow: #576881 3px 3px 3px;
+   min-height: 50px;
+   width: 300px;
+   background-repeat: no-repeat;
+   background-size: contain; 
+  
+}
+
+#pcc_verde {
+
+   background-image: url(../img/profesconclase_verde.png);
+   min-height: 50px;
+   width: 300px;
+   background-repeat: no-repeat;
+   background-size: contain; 
+
 }
 
 header.green
 {
   background-color : #118E56;
-  background-image: url(../img/profesconclase_verde.png);
 }
 
 header.blue
 {
   background-color : #376092;
-  background-image: url(../img/profesconclase_azul.png);
 }
 
 header.purple
 {
   background-color : #6A1B9A;
-  background-image: url(../img/profesconclase_azul.png);
 }
 
 button.green, select.green, input.green, option.green

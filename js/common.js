@@ -29,15 +29,28 @@ $(function() {
 	
 	});
 
-	$("#inicio_lnk").click(function(){
+	$("#pcc_azul").click(function(){
 		
 		$(location).attr('href', './index.php');
 	
 	});
 
+	$("#pcc_verde").click(function(){
+
+        $(location).attr('href', './index.php');
+
+    });
+
+	$("#pcc_morado").click(function(){
+
+        $(location).attr('href', './index.php');
+
+    });
+
+
   	$("#login").click (function () {
        	     $("#index_loginForm2").toggle();
-              $('#index_loginForm>#index_loginForm2>form>#index_entradas>input[name="dni"]').focus ();
+       	     $('#index_loginForm>#index_loginForm2>form>#index_entradas>input[name="dni"]').focus ();
    	});
 
 	$("#index_loginForm2 > form").submit(function(event) {

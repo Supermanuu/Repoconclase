@@ -16,10 +16,6 @@
   }
 
   echo '<footer class=' . $color . '>';
-	echo '<div id="inicio">';
-		echo '<h1>Inicio</h1>';
-		echo '<p id="inicio_lnk">Principal</p><br>';
-	echo '</div>';
 	echo '<div id="contacto">';
 		echo '<h1>Contacto</h1>';
 		echo '<p id="contacto_lnk">Contacta con nosotros</p><br>';
