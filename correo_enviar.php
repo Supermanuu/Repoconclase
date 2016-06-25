@@ -25,20 +25,20 @@
    while ($objeto = $resultado->fetch_assoc()){
 
         //Consulta del nuevo destinatario
-        $query2 = "SELECT nombre,apellido1 from registra where id=" . $objeto["id"];
+        $query2 = "SELECT nombre,apellido1,apellido2 from registra where id=" . $objeto["id"];
 
 	$resultado2 = $mysqli->query($query2) or die ($mysqli->error);
 	$objeto2 = $resultado2->fetch_assoc();
 
 	//Nueva option del select
-	$nombre = $objeto2["nombre"] . " " . $objeto2["apellido1"];
+	$nombre = $objeto2["nombre"] . "-" . $objeto2["apellido1"] . "-" . $objeto2["apellido2"];
 	echo '<option value=' . $i . '>' . $nombre . '</option>';
 	$i++;
 	//Liberamos
 	$resultado2->free();
    }
 
-   if ($i > 1){
+   if ($i > 2){
 	echo '<option value=' . $i . '>Difusion</option>';
    }
 

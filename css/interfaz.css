@@ -277,7 +277,6 @@ img.purple {
 }
 
 #admin_imagen {
-   background-image: url("../img/gato.jpg");
    background-size: contain;
    background-repeat: no-repeat;
 }
@@ -337,6 +336,15 @@ img.purple {
    font-weight: normal;
    font-size: 1.5em;
    margin-top: 5px;
+}
+
+#admin_mostrarUsuario > h1{
+
+   margin-left: 60px;
+   color: white;
+   font-size: 1.5em;
+   text-align: center;
+   margin-top: 60px;
 }
 
 #admin_clave {

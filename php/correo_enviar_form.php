@@ -2,7 +2,7 @@
 
 <html>
     <head id="Hola">
-        <title>Enviando mensaje...</title>
+        <title>Profesores Con Clase</title>
         <meta charset="utf-8"/>
         <meta name="author" content="SWTeam"/>
         <meta name="description" content="cliente_mensajeria"/>
@@ -57,13 +57,14 @@
     }
 
     //Parsear destinatario
-    $nombre = strtok($dest, ' ');
-    $pos = strpos($dest, " ");
-    $apellido1 = substr($dest, ($pos+1), strlen($dest));
+    $nombre = strtok($dest, '-');
+    $pos = strpos($dest, "-");
+    $auxiliar1 = substr($dest, ($pos+1), strlen($dest));
+    $apellido1 = strtok($auxiliar1, '-');
+    $pos = strpos($auxiliar1, "-");
+    $apellido2 = substr($auxiliar1, ($pos+1), strlen($auxiliar1));
 
-    $temp = '"' . $nombre . '"';
-    $temp2 = '"' . $apellido1 . '"';
-    $query = "SELECT id FROM registra where nombre=" . $temp . " and apellido1=" . $temp2;
+    $query = "SELECT id FROM registra where nombre='$nombre' and apellido1='$apellido1' and apellido2='$apellido2'";
     $resultado = $mysqli->query($query) or die ($mysqli->error);
     $objeto = $resultado->fetch_assoc();
 
