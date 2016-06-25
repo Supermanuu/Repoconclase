@@ -26,7 +26,7 @@
             </div>
             <div class="form_contenido">
                 <h1 class="my_h1">Formulario enviado</h1>
-                <p class="blue">Se ha procesado su solicitud. Por favor, continúe navegando por nuestra página.</h1>
+                <p>Se ha procesado su solicitud. Por favor, continúe navegando por nuestra página.</p>
             </div>
         </div>
         <?php include './php/footer.php'; ?>

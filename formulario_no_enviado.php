@@ -26,8 +26,8 @@
             </div>
             <div class="form_contenido">
                 <h1 class="my_h1">Formulario no enviado</h1>
-                <p class="blue">Ha habido un problema procesando su solicitud. Por favor, vuelva a intentarlo. 
-                Si comprueba que el problema persiste puede contactar con nosotros mediante la sección contacto a pie de página. Disculpe las molestias.</h1>
+                <p>Ha habido un problema procesando su solicitud. Por favor, vuelva a intentarlo. 
+                Si comprueba que el problema persiste puede contactar con nosotros mediante la sección contacto a pie de página. Disculpe las molestias.</p>
             </div>
         </div>
         <?php include './php/footer.php'; ?>
