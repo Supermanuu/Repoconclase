@@ -14,7 +14,7 @@ $(function() {
 
 	$("#volver").click(function(){
 		
-		$(location).attr('href', './php/volverIndex.php'); //php que redirige segun tu sesion
+		$(location).attr('href', './php/volverIndex.php');
 
 	});
 	$("#contacto_lnk").click(function(){

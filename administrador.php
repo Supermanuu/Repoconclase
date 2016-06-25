@@ -1,10 +1,6 @@
 <?php
 
-session_start();
-
-if (!isset($_SESSION["login"]) || $_SESSION["login"] == false) { //Sesion no iniciada
-   header('Location: index.php');
-}
+  include './php/sesion.php';
 
 ?>
 

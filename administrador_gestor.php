@@ -1,8 +1,7 @@
-<?php 
-	session_start(); 
-	if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){
-        header('Location: ./index.php');
-    }
+<?php
+
+  include './php/sesion.php';
+
 ?>
 
 <html>

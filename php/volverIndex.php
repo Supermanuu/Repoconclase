@@ -1,15 +1,29 @@
 <?php
 
-  session_start();
+	session_start();
 
-	if ($_SESSION["type"] == "alumno"){ //Alumno
-		header('Location: ../index_alumnos.php');
+	if (!isset($_SESSION["login"]) || $_SESSION["login"] == false) {
+		//header('Location: ../index.php');
 	}
-	elseif ($_SESSION["type"] == "profesor"){ //Profesor
-		header('Location: ../dashboard_profesores.php');
+
+	if(!isset($_COOKIE[$_SESSION["type"]])) {
+	  	session_destroy();
+	  	header('Location: ../sesion_expirada.php');
 	}
-	elseif ($_SESSION["type"] == "administrador") { //Admin
-		header('Location: ../administrador.php');
+	else {
+
+	  	setcookie($_SESSION["type"], $_SESSION["id_user"], time() + 60*5, "/");
+
+		if ($_SESSION["type"] == "alumno"){ //Alumno
+			header('Location: ../index_alumnos.php');
+		}
+		elseif ($_SESSION["type"] == "profesor"){ //Profesor
+			header('Location: ../dashboard_profesores.php');
+		}
+		elseif ($_SESSION["type"] == "administrador") { //Admin
+			header('Location: ../administrador.php');
+		}
+
 	}
 
 ?>

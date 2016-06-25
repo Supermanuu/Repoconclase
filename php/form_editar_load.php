@@ -1,4 +1,4 @@
-<?php session_start();
+<?php
 	
 	function error() {
 		if ($_SESSION["type"] == "administrador"){
