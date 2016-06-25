@@ -16,6 +16,10 @@
         <meta name="author" content="Sistemas web 15/16">
         <meta name="description" content="Editar un usuario.">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+		<meta http-equiv="Expires" content="0">
+		<meta http-equiv="Last-Modified" content="0">
+		<meta http-equiv="Cache-Control" content="no-cache, mustrevalidate">
+		<meta http-equiv="Pragma" content="no-cache">
         <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/reset.css"/>
       	<link rel="stylesheet" type="text/css" href="css/estructura.css"/>
