@@ -34,7 +34,6 @@
       if ($_REQUEST ["b"] == 'al')
       {
          $lista = $_SESSION ["alumnos"];
-         // Buscar info de alumnos
          $descr = $_SESSION ["descr_alumnos"];
          $nelems = $_SESSION ["nalumnos"];
          $ids = $_SESSION ["id_alumnos"];
@@ -42,7 +41,6 @@
       else if ($_REQUEST ["b"] == 'pr')
       {
          $lista = $_SESSION ["profesores"];
-         // Buscar info de profesores
          $descr = $_SESSION ["descr_profesores"];
          $nelems = $_SESSION ["nprofesores"];
          $ids = $_SESSION ["id_profesores"];
