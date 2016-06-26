@@ -37,7 +37,7 @@
 				<h1 class="my_h1">
                <?php
                   if (isset ($_REQUEST ["cl"])) echo 'Nueva clase'; 
-                  else echo 'Nuevo grupo';
+                  else echo 'Nuevo curso';
                ?>
             </h1>
 	
