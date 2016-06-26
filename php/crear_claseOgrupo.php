@@ -128,8 +128,8 @@
                 <?php include './php/login.php'; ?>
             </div>
             <div class="form_contenido">
-                <h1 class="my_h1">Su sesión ha expirado</h1>
-                <p>Por favor, vuelva a iniciar sesión.</p>
+                <h1 class="my_h1">¡Listo!</h1>
+                <p>¡Su clase ha sido creada!</p>
             </div>
         </div>
         <?php include './php/footer.php'; ?>
