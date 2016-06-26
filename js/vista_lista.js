@@ -140,7 +140,7 @@
       else
       {
          // Si es profesor, vamos a crear clase o grupo
-         if ($tablla == 'al')
+         if ($tabla == 'al')
             location.href += '&c=mis';
          else if ($tabla == 'cl')
             location.href = './crear.php?cl';
