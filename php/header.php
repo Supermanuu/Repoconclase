@@ -4,8 +4,8 @@
      echo '<header class="blue">';
      echo '<div id=pcc_azul></div>';
      echo '<div id=pcc_botones>';
-     echo '<button class="blue" id="login">Login</button>';
      echo '<button class="blue" id="registrarse">Registrarse</button>';
+     echo '<button class="blue" id="login">Login</button>';
      echo '</div>';
      echo '</header>';
   }
