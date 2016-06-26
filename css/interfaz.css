@@ -399,6 +399,76 @@ img.purple {
     background-color: #223A57;   
 }
 
+/* --------Buscador -> busqueda.php ----------- */
+
+#buscador_azul {
+   background-color: #4f81bd;  
+   box-shadow: 5px 5px 5px #376092;          
+}
+
+#buscador_azul > #search {
+   border: 1px solid #376092;
+   font: normal 13px;
+   font-family: 'Ubuntu', sans-serif;
+   background: #4f81bd;
+   color: white;        
+}
+
+#buscador_azul > #submit {       
+   background-color: #4f81bd;  
+    border-width: 1px;
+    border-style: solid;
+    border-color: #376092;
+    cursor: pointer;
+    font: bold 14px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #ffffff;  
+}
+
+#buscador_azul > #submit:hover {       
+    background-color: #376092;   
+}
+
+#buscador_verde {
+   background-color: #6AC46E;  
+   box-shadow: 5px 5px 5px #118E56;          
+}
+
+#buscador_verde > #search {
+   border: 1px solid #6AC46E;
+   font: normal 13px;
+   font-family: 'Ubuntu', sans-serif;
+   background: #118E56;
+   color: white;        
+}
+
+#buscador_verde > #submit {       
+   background-color: #6AC46E;  
+    border-width: 1px;
+    border-style: solid;
+    border-color: #118E56;
+    cursor: pointer;
+    font: bold 14px;
+    font-family: 'Ubuntu', sans-serif;
+    color: #ffffff;  
+}
+
+#buscador_verde > #submit:hover {       
+    background-color: #118E56;   
+}
+
+#busqueda_clave {
+   text-align: right;
+   color: white;
+   font-size: 1.2em;
+}
+
+#busqueda_valor {
+   text-align: left;
+   color: white;
+   font-size: 1em;
+}
+
 /*  --------Interfaz - > correo.html ----------- */
 
 #correo_body {

@@ -10,7 +10,7 @@
         <meta charset="utf-8">
         <meta name="author" content="Sistemas web 15/16">
         <meta name="description" content="Contacta con nosotros.">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
         <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" type="text/css" href="css/reset.css"/>
       	<link rel="stylesheet" type="text/css" href="css/estructura.css"/>
@@ -20,28 +20,30 @@
         <script src="js/common.js"></script>
     </head>
     <body class="form_body">
-		<?php 
+		<?php
 			$_SESSION["volverIndex"] = 1; 
 			include './php/header.php'; 
 		?>
 
 		<div class="form_principal">
-
-			<div id="admin_buscador">
-
+			<?php
+			if ($_SESSION["type"] == "alumno")
+			   echo '<div id=buscador_verde>';
+			else
+			   echo '<div id=buscador_azul>';
+			?>
 				<input id="search" list="browsers">
 				<datalist id="browsers" multiple>
 				</datalist>
 				<button id="submit">Buscar</button>
-        		</div>
-        		<div id="admin_mostrarUsuario">
-	  				<h1>No hay ningun usuario seleccionado</h1>
-				</div>
 
+        		</div>
+        		<div id="busqueda_mostrar">
+	  		   <h1>No hay ningun usuario seleccionado</h1>
 			</div>
 
 		</div>
 
-	<?php include './php/footer.php'; ?>
+	        <?php include './php/footer.php'; ?>
 	</body>
 </html>

@@ -1,13 +1,13 @@
 <?php
 
-    function esProfesor($id, $mysqli){
+    function esProfesor($id, $mysqli, $color){
 
         //Cursos impartidos
 
         $consulta_cus = "SELECT nombre_curso from cursos where id_profesor='$id'";
 
         $resultado_cus = $mysqli->query($consulta_cus);
-        echo '<select class=purple>';
+        echo '<select class=' . $color . '>';
 
         while ($objeto_cus = $resultado_cus->fetch_assoc()){
 
@@ -23,7 +23,7 @@
         $consulta_cls = "SELECT id_asignatura from clases where id_profesor='$id'";
 
         $resultado_cls = $mysqli->query($consulta_cls);
-        echo '<select class=purple>';
+        echo '<select class=' . $color . '>';
 
         while ($objeto_cls = $resultado_cls->fetch_assoc()){
 
@@ -44,15 +44,14 @@
 
     }
 
-    function esDatoComun($user, $objeto){
+    function esDatoComun($objeto){
 
-        echo '<div id="admin_valor">';
+        echo '<div id="busqueda_valor">';
 
-        echo '<p>'.$user.'</p>';
-        echo '<p>'.$objeto["correo"].'</p>';
         echo '<p>'.$objeto["nombre"].'</p>';
         echo '<p>'.$objeto["apellido1"].'</p>';
         echo '<p>'.$objeto["apellido2"].'</p>';
+        echo '<p>'.$objeto["correo"].'</p>';
         echo '<p>'.$objeto["nacimiento"].'</p>';
         echo '<p>'.$objeto["comunidad"].'</p>';
         echo '<p>'.$objeto["movil"].'</p>';
@@ -61,6 +60,7 @@
     //PHP encargado de mostrar toda la informacion de un usuario
 
     $user = $_REQUEST["user"];
+    $color = $_REQUEST["color"];
 
     if (!isset($user)){	//No se ha introducido criterio
         echo '<h1>No hay ningun usuario seleccionado</h1>';
@@ -71,11 +71,11 @@
 
         //Parsear texto de busqueda
 
-	    $nombre = strtok($dest, '-');
-	    $pos = strpos($dest, "-");
-	    $auxiliar1 = substr($dest, ($pos+1), strlen($dest));
-	    $apellido1 = strtok($auxiliar1, '-');
-	    $pos = strpos($auxiliar1, "-");
+	    $nombre = strtok($user, ' ');
+	    $pos = strpos($user, " ");
+	    $auxiliar1 = substr($user, ($pos+1), strlen($user));
+	    $apellido1 = strtok($auxiliar1, ' ');
+	    $pos = strpos($auxiliar1, " ");
 	    $apellido2 = substr($auxiliar1, ($pos+1), strlen($auxiliar1));
 
         //Conectamos
@@ -87,9 +87,7 @@
         }
 
         //Consultas a la base de datos
-
-        $consulta_reg = "SELECT idUser from usuarios where nombre='$nombre' and apellido1 = '$apellido1' and apellido2 = '$apellido2'";
-
+        $consulta_reg = "SELECT id from registra where nombre='$nombre' and apellido1 = '$apellido1' and apellido2 = '$apellido2'";
         $resultado_reg = $mysqli->query($consulta_reg) or die($mysqli->error);
         $objeto_reg = $resultado_reg->fetch_assoc();
 
@@ -98,11 +96,11 @@
             exit();
         }
 
-		$consulta_reg2 = "SELECT * from registra where id='$objeto_reg[idUser]'";
+		$consulta_reg2 = "SELECT * from registra where id='$objeto_reg[id]'";
 		$resultado_reg2 = $mysqli->query($consulta_reg2) or die($mysqli->error);
 		$objeto_reg2 = $resultado_reg2->fetch_assoc();
 
-        $resultado_fc = "SELECT folder from folders where id='$objeto_reg[idUser]'";
+        $resultado_fc = "SELECT folder from folders where id='$objeto_reg[id]'";
 
         $resultado_fc = $mysqli->query($resultado_fc) or die($mysqli->error);
         $objeto_fc = $resultado_fc->fetch_assoc();
@@ -116,41 +114,39 @@
 
         //Foto y curriculum
 
-        echo '<div id="admin_imagen">';
+        echo '<div id="buscador_imagen">';
             echo '<img src='.$objeto_fc["folder"].'foto height=250 width=250>';
             echo '<br><br><a href='.$objeto_fc["folder"].'cv target=_blank>Curriculum</a>';
-	    echo '<br><br><button class=purple id=banea>Eliminar Usuario</button>';
         echo '</div>';
 
         //Comun a profesores y alumnos
 
-        echo '<div id="admin_datos">';
-        echo '<div id="admin_clave">';
-        echo '<p>Usuario :</p>';
-        echo '<p>Correo :</p>';
+        echo '<div id="busqueda_datos">';
+        echo '<div id="busqueda_clave">';
         echo '<p>Nombre :</p>';
         echo '<p>Apellido1 :</p>';
         echo '<p>Apellido2 :</p>';
-	    echo '<p>Nacimiento : </p>'; 
+        echo '<p>Correo :</p>';
+        echo '<p>Nacimiento : </p>';
         echo '<p>Comunidad :</p>';
         echo '<p>Movil :</p>';
 
         if ($objeto_reg2["perfil"] == "alumno"){  //Info del alumno
             echo '</div>';
-            esDatoComun($user, $objeto_reg2);
+            esDatoComun($objeto_reg2);
         }
         elseif ($objeto_reg2["perfil"] == "profesor") {   //Info del profesor
             echo '<p>Cursos impartidos :</p>';
             echo '<p>Clases impartidas :</p>';
             echo '</div>';
-            esDatoComun($user, $objeto_reg2);
-            esProfesor($objeto_reg2["id"], $mysqli);
+            esDatoComun($objeto_reg2);
+            esProfesor($objeto_reg2["id"], $mysqli, $color);
         }
 
         echo '</div>';
 
         //Liberamos
-	    $resultado_reg2->free();
+	$resultado_reg2->free();
         $resultado_reg->free();
         $resultado_fc->free();
         $mysqli->close();

@@ -1,5 +1,11 @@
 <?php
 
+        $mysqli = new mysqli('localhost', 'profesores', 'profesConEstilo', 'profesoresConClase');
+	if(mysqli_connect_errno()){
+           echo '<h1 class=my_hy>error interno</h1>';
+	   exit();
+	}
+
 	$search = $_REQUEST["search"];
 	$search = htmlspecialchars(trim(strip_tags($search)));
 
@@ -9,7 +15,7 @@
 
 	//Completamos cuadro predectible con nom, ap1, ap2
 
-    $esApellido1 = 0;
+        $esApellido1 = 0;
 	$esApellido2 = 0;
 	$auxiliar1 = strtok($search, ' ');
 
@@ -23,7 +29,7 @@
 	   }
 	}
 
-	//Relaciones : 
+	//Relaciones :
 	//nombre <-> auxiliar1
 	//ap1 <-> auxiliar3, si esA1 = 1
 	//ap2 <-> auxiliar4, si esA2 = 1
@@ -38,18 +44,23 @@
 	   $consulta = "SELECT distinct nombre, apellido1, apellido2 FROM registra WHERE apellido1 LIKE '".$auxiliar3."%' AND nombre LIKE '".$auxiliar1."%' AND apellido2 LIKE '".$auxiliar4."%'";
 	}
 
-    $resultado = $mysqli->query($consulta) or die($mysqli->error);
+        $resultado = $mysqli->query($consulta) or die($mysqli->error);
 
 	while($objeto = $resultado->fetch_assoc()){
 
 	if ($esApellido1 == 0 && $esApellido2 == 0) {//busqueda nombre
-		echo '<option>'.$objeto["user"].'</>';
+		echo '<option>'.$objeto["nombre"].'</>';
 	}
 	elseif ($esApellido1 == 1 && $esApellido2 == 0) {//busqueda nombre y apellido1
-		echo '<option>'.$objeto["nombre"]. '-' .$objeto["apellido1"].'</>';
+		echo '<option>'.$objeto["nombre"]. ' ' .$objeto["apellido1"].'</>';
 	}
 	elseif ($esApellido1 == 1 && $esApellido2 == 1) {//busqueda nombre y apellido1
-		echo '<option>'.$objeto["nombre"]. '-' .$objeto["apellido1"]. '-' .$objeto["apellido2"].'</>';
+		echo '<option>'.$objeto["nombre"]. ' ' .$objeto["apellido1"]. ' ' .$objeto["apellido2"].'</>';
  	}
+
+	}
+
+        $resultado->free();
+        $mysqli->close();
 
 ?>
