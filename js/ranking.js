@@ -1,33 +1,33 @@
 $(function(){
 	
-   var cargaColor = function(){
+	var cargaColor = function(){
 
-     if ($("header").attr('class') == "blue")
-	return "blue";
-     else
-        return "green";
+		if ($("header").attr('class') == "blue")
+			return "blue";
+		else
+			return "green";
 
-   }; 
+	}; 
 
-   var cargaDetalles = function(vista) {
+	var cargaDetalles = function(vista) {
 
-        color = cargaColor();
+		color = cargaColor();
 
-	pagina = "php/ranking_info.php?view=" + vista + "&color=" + color;
+		pagina = "php/ranking_info.php?view=" + vista + "&color=" + color;
 
-	$("#rank").load(pagina);
-   };
+		$("#rank").load(pagina);
+	};
 
-   $("#buscador_rank > select").change(function(){
+	$("#buscador_rank > select").change(function(){
 
-	option = $(this).val();
- 	if (option == "asignaturas"){
-	   cargaDetalles ('1');
-        }
-	else if(option == "total"){
-	   cargaDetalles ('2');
-        }
-		
-   });
+		option = $(this).val();
+		if (option == "asignaturas"){
+			cargaDetalles ('1');
+		}
+		else if(option == "total"){
+			cargaDetalles ('2');
+		}
+
+	});
 
 })

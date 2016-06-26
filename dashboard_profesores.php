@@ -53,7 +53,9 @@
               while ($k < $nc)
               {  
                 echo '<li>';
+                echo '<p id="tusEventos" class="dashprofes_small_p dashprofes_info">';
                 echo $clases[$k] . "  " . $datosClases[$k];   
+                echo '</p>';
                 echo '</li>';
                 $k++;
               } 

@@ -51,7 +51,6 @@ if($vista == 1){ //vista de valoraciones de los profesores y sus asignaturas
       $numresult++;
    }
    $_SESSION ["numresultrank"] = $numresult; //numero de resultados obtenidos de la bd
-   
    $sentencia->free_result ();
 
 
@@ -160,8 +159,8 @@ else{ //vista de valoraciones de los profesores en total
 
    while ($sentencia->fetch())
    {
-	$auxiliar[] = $idstotal;
-	$auxiliar1++;
+   	$auxiliar[] = $idstotal;
+   	$auxiliar1++;
    }
 
    // Consulta suma total valoracion de un profesor
@@ -253,10 +252,9 @@ else{ //vista de valoraciones de los profesores en total
 
          if (!is_null($usuario)) {
 
-            $foto = $usuario["folder"] . 'foto';
-
+            $foto = ".." . $usuario["folder"] . 'foto';
             if (file_exists($foto))
-               echo '<img class='.$color.' src="'.$usuario["folder"].'foto'.'" height="256" width="256">';
+               echo '<img class='.$color.' src="'.$foto.'" height="256" width="256">';
             else
                echo '<img class='.$color.' src="img/avatar.jpg" height="256" width="256">';
 

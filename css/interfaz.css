@@ -904,16 +904,25 @@ div.oscuro{
 
 /*-----Lista slider con los proximos eventos-----*/
 
-#slider { /*contenedor del slider*/
-  margin: auto;
-  position: relative;
-  height: 40px;
-  overflow: hidden;
+@media (min-width: 768px){ /*Escritorio*/
+  #slider { /*contenedor del slider*/
+    margin: auto;
+    position: relative;
+    height: 40px;
+    overflow: hidden;
+  }
+
+  #listaOculta {
+    display: none; /*ocultamos todos los elems de la lista*/
+  }
 }
 
-#listaOculta {
-  display: none; /*ocultamos todos los elems de la lista*/
+@media (max-width: 768px){ /*Movil*/
+  #slider { /*contenedor del slider*/
+    display: none;
+  }
 }
+
 
 #listaCorreo {
   width: 100%;
