@@ -11,6 +11,6 @@ if(!isset($_COOKIE[$_SESSION["type"]])) {
   header('Location: ./sesion_expirada.php');
 }
 else
-  setcookie($_SESSION["type"], $_SESSION["id_user"], time() + 60*5, "/");
+  setcookie($_SESSION["type"], $_SESSION["id_user"], time() + 60*30, "/");
 
 ?>

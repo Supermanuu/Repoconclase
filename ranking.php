@@ -1,6 +1,5 @@
 <?php 
     include './php/sesion.php';
-    include "php/ranking_info.php";
 ?>
 
 <html>
@@ -56,9 +55,6 @@
                 <select id="select_filter">
                     <option value="asignaturas" selected>Asignaturas</option>
                     <option value="total">Valoracion Total</option>
-
-
-
                 </select>
                 
         <?php //COLOREAMOS EL BOTON DE BUSCAR DEPENDIENDO EL COLOR DEL USUARIO

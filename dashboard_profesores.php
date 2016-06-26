@@ -83,12 +83,11 @@
             }
             else{ //hay algun mensaje sin leer
 
-              echo '<p class="dashprofes_small_p dashprofes_info">Nuevos correos: ' . $_SESSION ["ncorreos"] . ' </p>';
-              if($_SESSION ["ncorreos"] > 4){
+              $nmen = $_SESSION ["ncorreos"];
+              echo '<p class="dashprofes_small_p dashprofes_info">Nuevos correos: ' . $nmen . ' </p>';
+
+              if($nmen > 4){
                 $nmen = 3; //mostramos maximo 3 mensajes
-              }
-              else {
-                $nmen = $_SESSION ["ncorreos"];
               }
 
               $m = 0;
@@ -97,7 +96,7 @@
               {  
                 echo '<li>';
                 echo '<p class="dashprofes_small_p " id="nuevosMensajes">';
-                echo $correo_nuevo[$k];   
+                echo $correo_nuevo[$m];   
                 echo '</p>';
                 echo '</li>';
                 $m++;
@@ -140,7 +139,7 @@
       <!-- _________ RANKING _________-->
 		 	<div id="ranking" class="dashboard claro">
 		    	<p class="dashprofes_big_p">Ranking <span class="glyphicon glyphicon-star-empty"> </p>
-		    	<p class="dashprofes_small_p" id="verTop">¡Comprueba tu puesto en la clasificación de Profesores y demuestra quien tiene mas Clase!</p>
+		    	<p class="dashprofes_small_p" id="verTop">¡Comprueba tu puesto en nuestra clasificación!</p>
 		 	</div>
 
       <!-- _________ MODIFICAR INFORMACION _________-->
