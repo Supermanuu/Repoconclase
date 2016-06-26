@@ -37,13 +37,13 @@
    $descripcion = $_REQUEST ["descripcion"];
    $precio = $_REQUEST ["precio"];
    
-   $hini = htmlspecialchars (trim (strip_tags ($hini)));
-   $hfin = htmlspecialchars (trim (strip_tags ($hfin)));
-   $fini = htmlspecialchars (trim (strip_tags ($fini)));
-   $ffin = htmlspecialchars (trim (strip_tags ($ffin)));
+   $hini = '\'' . htmlspecialchars (trim (strip_tags ($hini))) . '\'';
+   $hfin = '\'' . htmlspecialchars (trim (strip_tags ($hfin))) . '\'';
+   $fini = '\'' . htmlspecialchars (trim (strip_tags ($fini))) . '\'';
+   $ffin = '\'' . htmlspecialchars (trim (strip_tags ($ffin))) . '\'';
    $asignatura = htmlspecialchars (trim (strip_tags ($asignatura)));
-   $nombre_curso = htmlspecialchars (trim (strip_tags ($nombre_curso)));
-   $descripcion = htmlspecialchars (trim (strip_tags ($descripcion)));
+   $nombre_curso = '\'' . htmlspecialchars (trim (strip_tags ($nombre_curso))) . '\'';
+   $descripcion = '\'' . htmlspecialchars (trim (strip_tags ($descripcion))) . '\'';
    $precio = htmlspecialchars (trim (strip_tags ($precio)));
    
    $dias_str = array ( 0 => 'L', 1 => 'M', 2 => 'X', 3 => 'J', 4 => 'V', 5 => 'S', 6 => 'D');
@@ -62,7 +62,7 @@
       }
       $i++;
    }
-   $dias_semana = $dias_semana;
+   $dias_semana = '\'' . $dias_semana . '\'';
    
    // Conectamos con la base de datos
    $conexion = new mysqli ('localhost', 'profesores', 'profesConEstilo', 'profesoresConClase');
