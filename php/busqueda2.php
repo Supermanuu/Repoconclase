@@ -23,7 +23,7 @@
         $consulta_cls = "SELECT id_asignatura from clases where id_profesor='$id'";
 
         $resultado_cls = $mysqli->query($consulta_cls);
-        echo '<select class=' . $color . '>';
+        echo '<select id=clase class=' . $color . '>';
 
         while ($objeto_cls = $resultado_cls->fetch_assoc()){
 
@@ -42,6 +42,16 @@
         echo '</select><br>';
         $resultado_cls->free();
 
+        //Valorar Clase impartida
+
+        if ($color == "green") {//Si es un alumno puede valorar
+
+            echo '<p>Valora la clase seleccionada</p>';
+            echo '<input type=number id=quantity min=1 max=10>';
+            echo '<textarea id=texto class=green></textarea>';
+            echo '<input type=text id=esc value='. $id . '>';
+            echo '<button id=valora>Enviar</button>';
+        }
     }
 
     function esDatoComun($objeto){
@@ -146,7 +156,7 @@
         echo '</div>';
 
         //Liberamos
-	$resultado_reg2->free();
+	    $resultado_reg2->free();
         $resultado_reg->free();
         $resultado_fc->free();
         $mysqli->close();

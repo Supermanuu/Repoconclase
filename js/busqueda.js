@@ -23,4 +23,23 @@ $(function(){
 
 	});
 
+	$("#valora").click(function(){
+
+		texto = $("#texto").val();
+		valoracion = $("#quantity").val();
+		option = $("#clase").val();
+		id = $("#esc").val();
+
+		if (texto == "" || valoracion == "" || option == ""){
+			alert("Debes seleccionar una clase, una numero de valoracion y un comentario");
+		}
+		else {
+
+			pagina = "php/valora.php?q=" + valoracion + "&i=" + id + "&t=" + texto + "&op=" + option;
+			$(location).attr('href', pagina);
+
+		}
+
+	});
+
 });
