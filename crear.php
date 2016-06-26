@@ -1,23 +1,32 @@
 <?php
 
-	//include './php/sesion.php';
+   include './php/sesion.php';
+   include './php/getAsignaturas.php';
+   $_SESSION ["volverIndex"] = 1;
 
+   // Forma un elemento de la lista de asignaturas
+   function asignatura ($n, $nom, $ident)
+   {
+      echo '<option class="form_option" value="' . $ident . '"';
+      if ($n == 0) echo ' selected';
+      echo '>' . $nom . '</option>';
+   }
 ?>
 
 <html lang="es-ES">
     <head>
-        <title id="Title">Profesores con clase</title>
-        <meta charset="utf-8">
-        <meta name="author" content="SWTeam"/>
-        <meta name="description" content="Crear clases">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-        <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-        <link rel="stylesheet" type="text/css" href="css/reset.css"/>
-      	<link rel="stylesheet" type="text/css" href="css/estructura.css"/>
-      	<link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
-      	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-      	<script src="js/common.js"></script>
-      	<script src="js/clase_grupo.js"></script>
+      <title id="Title">Profesores con clase</title>
+      <meta charset="utf-8">
+      <meta name="author" content="SWTeam"/>
+      <meta name="description" content="Crear clases">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+      <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+      <link rel="stylesheet" type="text/css" href="css/estructura.css"/>
+      <link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+      <script src="js/common.js"></script>
+      <script src="js/clase_grupo.js"></script>
     </head>
     <body class ="form_body">
 		<?php
@@ -25,9 +34,15 @@
 		?>
 		<div class="form_principal">
 			<div class="form_contenido">
-				<h1 class="my_h1">Nueva clase/grupo</h1>
+				<h1 class="my_h1">
+               <?php
+                  if (isset ($_REQUEST ["cl"])) echo 'Nueva clase'; 
+                  else echo 'Nuevo grupo';
+               ?>
+            </h1>
 	
-				<form id="form_crear" class="form_box" method="post" action="">
+				<form id="form_crear" class="form_box" method="post" 
+               action="<?php if (isset ($_REQUEST ["cl"])) echo './php/crear_claseOgrupo.php?cl'; else echo './php/crear_claseOgrupo.php'; ?>">
 					<div class="form_etiquetas">
 
 						<text class="blue" id="form_text">Horarios de la clase</text></br>
@@ -79,8 +94,14 @@
 						</br></br>
 
 							<select class="blue" id="field6" name="asignatura">
-  								<option class="form_option" value="valor1" selected>Valor 1</option>
-  								<option class="form_option" value="valor2">Valor 2</option><
+  								<?php
+                           $ind = 0;
+                           while ($ind < $nelems)
+                           {
+                              asignatura ($ind, $asignaturas [$ind], $ids [$ind]);
+                              $ind++;
+                           }
+                        ?><
 							</select><label class="form_checker" id="input_chk6">  <</label></br>
 
 						</br></br>
