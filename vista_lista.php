@@ -33,7 +33,7 @@
 	<head>
 		<title>Profesores con clase</title>
 		<meta charset="utf-8"/>
-      <meta name="author" content="Sistemas web 15/16">
+      <meta name="author" content="SWTeam"/>
       <meta name="description" content="Muestra listas de cosas">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
       <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>

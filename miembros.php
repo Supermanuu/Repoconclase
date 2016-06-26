@@ -5,7 +5,7 @@
     <head>
         <title id="Title">Profesores con clase</title>
         <meta charset="utf-8"> <!--Codificación utf8-->
-        <meta name="author" content="Sistemas web 15/16"> <!--Autor del documento HTML-->
+        <meta name="author" content="SWTeam"/> <!--Autor del documento HTML-->
         <meta name="description" content="¿Quiénes somos?"> <!--Descripción del HTML-->
         <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
         <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
