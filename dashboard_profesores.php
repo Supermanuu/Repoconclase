@@ -49,9 +49,10 @@
 
                //lista oculta que contendra los prox eventos del profesor y nos servira para imprimir su primer elem en el parrafo de abajo
               $k = 0;
-              echo '<ul id="listaOculta">';
+              echo '<div id="slider">'; //-------------------generamos el slider
+              echo '<ul>';
               while ($k < $nc)
-              {  
+              {   
                 echo '<li>';
                 echo '<p id="tusEventos" class="dashprofes_small_p dashprofes_info">';
                 echo $infoClases[$k] . "  " . $datosClases[$k];   
@@ -60,12 +61,6 @@
                 $k++;
               } 
               echo '</ul>';
-
-              echo '<div id="slider">';
-              echo '<p id="tusEventos" class="dashprofes_small_p dashprofes_info"> </p>';
-              /* flechitas para pasar el slider */
-              echo '<div id="btn-prev" class="btn-prev" type="button"> &#60 </div>';
-              echo '<div id="btn-next" class="btn-next" type="button"> &#62 </div>';
               echo '</div>';
             }                           //-------------------slider 
           ?>

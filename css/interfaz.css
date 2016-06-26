@@ -985,16 +985,9 @@ div.oscuro{
     height: 40px;
     overflow: hidden;
   }
-
-  #listaOculta {
-    display: none; /*ocultamos todos los elems de la lista*/
-  }
 }
 
 @media (max-width: 768px){ /*Movil*/
-  #slider { /*contenedor del slider*/
-    display: none;
-  }
 }
 
 
