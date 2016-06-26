@@ -1,4 +1,6 @@
 <?php
+   session_start ();
+
    // Comprobacion de seguridad
    if (!isset ($_SESSION ["login"]) || !isset ($_SESSION ["id_user"]) || !isset ($_SESSION ["type"]))
       header ('Location: index.php');
@@ -35,13 +37,13 @@
    $descripcion = $_REQUEST ["descripcion"];
    $precio = $_REQUEST ["precio"];
    
-   $hini = htmlspecialchars (trim (strip_tags ($hini)));
-   $hfin = htmlspecialchars (trim (strip_tags ($hfin)));
-   $fini = htmlspecialchars (trim (strip_tags ($fini)));
-   $ffin = htmlspecialchars (trim (strip_tags ($ffin)));
+   $hini = '\'' . htmlspecialchars (trim (strip_tags ($hini))) . '\'';
+   $hfin = '\'' . htmlspecialchars (trim (strip_tags ($hfin))) . '\'';
+   $fini = '\'' . htmlspecialchars (trim (strip_tags ($fini))) . '\'';
+   $ffin = '\'' . htmlspecialchars (trim (strip_tags ($ffin))) . '\'';
    $asignatura = htmlspecialchars (trim (strip_tags ($asignatura)));
-   $nombre_curso = htmlspecialchars (trim (strip_tags ($nombre_curso)));
-   $descripcion = htmlspecialchars (trim (strip_tags ($descripcion)));
+   $nombre_curso = '\'' . htmlspecialchars (trim (strip_tags ($nombre_curso))) . '\'';
+   $descripcion = '\'' . htmlspecialchars (trim (strip_tags ($descripcion))) . '\'';
    $precio = htmlspecialchars (trim (strip_tags ($precio)));
    
    $dias_str = array ( 0 => 'L', 1 => 'M', 2 => 'X', 3 => 'J', 4 => 'V', 5 => 'S', 6 => 'D');
@@ -52,7 +54,7 @@
    {
       if ($dias [$i])
       {
-         if (!$primero)
+         if ($primero)
          {
             $dias_semana = $dias_semana . ', ';
             $primero = false;
@@ -61,6 +63,7 @@
       }
       $i++;
    }
+   $dias_semana = '\'' . $dias_semana . '\'';
    
    // Conectamos con la base de datos
    $conexion = new mysqli ('localhost', 'profesores', 'profesConEstilo', 'profesoresConClase');
@@ -71,19 +74,19 @@
    //echo "OK: " . $conexion->host_info . "\n";
    
    if ($clases)
-      $query = "INSERT INTO `profesoresConClase`.`clases` (`id_profesor`, `id_asignatura`, `hora_ini`, `hora_fin`, `dias_semana`, `fecha_ini`, `fecha_fin`, `descripcion`, `precio`, `creacion`) VALUES ((?), (?), (?), (?), (?), (?), (?), (?), (?), CURRENT_TIMESTAMP);";
+      $query = "INSERT INTO `clases` (`id_profesor`, `id_asignatura`, `hora_ini`, `hora_fin`, `dias_semana`, `fecha_ini`, `fecha_end`, `descripcion`, `precio`, `creacion`) VALUES ((?), (?), (?), (?), (?), (?), (?), (?), (?), CURRENT_TIMESTAMP);";
    else
-      $query = "INSERT INTO `profesoresConClase`.`cursos` (`id_profesor`, `nombre_curso`, `hora_ini`, `hora_fin`, `dias_semana`, `fecha_ini`, `fecha_fin`, `descripcion`, `precio`, `creacion`) VALUES ((?), (?), (?), (?), (?), (?), (?), (?), (?), CURRENT_TIMESTAMP);";
+      $query = "INSERT INTO `cursos` (`id_profesor`, `nombre_curso`, `hora_ini`, `hora_fin`, `dias_semana`, `fecha_ini`, `fecha_end`, `descripcion`, `precio`, `creacion`) VALUES ((?), (?), (?), (?), (?), (?), (?), (?), (?), CURRENT_TIMESTAMP);";
 
    // Preparamos la query que vamos a ejecutar: Eliminamos el alumno
    if (! ($sentencia = $conexion->prepare ($query)))
       echo "ERROR: PREPARE: " . $conexion->error;
    // Asociamos la variable a la query: Son los ids de cada cosa
    if ($clases)
-      if (!$sentencia->bind_param ("iittssssds", $_SESSION ["id_user"], $asignatura, $hini, $hfin, $dias_semana, $fini, $ffin, $descripcion, $precio)) 
+      if (!$sentencia->bind_param ("iissssssi", $_SESSION ["id_user"], $asignatura, $hini, $hfin, $dias_semana, $fini, $ffin, $descripcion, $precio)) 
          echo "ERROR: BIND PARAM: " . $conexion->error;
    else
-      if (!$sentencia->bind_param ("isssssssds", $_SESSION ["id_user"], $nombre_curso, $hini, $hfin, $dias_semana, $fini, $ffin, $descripcion, $precio)) 
+      if (!$sentencia->bind_param ("isssssssi", $_SESSION ["id_user"], $nombre_curso, $hini, $hfin, $dias_semana, $fini, $ffin, $descripcion, $precio)) 
          echo "ERROR: BIND PARAM: " . $conexion->error;
    // Ejecutamos la query en la BD
    if (!$sentencia->execute ())

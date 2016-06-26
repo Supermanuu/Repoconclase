@@ -58,7 +58,7 @@
 						<text class="blue" id="form_text">Precio</text></br>
 						<label class="form_label" for="precio">Importe</label></br>
 						</br>
-						<text class="blue" id="form_text">Observaciones</text></br>
+						<text class="blue" id="form_text">Descripción</text></br>
 						<label class="form_label" for="obs">Escriba aquí</label></br>
 
 
@@ -110,7 +110,7 @@
 
 						</br></br>
 
-						<textarea class="blue" id="text_chk" name="obs" rows="15" cols="25" maxlength="300" placeholder="Tiene 300 caracteres para escribir su observación." autocomplete="off"></textarea></br></br>
+						<textarea class="blue" id="text_chk" name="descripcion" rows="15" cols="25" maxlength="300" placeholder="Tiene 300 caracteres para escribir su descripcion." autocomplete="off"></textarea></br></br>
 
 					</div>
 
