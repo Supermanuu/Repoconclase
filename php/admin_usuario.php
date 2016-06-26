@@ -216,11 +216,22 @@
 
         //Mostrar Informacion
 
+	$curri = 0;
+	$ruta = "/var/www/html" . $objeto_fc["folder"] . 'cv';
+	if (is_file($ruta))
+	   $curri = 1;
+
+	if (is_file("/var/www/html" . $objeto_fc["folder"] . 'foto'))
+	   $ruta = $objeto_fc["folder"].'foto';
+	else
+	   $ruta = "img/avatar.jpg";
+
         //Foto y curriculum
 
         echo '<div id="admin_imagen">';
-            echo '<img src='.$objeto_fc["folder"].'foto height=250 width=250>';
-            echo '<br><br><a href='.$objeto_fc["folder"].'cv target=_blank>Curriculum</a>';
+            echo '<img src='.$ruta.' height=250 width=250>';
+            if ($curri == 1)
+		echo '<br><br><a href='.$objeto_fc["folder"].'cv target=_blank>Curriculum</a>';
 	    echo '<br><br><button class=purple id=banea>Eliminar Usuario</button>';
         echo '</div>';
 
