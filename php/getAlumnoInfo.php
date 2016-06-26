@@ -15,6 +15,13 @@
    else if ($_SESSION ["type"] != "alumno")
       header('Location: index.php');
 
+   // Comprobación de la cookie de sesión
+   if(!isset($_COOKIE[$_SESSION["type"]])) {
+      session_destroy();
+      header('Location: ../sesion_expirada.php');
+   }
+   else
+      setcookie($_SESSION["type"], $_SESSION["id_user"], time() + 60*30, "/");
 
    /* Desde aqui, esta claro que el login es correcto, asique rellenamos la pagina web con la info del alumno */
 

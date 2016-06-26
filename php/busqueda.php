@@ -1,6 +1,6 @@
 <?php
 
-        $mysqli = new mysqli('localhost', 'profesores', 'profesConEstilo', 'profesoresConClase');
+    $mysqli = new mysqli('localhost', 'profesores', 'profesConEstilo', 'profesoresConClase');
 	if(mysqli_connect_errno()){
            echo '<h1 class=my_hy>error interno</h1>';
 	   exit();
@@ -15,7 +15,7 @@
 
 	//Completamos cuadro predectible con nom, ap1, ap2
 
-        $esApellido1 = 0;
+    $esApellido1 = 0;
 	$esApellido2 = 0;
 	$auxiliar1 = strtok($search, ' ');
 

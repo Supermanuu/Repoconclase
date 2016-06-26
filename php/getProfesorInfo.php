@@ -1,8 +1,16 @@
 <?php 
 	//si no has iniciado sesion y accedes desde la url te tira al index
 	if (!isset($_SESSION["login"]) || $_SESSION["login"] == false){
-	    header('Location: ./index.php');
+	    header('Location: index.php');
 	}
+
+   // Comprobación de la cookie de sesión
+   if(!isset($_COOKIE[$_SESSION["type"]])) {
+      session_destroy();
+      header('Location: ../sesion_expirada.php');
+   }
+   else
+      setcookie($_SESSION["type"], $_SESSION["id_user"], time() + 60*30, "/");
 
 	/* Desde aqui, esta claro que el login es correcto, asique rellenamos la pagina web con la info del alumno */
 

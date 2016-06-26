@@ -70,7 +70,7 @@
 	  header('Location: ../sesion_expirada.php');
 	}
 	else
-	  setcookie($_SESSION["type"], $_SESSION["id_user"], time() + 60*5, "/");
+	  setcookie($_SESSION["type"], $_SESSION["id_user"], time() + 60*30, "/");
 
 	update();
 

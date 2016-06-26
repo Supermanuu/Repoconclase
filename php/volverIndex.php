@@ -3,7 +3,7 @@
 	session_start();
 
 	if (!isset($_SESSION["login"]) || $_SESSION["login"] == false) {
-		//header('Location: ../index.php');
+		header('Location: ../index.php');
 	}
 
 	if(!isset($_COOKIE[$_SESSION["type"]])) {
@@ -12,7 +12,7 @@
 	}
 	else {
 
-	  	setcookie($_SESSION["type"], $_SESSION["id_user"], time() + 60*5, "/");
+	  	setcookie($_SESSION["type"], $_SESSION["id_user"], time() + 60*30, "/");
 
 		if ($_SESSION["type"] == "alumno"){ //Alumno
 			header('Location: ../index_alumnos.php');
