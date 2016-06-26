@@ -27,18 +27,21 @@
 
 		<div class="form_principal">
 
-			<div class="form_contenido">
-			<h1 class="my_h1">Búsqueda por nombre o apellido</h1>
-			<form class="blue_search" method="post" action="" name="search_form" id="search_form">
-				<input class="blue" id="search" type="text" placeholder=" Introduzca nombre/apellido"/>
-				<input class="blue" id="submit" type="submit" value="Buscar"/>
-			</form>
-			<div id="resultados">
+			<div id="admin_buscador">
+
+				<input id="search" list="browsers">
+				<datalist id="browsers" multiple>
+				</datalist>
+				<button id="submit">Buscar</button>
+        		</div>
+        		<div id="admin_mostrarUsuario">
+	  				<h1>No hay ningun usuario seleccionado</h1>
+				</div>
 
 			</div>
+
 		</div>
-		</div>
-		<?php include './php/footer.php'; ?>
-        </footer>
+
+	<?php include './php/footer.php'; ?>
 	</body>
 </html>
