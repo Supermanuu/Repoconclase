@@ -102,5 +102,5 @@
       echo "ERROR: CLOSE: " . $conexion->error;
    
    //echo $query;
-   header ('Location: formulario_enviado.php');
+   header ('Location: ../formulario_enviado.php');
 ?>
