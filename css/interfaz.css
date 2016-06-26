@@ -1419,3 +1419,35 @@ li:nth-child(odd) { background: #fff}
    height: 23px;
    margin: 0 0 0 5px;
 }
+
+/*-------------elemento.php-----------*/
+
+#elemento_principal  p
+{
+   margin-bottom: 50px;
+}
+
+#elemento_titulo
+{
+   background-color: #81c37c;
+   padding: 10px;
+}
+
+#elemento_contenido
+{
+   background-color: #b7efb0;
+   padding: 20px;
+}
+
+#elemento_precio > p
+{
+   text-align: center;
+   font-size: 50px;
+   background-color: #81c37c;
+   padding: 10px;
+}
+
+#elemento_titulo > p
+{
+   font-size: 40px;
+}
