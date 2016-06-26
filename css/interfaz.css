@@ -96,6 +96,10 @@ button.purple, select.purple, input.purple, option.purple
 
 }
 
+select {
+  max-width: 210px;
+}
+
 text.blue {
    color: #4F81BD;
 }
