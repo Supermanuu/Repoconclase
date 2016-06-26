@@ -1,9 +1,19 @@
 $(function(){
 	
-	setInterval(load,50);
+   var cargaColor = function(){
 
-	var cargaDetalles = function(vista) {
-	pagina = "php/ranking_info.php?" + "view=" + vista;
+     if ($("header").attr('class') == "blue")
+	return "blue";
+     else
+        return "green";
+
+   }; 
+
+   var cargaDetalles = function(vista) {
+
+        color = cargaColor();
+
+	pagina = "php/ranking_info.php?view=" + vista + "&color=" + color;
 
 	$("#rank").load(pagina);
    };
@@ -13,16 +23,11 @@ $(function(){
 	option = $(this).val();
  	if (option == "asignaturas"){
 	   cargaDetalles ('1');
-    }
+        }
 	else if(option == "total"){
 	   cargaDetalles ('2');
-    }
+        }
 		
    });
-
-   function load(){
-
-   };
-   
 
 })
