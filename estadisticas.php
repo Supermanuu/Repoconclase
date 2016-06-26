@@ -24,6 +24,7 @@
         include('php/header.php'); 
     ?>
         <div id="valora_principal">
+	  <h1>Lee lo ultimo que la gente ha comentado sobre ti </h1>
         <?php
             if ($_SESSION["type"] == "alumno"){
                 $color = "verde";

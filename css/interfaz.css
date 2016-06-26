@@ -575,6 +575,38 @@ img.purple {
    margin-top: 60px;
 }
 
+/* ---------Interfaz - > Estadisticas --------- */
+
+#valora_body{
+   background-color: #e6e6e6;
+}
+
+#valora_principal > h1{
+
+   color: #376092;
+   font-size:1.5em;
+   text-align: center;
+   margin-top: 20px;
+}
+
+#valora_azul > p, valora_verde > p{
+   color: white;
+   font-size:1.2em;
+   text-align: center;
+   margin-top: 5px;
+}
+
+#valora_azul {
+  background-color: #4f81bd;
+  box-shadow: 5px 5px 5px #376092;
+}
+
+#valora_verde {
+  background-color: #6AC46E;
+  box-shadow: 5px 5px 5px #118E56;
+}
+
+
 /* ---------Interfaz - > Contrata.html --------- */
 
 #contrata_cabecera {

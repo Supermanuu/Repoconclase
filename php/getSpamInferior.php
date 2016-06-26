@@ -33,7 +33,7 @@
    
    
    // Preparamos la query que vamos a ejecutar: Conseguimos los comentarios
-   if (! ($sentencia = $conexion->prepare ("SELECT id_profe, rate_comentario FROM rating")))
+   if (! ($sentencia = $conexion->prepare ("SELECT idProfe, texto FROM imparte")))
       echo "ERROR: PREPARE (1): " . $conexion->error;
    // Ejecutamos la query en la BD
    if (!$sentencia->execute ())

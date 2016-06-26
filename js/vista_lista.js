@@ -126,17 +126,19 @@
    else
    {
       $("#vista_lista_presentacion").html ('Mis ' + $vista);
-      if ($perfil == 'al' || $perfil == 'ad')
-      {
-         $('div[name="vista_lista_aceptar_elemento[]"]').css ("display", "none");
-         $('div[name="vista_lista_borrar_elemento[]"]').css ("margin-left", "auto");
-      }
+      $('div[name="vista_lista_aceptar_elemento[]"]').css ("display", "none");
+      $('div[name="vista_lista_borrar_elemento[]"]').css ("margin-left", "auto");
    }
    
-   // Para navegar a todos los cursos si se da a "nuevo"
+   
    $("#vista_lista_nuevo").click (function ()
    {
-      location.href += '&c=mis';
+      if ($perfil != 'pr')
+         // Para navegar a todos los cursos si se da a "nuevo" y no eres profe
+         location.href += '&c=mis';
+      else
+         // Si es profesor, vamos a crear clase o grupo
+         location.href = ./crear.php;
    });
    
    // Para controlar el borrado de elementos de la lista utilizo un hash map
