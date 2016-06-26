@@ -42,8 +42,8 @@
             }
             else{ //hay alguna clase
               
-              if($_SESSION ["infonclases"] > 4)
-                $nc = 4;
+              if($_SESSION ["infonclases"] > 3)
+                $nc = 3;
               else  
                 $nc = $_SESSION ["infonclases"];
 
@@ -118,8 +118,8 @@
             }
             else{
               $numcls = $_SESSION ["nclases"]; 
-              if($numcls > 4){
-                $numcls = 4;
+              if($numcls > 2){
+                $numcls = 2;
               }
 
               echo '<p class="dashprofes_small_p dashprofes_info">Clases actuales: ' . $_SESSION ["nclases"] . ' </p>';
@@ -144,8 +144,8 @@
             }
             else{
               $numcurs = $_SESSION ["ncursos"]; 
-              if($numcurs > 4){
-                $numcurs = 4;
+              if($numcurs > 2){
+                $numcurs = 2;
               }
 
               echo '<p class="dashprofes_small_p dashprofes_info">Cursos actuales: ' . $_SESSION ["ncursos"] . ' </p>';
