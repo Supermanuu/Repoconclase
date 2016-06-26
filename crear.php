@@ -42,6 +42,10 @@
 						</br>
 						<text class="blue" id="form_text">Precio</text></br>
 						<label class="form_label" for="precio">Importe</label></br>
+						</br>
+						<text class="blue" id="form_text">Observaciones</text></br>
+						<label class="form_label" for="obs">Escriba aquí</label></br>
+
 
 					</div>
 					<div class="form_entradas">
@@ -76,6 +80,8 @@
 						<input class="form_input" id="field7" type="number" name="precio" autocomplete="off" required/><label class="form_checker" id="input_chk7">  <</label></br>
 
 						</br></br>
+
+						<textarea class="blue" id="text_chk" name="obs" rows="15" cols="25" maxlength="300" placeholder="Tiene 300 caracteres para escribir su observación." autocomplete="off"></textarea></br></br>
 
 					</div>
 

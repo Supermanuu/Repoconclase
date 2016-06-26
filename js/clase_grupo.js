@@ -185,7 +185,7 @@ $(document).ready(function() {
 				}
 				alert( "Las horas/fechas de inicio deben ser anteriores a las de fin." );
 			}
-			
+
 		}
 			
 		else {
@@ -219,6 +219,7 @@ $(document).ready(function() {
 		$("input#field5_6").val("");
 		$("input#field5_7").val("");
 		$("input#field7").val("");
+		$("textarea#text_chk").val("");
 
 	}
 
