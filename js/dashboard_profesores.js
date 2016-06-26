@@ -56,7 +56,7 @@ $(document).ready (function () {
    });
 
    //------------Animacion JS del slider del profesor------------
-
+/*
    //almacenar slider en una variable
    var slider = $('#slider');
    //almacenar botones
@@ -76,5 +76,5 @@ $(document).ready (function () {
       var txto = $('#listaOculta:first').val();
       $("#tusEventos").html('<p id="tusEventos" class="dashprofes_small_p dashprofes_info">'+ txto +'</p>');
    });
-
+*/
 });

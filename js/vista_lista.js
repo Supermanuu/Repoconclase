@@ -138,7 +138,7 @@
          location.href += '&c=mis';
       else
          // Si es profesor, vamos a crear clase o grupo
-         location.href = ./crear.php;
+         location.href = '../crear.php';
    });
    
    // Para controlar el borrado de elementos de la lista utilizo un hash map
