@@ -170,8 +170,11 @@ $(document).ready(function() {
 		if (timefield1() && timefield2() 
 			&& datefield3() && datefield4()
 			&& checked5() && numberfield7()) {
-			if ($("input#field1").val() < $("input#field2").val() && $("input#field3").val() < $("input#field4").val())
+			if ($("input#field3").val() < $("input#field4").val())
 				$("form#form_crear").submit();
+			else if ($("input#field3").val() === $("input#field4").val() && $("input#field1").val() < $("input#field2").val()) {
+				$("form#form_crear").submit();
+			}
 			else {
 				
 				if ($("input#field1").val() >= $("input#field2").val()) {

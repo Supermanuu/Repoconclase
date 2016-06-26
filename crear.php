@@ -35,7 +35,7 @@
 						<label class="form_label" for="hfin">Hora fin</label></br>
 						<label class="form_label" for="fini">Fecha inicio</label></br>
 						<label class="form_label" for="ffin">Fecha fin</label></br>
-						<label class="form_label" for="dias">Días semana (L-D)</label></br>
+						<label class="form_label" for="dias">Días semana</label></br>
 						</br>
 						<text class="blue" id="form_text">Asignaturas</text></br>
 						<label class="form_label" for="asignatura">Selecciona</label></br>
@@ -59,14 +59,22 @@
 
 						<input class="form_input" id="field4" type="date" name="ffin" autocomplete="off" required/><label class="form_checker" id="input_chk4">  <</label></br>
 
+						<label for="field5_1">L</label>
 						<input class="form_input" id="field5_1" type="checkbox" name="lunes" autocomplete="off" />
+						<label for="field5_2">M</label>
 						<input class="form_input" id="field5_2" type="checkbox" name="martes" autocomplete="off" />
+						<label for="field5_3">X</label>
 						<input class="form_input" id="field5_3" type="checkbox" name="miercoles" autocomplete="off"/>
+						<label for="field5_4">J</label>
 						<input class="form_input" id="field5_4" type="checkbox" name="jueves" autocomplete="off" />
+						<label for="field5_5">V</label>
 						<input class="form_input" id="field5_5" type="checkbox" name="viernes" autocomplete="off" />
-						<input class="form_input" id="field5_6" type="checkbox" name="sabado" autocomplete="off" />
-						<input class="form_input" id="field5_7" type="checkbox" name="domingo" autocomplete="off" />
 						<label class="form_checker" id="input_chk5">  <</label></br>
+						<label for="field5_6">S</label>
+						<input class="form_input" id="field5_6" type="checkbox" name="sabado" autocomplete="off" />
+						<label for="field5_7">D</label>
+						<input class="form_input" id="field5_7" type="checkbox" name="domingo" autocomplete="off" />
+						
 
 						</br></br>
 
