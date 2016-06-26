@@ -469,6 +469,10 @@ img.purple {
    font-size: 1em;
 }
 
+#esc {
+	visibility: hidden;
+}
+
 /*  --------Interfaz - > correo.html ----------- */
 
 #correo_body {

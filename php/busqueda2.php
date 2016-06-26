@@ -46,11 +46,10 @@
 
         if ($color == "green") {//Si es un alumno puede valorar
 
-            echo '<p>Valora la clase seleccionada</p>';
-            echo '<input type=number id=quantity min=1 max=10>';
-            echo '<textarea id=texto class=green></textarea>';
-            echo '<input type=text id=esc value='. $id . '>';
-            echo '<button id=valora>Enviar</button>';
+            echo '<input type=number id=quantity class=green min=1 max=10><br>';
+            echo '<textarea id=texto class=green></textarea><br>';
+            echo '<input type=text id=esc value='. $id . '><br>';
+            echo '<button id=valora class=green>Enviar</button>';
         }
     }
 
@@ -148,6 +147,10 @@
         elseif ($objeto_reg2["perfil"] == "profesor") {   //Info del profesor
             echo '<p>Cursos impartidos :</p>';
             echo '<p>Clases impartidas :</p>';
+	    if ($color == "green"){
+		echo '<p>Valoracion clase selec: </p>';
+		echo '<p>Comentario: </p>';
+ 	    }
             echo '</div>';
             esDatoComun($objeto_reg2);
             esProfesor($objeto_reg2["id"], $mysqli, $color);

@@ -23,8 +23,12 @@ $(function(){
 
 	});
 
-	$("#valora").click(function(){
+	setInterval(load,1000);
 
+        function load(){
+
+	$("#valora").click(function(){
+		console.log("pene");
 		texto = $("#texto").val();
 		valoracion = $("#quantity").val();
 		option = $("#clase").val();
@@ -41,5 +45,7 @@ $(function(){
 		}
 
 	});
+
+	};
 
 });
