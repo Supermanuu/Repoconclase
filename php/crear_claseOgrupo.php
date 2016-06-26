@@ -55,10 +55,9 @@
       if ($dias [$i])
       {
          if ($primero)
-         {
-            $dias_semana = $dias_semana . ', ';
             $primero = false;
-         }
+         else
+            $dias_semana = $dias_semana . ', ';
          $dias_semana = $dias_semana . $dias_str [$i];
       }
       $i++;
@@ -74,20 +73,24 @@
    //echo "OK: " . $conexion->host_info . "\n";
    
    if ($clases)
-      $query = "INSERT INTO `clases` (`id_profesor`, `id_asignatura`, `hora_ini`, `hora_fin`, `dias_semana`, `fecha_ini`, `fecha_end`, `descripcion`, `precio`, `creacion`) VALUES ((?), (?), (?), (?), (?), (?), (?), (?), (?), CURRENT_TIMESTAMP);";
+      $query = "INSERT INTO `profesoresConClase`.`clases` (`id_clases`, `id_profesor`, `id_asignatura`, `creacion`, `hora_ini`, `hora_fin`, `fecha_ini`, `fecha_end`, `dias_semana`, `descripcion`, `precio`) VALUES (NULL, (?), (?), CURRENT_TIMESTAMP, (?), (?), (?), (?), (?), (?), (?));";
    else
-      $query = "INSERT INTO `cursos` (`id_profesor`, `nombre_curso`, `hora_ini`, `hora_fin`, `dias_semana`, `fecha_ini`, `fecha_end`, `descripcion`, `precio`, `creacion`) VALUES ((?), (?), (?), (?), (?), (?), (?), (?), (?), CURRENT_TIMESTAMP);";
+      $query = "INSERT INTO `profesoresConClase`.`cursos` (`id_curso`, `id_profesor`, `nombre_curso`, `creacion`, `hora_ini`, `hora_fin`, `fecha_ini`, `fecha_fin`, `dias_semana`, `descripcion`, `precio`) VALUES (NULL, (?), (?), CURRENT_TIMESTAMP, (?), (?), (?), (?), (?), (?), (?));";
 
    // Preparamos la query que vamos a ejecutar: Eliminamos el alumno
    if (! ($sentencia = $conexion->prepare ($query)))
       echo "ERROR: PREPARE: " . $conexion->error;
    // Asociamos la variable a la query: Son los ids de cada cosa
    if ($clases)
-      if (!$sentencia->bind_param ("iissssssi", $_SESSION ["id_user"], $asignatura, $hini, $hfin, $dias_semana, $fini, $ffin, $descripcion, $precio)) 
+   {
+      if (!$sentencia->bind_param ("iissssssi", $_SESSION ["id_user"], $asignatura, $hini, $hfin, $fini, $ffin, $dias_semana, $descripcion, $precio)) 
          echo "ERROR: BIND PARAM: " . $conexion->error;
+   }
    else
-      if (!$sentencia->bind_param ("isssssssi", $_SESSION ["id_user"], $nombre_curso, $hini, $hfin, $dias_semana, $fini, $ffin, $descripcion, $precio)) 
+   {
+      if (!$sentencia->bind_param ("isssssssi", $_SESSION ["id_user"], $nombre_curso, $hini, $hfin, $fini, $ffin, $dias_semana, $descripcion, $precio)) 
          echo "ERROR: BIND PARAM: " . $conexion->error;
+   }
    // Ejecutamos la query en la BD
    if (!$sentencia->execute ())
       echo "ERROR : EXECUTE: " . $conexion->error;
@@ -98,5 +101,37 @@
    if (!$conexion->close ())
       echo "ERROR: CLOSE: " . $conexion->error;
    
-   echo $query;
+   //echo $query;
 ?>
+
+<html lang="es-ES">
+    <head>
+        <title id="Title">Profesores con clase</title>
+        <meta charset="utf-8">
+        <meta name="author" content="SWTeam"/>
+        <meta name="description" content="Listo">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+        <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+        <link rel="stylesheet" type="text/css" href="css/estructura.css"/>
+        <link rel="stylesheet" type="text/css" href="css/interfaz.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="js/common.js"></script>
+    </head>
+    <body class="form_body">
+        <?php 
+            $_SESSION["volverIndex"] = 1;
+            include './php/header.php'; 
+        ?>
+        <div class="form_principal">
+            <div id="login_placement">
+                <?php include './php/login.php'; ?>
+            </div>
+            <div class="form_contenido">
+                <h1 class="my_h1">Su sesión ha expirado</h1>
+                <p>Por favor, vuelva a iniciar sesión.</p>
+            </div>
+        </div>
+        <?php include './php/footer.php'; ?>
+    </body>
+</html>

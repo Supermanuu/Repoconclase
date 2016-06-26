@@ -52,8 +52,18 @@
 						<label class="form_label" for="ffin">Fecha fin</label></br>
 						<label class="form_label" for="dias">Días semana</label></br>
 						</br>
-						<text class="blue" id="form_text">Asignaturas</text></br>
-						<label class="form_label" for="asignatura">Selecciona</label></br>
+                  <?php 
+                     if (isset ($_REQUEST ["cl"]))
+                     {
+                         echo '<text class="blue" id="form_text">Asignaturas</text></br>';
+                         echo '<label class="form_label" for="asignatura">Selecciona</label></br>';
+                     }
+                     else
+                     {
+                        echo '<text class="blue" id="form_text">Nombre del curso</text></br>'; 
+                        echo '<label class="form_label" for="asignatura">Nombre</label></br>';
+                     }
+                  ?>
 						</br>
 						<text class="blue" id="form_text">Precio</text></br>
 						<label class="form_label" for="precio">Importe</label></br>
@@ -92,17 +102,22 @@
 						
 
 						</br></br>
-
-							<select class="blue" id="field6" name="asignatura">
-  								<?php
+                     
+                     <?php 
+                        if (!isset ($_REQUEST ["cl"]))
+                           echo '<input class="form_input" id="field8" type="text" name="nombre_curso" autocomplete="off" required/><label class="form_checker">  <</label></br>';
+                        else
+                        {
+                           echo '<select class="blue" id="field6" name="asignatura">'; 
                            $ind = 0;
                            while ($ind < $nelems)
                            {
                               asignatura ($ind, $asignaturas [$ind], $ids [$ind]);
                               $ind++;
                            }
-                        ?><
-							</select><label class="form_checker" id="input_chk6">  <</label></br>
+                           echo '</select><label class="form_checker" id="input_chk6">  <</label></br>'; 
+                        }
+                     ?>
 
 						</br></br>
 
