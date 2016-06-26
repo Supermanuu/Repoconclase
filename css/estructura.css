@@ -41,7 +41,7 @@ header
 }
 
 #pcc_botones {
-
+   display: flex;
    width: 100%;
 }
 
@@ -51,12 +51,14 @@ header
    width: 50%;
 }
 
+button#login, button#logout
+{
+   margin-left: auto;
+}
+
 button#registrarse, button#login, button#logout, button#volver
 {
-   float: right;
-   
-   min-width: 120px;
-   min-height: 50px;
+   min-width: 10%;
 }
 
 form.blue_search {
