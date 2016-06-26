@@ -124,8 +124,20 @@
         //Foto y curriculum
 
         echo '<div id="buscador_imagen">';
-            echo '<img src='.$objeto_fc["folder"].'foto height=250 width=250>';
-            echo '<br><br><a href='.$objeto_fc["folder"].'cv target=_blank>Curriculum</a>';
+
+            $foto = $objeto_fc["folder"] . 'foto';
+            $cv = $objeto_fc["folder"] . 'cv';
+
+            if (file_exists("/var/www/html".$foto))
+               echo '<img class='.$color.' src="'.$foto.'" height="256" width="256">';
+            else
+               echo '<img class='.$color.' src="img/avatar.jpg" height="256" width="256">';
+
+            if (file_exists("/var/www/html".$cv))
+               echo '<br><br><a href='.$cv.' target=_blank>Curriculum</a>';
+            else
+               echo '<br><br><p>¡No tiene curriculum!</p>';
+
         echo '</div>';
 
         //Comun a profesores y alumnos
