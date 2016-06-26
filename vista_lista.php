@@ -2,7 +2,7 @@
    include './php/sesion.php';
    include './php/preparaLista.php';
    
-   function print_item ($nitem, $titulo, $descripcion, $id)
+   function print_item ($nitem, $titulo, $descripcion, $id, $precio)
    {
       echo '<div id="vista_lista_elemento_' . $nitem . '" name="vista_lista_elemento[]" class="vista_lista_elemento pulsable">';
          echo '<div id="vista_lista_imagen_elemento_' . $nitem . '" name="vista_lista_imagen_elemento[]" class="vista_lista_imagen_elemento pulsable"></div>';
@@ -21,6 +21,9 @@
          echo '</div>';
          echo '<div id="vista_lista_id_oculto_' . $nitem . '" class="vista_lista_elemento_oculto">';
             echo $id;
+         echo '</div>';
+         echo '<div id="vista_lista_precio_oculto' . $nitem . '" class="vista_lista_elemento_oculto">';
+            echo $precio;
          echo '</div>';
       echo '</div>';
    }
@@ -69,7 +72,7 @@
                      while ($i < $nelems)
                      {
                         if ($ids [$i] != null)
-                           print_item ($i, $lista [$i], $descr [$i], $ids [$i]);
+                           print_item ($i, $lista [$i], $descr [$i], $ids [$i], $precios [$i]);
                         else
                            $elementos_nulos++;
                         $i++;

@@ -82,6 +82,7 @@
             $lista[] = $nombre_alumno . " " . $apellido1_alumno . " " . $apellido2_alumno;
             $descr[] = "ID: " . $id_alumno . "\nFecha de nacimiento: " . $nacimiento . "\nComunidad autónoma: " . $com . "\nC.P.: " . $cod_post . "\nCorreo: " . $correo;
             $ids[] = $id_alumno;
+            $precios[] =  0;
             $i++;
          }
          $nelems = $i;
@@ -104,6 +105,7 @@
          {
             $lista[] = $nombre_profesor . " " . $apellido1_profesor . " " . $apellido2_profesor;
             $descr[] = "ID: " . $id_prof . "\nFecha de nacimiento: " . $nacimiento . "\nComunidad autónoma: " . $com . "\nC.P.: " . $cod_post . "\nCorreo: " . $correo;
+            $precios[] =  0;
             $ids[] = $id_prof;
             $i++;
          }
@@ -127,7 +129,8 @@
          {
             $horas_clases[] = "de " . $hora_ini . " a " . $hora_fin . " - " . $dias_semana;
             $id_asignaturas[] = $id_asignatura;
-            $descr_clases[] = $descripcion . "\n\nFecha de inicio: " . $fecha_ini . "\nFecha de fin: " . $fecha_fin . "\nPrecio: " . $precio;
+            $descr_clases[] = $descripcion . "\n\nFecha de inicio: " . $fecha_ini . "\nFecha de fin: " . $fecha_fin;
+            $precios[] =  $precio;
             $ids[] = $id_clase;
             $i++;
          }
@@ -176,6 +179,7 @@
             $lista[] = $nombre_asignatura . " " . $nivel . " " . $curso;
             $descr[] = "ID: " . $id_asignatura;
             $ids[] = $id_asignatura;
+            $precios[] =  0;
             $i++;
          }
          $nelems = $i;
@@ -197,7 +201,8 @@
          while ($sentencia->fetch ())
          {
             $lista[] = $nombre_curso . " de " . $hora_ini . " a " . $hora_fin . " - " . $dias_semana;
-            $descr[] = $descripcion . "\n\nFecha de inicio: " . $fecha_ini . "\nFecha de fin: " . $fecha_fin . "\nPrecio: " . $precio;
+            $descr[] = $descripcion . "\n\nFecha de inicio: " . $fecha_ini . "\nFecha de fin: " . $fecha_fin;
+            $precios[] =  $precio;
             $ids[] = $id_curso;
             $i++;
          }

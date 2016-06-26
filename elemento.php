@@ -3,7 +3,7 @@
    $titulo = $_REQUEST ["titulo"];
    $contenido = $_REQUEST ["contenido"];
    $id = $_REQUEST ["id"];
-   //$precio = $_REQUEST ["precio"];
+   $precio = $_REQUEST ["precio"];
 ?>
    
 <div id="elemento_principal">
@@ -26,7 +26,7 @@
       
       <div id="elemento_precio">
          <p>
-            <?php //echo $precio; ?> 100.4€
+            <?php echo $precio; ?> €
          </p>
       </div>
       

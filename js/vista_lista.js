@@ -249,7 +249,8 @@
                data: {
                   "titulo" : this.parentElement.children [1].firstChild.innerText, 
                   "contenido" : this.parentElement.children [4].innerText, 
-                  "id" : this.parentElement.children [5].innerText
+                  "id" : this.parentElement.children [5].innerText,
+                  "precio" : this.parentElement.children [6].innerText
                },
                success: function (data)
                {

@@ -38,7 +38,7 @@
    
    $("#buscar_profesor").click (function ()
    {
-      $(location).attr('href', 'buscador.html');
+      $(location).attr('href', 'busqueda.php');
    });
    
    $("#contratar_profesor").click (function ()
