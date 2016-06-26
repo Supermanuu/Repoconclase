@@ -16,17 +16,17 @@ $(document).ready (function () {
 
    $("#misClases").mousedown (function ()
    {
-      $(location).attr('href', 'vista_lista.php?a=pr&b=cl&c=mis');
+      $(location).attr('href', 'vista_lista.php?a=pr&b=cl');
    });
 
    $("#misCursos").mousedown (function ()
    {
-      $(location).attr('href', 'vista_lista.php?a=pr&b=cu&c=mis');
+      $(location).attr('href', 'vista_lista.php?a=pr&b=cu');
    });
 
    $("#misAlumnos").mousedown (function ()
    {
-      $(location).attr('href', 'vista_lista.php?a=pr&b=al&c=mis');
+      $(location).attr('href', 'vista_lista.php?a=pr&b=al');
    });
 
    $("#busqueda").mousedown (function ()
