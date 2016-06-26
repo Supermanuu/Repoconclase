@@ -56,11 +56,19 @@
          data: {"perfil" : $perfil, "tabla" : $tabla, "mis" : !tokens.includes ("c=mis"), "id" :  id_oculto.innerText},
          success: function (data)
          {
-            //alert (data); // Esto por si quieres ver la query que se ha ejecutado e info de depuración
+            // Animaciones
             $("#elemento_titulo").fadeOut ("fast", function ()
             {
                $("#elemento_titulo").css ("text-align", "center");
-               elemento_titulo.innerText = "¡Contrato firmado!";
+               // Si hay un error
+               if (data == '' || data.search ("ERROR") > -1)
+               {
+                  //alert (data); // Esto por si quieres ver la query que se ha ejecutado e info de depuración
+                  elemento_titulo.innerText = "¡Error! ¡No se pudo firmar el contrato!";
+               }
+               // Si no hay error
+               else
+                  elemento_titulo.innerText = "¡Contrato firmado!";
                $("#elemento_titulo").fadeIn ("fast", function ()
                {
                   setTimeout (quita_mensaje_final, 1000);

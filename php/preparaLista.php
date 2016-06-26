@@ -80,7 +80,7 @@
          while ($sentencia->fetch ())
          {
             $lista[] = $nombre_alumno . " " . $apellido1_alumno . " " . $apellido2_alumno;
-            $descr[] = "ID: " . $id_alumno . "\n Fecha de nacimiento: " . $nacimiento . "\n Comunidad autónoma: " . $com . "\n C.P.: " . $cod_post . "\n Correo: " . $correo;
+            $descr[] = "ID: " . $id_alumno . "\nFecha de nacimiento: " . $nacimiento . "\nComunidad autónoma: " . $com . "\nC.P.: " . $cod_post . "\nCorreo: " . $correo;
             $ids[] = $id_alumno;
             $i++;
          }
@@ -103,7 +103,7 @@
          while ($sentencia->fetch ())
          {
             $lista[] = $nombre_profesor . " " . $apellido1_profesor . " " . $apellido2_profesor;
-            $descr[] = "ID: " . $id_prof . "\n Fecha de nacimiento: " . $nacimiento . "\n Comunidad autónoma: " . $com . "\n C.P.: " . $cod_post . "\n Correo: " . $correo;
+            $descr[] = "ID: " . $id_prof . "\nFecha de nacimiento: " . $nacimiento . "\nComunidad autónoma: " . $com . "\nC.P.: " . $cod_post . "\nCorreo: " . $correo;
             $ids[] = $id_prof;
             $i++;
          }
@@ -113,13 +113,13 @@
       {
          // Buscar todas las clases
          // Preparamos la query que vamos a ejecutar: Obtenemos la informacion de una clase seleccionada
-         if (! ($sentencia = $conexion->prepare ("SELECT id_clases, id_asignatura, hora_ini, hora_fin, dias_semana, fecha_ini, fecha_end, descripcion FROM clases;")))
+         if (! ($sentencia = $conexion->prepare ("SELECT id_clases, id_asignatura, hora_ini, hora_fin, dias_semana, fecha_ini, fecha_end, descripcion, precio FROM clases;")))
             echo "ERROR: PREPARE (2): " . $conexion->error;
          // Ejecutamos la query en la BD
          if (!$sentencia->execute ())
             echo "ERROR: EXECUTE (2): " . $conexion->error;
          // Vinculamos la salida a otras variables: Esperamos la info de la clase
-         if (!$sentencia->bind_result ($id_clase, $id_asignatura, $hora_ini, $hora_fin, $dias_semana, $fecha_ini, $fecha_fin, $descripcion))
+         if (!$sentencia->bind_result ($id_clase, $id_asignatura, $hora_ini, $hora_fin, $dias_semana, $fecha_ini, $fecha_fin, $descripcion, $precio))
             echo "ERROR: BIND RESULT (2): " . $conexion->error;
          // Recorremos las 3 primeras filas, si hay
          $i = 0;
@@ -127,7 +127,7 @@
          {
             $horas_clases[] = "de " . $hora_ini . " a " . $hora_fin . " - " . $dias_semana;
             $id_asignaturas[] = $id_asignatura;
-            $descr_clases[] = $descripcion . "\n\nFecha de inicio: " . $fecha_ini . "\nFecha de fin: " . $fecha_fin;
+            $descr_clases[] = $descripcion . "\n\nFecha de inicio: " . $fecha_ini . "\nFecha de fin: " . $fecha_fin . "\nPrecio: " . $precio;
             $ids[] = $id_clase;
             $i++;
          }
@@ -184,20 +184,20 @@
       {
          // Buscar todos los cursos
          // Preparamos la query que vamos a ejecutar: Obtenemos la informacion de un grupo seleccionado
-         if (! ($sentencia = $conexion->prepare ("SELECT id_curso, nombre_curso, hora_ini, hora_fin, dias_semana, fecha_ini, fecha_fin, descripcion FROM cursos")))
+         if (! ($sentencia = $conexion->prepare ("SELECT id_curso, nombre_curso, hora_ini, hora_fin, dias_semana, fecha_ini, fecha_fin, descripcion, precio FROM cursos")))
             echo "ERROR: PREPARE (4): " . $conexion->error;
          // Ejecutamos la query en la BD
          if (!$sentencia->execute ())
             echo "ERROR: EXECUTE (4): " . $conexion->error;
          // Vinculamos la salida a otras variables: Esperamos la info de la clase
-         if (!$sentencia->bind_result ($id_curso, $nombre_curso, $hora_ini, $hora_fin, $dias_semana, $fecha_ini, $fecha_fin, $descripcion))
+         if (!$sentencia->bind_result ($id_curso, $nombre_curso, $hora_ini, $hora_fin, $dias_semana, $fecha_ini, $fecha_fin, $descripcion, $precio))
             echo "ERROR: BIND RESULT (4): " . $conexion->error;
          // Recorremos las 3 primeras filas, si hay
          $i = 0;
          while ($sentencia->fetch ())
          {
             $lista[] = $nombre_curso . " de " . $hora_ini . " a " . $hora_fin . " - " . $dias_semana;
-            $descr[] = $descripcion . "\n\nFecha de inicio: " . $fecha_ini . "\nFecha de fin: " . $fecha_fin;
+            $descr[] = $descripcion . "\n\nFecha de inicio: " . $fecha_ini . "\nFecha de fin: " . $fecha_fin . "\nPrecio: " . $precio;
             $ids[] = $id_curso;
             $i++;
          }

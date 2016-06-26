@@ -108,13 +108,19 @@
    {
       $("#vista_lista_presentacion").html ($vista);
       if ($perfil == 'al')
+      {
          $('div[name="vista_lista_borrar_elemento[]"]').css ("display", "none");
+         $("#vista_lista_nuevo").css ("display", "none");
+         $("#vista_lista_borrar_seleccionados").css ("visibility", "hidden");
+      }
       if ($perfil == 'pr' && $tabla != 'pr' && $tabla != 'as')
          $('div[name="vista_lista_borrar_elemento[]"]').css ("display", "none");
       if ($perfil == 'ad')
       {
          $('div[name="vista_lista_aceptar_elemento[]"]').css ("display", "none");
          $('div[name="vista_lista_borrar_elemento[]"]').css ("margin-left", "auto");
+         $("#vista_lista_nuevo").css ("display", "none");
+         $("#vista_lista_borrar_seleccionados").css ("visibility", "hidden");
       }
    }
    else
@@ -125,17 +131,13 @@
          $('div[name="vista_lista_aceptar_elemento[]"]').css ("display", "none");
          $('div[name="vista_lista_borrar_elemento[]"]').css ("margin-left", "auto");
       }
-      // Los profesores solo pueden aceptar clases que no hayan aceptado dar
-      if ($perfil == 'pr')
-      {
-         // Eliminar el aceptar de las clases que ya tiene como suyas
-         if (false)
-         {
-            $('div[name="vista_lista_aceptar_elemento[]"]').css ("display", "none");
-            $('div[name="vista_lista_borrar_elemento[]"]').css ("margin-left", "auto");
-         }
-      }
    }
+   
+   // Para navegar a todos los cursos si se da a "nuevo"
+   $("#vista_lista_nuevo").click (function ()
+   {
+      location.href += '&c=mis';
+   });
    
    // Para controlar el borrado de elementos de la lista utilizo un hash map
    var seleccionados_borrar = [];
@@ -170,6 +172,8 @@
             data: {"perfil" : $perfil, "tabla" : $tabla, "mis" : !tokens.includes ("c=mis"), "id" :  seleccionados_borrar [i].parentElement.children [5].innerText},
             success: function (data)
             {
+               if (data == '' || data.search ("ERROR") > -1)
+                  alert ("¡Ooops! ¡Ha habido un error!");
                //alert (data); // Esto por si quieres ver la query que se ha ejecutado e info de depuración
             }
          });
@@ -230,7 +234,9 @@
                data: {"perfil" : $perfil, "tabla" : $tabla, "mis" : !tokens.includes ("c=mis"), "id" :  this.parentElement.children [5].innerText},
                success: function (data)
                {
-                  //alert (data); // Esto por si quieres ver la query que se ha ejecutado e info de depuración
+                  if (data == '' || data.search ("ERROR") > -1)
+                     alert ("¡Ooops! ¡Ha habido un error!");
+               //alert (data); // Esto por si quieres ver la query que se ha ejecutado e info de depuración
                }
             });
          }
@@ -247,9 +253,15 @@
                },
                success: function (data)
                {
-                  vista_lista_principal.innerHTML = data;
-                  $("#elemento_principal").hide ();
-                  $.getScript ("js/elemento.js");
+                  if (data == '' || data.search ("ERROR") > -1)
+                     alert ("¡Ooops! ¡Ha habido un error!");
+                  else
+                  {
+                     vista_lista_principal.innerHTML = data;
+                     $("#elemento_principal").hide ();
+                     $.getScript ("js/elemento.js");
+                  }
+                  //alert (data); // Esto por si quieres ver la query que se ha ejecutado e info de depuración
                }
             });
          }
