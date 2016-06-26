@@ -137,8 +137,13 @@
          // Para navegar a todos los cursos si se da a "nuevo" y no eres profe
          location.href += '&c=mis';
       else
+      {
          // Si es profesor, vamos a crear clase o grupo
-         location.href = './crear.php';
+         if ($tabla == 'cl')
+            location.href = './crear.php?cl';
+         else
+            location.href = './crear.php';
+      }
    });
    
    // Para controlar el borrado de elementos de la lista utilizo un hash map
