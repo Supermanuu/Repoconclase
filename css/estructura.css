@@ -79,6 +79,19 @@ form.blue_search > #submit {
    width: 30%;
 }
 
+form.gray_search {
+   display: flex;
+   flex-direction: row;
+   padding: 10px;
+   margin: 10px auto;           
+}
+
+form.gray_search > #search {
+   float: left; 
+   width: 100%;  
+   height: 35px;
+}
+
 footer
 {
   display: flex;
