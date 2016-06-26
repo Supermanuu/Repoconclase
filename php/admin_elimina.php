@@ -42,7 +42,7 @@
             $query = "SELECT * FROM usuarios where user = '$user'";
             $resultado = $mysqli->query($query);
             $usuario = $resultado->fetch_assoc();
-            $id = $usuario["id_user"];
+            $id = $usuario["idUser"];
 
             $query = "SELECT * FROM folders where id = '$id'";
             $resultado = $mysqli->query($query);
