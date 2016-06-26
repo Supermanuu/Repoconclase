@@ -20,7 +20,7 @@
    width: 300px;
    background-repeat: no-repeat;
    background-size: contain; 
-  
+   margin: auto;
 }
 
 #pcc_verde {
@@ -30,7 +30,7 @@
    width: 300px;
    background-repeat: no-repeat;
    background-size: contain; 
-
+   margin: auto;
 }
 
 header.green
