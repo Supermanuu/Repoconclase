@@ -8,7 +8,7 @@
    
    $("#spam_secundario_izquierda").click (function (event)
    {
-      $(location).attr('href', 'ranking.php);
+      $(location).attr('href', 'ranking.php');
    });
    
    $("#spam_secundario_centro").click (function (event)
