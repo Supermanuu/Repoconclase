@@ -11,7 +11,7 @@
         <title id="Title">Profesores con clase</title>
         <meta charset="utf-8">
         <meta name="author" content="Sistemas web 15/16">
-        <meta name="description" content="Editar un usuario.">
+        <meta name="description" content="Editar un usuario">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 		<meta http-equiv="Expires" content="0">
 		<meta http-equiv="Last-Modified" content="0">
