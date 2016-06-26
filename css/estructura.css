@@ -61,6 +61,10 @@ button#registrarse, button#login, button#logout, button#volver
    min-width: 10%;
 }
 
+button#volver{
+    margin-left: 80%;
+}
+
 form.blue_search {
    display: flex;
    flex-direction: row;
