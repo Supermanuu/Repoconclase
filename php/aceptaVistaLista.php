@@ -13,10 +13,10 @@
 
    /* Desde aqui, esta claro que el login es correcto */
    
-   $mis = $_POST ['mis'];
-   $tabla = $_POST ['tabla'];
-   $perfil = $_POST ['perfil'];
-   $id = $_POST ['id'];
+   $mis = $_REQUEST ['mis'];
+   $tabla = $_REQUEST ['tabla'];
+   $perfil = $_REQUEST ['perfil'];
+   $id = $_REQUEST ['id'];
    
    // Conectamos con la base de datos
    $conexion = new mysqli ('localhost', 'profesores', 'profesConEstilo', 'profesoresConClase');
@@ -34,7 +34,7 @@
    else
    {
       if ($tabla == 'al')
-         $query = "";
+         $query = "INSERT INTO `profesoresConClase`.`profes_seleccionados` (`id_profesor`, `id_alumno`) VALUES ((?), (?));";
       else if ($tabla == 'pr')
          $query = "INSERT INTO `profesoresConClase`.`profes_seleccionados` (`id_alumno`, `id_profesor`) VALUES ((?), (?));";
       else if ($tabla == 'cl')

@@ -225,7 +225,7 @@
          {
             $.ajax (
             {
-               type: "SPOST",
+               type: "POST",
                url: "./php/aceptaVistaLista.php",
                data: {"perfil" : $perfil, "tabla" : $tabla, "mis" : !tokens.includes ("c=mis"), "id" :  this.parentElement.children [5].innerText},
                success: function (data)

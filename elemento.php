@@ -21,7 +21,7 @@
       
       <div id="elemento_contenido">
          <!-- Un <p> por cada salto de línea -->
-         <?php echo $contenido; ?>
+         <?php echo nl2br ($contenido); ?>
       </div>
       
       <div id="elemento_precio">
