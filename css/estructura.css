@@ -1256,6 +1256,7 @@ body
 {
    display: flex;
    flex-direction: column;
+   background-color: #e6e6e6;
 }
 
 #vista_lista_principal
