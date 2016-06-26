@@ -1355,11 +1355,13 @@ body
 
 #rank{ 
    display: flex;
-   flex-direction: column;
-   /* flex-direction: row; */
+   flex-direction: row;
+   /* flex-direction: column; */
    list-style:none; 
    flex-wrap: wrap;
    margin:30px auto; 
+   height: 52%;  /*500px*/
+   overflow: scroll;
 }
 
 #busca_rank{
