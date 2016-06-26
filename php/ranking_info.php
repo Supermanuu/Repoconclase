@@ -252,8 +252,8 @@ else{ //vista de valoraciones de los profesores en total
 
          if (!is_null($usuario)) {
 
-            $foto = ".." . $usuario["folder"] . 'foto';
-            if (file_exists($foto))
+            $foto = $usuario["folder"] . 'foto';
+            if (file_exists("/var/www/html".$foto))
                echo '<img class='.$color.' src="'.$foto.'" height="256" width="256">';
             else
                echo '<img class='.$color.' src="img/avatar.jpg" height="256" width="256">';
