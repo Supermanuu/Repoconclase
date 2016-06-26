@@ -566,6 +566,20 @@ footer
    height: 100%;
 }
 
+
+#valora_principal {
+
+   min-height: 70%;
+}
+
+#valora_azul, valora_verde {
+
+   height: 50%;
+   overflow: auto;
+   margin: 3% 3% 3% 3%;
+   
+}
+
 /* ----------Estructura - > Formularios--------- */
 
 body.form_body {

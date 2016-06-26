@@ -2,7 +2,7 @@
 
 	session_start();
 
-	$id = $_SESSION["idUser"];
+	$id = $_SESSION["id_user"];
 
 	//Conectamos
 
@@ -12,7 +12,7 @@
           exit();
     }
 
-    $sentencia = "SELECT idAsignatura, valoracion, texto from imparte where idProfe='$id'"; 
+    $sentencia = "SELECT idAsignatura, valoracion, texto from imparte where idProfe='$id'";
     $resultado = $mysqli->query($sentencia) or die($mysqli->error);
 
     while ($objeto = $resultado->fetch_assoc()) {
@@ -29,7 +29,7 @@
     	echo '<p> Asignatura : ' . $objeto2["nom"] . '</p>';
     	echo '<p> Valoracion : ' . $objeto["valoracion"] . '</p>';
     	echo '<p> Comentario : ' . $objeto["texto"] . '</p>';
-
+	echo '<hr class=correo_linea_azul>';
     	$resultado2->free();
     }
 
