@@ -151,7 +151,7 @@
               echo '<p class="dashprofes_small_p dashprofes_info">Cursos actuales: ' . $_SESSION ["ncursos"] . ' </p>';
               $k = 0;
               while($k < $numcurs){
-                echo '<p id="tusEventos" class="dashprofes_small_p dashprofes_info"> ' . $cursos[$j] . ' </p>';
+                echo '<p id="tusEventos" class="dashprofes_small_p dashprofes_info"> ' . $cursos[$k] . ' </p>';
                 $k++;
               }
             }
