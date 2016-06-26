@@ -32,7 +32,7 @@
         <div class="dashprofes_principal" id="principal">
         	<div id="tuInfo" class="dashboard oscuro" title="<?php echo $_SESSION["nombre"]; ?>">       
 		    	<p class="dashprofes_big_p"> <?php echo $_SESSION["nombre"]; ?> <span class="glyphicon glyphicon-info-sign" ></span> </p>
-		    	<p class="dashprofes_small_p dashprofes_info">Proximos Eventos: </p>
+		    	<p class="dashprofes_small_p dashprofes_info">Próximos Eventos: </p>
           <?php 
             $infoClases = $_SESSION ["infoclases"];
             if($_SESSION ["nclases"] == 0){ //no hay clases para el profesor, imprimimos mensaje por defecto emitido por el php
@@ -74,7 +74,7 @@
           <?php 
             
             if($_SESSION ["ncorreos"] == 0){ //no hay mensajes nuevos sin leer
-              echo '<p class="dashprofes_small_p" id="nuevosMensajes">Ningun mensaje nuevo</p>';
+              echo '<p class="dashprofes_small_p" id="nuevosMensajes">Ningún mensaje nuevo</p>';
             }
             else{ //hay algun mensaje sin leer
 
@@ -171,12 +171,12 @@
               echo '<p class="dashprofes_small_p dashprofes_info">Alumnos actuales: ' . $_SESSION ["nalumnos"] . ' </p>';
             }
           ?>
-          <p class="dashprofes_small_p">Una forma rapida de gestionar tus alumnos</p>
+          <p class="dashprofes_small_p">Una forma rápida de gestionar tus alumnos</p>
       </div>
 
       <!-- _________ VALORACIONES Y ESTADISTICAS _________-->
 		 	<div id="valoraciones" class="dashboard claro">
-		    	<p class="dashprofes_big_p">Valoraciones y Estadisticas <span class="glyphicon glyphicon-check"> </p>
+		    	<p class="dashprofes_big_p">Valoraciones y Estadísticas <span class="glyphicon glyphicon-check"> </p>
 		    	<p class="dashprofes_small_p" id="verValoraciones">Consulta tus valoraciones. ¡Son una parte muy importante de esta web!</p>
 		 	</div>
 
@@ -184,7 +184,7 @@
 		 	<div id="ranking" class="dashboard claro">
 		    	<p class="dashprofes_big_p">Ranking <span class="glyphicon glyphicon-star-empty"> </p>
           <?php 
-            echo '<p class="dashprofes_small_p dashprofes_info">Tu valoracion total actual es: ' . $_SESSION ["valoracion"] . ' </p>';
+            echo '<p class="dashprofes_small_p dashprofes_info">Tu valoración total actual es: ' . $_SESSION ["valoracion"] . ' </p>';
           ?>
 		    	<p class="dashprofes_small_p" id="verTop">¡Comprueba tu puesto en nuestra clasificación!</p>
 		 	</div>
