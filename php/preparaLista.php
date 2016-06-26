@@ -31,13 +31,13 @@
 
    if (!isset ($_REQUEST ["c"]) || $_REQUEST ["c"] != 'mis')
    {
-      if ($_REQUEST ["b"] == 'al')
+      if ($_REQUEST ["b"] == 'al')     //ALUMNOS
       {
-         $lista = $_SESSION ["alumnos"];
+         $lista = $_SESSION ["alumnos"];        //info del mis alumnos, nombre ap1 ap2
          // Buscar info de alumnos
-         $descr = $_SESSION ["descr_alumnos"];
-         $nelems = $_SESSION ["nalumnos"];
-         $ids = $_SESSION ["id_alumnos"];
+         $descr = $_SESSION ["descr_alumnos"];  //descripcion del alumno, id fechaNac comunidad CP correo
+         $nelems = $_SESSION ["nalumnos"];      //num de mis alumnos
+         $ids = $_SESSION ["id_alumnos"];       //ids de los alumnos
       }
       else if ($_REQUEST ["b"] == 'pr')
       {
@@ -47,12 +47,12 @@
          $nelems = $_SESSION ["nprofesores"];
          $ids = $_SESSION ["id_profesores"];
       }
-      else if ($_REQUEST ["b"] == 'cl')
+      else if ($_REQUEST ["b"] == 'cl')   //CLASES
       {
-         $lista = $_SESSION ["clases"];
-         $descr = $_SESSION ["descr_clases"];
-         $nelems = $_SESSION ["nclases"];
-         $ids = $_SESSION ["id_clases"];
+         $lista = $_SESSION ["clases"];         //lista de clases, nombreAsig - nivel - curso
+         $descr = $_SESSION ["descr_clases"];   //descripcion de las clases
+         $nelems = $_SESSION ["nclases"];       //numero de clases disponibles
+         $ids = $_SESSION ["id_clases"];        //lista de ids de las clases
       }
       else if ($_REQUEST ["b"] == 'as')
       {
@@ -61,12 +61,12 @@
          $nelems = $_SESSION ["nasignaturas"];
          $ids = $_SESSION ["id_asignaturas"];
       }
-      else
+      else                                //CURSOS
       {
-         $lista = $_SESSION ["cursos"];
-         $descr = $_SESSION ["descr_cursos"];
-         $nelems = $_SESSION ["ncursos"];
-         $ids = $_SESSION ["id_cursos"];
+         $lista = $_SESSION ["cursos"];         //lista de cursos, nombrecursos - horaini - diassemana
+         $descr = $_SESSION ["descr_cursos"];   //descripcion de los cursos
+         $nelems = $_SESSION ["ncursos"];       //numero de cursos disponibles
+         $ids = $_SESSION ["id_cursos"];        //lista de ids de las cursos
       }
    }
    else
