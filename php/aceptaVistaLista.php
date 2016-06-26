@@ -35,22 +35,17 @@
    //echo "OK: " . $conexion->host_info . "\n";
    
    // Dependiendo de la tabla actuamos de una forma u otra
-   if ($mis == "true")
-   {
-      $query = "";
-   }
-   else
+   $query = "";
+   if ($mis != "true")
    {
       if ($tabla == 'al')
          $query = "INSERT INTO `profesoresConClase`.`profes_seleccionados` (`id_profesor`, `id_alumno`) VALUES ((?), (?));";
       else if ($tabla == 'pr')
          $query = "INSERT INTO `profesoresConClase`.`profes_seleccionados` (`id_alumno`, `id_profesor`) VALUES ((?), (?));";
       else if ($tabla == 'cl')
-         $query = "INSERT INTO `profesoresConClase`.`clases_seleccionadas` (`id_alumno`, `id_clase`, `peticion`, `admision`) VALUES ((?), (?), CURRENT_TIMESTAMP, '0000-00-00 00:00:00');";
-      else if ($tabla == 'as')
-         $query = "";
-      else
-         $query = "INSERT INTO `profesoresConClase`.`cursos_seleccionados` (`id_alumno`, `id_curso`, `peticion`, `admision`) VALUES ((?), (?), CURRENT_TIMESTAMP, '0000-00-00 00:00:00');";
+         $query = "INSERT INTO `profesoresConClase`.`clases_seleccionadas` (`id_alumno`, `id_clase`, `peticion`) VALUES ((?), (?), CURRENT_TIMESTAMP);";
+      else if ($tabla != 'as')
+         $query = "INSERT INTO `profesoresConClase`.`cursos_seleccionados` (`id_alumno`, `id_curso`, `peticion`) VALUES ((?), (?), CURRENT_TIMESTAMP);";
    }  
 
    // Preparamos la query que vamos a ejecutar: Eliminamos el alumno
