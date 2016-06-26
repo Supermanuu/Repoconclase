@@ -8,6 +8,7 @@
    tokens = location.search.substr(1).split ("&");
    $perfil = 'al';
    
+   $("#vista_lista_editar").css ("display", "none");
    // Tipo de usuario
    if (tokens.includes ("a=al"))
    {

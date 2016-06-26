@@ -8,17 +8,17 @@
    
    $("#spam_secundario_izquierda").click (function (event)
    {
-      $(location).attr('href', 'estadisticas.html');
+      $(location).attr('href', 'ranking.php);
    });
    
    $("#spam_secundario_centro").click (function (event)
    {
-      $(location).attr('href', 'estadisticas.html');
+      $(location).attr('href', 'ranking.php');
    });
    
    $("#spam_secundario_derecha").click (function (event)
    {
-      $(location).attr('href', 'estadisticas.html');
+      $(location).attr('href', 'ranking.php');
    });
    
    $("#mis_notas").click (function ()
