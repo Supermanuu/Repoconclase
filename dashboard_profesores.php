@@ -34,18 +34,18 @@
 		    	<p class="dashprofes_big_p"> <?php echo $_SESSION["nombre"]; ?> <span class="glyphicon glyphicon-info-sign" ></span> </p>
 		    	<p class="dashprofes_small_p dashprofes_info">Proximos Eventos: </p>
           <?php 
-           
+            $infoClases = $_SESSION ["infoclases"];
             if($_SESSION ["nclases"] == 0){ //no hay clases para el profesor, imprimimos mensaje por defecto emitido por el php
               echo '<p class="dashprofes_small_p dashprofes_info" id="tusEventos">'; 
-              echo $clases[0];  
+              echo $infoClases[0];  
               echo '</p>';
             }
             else{ //hay alguna clase
               
-              if($_SESSION ["nclases"] > 4)
+              if($_SESSION ["infonclases"] > 4)
                 $nc = 4;
               else  
-                $nc = $_SESSION ["nclases"];
+                $nc = $_SESSION ["infonclases"];
 
                //lista oculta que contendra los prox eventos del profesor y nos servira para imprimir su primer elem en el parrafo de abajo
               $k = 0;
@@ -54,7 +54,7 @@
               {  
                 echo '<li>';
                 echo '<p id="tusEventos" class="dashprofes_small_p dashprofes_info">';
-                echo $clases[$k] . "  " . $datosClases[$k];   
+                echo $infoClases[$k] . "  " . $datosClases[$k];   
                 echo '</p>';
                 echo '</li>';
                 $k++;
@@ -96,7 +96,7 @@
               {  
                 echo '<li>';
                 echo '<p class="dashprofes_small_p " id="nuevosMensajes">';
-                echo $correo_nuevo[$m];   
+                echo $correo_nuevo_asunto[$m] . "    ----    " . $correo_nuevo_fecha[$m];   
                 echo '</p>';
                 echo '</li>';
                 $m++;
@@ -114,19 +114,68 @@
 
       <!-- _________ TUS CLASES _________-->
       <div id="misClases" class="dashboard claro">
-		    	<p class="dashprofes_big_p">Mis Clases <span class="glyphicon glyphicon-education"> </p>
-		    	<p class="dashprofes_small_p" id="gestionaAlumnos">Gestiona tus clases particulares con otros alumnos</p>
+		    	<p class="dashprofes_big_p">Mis Clases <span class="glyphicon glyphicon-education"> </p>	
+          <?php 
+            $clases = $_SESSION ["clases"];
+
+            if($_SESSION ["nclases"] == 0){
+              echo '<p class="dashprofes_small_p">' . $clases[0] . '</p>';
+            }
+            else{
+              $numcls = $_SESSION ["nclases"]; 
+              if($numcls > 4){
+                $numcls = 4;
+              }
+
+              echo '<p class="dashprofes_small_p dashprofes_info">Clases actuales: ' . $_SESSION ["nclases"] . ' </p>';
+              $j = 0;
+              while($j < $numcls){
+                echo '<p id="tusEventos" class="dashprofes_small_p dashprofes_info"> ' . $clases[$j] . ' </p>';
+                $j++;
+              }
+            }
+          ?>   
+          </p>
 		 	</div>
 
       <!-- _________ TUS CURSOS _________-->
 		 	<div id="misCursos" class="dashboard claro">
 		    	<p class="dashprofes_big_p">Mis Cursos <span class="glyphicon glyphicon-list-alt"> </p>
-		    	<p class="dashprofes_small_p" id="gestionaGrupos">Crea, Edita, comparte tus conocimientos impartiendo un curso</p>
+          <?php 
+            $cursos = $_SESSION ["cursos"];
+
+            if($_SESSION ["ncursos"] == 0){
+              echo '<p class="dashprofes_small_p">' . $cursos[0] . '</p>';
+            }
+            else{
+              $numcurs = $_SESSION ["ncursos"]; 
+              if($numcurs > 4){
+                $numcurs = 4;
+              }
+
+              echo '<p class="dashprofes_small_p dashprofes_info">Cursos actuales: ' . $_SESSION ["ncursos"] . ' </p>';
+              $k = 0;
+              while($k < $numcurs){
+                echo '<p id="tusEventos" class="dashprofes_small_p dashprofes_info"> ' . $cursos[$j] . ' </p>';
+                $k++;
+              }
+            }
+          ?> 
 		 	</div>
 
       <!-- _________ MIS ALUMNOS _________-->
 		 	<div id="misAlumnos" class="dashboard claro">
           <p class="dashprofes_big_p">Mis Alumnos <span class="glyphicon glyphicon-user" > </p>
+          <?php 
+
+            $alums = $_SESSION ["alumnos"];
+            if($_SESSION ["nalumnos"] == 0){
+              echo '<p class="dashprofes_small_p">' . $alums[0] . '</p>';
+            }
+            else{
+              echo '<p class="dashprofes_small_p dashprofes_info">Alumnos actuales: ' . $_SESSION ["nalumnos"] . ' </p>';
+            }
+          ?>
           <p class="dashprofes_small_p">Una forma rapida de gestionar tus alumnos</p>
       </div>
 
@@ -139,6 +188,9 @@
       <!-- _________ RANKING _________-->
 		 	<div id="ranking" class="dashboard claro">
 		    	<p class="dashprofes_big_p">Ranking <span class="glyphicon glyphicon-star-empty"> </p>
+          <?php 
+            echo '<p class="dashprofes_small_p dashprofes_info">Tu valoracion total actual es: ' . $_SESSION ["valoracion"] . ' </p>';
+          ?>
 		    	<p class="dashprofes_small_p" id="verTop">¡Comprueba tu puesto en nuestra clasificación!</p>
 		 	</div>
 

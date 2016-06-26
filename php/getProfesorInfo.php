@@ -107,9 +107,9 @@
    if ($i == 0)
       $clases[] = "Hoy no tienes mucho que hacer..., Crea una nueva Clase o Curso!"; 
     
-   $_SESSION ["nclases"] = $i;
-   $_SESSION ["clases"] = $clases;
-   $_SESSION ["horas_clases"] = $horas_clases;
+   $_SESSION ["infonclases"] = $i;
+   $_SESSION ["infoclases"] = $clases;
+   $_SESSION ["infohoras_clases"] = $horas_clases;
 
    // Las clases de este alumno estan en el array clases y horas_clases
 
@@ -144,7 +144,8 @@
    $t=0;
    while ($t < $l)
    {
-      $correo_nuevo[] = "Asunto: " . $asuntos[$t] . " -  Fecha: " . $fechas_msg[$t];
+      $correo_nuevo_asunto[] = "Asunto: " . $asuntos[$t];
+      $correo_nuevo_fecha[] = " Fecha: " . $fechas_msg[$t];
       $t++;
    }
 
@@ -235,7 +236,7 @@
       $i++;
    }
    if ($i == 0)
-      $cursos[] = "¡Crea nuevos cursos especializados!";
+      $cursos[] = "Ningun curso por aqui, ¡Crea uno nuevo!";
    $_SESSION ["ncursos"] = $i;
    $_SESSION ["cursos"] = $cursos;
    $_SESSION ["descr_cursos"] = $descr_cursos;
@@ -278,7 +279,23 @@
    // Los profesores de este alumno estan en el array profesores
 
 
+//------------------ OBTENEMOS LA SUMA TOTAL DE VALORACIONES DEL PROFESOR ------------------
 
+   // Preparamos la query que vamos a ejecutar: Obtenemos el nombre real del profesor
+   if (! ($sentencia = $conexion->prepare ("SELECT sum(valoracion) as val FROM imparte WHERE idProfe = (?);")))
+      echo "ERROR: PREPARE (1): " . $conexion->error;
+   // Asociamos la variable a la query: Es el id del alumno
+   if (!$sentencia->bind_param ("i", $_SESSION ["id_user"])) 
+      echo "ERROR: BIND PARAM (1): " . $conexion->error;
+   // Ejecutamos la query en la BD
+   if (!$sentencia->execute ())
+      echo "ERROR: EXECUTE (1): " . $conexion->error;
+   // Vinculamos la salida a otras variables: Guardamos el perfil y el nombre del alumno
+   if (!$sentencia->bind_result ($val))
+      echo "ERROR: BIND RESULT (1): " . $conexion->error;
+   // Comprobamos que existe una fila
+   if ($sentencia->fetch ())
+         $_SESSION ["valoracion"] = $val;
 
 
    // Cerramos conexion con la base de datos
