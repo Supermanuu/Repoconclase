@@ -1531,6 +1531,13 @@ body.ranking_body{
    margin-bottom: 50px;
 }
 
+/*-------------crear_claseOgrupo.php-----------*/
+
+.asignatura_oculta
+{
+   display: none;
+}
+
 #elemento_titulo
 {
    background-color: #81c37c;
