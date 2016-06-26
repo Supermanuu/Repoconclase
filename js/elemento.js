@@ -37,6 +37,15 @@
       $("#elemento_precio > p").css ("backgroundColor", "#ba70ce");
    }
    
+   // Para que anime el ambiente
+   function quita_mensaje_final ()
+   {
+      $("#elemento_titulo").fadeOut ("fast", function ()
+      {
+         location.reload ();
+      });
+   }
+   
    // Si da a aceptar
    $('#elemento_aceptar').click (function ()
    {
@@ -50,11 +59,11 @@
             //alert (data); // Esto por si quieres ver la query que se ha ejecutado e info de depuración
             $("#elemento_titulo").fadeOut ("fast", function ()
             {
-               $("#elemento_titulo").css ("align-text", "center");
+               $("#elemento_titulo").css ("text-align", "center");
                elemento_titulo.innerText = "¡Contrato firmado!";
                $("#elemento_titulo").fadeIn ("fast", function ()
                {
-                  setTimeout (location.reload (), 10000);
+                  setTimeout (quita_mensaje_final, 1000);
                });
             });
             $("#elemento_contenido").fadeOut ("fast");
@@ -75,7 +84,7 @@
       $("#elemento_aceptar").fadeOut ("fast");
       $("#elemento_volver").fadeOut ("fast", function ()
       {
-         setTimeout (location.reload (), 3000);
+         location.reload ();
       });
    });
    
